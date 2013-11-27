@@ -105,9 +105,9 @@ export LC_ALL=""
 export TERM=xterm-256color
 source ~/linux.alias/core.bash
 
-#power shell
-function _update_ps1() {
-    export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-}
+##power shell
+#function _update_ps1() {
+    #export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+#}
 
-export PROMPT_COMMAND="_update_ps1"
+#export PROMPT_COMMAND="_update_ps1"
