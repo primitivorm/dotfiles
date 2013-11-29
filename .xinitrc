@@ -12,6 +12,7 @@ urxvt -T Terminal &
 
 #Start the window manager
 exec awesome &
+exec aurget -S devilspie2 &
 
 #slim
 login_cmd exec ck-launch-session /bin/bash -login /etc/X11/Xsession %session
