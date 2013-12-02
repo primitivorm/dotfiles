@@ -1,5 +1,19 @@
 [user]
 	name = Primitivo R. Montero
 	email = cibercafe_montero@hotmail.com
+
 [push]
-	default = simple
+    default = upstream
+
+[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
+[core]
+    autocrlf = true
+
+[rebase]
+    autosquash = true
+
+[credential]
+	helper = cache --timeout=3600
