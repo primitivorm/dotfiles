@@ -1,6 +1,6 @@
 ! Use a nice truetype font and size by default...
-xterm*faceName: Terminus
-xterm*faceSize: 10
+xterm*faceName: DejaVu Sans Mono for Powerline
+xterm*faceSize: 9
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 xterm*loginshell: true
 
