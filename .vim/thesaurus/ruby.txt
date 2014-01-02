@@ -1,0 +1,13 @@
+arrayfind [] slice at first last take drop
+arrayinfo empty length count include
+arrayadd push << unshift insert concat replace &
+arrayremove pop shift delete compact uniq
+arraytransform flatten reverse
+arrayiterate each map reverse_each select reject drop_while delete_if keep_if
+
+hashfind
+hashinfo empty size length haskey? include has_value? values? keys values_at eql? key
+hashadd 
+hashremove shift delete_at delete_if clear
+hashtransform merge replace flatten invert
+hashiterate each_key each_value each_pair select keep_if
