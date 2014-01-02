@@ -122,7 +122,7 @@ set shortmess=a
 set cursorline "cursorcolumn "underline the current line, for quick orientation
 "establece el esquema de colores
 "max num of tabs
-set tabpagemax=15
+set tabpagemax=50
 set fileformats=unix,dos
 set listchars=tab:▸\-,trail:·,eol:¬,extends:→,precedes:←,nbsp:×
 if has('win32') || has('win64')
@@ -175,8 +175,9 @@ set showbreak=...
 set textwidth=72
 set wrapmargin=0
 "http://vim.wikia.com/wiki/VimTip30
-set nrformats+=alpha,octal,hex
-set display=uhex
+set nrformats+=alpha,hex
+"set display=uhex
+set display=lastline
 set formatoptions=tcq "fo
 set formatoptions+=qrn1 " When wrapping paragraphs, don't end lines with 1-letter words (looks stupid)
 if exists('+colorcolumn')
@@ -190,7 +191,7 @@ set smartindent
 "use 4 spaces for tabs set tabstop=4 softtabstop=4 shiftwidth=4 " display indentation guides
 set tabstop=4
 set shiftwidth=4
-set scrolloff=4 " keep 4 lines off the edges of the screen when scrolling
+set scrolloff=5 " keep 5 lines off the edges of the screen when scrolling
 "change tabs to spaces
 set expandtab
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
@@ -218,6 +219,10 @@ set matchpairs+=<:>
 set matchpairs+=":"
 set matchpairs+=':'
 set matchpairs+=%:%
+" Load matchit.vim, but only if the user hasn't installed a newer " version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 "}}}
 
 " Folding rules {{{
