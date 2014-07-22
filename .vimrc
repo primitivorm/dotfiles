@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 syntax on
 syntax enable
 filetype on
@@ -151,3 +152,6 @@ let g:UltiSnipsSnippetsDir           = "~/.vim/snippets/"
 let g:UltiSnipsSnippetDirectories    = ["UltiSnips", "snippets"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 "}}}
+=======
+source ~/vimfiles/_vimrc
+>>>>>>> 3a6e07bf31f5bd24ce31bf9fd489a8768e630e77
