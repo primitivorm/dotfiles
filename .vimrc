@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 syntax on
 syntax enable
 filetype on
@@ -11,11 +10,7 @@ set nowritebackup
 set noswapfile
 set autowrite
 set autoread
-if has("gui_running")
-    set background=light
-else
-    set background=dark
-endif
+set background=dark
 set nu
 set smartindent
 set ai
@@ -37,10 +32,57 @@ colorscheme proman
 
 "keymaps {{{
 let mapleader=','
+"HELP
+map <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 map <C-Left> <C-w>h " focus the window to the left
 map <C-Down> <C-w>j " focus the window to the down
 map <C-Up> <C-w>k " focus the window to the up
 map <C-Right> <C-w>l " focus the window to the right
+nmap <silent><C-tab> :tabnext<cr>
+nmap <silent><C-t> :tabnew<cr>
+nmap <silent><S-tab> :tabprev<cr>
+"CUT
+vmap <leader>x "+x
+"YANK
+vmap <leader>y "+y
+"PASTE
+nmap <leader>p "+p
+"CTRL-S is Save file
+nmap <C-s> :update<cr>
+"list
+nmap <leader>l :set list!<CR>
+"Type <leader>hl to toggle highlighting on/off, and show current value.
+map <leader>h :set hlsearch! hlsearch?<CR>
+"Omnicompletion
+imap <c-space> <c-x><c-o>
+"disable paste when MiddleMouse press
+"http://vim.wikia.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste
+nnoremap <MiddleMouse> <LeftMouse>
+"CTRL-ENTER is insert line after
+nmap <c-cr> o<esc>
+"CTRL-ENTER is insert line before
+nmap <c-s-cr> O<esc>
+"SUDO to write
+cmap w!! w !sudo tee % >/dev/null
+"}}}
+
+
+" Vundle {{{
+"https://github.com/gmarik/vundle
+"rtp
+set runtimepath+=~/.vim/
+set runtimepath+=~/.vim/bin/
+set runtimepath+=~/.vim/bundle/
+set runtimepath+=~/.vim/bundle/vundle/
+set nocompatible " be iMproved
+"https://github.com/gmarik/vundle/issues/211
+"call vundle#rc()
+call vundle#rc('~/.vim/bundle/')
+"" let Vundle manage Vundle
+"" required!
+Bundle 'gmarik/vundle'
+
+nmap <leader>bi :BundleInstall<cr>
 "}}}
 
 "NERDTree {{{
@@ -122,6 +164,8 @@ let g:acp_completeOption = '.,w,b,u'
 "let g:acp_behaviorCssOmniPropertyLength = 3
 "let g:acp_behaviorSnipmateLength=3
 "let g:acp_behaviorRubyOmniMethodLength=3
+let g:acp_behaviorUserDefinedFunction = 'predictive#complete'
+let g:acp_behaviorUserDefinedMeets = 'predictive#meetsForPredictive'
 "}}}
 
 " SuperTab {{{
@@ -152,6 +196,8 @@ let g:UltiSnipsSnippetsDir           = "~/.vim/snippets/"
 let g:UltiSnipsSnippetDirectories    = ["UltiSnips", "snippets"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 "}}}
-=======
-source ~/vimfiles/_vimrc
->>>>>>> 3a6e07bf31f5bd24ce31bf9fd489a8768e630e77
+
+" GUndo {{{
+nmap <silent><S-U> :GundoToggle<CR>
+" }}}
+
