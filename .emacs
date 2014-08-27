@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/evil/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/primitivorms-evil/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/themes")
@@ -39,3 +39,5 @@
 ;evil
 (require 'evil)
 (evil-mode 1)
+
+
