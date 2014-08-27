@@ -1,0 +1,3 @@
+[submodule "evil"]
+      path = ./.emacs.d/site-lisp./primitivorms-evil/
+      url = https://gitorious.org/evil/primitivorms-evil.git
