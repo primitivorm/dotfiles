@@ -1,3 +1,6 @@
 [submodule ".emacs.d/site-lisp/primitivorms-evil"]
 	path = .emacs.d/site-lisp/primitivorms-evil
 	url = https://gitorious.org/evil/primitivorms-evil.git
+[submodule ".emacs.d/site-lisp/predictive"]
+	path = .emacs.d/site-lisp/predictive
+	url = http://www.dr-qubit.org/git/predictive.git
