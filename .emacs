@@ -34,7 +34,7 @@
 ;(eval-after-load "color-theme" '(color-theme-molokai))
 (eval-after-load "color-theme" '(color-theme-solarized-light))
 ;change font name and size
-(set-face-attribute 'default nil :font "Monaco-10")
+(set-face-attribute 'default nil :font "Andale Mono-10")
 
 ;disable backup
 (setq backup-inhibited t)
@@ -42,8 +42,8 @@
 (setq auto-save-default nil)
 
 ;;;evil
-(require 'evil)
-(evil-mode 1)
+;(require 'evil)
+;(evil-mode 1)
 
 ;predictive mode
 (require 'predictive)
