@@ -1,0 +1,55 @@
+pristine:2b3d30acf284956bc4419ee5e7e7be84e7d83878739e433fa7dee130d371c4aa
+Starting with inventory:
+0000098323-4b732df5c0bca28f142bb8c15ebe6ac7562970e16fb438c0501fd4d51e7c5ad1
+[TAG 0.11.1
+Andrea Rossato <andrea.rossato@ing.unitn.it>**20100517114228
+ Ignore-this: b4950eeceab8b58b0a279a68e87b2eb85470a0a5
+] 
+hash: 0000000883-9c794a96fdf16675857ec41c7ef495ea046f837f1fd4cdf7a5f6b9c9d844f269
+[Fix for issue 23 (compat with iwlib 29)
+Jose A Ortega Ruiz <jao@gnu.org>**20100519124333
+ Ignore-this: 8bf9b8b8cd84d4a27dc12cce6ba45121
+] 
+hash: 0000000483-7a7f34cbe61b99a5201dc7da060c5bcaad81535d42bc0922f97d6aef38a44ea0
+[fix type - thanks to Taylan Ulrich B. for reporting it
+Andrea Rossato <andrea.rossato@ing.unitn.it>**20100527100616
+ Ignore-this: 08b07a8398bdbf974bfa21287c779340a68b9381
+] 
+hash: 0000000369-7f4043f5c306550b0ac642d511af9a54b86c0d2b01ebf0daf867087652595a4a
+[Full-height colour boxes around text
+Norbert Zeh <nzeh@cs.dal.ca>**20090731025556
+ Ignore-this: b1339bf8b7ed3ee816233d1dd386bd0a
+ 
+ Didn't like the fact that strings with the non-default background had two
+ pixels of default background above and below it.  Made the boxes with the
+ custom background colour extend to the full height of the status bar.
+] 
+hash: 0000000594-6760d772f1575f04c3fc61c8b1fff858857d319f3806c672162e3c5cfc649037
+[Fix right-alignment of strings
+Norbert Zeh <nzeh@cs.dal.ca>**20090731025448
+ Ignore-this: c8788007de87e0832575047b9ba4780b
+ 
+ The alignment of right-aligned content was off by one.  Fixed that.
+] 
+hash: 0000000313-f31202e63b9cef487114dc0afa9438917bddbb3f91b62269ecae01d349cac66b
+[Fix strange formatting of CPU frequencies
+Norbert Zeh <nzeh@cs.dal.ca>**20100604144153
+ Ignore-this: 8c7108dbb071318135c54f0ff830c065
+ 
+ This patch displays frequencies under 1GHz as MHz and above 1GHz as GHz.
+ Unfortunately, it was also necessary to touch CoreCommon.hs and CoreTemp.hs to
+ implement this.
+] 
+hash: 0000001840-befc0fedfd6e4727475d3f5f3fe4182242cb4c764ccbcada47aa23ff58ba957c
+[jao takes over maintainership of xmobar
+Andrea Rossato <andrea.rossato@ing.unitn.it>**20101201104302
+ Ignore-this: 74f2eba7cf906c319c5f6ab7739d5ea5ec429866
+ 
+ I hope this will inject new ideas in the project. It's been fun coding
+ xmobar, and a nice opportunity to learn Haskell.
+ 
+ Thanks to everyone for ideas, contributions and patches.
+ 
+ Have fun!
+] 
+hash: 0000000478-f4d470771ec7aae8ba58ddeda7e45a863597668ff3c857cb3c6a96f8082056b1
