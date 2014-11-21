@@ -1,4 +1,4 @@
-#http://astyle.sourceforge.net/astyle.html#_attach_namespaces
+#http://astyle.sourceforge.net/astyle.html
 
 #Kernighan&Ritchie style formatting/indenting.
 #namespace foospace {
