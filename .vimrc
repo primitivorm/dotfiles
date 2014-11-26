@@ -3,7 +3,6 @@ syntax enable
 filetype on
 filetype plugin on
 filetype plugin indent on
-set nocompatible
 set nocp
 set nobackup
 set nowritebackup
@@ -26,7 +25,10 @@ set hlsearch
 set ignorecase
 set hlsearch
 set ignorecase
+set cursorline
 set listchars=tab:\|-,trail:-,eol:¬
+set guifont=Monaco\ 10
+set guioptions-=T
 call pathogen#infect()
 colorscheme proman 
 
@@ -38,7 +40,7 @@ map <C-Left> <C-w>h " focus the window to the left
 map <C-Down> <C-w>j " focus the window to the down
 map <C-Up> <C-w>k " focus the window to the up
 map <C-Right> <C-w>l " focus the window to the right
-nmap <silent><C-tab> :tabnext<cr>
+nmap <silent><C-tab> :tabNext<cr>
 nmap <silent><C-t> :tabnew<cr>
 nmap <silent><S-tab> :tabprev<cr>
 "CUT
@@ -64,8 +66,27 @@ nmap <c-cr> o<esc>
 nmap <c-s-cr> O<esc>
 "SUDO to write
 cmap w!! w !sudo tee % >/dev/null
+
+" Edit the vimrc file
+nmap <silent><leader>ed :tabnew $MYVIMRC<CR>
+nmap <silent><leader>ld :source $MYVIMRC<CR>
 "}}}
 
+" Highlight all words when press <CR> {{{
+let g:highlighting = 0
+function! Highlighting()
+  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+    let g:highlighting = 0
+    return ":silent nohlsearch\<CR>"
+  endif
+  let @/ = '\<'.expand('<cword>').'\>'
+  let g:highlighting = 1
+  return ":silent set hlsearch\<CR>"
+endfunction
+"TODO: Uncoment this
+nmap <silent> <expr> <CR> Highlighting()
+"nmap <silent> <expr> <2-LeftMouse> Highlighting()
+" }}}
 
 " Vundle {{{
 "https://github.com/gmarik/vundle
@@ -74,15 +95,24 @@ set runtimepath+=~/.vim/
 set runtimepath+=~/.vim/bin/
 set runtimepath+=~/.vim/bundle/
 set runtimepath+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/bundle/Vundle.vim/
 set nocompatible " be iMproved
 "https://github.com/gmarik/vundle/issues/211
-"call vundle#rc()
-call vundle#rc('~/.vim/bundle/')
+call vundle#begin('~/.vim/bundle/')
 "" let Vundle manage Vundle
 "" required!
-Bundle 'gmarik/vundle'
-
-nmap <leader>bi :BundleInstall<cr>
+Plugin 'primitivorm/ack.vim'
+Plugin 'primitivorm/AutoComplPop'
+Plugin 'primitivorm/gundo.vim'
+Plugin 'primitivorm/nerdcommenter'
+Plugin 'primitivorm/nerdtree'
+Plugin 'primitivorm/supertab'
+Plugin 'primitivorm/ultisnips'
+Plugin 'tpope/vim-fugitive'
+Plugin 'primitivorm/vim-predictive'
+Plugin 'primitivorm/vim-proman-theme'
+call vundle#end()
+nmap <leader>pi :PluginInstall<cr>
 "}}}
 
 "NERDTree {{{
@@ -99,7 +129,7 @@ let g:NERDTreeChristmasTree     = 1
 let g:NERDTreeCaseSensitiveSort = 0
 let g:NERDTreeQuitOnOpen        = 1
 let g:NERDTreeMouseMode         = 2
-let NERDTreeShowHidden          = 0
+let NERDTreeShowHidden          = 1
 "the working directory is always the one where the active buffer is located.
 set autochdir
 "I make sure the working directory is set correctly.
@@ -152,7 +182,7 @@ nnoremap <leader>t :CtrlPTag<cr>
 " complete the first match for me.  If you edit files with tags you might
 " want to add those.
 "let g:acp_completeOption = '.,w,b,u,t,i'
-let g:acp_completeOption = '.,w,b,u'
+let g:acp_completeOption = '.,w,b,u,i'
 "length to trigger AutoComplPop
 "let g:acp_behaviorFileLength = 3
 "let g:acp_behaviorKeywordLength = 3
@@ -164,8 +194,13 @@ let g:acp_completeOption = '.,w,b,u'
 "let g:acp_behaviorCssOmniPropertyLength = 3
 "let g:acp_behaviorSnipmateLength=3
 "let g:acp_behaviorRubyOmniMethodLength=3
+
+"predictive
+let g:predictive#disable_plugin=0
 let g:acp_behaviorUserDefinedFunction = 'predictive#complete'
-let g:acp_behaviorUserDefinedMeets = 'predictive#meetsForPredictive'
+let g:acp_behaviorUserDefinedMeets = 'predictive#meets_for_predictive'
+let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
+let &completefunc='predictive#complete'
 "}}}
 
 " SuperTab {{{
