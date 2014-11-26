@@ -1,5 +1,6 @@
 ! Use a nice truetype font and size by default...
-xterm*faceName: Terminus Medium
+!xterm*faceName: Terminus Medium
+xterm*faceName: ConsolaMono
 xterm*faceSize: 10
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 xterm*loginshell: true
