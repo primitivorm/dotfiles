@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
 
-# vim-predictive: Given the first few letters of a word, for instance,
-#                   it's not too difficult to
+# vim-predictive: Given the first few letters of a word, for instance, it's not too difficult to
 #         predict what should come next.
 #      Author: Primitivo Roman
 #      Email: primitivo.roman.montero@gmail.com
@@ -22,8 +21,10 @@ import re
 import codecs
 import locale
 import os
+import sys
+import string
+from collections import Counter
 from collections import OrderedDict
-import numpy as np
 
 def read_file(_path, _encoding):
     _dict = {}
@@ -69,7 +70,7 @@ def is_valid_word(_word, _regex):
             reg_ex = re.compile(_regex)
         except:
             reg_ex = re.compile('^[a-zA-Z]+$')
-        rb = re.match(reg_ex, _word)
+        rb = re.match(reg_ex,_word)
     except:
         pass
     return rb
@@ -83,76 +84,91 @@ def dict_reset_value(_dict, _key, _val=0):
     return _dict
 
 def most_common(_dict, _len, _count):
-    results = []
+    results=[]
     od = ordered_dict(_dict)
-    for k, y in od.iteritems():
+    for k,y in od.iteritems():
         if len(k) >= _len:
             results.append(k)
         if len(results) >= _count:
             break
     return results
 
-def levenshtein(source, target):
-    """
-    Calculates the Levenshtein distance between a and b."
-    http://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python
-    """
-    if len(source) < len(target):
-        return levenshtein(target, source)
-
-    # So now we have len(source) >= len(target).
-    if len(target) == 0:
-        return len(source)
-
-    # We call tuple() to force strings to be used as sequences
-    # ('c', 'a', 't', 's') - numpy uses them as values by default.
-    source = np.array(tuple(source))
-    target = np.array(tuple(target))
-
-    # We use a dynamic programming algorithm, but with the
-    # added optimization that we only need the last two rows
-    # of the matrix.
-    previous_row = np.arange(target.size + 1)
-    for s in source:
-        # Insertion (target grows longer than source):
-        current_row = previous_row + 1
-
-        # Substitution or matching:
-        # Target and source items are aligned, and either
-        # are different (cost of 1), or are the same (cost of 0).
-        current_row[1:] = np.minimum(
-            current_row[1:],
-            np.add(previous_row[:-1], target != s))
-
-        # Deletion (target grows shorter than source):
-        current_row[1:] = np.minimum(
-                current_row[1:],
-                current_row[0:-1] + 1)
-
-        previous_row = current_row
-
-    return previous_row[-1]
+def levenshtein(a,b):
+    #from http://hetland.org/coding/python/levenshtein.py
+    "Calculates the Levenshtein distance between a and b."
+    n, m = len(a), len(b)
+    if n > m:
+        # Make sure n <= m, to use O(min(n,m)) space
+        a,b = b,a
+        n,m = m,n
+    current = range(n+1)
+    for i in range(1,m+1):
+        previous, current = current, [i]+[0]*n
+        for j in range(1,n+1):
+            add, delete = previous[j]+1, current[j-1]+1
+            change = previous[j-1]
+            if a[j-1] != b[i-1]:
+                change = change + 1
+            current[j] = min(add, delete, change)
+    return current[n]
 
 def fuzzy_completion(_list, word, MIN_DISTANCE, MAX_RESULTS=10):
-    results = []
+    results=[]
+    distances = None
+    distances_1 = {}
+    distances_2 = {}
     try:
-        first_char = word[0]
+        first_char=word[0].lower()
     except:
-        first_char = ''
-    word_len = len(word)
-    endwalk = False
-    new_list = (wr for wr in _list if len(wr) >= word_len)
-    for w in new_list:
-        wl = w.lower()
-        if wl.startswith(word[0:len(word)]):
+        first_char=''
+    word_len=len(word)
+    word_lower=word.lower()
+    endwalk=False
+    for w in _list:
+        wl=w.lower()
+        if wl.startswith(word_lower[0:len(word_lower)]):
             results.append(w)
             if len(results) >= MAX_RESULTS:
+                endwalk=True
                 break
         else:
-            d = levenshtein(word, w[0:len(w)])
-            if d <= MIN_DISTANCE:
-                results.append(w)
+            if wl.startswith(first_char):
+                distances=distances_1
+                distances_2={}
+            elif not distances_1:
+                distances=distances_2
+            if distances!=None:
+                w_len=len(w)
+                if word_len < w_len:
+                    w_len=word_len
+                d = levenshtein(w[0:w_len],word)
+                if d <= MIN_DISTANCE:
+                    try:
+                        distancesList=distances[d]
+                    except:
+                        distancesList =[]
+                        distances[d]=distancesList
+                    distancesList.append(w)
+            distances=None
+        if endwalk:
+            break
+    if distances_1:
+        distances=distances_1
+    else:
+        distances=distances_2
+    results.sort(
+        lambda a,b: \
+            (0 if len(a)==len(b) else {True:-1,False:1}[len(a) < len(b)]))
+    keys=list(distances.keys())
+    keys.sort()
+    fuzzylen=int(MAX_RESULTS)-len(results)
+    if fuzzylen >=0:
+        for k in keys:
+            distancesList=distances[k]
+            results.extend(distancesList)
+            del distances[k]
             if len(results) >= MAX_RESULTS:
+                results=results[0:MAX_RESULTS]
                 break
     return results
 
@@ -170,14 +186,14 @@ def produce_result_value(matches_list, origin_note, want_show_origin):
     else:
         for match in matches_list:
             s += '{"word": "' + match + '"},'
-    s += ']'
-    s = s.replace('},]', '}]')
+    s+=']'
+    s= s.replace('},]', '}]')
     return s
 
-def python_dict_to_vim_str(_dict):
+def PythonDictToVimStr(_dict):
     s = '{'
     for key in _dict:
         s += '"' + key + '":' + str(_dict[key]) + ','
-    s += '}'
-    s = s.replace(',}', '}')
+    s+='}'
+    s= s.replace(',}', '}')
     return s

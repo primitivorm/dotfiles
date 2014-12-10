@@ -33,7 +33,7 @@ if !exists("g:predictive#dict_path")
      finish
 endif
 
-let s:__predictive_complete_lookup=[]
+let s:__predictive_complete_lookup_result=[]
 
 if !exists("g:predictive#OriginNotePredictive")
     let g:predictive#OriginNotePredictive="    << predictive"
@@ -81,10 +81,6 @@ endif
 
 if !exists("g:predictive#keyword_patterns")
     let g:predictive#keyword_patterns = '^[a-zA-Z]+$'
-endif
-
-if !exists("g:predictive#debug")
-    let g:predictive#debug=0
 endif
 
 "Controls automatic word frequency learning. When non-nil (the default), the

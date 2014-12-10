@@ -26,9 +26,10 @@ set ignorecase
 set hlsearch
 set ignorecase
 set cursorline
-set listchars=tab:\|-,trail:-,eol:Â¬
+"set listchars=tab:\|-,trail:-,eol:Â¬
 set guifont=Monaco\ 10
 set guioptions-=T
+set mouse=a
 call pathogen#infect()
 colorscheme proman 
 
@@ -59,7 +60,7 @@ map <leader>h :set hlsearch! hlsearch?<CR>
 imap <c-space> <c-x><c-o>
 "disable paste when MiddleMouse press
 "http://vim.wikia.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste
-nnoremap <MiddleMouse> <LeftMouse>
+"nnoremap <MiddleMouse> <LeftMouse>
 "CTRL-ENTER is insert line after
 nmap <c-cr> o<esc>
 "CTRL-ENTER is insert line before
@@ -70,6 +71,8 @@ cmap w!! w !sudo tee % >/dev/null
 " Edit the vimrc file
 nmap <silent><leader>ed :tabnew $MYVIMRC<CR>
 nmap <silent><leader>ld :source $MYVIMRC<CR>
+
+
 "}}}
 
 " Highlight all words when press <CR> {{{
@@ -175,6 +178,7 @@ imap <C-p> <esc>:CtrlP<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 imap <C-b> <esc>:CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlPTag<cr>
+
 "}}}
 
 " AutoComplPop {{{
@@ -196,11 +200,9 @@ let g:acp_completeOption = '.,w,b,u,i'
 "let g:acp_behaviorRubyOmniMethodLength=3
 
 "predictive
-let g:predictive#disable_plugin=0
-let g:acp_behaviorUserDefinedFunction = 'predictive#complete'
-let g:acp_behaviorUserDefinedMeets = 'predictive#meets_for_predictive'
 let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
-let &completefunc='predictive#complete'
+let g:predictive#file_types = ['*', 'text', 'vim', 'python', 'cs', 'sql', 'java', 'ruby', 'html', 'xml', 'javascript']
+let g:predictive#keyword_patterns = '^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$'
 "}}}
 
 " SuperTab {{{
@@ -235,4 +237,3 @@ let g:UltiSnipsDontReverseSearchPath = "1"
 " GUndo {{{
 nmap <silent><S-U> :GundoToggle<CR>
 " }}}
-
