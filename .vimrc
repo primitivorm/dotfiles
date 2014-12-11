@@ -30,9 +30,20 @@ set cursorline
 set guifont=Monaco\ 10
 set guioptions-=T
 set mouse=a
+" first full match
+set visualbell " don't beep
+set noerrorbells " don't beep
+"disable blink
+autocmd GUIEnter * set visualbell t_vb=
+set vb t_vb= " Turn off visual bell, error flash
+set noshowmode "show current mode
+set showcmd " show (partial) command in the last line of the screen
+" this also shows visual selection info
+" set nomodeline " disable mode lines (security measure)
+set modeline
 call pathogen#infect()
-colorscheme proman 
 
+colorscheme proman 
 "keymaps {{{
 let mapleader=','
 "HELP
@@ -114,6 +125,9 @@ Plugin 'primitivorm/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'primitivorm/vim-predictive'
 Plugin 'primitivorm/vim-proman-theme'
+Plugin 'primitivorm/L9'
+Plugin 'primitivorm/vim-swap-lines'
+
 call vundle#end()
 nmap <leader>pi :PluginInstall<cr>
 "}}}
