@@ -27,7 +27,7 @@ set hlsearch
 set ignorecase
 set cursorline
 "set listchars=tab:\|-,trail:-,eol:¬
-set guifont=Monaco\ 10
+set guifont=Consola\ Mono\ 10
 set guioptions-=T
 set mouse=a
 " first full match
@@ -44,47 +44,6 @@ set modeline
 call pathogen#infect()
 
 colorscheme proman 
-"keymaps {{{
-let mapleader=','
-"HELP
-map <F1> <ESC>:exec "help ".expand("<cword>")<CR>
-map <C-Left> <C-w>h " focus the window to the left
-map <C-Down> <C-w>j " focus the window to the down
-map <C-Up> <C-w>k " focus the window to the up
-map <C-Right> <C-w>l " focus the window to the right
-nmap <silent><C-tab> :tabNext<cr>
-nmap <silent><C-t> :tabnew<cr>
-nmap <silent><S-tab> :tabprev<cr>
-"CUT
-vmap <leader>x "+x
-"YANK
-vmap <leader>y "+y
-"PASTE
-nmap <leader>p "+p
-"CTRL-S is Save file
-nmap <C-s> :update<cr>
-"list
-nmap <leader>l :set list!<CR>
-"Type <leader>hl to toggle highlighting on/off, and show current value.
-map <leader>h :set hlsearch! hlsearch?<CR>
-"Omnicompletion
-imap <c-space> <c-x><c-o>
-"disable paste when MiddleMouse press
-"http://vim.wikia.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste
-"nnoremap <MiddleMouse> <LeftMouse>
-"CTRL-ENTER is insert line after
-nmap <c-cr> o<esc>
-"CTRL-ENTER is insert line before
-nmap <c-s-cr> O<esc>
-"SUDO to write
-cmap w!! w !sudo tee % >/dev/null
-
-" Edit the vimrc file
-nmap <silent><leader>ed :tabnew $MYVIMRC<CR>
-nmap <silent><leader>ld :source $MYVIMRC<CR>
-
-
-"}}}
 
 " Highlight all words when press <CR> {{{
 let g:highlighting = 0
@@ -251,3 +210,49 @@ let g:UltiSnipsDontReverseSearchPath = "1"
 " GUndo {{{
 nmap <silent><S-U> :GundoToggle<CR>
 " }}}
+
+"keymaps {{{
+let mapleader=','
+"HELP
+map <F1> <ESC>:exec "help ".expand("<cword>")<CR>
+map <C-Left> <C-w>h " focus the window to the left
+map <C-Down> <C-w>j " focus the window to the down
+map <C-Up> <C-w>k " focus the window to the up
+map <C-Right> <C-w>l " focus the window to the right
+nmap <silent><C-tab> :tabNext<cr>
+nmap <silent><C-t> :tabnew<cr>
+nmap <silent><S-tab> :tabprev<cr>
+"CUT
+vmap <leader>x "+x
+"YANK
+vmap <leader>y "+y
+"PASTE
+nmap <leader>p "+p
+"CTRL-S is Save file
+nmap <C-s> :update<cr>
+"list
+nmap <leader>l :set list!<CR>
+"Type <leader>hl to toggle highlighting on/off, and show current value.
+map <leader>h :set hlsearch! hlsearch?<CR>
+"Omnicompletion
+imap <c-space> <c-x><c-o>
+"disable paste when MiddleMouse press
+"http://vim.wikia.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste
+"nnoremap <MiddleMouse> <LeftMouse>
+"CTRL-ENTER is insert line after
+nmap <c-cr> o<esc>
+"CTRL-ENTER is insert line before
+nmap <c-s-cr> O<esc>
+"SUDO to write
+cmap w!! w !sudo tee % >/dev/null
+
+" Edit the vimrc file
+nmap <silent><leader>ed :tabnew $MYVIMRC<CR>
+nmap <silent><leader>ld :source $MYVIMRC<CR>
+
+" Fix: VIM UP and Down Keys Inserting A B C D 
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
+"}}}

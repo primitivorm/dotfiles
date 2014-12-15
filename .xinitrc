@@ -24,3 +24,6 @@ export CLICOLOR=TRUE
 
 #slim
 login_cmd exec ck-launch-session /bin/bash -login /etc/X11/Xsession %session
+
+#change brightness
+xrandr --output LVDS1 --set Backlight 0
