@@ -1,3 +1,6 @@
+; load-path
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
+
 ; start package.el with emacs
 (require 'package)
 ; add MELPA to repository list
@@ -22,7 +25,19 @@
 ; to add header include directories
 ; (add-to-list 'achead:include-directories '"path_headers_here")
 
-; Disable the splash screen (to enable it agin, replace the t with 0)
+; disable the splash screen (to enable it again, replace the t with 0)
 (setq inhibit-splash-screen t)
 ; disable backup
 (setq backup-inhibited t)
+; disable auto save
+(setq auto-save-default nil)
+; enable line numbers
+(global-linum-mode t)
+; disable toolbar
+(tool-bar-mode -1)
+; change yes-or-no to y-or-n
+(fset 'yes-or-no-p 'y-or-n-p)
+; vbnet-mode
+(autoload 'vbnet-mode "vbnet-mode" "Mode for editing VB.NET code." t)
+(setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
+                             vbnet-mode)) auto-mode-alist))
