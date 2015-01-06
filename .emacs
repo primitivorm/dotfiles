@@ -1,8 +1,13 @@
 ; load-path
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
+; vbnet-mode
+(autoload 'vbnet-mode "vbnet-mode" "Mode for editing VB.NET code." t)
+(setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
+                             vbnet-mode)) auto-mode-alist))
 
 ; start package.el with emacs
 (require 'package)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; add MELPA to repository list
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 ; initialize package.el
@@ -24,6 +29,7 @@
             (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 ; to add header include directories
 ; (add-to-list 'achead:include-directories '"path_headers_here")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; disable the splash screen (to enable it again, replace the t with 0)
 (setq inhibit-splash-screen t)
@@ -37,7 +43,5 @@
 (tool-bar-mode -1)
 ; change yes-or-no to y-or-n
 (fset 'yes-or-no-p 'y-or-n-p)
-; vbnet-mode
-(autoload 'vbnet-mode "vbnet-mode" "Mode for editing VB.NET code." t)
-(setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
-                             vbnet-mode)) auto-mode-alist))
+; display column number in the mode line
+(setq column-number-mode t)
