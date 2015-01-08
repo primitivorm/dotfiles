@@ -29,6 +29,21 @@
             (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 ; to add header include directories
 ; (add-to-list 'achead:include-directories '"path_headers_here")
+
+;neotree plugin
+(require 'neotree)
+(global-set-key [f2] 'neotree-toggle)
+
+;expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-+") 'er/expand-region)
+
+;multiple-cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; disable the splash screen (to enable it again, replace the t with 0)
