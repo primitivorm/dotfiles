@@ -60,3 +60,11 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ; display column number in the mode line
 (setq column-number-mode t)
+; show highlight line
+(global-hl-line-mode 1)
+(setq scroll-step 1)
+; typed text replaces the selection if the selection is active
+(delete-selection-mode 1)
+; higjlight parenthesis
+(require 'highlight-parentheses)
+(global-highlight-parentheses-mode t)
