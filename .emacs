@@ -44,6 +44,23 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;csharp-mode
+(require 'cc-mode)
+
+;http://web-mode.org/
+(require 'web-mode)
+
+;; minimap.el
+(when (display-graphic-p)
+  (require 'minimap)
+  ;; enable minimap
+  (global-set-key (kbd "C-c m") 'minimap-toggle)  
+  (setq minimap-window-location 'right)
+  (setq minimap-recenter-type 'free)
+  (setq minimap-width-fraction 0.05)
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; disable the splash screen (to enable it again, replace the t with 0)
