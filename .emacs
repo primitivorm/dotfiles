@@ -58,9 +58,24 @@
   (global-set-key (kbd "C-c m") 'minimap-toggle)  
   (setq minimap-window-location 'right)
   (setq minimap-recenter-type 'free)
-  (setq minimap-width-fraction 0.05)
-)
+  (setq minimap-width-fraction 0.05))
 
+;indent guide
+;(require 'indent-guide)
+;(indent-guide-global-mode)
+
+; rainbow-mode
+(require 'rainbow-mode)
+(require 'rainbow-blocks)
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-blocks-mode)
+(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+; sexp-mode
+(require 'hl-sexp)
+(add-hook 'clojure-mode-hook #'hl-sexp-mode)
+;(add-hook 'prog-mode-hook #'hl-sexp-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; disable the splash screen (to enable it again, replace the t with 0)
@@ -82,6 +97,15 @@
 (setq scroll-step 1)
 ; typed text replaces the selection if the selection is active
 (delete-selection-mode 1)
-; higjlight parenthesis
+; highlight parenthesis
 (require 'highlight-parentheses)
 (global-highlight-parentheses-mode t)
+(show-paren-mode 1)
+
+; enable all disabled commands
+(put 'set-goal-column 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
+(put 'erase-buffer 'disabled nil)
