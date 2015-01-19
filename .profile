@@ -23,3 +23,7 @@ fi
 #set LANGUAGE
 LANG="en_US"
 LANGUAGE="en_US"
+
+#add android PATH
+export PATH=$PATH:~/Android/Sdk/tools
+export PATH=$PATH:~/Android/Sdk/platform-tools

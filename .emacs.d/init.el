@@ -75,6 +75,27 @@
 ; sexp-mode
 (require 'hl-sexp)
 (add-hook 'prog-mode-hook #'hl-sexp-mode)
+
+; highlight-symbol
+(require 'highlight-symbol)
+(global-set-key [(control f3)] 'highlight-symbol-at-point)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
+; color-identifiers-mode
+(add-hook 'after-init-hook 'global-color-identifiers-mode)
+(let ((faces '(font-lock-comment-face font-lock-comment-delimiter-face font-lock-constant-face font-lock-type-face font-lock-function-name-face font-lock-variable-name-face font-lock-keyword-face font-lock-string-face font-lock-builtin-face font-lock-preprocessor-face font-lock-warning-face font-lock-doc-face)))
+  (dolist (face faces)
+    (set-face-attribute face nil :foreground nil :weight 'normal :slant 'normal)))
+
+(set-face-attribute 'font-lock-comment-delimiter-face nil :slant 'italic)
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+(set-face-attribute 'font-lock-doc-face nil :slant 'italic)
+(set-face-attribute 'font-lock-keyword-face nil :weight 'bold)
+(set-face-attribute 'font-lock-builtin-face nil :weight 'bold)
+(set-face-attribute 'font-lock-preprocessor-face nil :weight 'bold)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; disable the splash screen (to enable it again, replace the t with 0)
@@ -86,7 +107,8 @@
 ; enable line numbers
 (global-linum-mode t)
 ; disable toolbar
-(tool-bar-mode -1)
+(if window-system
+    (tool-bar-mode -1))
 ; change yes-or-no to y-or-n
 (fset 'yes-or-no-p 'y-or-n-p)
 ; display column number in the mode line
@@ -103,6 +125,9 @@
 ;(setq show-paren-style 'expression) 
 (global-highlight-parentheses-mode t)
 (set-face-attribute 'hl-paren-face nil :bold t)
+
+; disable bell (beep)
+(setq visible-bell 1)
 
 ; enable all disabled commands
 (put 'upcase-region 'disabled nil)

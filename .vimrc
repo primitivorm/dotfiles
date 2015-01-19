@@ -45,6 +45,11 @@ call pathogen#infect()
 
 colorscheme proman 
 
+if exists('+colorcolumn')
+  set colorcolumn=79
+  let &colorcolumn="80,".join(range(100,999),",")
+endif
+
 " Highlight all words when press <CR> {{{
 let g:highlighting = 0
 function! Highlighting()
@@ -176,6 +181,7 @@ let g:acp_completeOption = '.,w,b,u,i'
 let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
 let g:predictive#file_types = ['*', 'text', 'vim', 'python', 'cs', 'sql', 'java', 'ruby', 'html', 'xml', 'javascript']
 let g:predictive#keyword_patterns = '^[a-zA-ZÒ—·ÈÌÛ˙¡…Õ”⁄]+$'
+let g:predictive#disable=1
 "}}}
 
 " SuperTab {{{
@@ -255,4 +261,12 @@ imap <ESC>oA <ESC>ki
 imap <ESC>oB <ESC>ji
 imap <ESC>oC <ESC>li
 imap <ESC>oD <ESC>hi
+
+"CTRL-ENTER is insert line after
+nmap <c-cr> o<esc>
+"CTRL-ENTER is insert line before
+nmap <c-s-cr> O<esc>
+
+"It is much more efficient having Q save and quit the current buffer
+nnoremap <silent> Q ZZ
 "}}}
