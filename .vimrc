@@ -26,8 +26,10 @@ set ignorecase
 set hlsearch
 set ignorecase
 set cursorline
+set laststatus=2
 "set listchars=tab:\|-,trail:-,eol:¬¨
-set guifont=Consola\ Mono\ 10
+"set guifont=Consola\ Mono\ 10
+set guifont=Consolas\ for\ Powerline\ 10
 set guioptions-=T
 set mouse=a
 " first full match
@@ -79,21 +81,22 @@ set nocompatible " be iMproved
 call vundle#begin('~/.vim/bundle/')
 "" let Vundle manage Vundle
 "" required!
-Plugin 'primitivorm/ack.vim'
-Plugin 'primitivorm/AutoComplPop'
-Plugin 'primitivorm/gundo.vim'
-Plugin 'primitivorm/nerdcommenter'
-Plugin 'primitivorm/nerdtree'
-Plugin 'primitivorm/supertab'
-Plugin 'primitivorm/ultisnips'
-Plugin 'tpope/vim-fugitive'
-Plugin 'primitivorm/vim-predictive'
+Plugin 'L9'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
+Plugin 'mileszs/ack.vim'
+Plugin 'othree/vim-autocomplpop'
+"Plugin 'primitivorm/vim-predictive'
 Plugin 'primitivorm/vim-proman-theme'
-Plugin 'primitivorm/L9'
-Plugin 'primitivorm/vim-swap-lines'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim'
+Plugin 'skammer/vim-swaplines'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
-nmap <leader>pi :PluginInstall<cr>
+nmap <leader>bi :PluginInstall<cr>
 "}}}
 
 "NERDTree {{{
@@ -181,7 +184,7 @@ let g:acp_completeOption = '.,w,b,u,i'
 let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
 let g:predictive#file_types = ['*', 'text', 'vim', 'python', 'cs', 'sql', 'java', 'ruby', 'html', 'xml', 'javascript']
 let g:predictive#keyword_patterns = '^[a-zA-ZÒ—·ÈÌÛ˙¡…Õ”⁄]+$'
-let g:predictive#disable=1
+let g:predictive#disable=0
 "}}}
 
 " SuperTab {{{
@@ -269,4 +272,15 @@ nmap <c-s-cr> O<esc>
 
 "It is much more efficient having Q save and quit the current buffer
 nnoremap <silent> Q ZZ
+
+"delete duplicate lines
+"nmap <leader>d :v/./,/./-1join <cr>
+nmap <leader>d :%s/\(\n\n\)\n\+/\1/<cr>
 "}}}
+
+" filetype {{{
+
+autocmd filetype java nnoremap <F5> :wa <cr> <bar> :!javac % <cr>
+autocmd filetype java nnoremap <C-F5> :!java %:r <cr>
+
+" }}}
