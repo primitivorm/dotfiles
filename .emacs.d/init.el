@@ -73,8 +73,8 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ; sexp-mode
-(require 'hl-sexp)
-(add-hook 'prog-mode-hook #'hl-sexp-mode)
+;(require 'hl-sexp)
+;(add-hook 'prog-mode-hook #'hl-sexp-mode)
 
 ; highlight-symbol
 (require 'highlight-symbol)
