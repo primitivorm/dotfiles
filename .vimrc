@@ -94,9 +94,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'primitivorm/vim-latino'
 
 call vundle#end()
-nmap <leader>bi :PluginInstall<cr>
 "}}}
 
 "NERDTree {{{
@@ -205,23 +206,48 @@ let g:SuperTabLongestEnhanced=0
 " Ultisnip {{{
 "https://github.com/vim-scripts/UltiSnips
 "defaults
-set runtimepath+=~/vimfiles/snippets/
-let g:UltiSnipsDoHash                = 0
 let g:UltiSnipsExpandTrigger         = '<tab>'
 let g:UltiSnipsListSnippets          = '<c-space>'
 let g:UltiSnipsJumpForwardTrigger    = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger   = '<s-tab>'
-let g:UltiSnipsSnippetsDir           = "~/.vim/snippets/"
-let g:UltiSnipsSnippetDirectories    = ["UltiSnips", "snippets"]
-let g:UltiSnipsDontReverseSearchPath = "1"
 "}}}
 
 " GUndo {{{
 nmap <silent><S-U> :GundoToggle<CR>
 " }}}
 
+" Tagbar {{{
+" http://www.vim.org/scripts/script.php?script_id=3465
+" https://github.com/majutsushi/tagbar
+"file to find tags
+set tags=tags,./tags
+"to specify one or more file extensions, which Vim will attempt to use when looking up a filename with the gf
+"set suffixes+=.cs,.py,.rb,.js
+"toggle fold = o/za
+"open fold=+
+"close fold=-
+"openall=*
+let g:tagbar_width     = 25  "default 40
+let g:tagbar_compact   = 1   "default 0
+let g:tagbar_foldlevel   = 2  "default 99
+let g:tagbar_ctags_bin   = 'ctags'
+let g:tagbar_autofocus   = 1   "default 0
+let g:tagbar_expand    = 0
+"let g:tagbar_iconchars  = ['¿', '¿']
+let g:tagbar_autoclose   = 0
+let g:tagbar_singleclick = 1
+"let g:tagbar_map_closeallfolds = ['_', 'zM',]
+
+map <F3> :TagbarToggle<CR>
+nmap <C-]> :tabnew %<CR>g<C-]>
+vmap <C-]> <Esc>:tabnew %<CR>gvg<C-]>
+""}}}
+
 "keymaps {{{
 let mapleader=','
+
+"vundle
+nmap <leader>bi :PluginInstall<cr>
 "HELP
 map <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 map <C-Left> <C-w>h " focus the window to the left
