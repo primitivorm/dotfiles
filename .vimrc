@@ -3,33 +3,35 @@ syntax enable
 filetype on
 filetype plugin on
 filetype plugin indent on
-set nocp
-set nobackup
-set nowritebackup
-set noswapfile
-set autowrite
-set autoread
-set background=dark
-set nu
-set smartindent
 set ai
-set tabstop=4
-set shiftwidth=4
+set autoread
+set autowrite
+set background=dark
+set cursorline
 set expandtab
-set scrolloff=3
+set foldlevel=1
 set foldmethod=indent
 set foldnestmax=10
-set foldlevel=1
-set nofoldenable
 set hlsearch
 set ignorecase
-set hlsearch
-set ignorecase
-set cursorline
+set incsearch
 set laststatus=2
+set nobackup
+set nocp
+set nofoldenable
+set noswapfile
+set nowritebackup
+set nu
+set scrolloff=3
+set shiftwidth=4
+set smartcase
+set smartindent
+set smarttab
+set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 "set guifont=Consola\ Mono\ 10
-set guifont=Consolas\ for\ Powerline\ 10
+set guifont=Ubuntu\ Mono\ 11
+"set guifont=Consolas\ for\ Powerline\ 10
 set guioptions-=T
 set mouse=a
 " first full match
@@ -87,7 +89,6 @@ Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
 Plugin 'othree/vim-autocomplpop'
-"Plugin 'primitivorm/vim-predictive'
 Plugin 'primitivorm/vim-proman-theme'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -96,7 +97,12 @@ Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'primitivorm/vim-latino'
+Plugin 'primitivorm/QuickBuf'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
 
+"Plugin 'primitivorm/vim-predictive'
 call vundle#end()
 "}}}
 
@@ -243,6 +249,33 @@ nmap <C-]> :tabnew %<CR>g<C-]>
 vmap <C-]> <Esc>:tabnew %<CR>gvg<C-]>
 ""}}}
 
+" Syntastic {{{
+" https://github.com/scrooloose/syntastic
+let g:syntastic_enable_balloons = 1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_jump=1
+let g:syntastic_enable_signs=1
+let g:syntastic_mode_map = { 'mode': 'active',
+    \ 'active_filetypes': ['ruby', 'php', 'cs', 'python', 'lisp', 'json', 'js', 'html', 'xhtml', 'xml'],
+    \ 'passive_filetypes': ['puppet'] }
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_error_symbol='E'
+let g:syntastic_style_error_symbol='S'
+let g:syntastic_warning_symbol='W'
+let g:syntastic_style_warning_symbol='S'
+let g:syntastic_always_populate_loc_list=1
+"configuring for cs files
+"require mono mcs parser
+"configuring for python files
+let g:syntastic_python_checkers=['pylint']
+if !&diff
+  let g:syntastic_check_on_open=1
+endif
+"quickfix
+set cscopequickfix=s-,c-,d-,i-,t-,e-,g-,f-
+nmap <silent> <leader>sc :SyntasticCheck<cr>
+"}}}
+
 "keymaps {{{
 let mapleader=','
 
@@ -302,6 +335,9 @@ nnoremap <silent> Q ZZ
 "delete duplicate lines
 "nmap <leader>d :v/./,/./-1join <cr>
 nmap <leader>d :%s/\(\n\n\)\n\+/\1/<cr>
+
+"insert autoclose for {
+imap {<CR> {<CR>}<Esc>O
 "}}}
 
 " filetype {{{
@@ -309,4 +345,8 @@ nmap <leader>d :%s/\(\n\n\)\n\+/\1/<cr>
 autocmd filetype java nnoremap <F5> :wa <cr> <bar> :!javac % <cr>
 autocmd filetype java nnoremap <C-F5> :!java %:r <cr>
 
+" }}}
+
+"abbreviations {{{
+cabbr ack Ack
 " }}}
