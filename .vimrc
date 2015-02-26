@@ -44,7 +44,10 @@ set noshowmode "show current mode
 set showcmd " show (partial) command in the last line of the screen
 " this also shows visual selection info
 " set nomodeline " disable mode lines (security measure)
+set wildmenu " make tab completion for files/buffers act like bash
+set wildmode=list:longest,full " show a list when pressing tab and complete
 set modeline
+set cmdheight=2 " use a status bar that is 2 rows high
 call pathogen#infect()
 
 colorscheme proman 
@@ -340,11 +343,15 @@ nmap <leader>d :%s/\(\n\n\)\n\+/\1/<cr>
 imap {<CR> {<CR>}<Esc>O
 "}}}
 
-" filetype {{{
+"{{{
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"}}}
 
+
+" filetype {{{
 autocmd filetype java nnoremap <F5> :wa <cr> <bar> :!javac % <cr>
 autocmd filetype java nnoremap <C-F5> :!java %:r <cr>
-
 " }}}
 
 "abbreviations {{{
