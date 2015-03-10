@@ -104,6 +104,7 @@ Plugin 'primitivorm/QuickBuf'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
+Plugin 'hexHighlight.vim'
 
 "Plugin 'primitivorm/vim-predictive'
 call vundle#end()
