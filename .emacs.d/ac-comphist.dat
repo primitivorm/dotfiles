@@ -1,4 +1,6 @@
-((("highlight-symbol" .
+((("achead:include-directories" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("highlight-symbol" .
    [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("highlight-symbol-mode" .
    [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
@@ -49,7 +51,7 @@
   ("ac-c-headers" .
    [0 0 0 0 0 0 0 0 0 0 0 1])
   ("add-to-list" .
-   [0 0 0 0 1 0 0 0 0 0 0])
+   [0 0 0 0 2 0 0 0 0 0 0])
   ("ac-source" .
    [0 0 0 0 0 0 1 0 2])
   ("ac-sources" .

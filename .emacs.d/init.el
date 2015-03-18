@@ -26,9 +26,9 @@
 (add-hook 'c-mode-hook
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-c-headers)
-            (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
-; to add header include directories
-; (add-to-list 'achead:include-directories '"path_headers_here")
+            (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
+	    (when (string= (window-system) "w32")
+	      (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
 
 ;neotree plugin
 (require 'neotree)
@@ -73,8 +73,8 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ; sexp-mode
-;(require 'hl-sexp)
-;(add-hook 'prog-mode-hook #'hl-sexp-mode)
+(require 'hl-sexp)
+(add-hook 'prog-mode-hook #'hl-sexp-mode)
 
 ; highlight-symbol
 (require 'highlight-symbol)
@@ -85,7 +85,17 @@
 
 ; color-identifiers-mode
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
-(let ((faces '(font-lock-comment-face font-lock-comment-delimiter-face font-lock-constant-face font-lock-type-face font-lock-function-name-face font-lock-variable-name-face font-lock-keyword-face font-lock-string-face font-lock-builtin-face font-lock-preprocessor-face font-lock-warning-face font-lock-doc-face)))
+(let ((faces '(font-lock-comment-face 
+	       font-lock-comment-delimiter-face 
+	       font-lock-constant-face 
+	       font-lock-type-face 
+	       font-lock-function-name-face 
+	       font-lock-variable-name-face 
+	       font-lock-keyword-face 
+	       font-lock-string-face 
+	       font-lock-builtin-face 
+	       font-lock-preprocessor-face 
+	       font-lock-warning-face font-lock-doc-face)))
   (dolist (face faces)
     (set-face-attribute face nil :foreground nil :weight 'normal :slant 'normal)))
 
@@ -123,8 +133,8 @@
 (show-paren-mode 1)
 ; highlight entire bracket expression
 ;(setq show-paren-style 'expression) 
-(global-highlight-parentheses-mode t)
-(set-face-attribute 'hl-paren-face nil :bold t)
+;(global-highlight-parentheses-mode t)
+;(set-face-attribute 'hl-paren-face nil :bold t)
 
 ; disable bell (beep)
 (setq visible-bell 1)
