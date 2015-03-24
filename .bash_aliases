@@ -1,3 +1,6 @@
+# editor
+alias vim="vim.nox"
+
 # free memory
 alias free="free -m"
 
@@ -19,7 +22,7 @@ alias gp="git push"
 alias ga="git add ."
 alias gc="git commit -m \$1"
 alias gs="git status"
-alias gi="vim .gitignore"
+alias gi="vim.nox .gitignore"
 
 # git config (globally)
 alias ggmyname="git config --global user.name \$1"

@@ -30,7 +30,7 @@ set smarttab
 set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 "set guifont=Consola\ Mono\ 10
-set guifont=Ubuntu\ Mono\ 11
+set guifont=Ubuntu\ Mono\ 12
 "set guifont=Consolas\ for\ Powerline\ 10
 set guioptions-=T
 set mouse=a
@@ -48,6 +48,8 @@ set wildmenu " make tab completion for files/buffers act like bash
 set wildmode=list:longest,full " show a list when pressing tab and complete
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start 
 call pathogen#infect()
 
 colorscheme proman 
@@ -105,6 +107,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'hexHighlight.vim'
+Plugin 'shawncplus/Vim-toCterm'
 
 "Plugin 'primitivorm/vim-predictive'
 call vundle#end()
