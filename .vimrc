@@ -49,7 +49,8 @@ set wildmode=list:longest,full " show a list when pressing tab and complete
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start 
+"set backspace=indent,eol,start
+set backspace=2
 call pathogen#infect()
 
 colorscheme proman 
@@ -90,24 +91,24 @@ call vundle#begin('~/.vim/bundle/')
 "" required!
 Plugin 'L9'
 Plugin 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'hexHighlight.vim'
 Plugin 'honza/vim-snippets'
+Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
-Plugin 'othree/vim-autocomplpop'
+Plugin 'primitivorm/vim-autocomplpop'
+Plugin 'primitivorm/QuickBuf'
+Plugin 'primitivorm/vim-latino'
 Plugin 'primitivorm/vim-proman-theme'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'shawncplus/Vim-toCterm'
 Plugin 'sjl/gundo.vim'
 Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
-Plugin 'majutsushi/tagbar'
-Plugin 'primitivorm/vim-latino'
-Plugin 'primitivorm/QuickBuf'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'hexHighlight.vim'
-Plugin 'shawncplus/Vim-toCterm'
 
 "Plugin 'primitivorm/vim-predictive'
 call vundle#end()
@@ -203,8 +204,8 @@ let g:predictive#disable=0
 
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
-let g:SuperTabDefaultCompletionTypeDiscovery=["&completefunc:<c-x><c-o>","&omnifunc:<c-x><c-u>", "&omnifunc:<c-x><c-k>"]
+let g:SuperTabContextDefaultCompletionType='<c-n>'
+"let g:SuperTabDefaultCompletionTypeDiscovery=["&completefunc:<c-x><c-o>","&omnifunc:<c-x><c-u>", "&omnifunc:<c-x><c-k>"]
 let g:SuperTabClosePreviewOnPopupClose=1
 let g:SuperTabNoCompleteAfter=['^', ',', '\s']
 "let g:SuperTabLongestHighlight=1
@@ -294,7 +295,7 @@ map <C-Left> <C-w>h " focus the window to the left
 map <C-Down> <C-w>j " focus the window to the down
 map <C-Up> <C-w>k " focus the window to the up
 map <C-Right> <C-w>l " focus the window to the right
-nmap <silent><C-tab> :tabNext<cr>
+nmap <silent><C-tab> :tabnext<cr>
 nmap <silent><C-t> :tabnew<cr>
 nmap <silent><S-tab> :tabprev<cr>
 "CUT
@@ -350,6 +351,8 @@ imap {<CR> {<CR>}<Esc>O
 "{{{
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 "}}}
 
 
