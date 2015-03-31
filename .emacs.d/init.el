@@ -65,23 +65,23 @@
 ;(indent-guide-global-mode)
 
 ; rainbow-mode
-(require 'rainbow-mode)
-(require 'rainbow-blocks)
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-blocks-mode)
-(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+;(require 'rainbow-mode)
+;(require 'rainbow-blocks)
+;(require 'rainbow-delimiters)
+;(add-hook 'prog-mode-hook #'rainbow-blocks-mode)
+;(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
+;(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ; sexp-mode
 ;(require 'hl-sexp)
 ;(add-hook 'prog-mode-hook #'hl-sexp-mode)
 
 ; highlight-symbol
-(require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol-at-point)
-(global-set-key [f3] 'highlight-symbol-next)
-(global-set-key [(shift f3)] 'highlight-symbol-prev)
-(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+;(require 'highlight-symbol)
+;(global-set-key [(control f3)] 'highlight-symbol-at-point)
+;(global-set-key [f3] 'highlight-symbol-next)
+;(global-set-key [(shift f3)] 'highlight-symbol-prev)
+;(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
 ; color-identifiers-mode
 ;(add-hook 'after-init-hook 'global-color-identifiers-mode)
