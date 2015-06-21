@@ -84,28 +84,28 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
-; color-identifiers-mode
-;(add-hook 'after-init-hook 'global-color-identifiers-mode)
-;(let ((faces '(font-lock-comment-face 
-;	       font-lock-comment-delimiter-face 
-;	       font-lock-constant-face 
-;	       font-lock-type-face 
-;	       font-lock-function-name-face 
-;	       font-lock-variable-name-face 
-;	       font-lock-keyword-face 
-;	       font-lock-string-face 
-;	       font-lock-builtin-face 
-;	       font-lock-preprocessor-face 
-;	       font-lock-warning-face font-lock-doc-face)))
-;  (dolist (face faces)
-;    (set-face-attribute face nil :foreground nil :weight 'normal :slant 'normal)))
+;ack
+(defvar ack-history nil
+  "History for the `ack' command.")
 
-;(set-face-attribute 'font-lock-comment-delimiter-face nil :slant 'italic)
-;(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
-;(set-face-attribute 'font-lock-doc-face nil :slant 'italic)
-;(set-face-attribute 'font-lock-keyword-face nil :weight 'bold)
-;(set-face-attribute 'font-lock-builtin-face nil :weight 'bold)
-;(set-face-attribute 'font-lock-preprocessor-face nil :weight 'bold)
+(defun ack (command-args)
+  (interactive
+   (if (string= (window-system) "w32")
+   (let ((ack-command "ack --nofilter --nogroup --with-filename "))
+     (list (read-shell-command "Run ack (like this): "
+                               ack-command
+                               'ack-history)))
+   (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
+     (list (read-shell-command "Run ack (like this): "
+                               ack-command
+                               'ack-history)))
+   ))
+  (let ((compilation-disable-input t))
+    (compilation-start (concat command-args " < " null-device)
+                       'grep-mode)))
+
+;cc-mode
+(setq c-default-style "linux" c-basic-offset 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -149,4 +149,4 @@
 (put 'erase-buffer 'disabled nil)
 
 ;frame font
-(set-frame-font "Monospace-10" t t)
+(set-frame-font "Ubuntu Mono-12" t t)
