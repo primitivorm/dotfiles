@@ -1,0 +1,14 @@
+﻿Build started 24/06/2015 16:57:23.
+     1>Project "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\ZERO_CHECK.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/src/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/docs/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/test/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/test/elisp/CMakeFiles/generate.stamp is up-to-date.
+     1>Done Building Project "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\ZERO_CHECK.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:07.17

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\CommandLineParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\TemporaryFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\Command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\Irony.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\TUManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\arraysize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\CommandLineParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\iomanip_quoted.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\NonCopyable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\CIndex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\support\TemporaryFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\Commands.def">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\Irony.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\TUManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B29A97A-0441-4EF9-9A24-8E0FC6380FEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6D82CC3A-7A56-4385-BD2D-865E3516F93E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

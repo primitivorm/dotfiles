@@ -1,0 +1,340 @@
+The system is: Windows - 6.1 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:10:55.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdC\CompilerIdC.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "Debug\".
+  Creando directorio "Debug\CompilerIdC.tlog\".
+InitializeBuildStatus:
+  Se crear  "Debug\CompilerIdC.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "Debug\CompilerIdC.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdC\CompilerIdC.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:03.71
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/3.2.1/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:10:59.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdCXX\CompilerIdCXX.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "Debug\".
+  Creando directorio "Debug\CompilerIdCXX.tlog\".
+InitializeBuildStatus:
+  Se crear  "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\3.2.1\CompilerIdCXX\CompilerIdCXX.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:02.39
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/3.2.1/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTryCompileExec1160637844.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:11:02.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec1160637844.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "cmTryCompileExec1160637844.dir\Debug\".
+  Creando directorio "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\".
+  Creando directorio "cmTryCompileExec1160637844.dir\Debug\cmTryCom.D486E796.tlog\".
+InitializeBuildStatus:
+  Se crear  "cmTryCompileExec1160637844.dir\Debug\cmTryCom.D486E796.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec1160637844.dir\Debug\\" /Fd"cmTryCompileExec1160637844.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\testCCompiler.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec1160637844.dir\Debug\\" /Fd"cmTryCompileExec1160637844.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\testCCompiler.c"
+  
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec1160637844.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1160637844.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1160637844.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug cmTryCompileExec1160637844.dir\Debug\testCCompiler.obj
+  cmTryCompileExec1160637844.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec1160637844.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "cmTryCompileExec1160637844.dir\Debug\cmTryCom.D486E796.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "cmTryCompileExec1160637844.dir\Debug\cmTryCom.D486E796.tlog\cmTryCompileExec1160637844.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec1160637844.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:02.14
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTryCompileExec4079333867.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:11:05.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec4079333867.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "cmTryCompileExec4079333867.dir\Debug\".
+  Creando directorio "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\".
+  Creando directorio "cmTryCompileExec4079333867.dir\Debug\cmTryCom.46694E23.tlog\".
+InitializeBuildStatus:
+  Se crear  "cmTryCompileExec4079333867.dir\Debug\cmTryCom.46694E23.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec4079333867.dir\Debug\\" /Fd"cmTryCompileExec4079333867.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCCompilerABI.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec4079333867.dir\Debug\\" /Fd"cmTryCompileExec4079333867.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec4079333867.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec4079333867.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec4079333867.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug cmTryCompileExec4079333867.dir\Debug\CMakeCCompilerABI.obj
+  cmTryCompileExec4079333867.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec4079333867.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "cmTryCompileExec4079333867.dir\Debug\cmTryCom.46694E23.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "cmTryCompileExec4079333867.dir\Debug\cmTryCom.46694E23.tlog\cmTryCompileExec4079333867.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec4079333867.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:02.61
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTryCompileExec1775570406.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:11:09.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec1775570406.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "cmTryCompileExec1775570406.dir\Debug\".
+  Creando directorio "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\".
+  Creando directorio "cmTryCompileExec1775570406.dir\Debug\cmTryCom.EDCBA3B7.tlog\".
+InitializeBuildStatus:
+  Se crear  "cmTryCompileExec1775570406.dir\Debug\cmTryCom.EDCBA3B7.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec1775570406.dir\Debug\\" /Fd"cmTryCompileExec1775570406.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec1775570406.dir\Debug\\" /Fd"cmTryCompileExec1775570406.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  
+  testCXXCompiler.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec1775570406.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1775570406.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1775570406.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug cmTryCompileExec1775570406.dir\Debug\testCXXCompiler.obj
+  cmTryCompileExec1775570406.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec1775570406.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "cmTryCompileExec1775570406.dir\Debug\cmTryCom.EDCBA3B7.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "cmTryCompileExec1775570406.dir\Debug\cmTryCom.EDCBA3B7.tlog\cmTryCompileExec1775570406.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec1775570406.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:03.84
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTryCompileExec3067156898.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:11:13.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec3067156898.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "cmTryCompileExec3067156898.dir\Debug\".
+  Creando directorio "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\".
+  Creando directorio "cmTryCompileExec3067156898.dir\Debug\cmTryCom.94FB981C.tlog\".
+InitializeBuildStatus:
+  Se crear  "cmTryCompileExec3067156898.dir\Debug\cmTryCom.94FB981C.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec3067156898.dir\Debug\\" /Fd"cmTryCompileExec3067156898.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXCompilerABI.cpp"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec3067156898.dir\Debug\\" /Fd"cmTryCompileExec3067156898.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec3067156898.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3067156898.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3067156898.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug cmTryCompileExec3067156898.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTryCompileExec3067156898.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec3067156898.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "cmTryCompileExec3067156898.dir\Debug\cmTryCom.94FB981C.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "cmTryCompileExec3067156898.dir\Debug\cmTryCom.94FB981C.tlog\cmTryCompileExec3067156898.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec3067156898.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:02.06
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTryCompileExec3125451200.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, versi¢n 12.0.31101.0
+[Microsoft .NET Framework, versi¢n 4.0.30319.34209]
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Compilaci¢n iniciada a las 24/06/2015 16:11:16.
+Proyecto "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec3125451200.vcxproj" en nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  Creando directorio "cmTryCompileExec3125451200.dir\Debug\".
+  Creando directorio "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\".
+  Creando directorio "cmTryCompileExec3125451200.dir\Debug\cmTryCom.BD6DE3CB.tlog\".
+InitializeBuildStatus:
+  Se crear  "cmTryCompileExec3125451200.dir\Debug\cmTryCom.BD6DE3CB.tlog\unsuccessfulbuild" porque se especific¢ "AlwaysCreate".
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec3125451200.dir\Debug\\" /Fd"cmTryCompileExec3125451200.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\feature_tests.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec3125451200.dir\Debug\\" /Fd"cmTryCompileExec3125451200.dir\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\feature_tests.cxx"
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec3125451200.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3125451200.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3125451200.lib" /MACHINE:X86 /SAFESEH  /machine:X86 /debug cmTryCompileExec3125451200.dir\Debug\feature_tests.obj
+  cmTryCompileExec3125451200.vcxproj -> C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec3125451200.exe
+FinalizeBuildStatus:
+  Se eliminar  el archivo "cmTryCompileExec3125451200.dir\Debug\cmTryCom.BD6DE3CB.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "cmTryCompileExec3125451200.dir\Debug\cmTryCom.BD6DE3CB.tlog\cmTryCompileExec3125451200.lastbuildstate".
+Compilaci¢n del proyecto terminada "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\CMakeTmp\cmTryCompileExec3125451200.vcxproj" (destinos predeterminados).
+
+Compilaci¢n correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:01.69
+
+
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates

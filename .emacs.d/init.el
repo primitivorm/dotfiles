@@ -21,6 +21,8 @@
 ; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
+(yas/initialize)
+
 ; add ac-c-headers and gets called for c/c++ hooks
 (require 'ac-c-headers)
 (add-hook 'c-mode-hook
@@ -30,6 +32,38 @@
             (add-to-list 'cc-search-directories '"/usr/include/")
 	    (when (string= (window-system) "w32")
 	      (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
+
+;irony
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(if (string= (window-system) "w32")
+  (setq w32-pipe-read-delay 0))
+
+;company-irony
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+;; (optional) adds CC special commands to `company-begin-commands' in order to
+;; trigger completion at interesting places, such as after scope operator
+;;     std::|
+(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+
+; set company-mode to default mode
+;(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'c-mode-hook 'company-mode)
+(add-hook 'c++-mode-hook 'company-mode)
 
 ;neotree plugin
 (require 'neotree)
@@ -52,38 +86,6 @@
 ;http://web-mode.org/
 (require 'web-mode)
 
-;; minimap.el
-(when (display-graphic-p)
-  (require 'minimap)
-  ;; enable minimap
-  (global-set-key (kbd "C-c m") 'minimap-toggle)  
-  (setq minimap-window-location 'right)
-  (setq minimap-recenter-type 'free)
-  (setq minimap-width-fraction 0.05))
-
-;indent guide
-;(require 'indent-guide)
-;(indent-guide-global-mode)
-
-; rainbow-mode
-(require 'rainbow-mode)
-(require 'rainbow-blocks)
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-blocks-mode)
-(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-; sexp-mode
-;(require 'hl-sexp)
-;(add-hook 'prog-mode-hook #'hl-sexp-mode)
-
-; highlight-symbol
-(require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol-at-point)
-(global-set-key [f3] 'highlight-symbol-next)
-(global-set-key [(shift f3)] 'highlight-symbol-prev)
-(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-
 ;ack
 (defvar ack-history nil
   "History for the `ack' command.")
@@ -105,14 +107,35 @@
                        'grep-mode)))
 
 ;cc-mode
-(setq c-default-style "linux" c-basic-offset 4)
+(setq c-default-style "k&r" c-basic-offset 4)
+(setq-default c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode t)
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ctags-update 
+;etags-table 
+;etags-select
+;speedbar
+;sr-speedbar
+(require 'sr-speedbar)
+(global-set-key [f3] 'sr-speedbar-toggle)
 
+; install https://github.com/rranelli/auto-package-update.el
+; require emacs 24.4
+(require 'auto-package-update)
+(auto-package-update-maybe)
+
+
+;end MELPA repository list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ; disable the splash screen (to enable it again, replace the t with 0)
+
 (setq inhibit-splash-screen t)
-; disable backup
+										; disable backup
 (setq backup-inhibited t)
+(setq make-backup-files nil)
 ; disable auto save
 (setq auto-save-default nil)
 ; enable line numbers
@@ -132,10 +155,6 @@
 ; highlight parenthesis
 (require 'highlight-parentheses)
 (show-paren-mode 1)
-; highlight entire bracket expression
-;(setq show-paren-style 'expression) 
-;(global-highlight-parentheses-mode t)
-;(set-face-attribute 'hl-paren-face nil :bold t)
 
 ; disable bell (beep)
 (setq visible-bell 1)
@@ -148,5 +167,22 @@
 (put 'scroll-left 'disabled nil)
 (put 'erase-buffer 'disabled nil)
 
+;set theme
+;(load-theme 'dichromacy)
 ;frame font
 (set-frame-font "Ubuntu Mono-12" t t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (zenburn)))
+ '(custom-safe-themes
+   (quote
+	("3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

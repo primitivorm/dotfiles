@@ -1,0 +1,3 @@
+C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/src/CMakeFiles/irony-server.dir
+C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/ALL_BUILD.dir
+C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,10 @@
+﻿Build started 24/06/2015 16:59:27.
+     1>Project "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\ALL_BUILD.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Building Custom Rule C:/Users/proman02/.emacs.d/elpa/irony-20150614.1225/server/CMakeLists.txt
+         CMake does not need to re-run because C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\CMakeFiles\generate.stamp is up-to-date.
+     1>Done Building Project "C:\Users\proman02\.emacs.d\elpa\irony-20150614.1225\server\ALL_BUILD.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.46
