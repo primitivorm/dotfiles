@@ -1,39 +1,38 @@
-; load-path
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-; vbnet-mode
+										; vbnet-mode
 (autoload 'vbnet-mode "vbnet-mode" "Mode for editing VB.NET code." t)
 (setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
-                             vbnet-mode)) auto-mode-alist))
+								 vbnet-mode)) auto-mode-alist))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; add MELPA to repository list
+;; add MELPA to repository list
 (require 'package)
 (setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
                          ("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
-; start auto-complete with emacs
+;; start auto-complete with emacs
 (require 'auto-complete)
-; do default config for auto-complete
+;; do default config for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
-; start yasnippet with emacs
+;; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
 (yas/initialize)
 
-; add ac-c-headers and gets called for c/c++ hooks
+;; add ac-c-headers and gets called for c/c++ hooks
 (require 'ac-c-headers)
 (add-hook 'c-mode-hook
-          (lambda ()
-            (add-to-list 'ac-sources 'ac-source-c-headers)
-            (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
-            (add-to-list 'cc-search-directories '"/usr/include/")
-	    (when (string= (window-system) "w32")
-	      (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
+		  (lambda ()
+			(add-to-list 'ac-sources 'ac-source-c-headers)
+			(add-to-list 'ac-sources 'ac-source-c-header-symbols t)
+			(add-to-list 'cc-search-directories '"/usr/include/")
+			(when (string= (window-system) "w32")
+			  (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
 
-;irony
+;; irony-mode
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
@@ -49,9 +48,9 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 (if (string= (window-system) "w32")
-  (setq w32-pipe-read-delay 0))
+	(setq w32-pipe-read-delay 0))
 
-;company-irony
+;; company-irony
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
 
@@ -60,106 +59,103 @@
 ;;     std::|
 (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
 
-; set company-mode to default mode
-;(add-hook 'after-init-hook 'global-company-mode)
+;; set company-mode to default mode
+;; (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'c-mode-hook 'company-mode)
 (add-hook 'c++-mode-hook 'company-mode)
 
-;neotree plugin
+;; neotree
 (require 'neotree)
 (global-set-key [f2] 'neotree-toggle)
 
-;expand-region
+;; expand-region
 (require 'expand-region)
 (global-set-key (kbd "C-+") 'er/expand-region)
 
-;multiple-cursors
+;; multiple-cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;csharp-mode
+;; cc-mode
 (require 'cc-mode)
+(setq c-default-style "k&r" c-basic-offset 4)
+(setq-default c-basic-offset 4
+			  tab-width 4
+			  indent-tabs-mode t)
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 
-;http://web-mode.org/
+;; web-mode http://web-mode.org/
 (require 'web-mode)
 
-;ack
+;; ack
 (defvar ack-history nil
   "History for the `ack' command.")
 
 (defun ack (command-args)
   (interactive
    (if (string= (window-system) "w32")
-   (let ((ack-command "ack --nofilter --nogroup --with-filename "))
-     (list (read-shell-command "Run ack (like this): "
-                               ack-command
-                               'ack-history)))
-   (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
-     (list (read-shell-command "Run ack (like this): "
-                               ack-command
-                               'ack-history)))
-   ))
+	   (let ((ack-command "ack --nofilter --nogroup --with-filename "))
+		 (list (read-shell-command "Run ack (like this): "
+								   ack-command
+								   'ack-history)))
+	 (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
+	   (list (read-shell-command "Run ack (like this): "
+								 ack-command
+								 'ack-history)))))
   (let ((compilation-disable-input t))
     (compilation-start (concat command-args " < " null-device)
                        'grep-mode)))
-
-;cc-mode
-(setq c-default-style "k&r" c-basic-offset 4)
-(setq-default c-basic-offset 4
-                  tab-width 4
-                  indent-tabs-mode t)
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
-
-;ctags-update 
-;etags-table 
-;etags-select
-;speedbar
-;sr-speedbar
+;; ctags-update 
+;; etags-table 
+;; etags-select
+;; speedbar
+;; sr-speedbar
 (require 'sr-speedbar)
 (global-set-key [f3] 'sr-speedbar-toggle)
 
-; install https://github.com/rranelli/auto-package-update.el
-; require emacs 24.4
+;; install https://github.com/rranelli/auto-package-update.el
+;; require emacs 24.4
 (require 'auto-package-update)
 (auto-package-update-maybe)
 
-
-;end MELPA repository list
+;; idle-highlight-mode
+(add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
+;; end MELPA repository list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-; disable the splash screen (to enable it again, replace the t with 0)
+;; disable the splash screen (to enable it again, replace the t with 0)
 
 (setq inhibit-splash-screen t)
-										; disable backup
+;; disable backup
 (setq backup-inhibited t)
 (setq make-backup-files nil)
-; disable auto save
+;; disable auto save
 (setq auto-save-default nil)
-; enable line numbers
+;; enable line numbers
 (global-linum-mode t)
-; disable toolbar
+;; disable toolbar
 (if window-system
     (tool-bar-mode -1))
-; change yes-or-no to y-or-n
+;; change yes-or-no to y-or-n
 (fset 'yes-or-no-p 'y-or-n-p)
-; display column number in the mode line
+;; display column number in the mode line
 (setq column-number-mode t)
-; show highlight line
+;; show highlight line
 (global-hl-line-mode 1)
 (setq scroll-step 1)
-; typed text replaces the selection if the selection is active
+;; typed text replaces the selection if the selection is active
 (delete-selection-mode 1)
-; highlight parenthesis
+;; highlight parenthesis
 (require 'highlight-parentheses)
 (show-paren-mode 1)
 
-; disable bell (beep)
+;; disable bell (beep)
 (setq visible-bell 1)
 
-; enable all disabled commands
+;; enable all disabled commands
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -167,22 +163,7 @@
 (put 'scroll-left 'disabled nil)
 (put 'erase-buffer 'disabled nil)
 
-;set theme
-;(load-theme 'dichromacy)
-;frame font
+;; set theme
+(load-theme 'dichromacy)
+;; frame font
 (set-frame-font "Ubuntu Mono-12" t t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes
-   (quote
-	("3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
