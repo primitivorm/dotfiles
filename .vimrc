@@ -6,7 +6,7 @@ filetype plugin indent on
 set ai
 set autoread
 set autowrite
-set background=dark
+set background=light
 set cursorline
 set expandtab
 set foldlevel=1
@@ -28,10 +28,11 @@ set smartcase
 set smartindent
 set smarttab
 set tabstop=4
-"set listchars=tab:\|-,trail:-,eol:Â¬
+"set listchars=tab:\|-,trail:-,eol:¬
+set listchars=tab:»\-,trail:·,eol:¬
 "set guifont=Consola\ Mono\ 10
 set guifont=Ubuntu\ Mono\ 12
-"set guifont=Consolas\ for\ Powerline\ 10
+"set guifont=Consolas\ for\ Powerline\ 9
 set guioptions-=T
 set mouse=a
 " first full match
@@ -50,24 +51,25 @@ set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
 "set backspace=indent,eol,start
-set backspace=2
+"set backspace=2
+set backspace=
 call pathogen#infect()
 
-colorscheme proman 
+colorscheme zenburn 
 
-if exists('+colorcolumn')
-  set colorcolumn=79
-  let &colorcolumn="80,".join(range(100,999),",")
-endif
+"if exists('+colorcolumn')
+  "set colorcolumn=79
+  ""let &colorcolumn="79,".join(range(100,999),",")
+"endif
 
 " Highlight all words when press <CR> {{{
 let g:highlighting = 0
 function! Highlighting()
-  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+  if g:highlighting == 1 && @/ =~ '^' . expand('<cword>') . '$'
     let g:highlighting = 0
     return ":silent nohlsearch\<CR>"
   endif
-  let @/ = '\<'.expand('<cword>').'\>'
+  let @/ = expand('<cword>')
   let g:highlighting = 1
   return ":silent set hlsearch\<CR>"
 endfunction
@@ -109,6 +111,29 @@ Plugin 'shawncplus/Vim-toCterm'
 Plugin 'sjl/gundo.vim'
 Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Zenburn'
+
+
+" Editor layout {{{
+"set lazyredraw " don't update the display while executing macros
+" tell VIM to always put a status line in, even
+set laststatus=2
+if has("statusline")
+  set runtimepath+=~/vimfiles/cream/
+  source $HOME/.vim/cream/genutils.vim
+  source $HOME/.vim/cream/cream-lib.vim
+  source $HOME/.vim/cream/cream-lib-os.vim
+  source $HOME/.vim/cream/cream-statusline.vim
+
+  " for cream statusline
+  hi! User1  gui=NONE guifg=#999999 guibg=#073642 gui=bold
+  hi! User2  gui=NONE guifg=#93a1a1 guibg=#073642 gui=NONE
+  hi! User3  gui=NONE guifg=#bcc9db guibg=#073642 gui=bold
+  hi! User4  gui=NONE guifg=#d7d7af guibg=#073642 gui=bold
+endif
+" if there is only one window
+set cmdheight=1 " use a status bar that is 2 rows high
+"}}}
 
 "Plugin 'primitivorm/vim-predictive'
 call vundle#end()
@@ -204,8 +229,8 @@ let g:predictive#disable=0
 
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabContextDefaultCompletionType='<c-n>'
-"let g:SuperTabDefaultCompletionTypeDiscovery=["&completefunc:<c-x><c-o>","&omnifunc:<c-x><c-u>", "&omnifunc:<c-x><c-k>"]
+let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
+let g:SuperTabDefaultCompletionTypeDiscovery=["&completefunc:<c-x><c-o>","&omnifunc:<c-x><c-u>", "&omnifunc:<c-x><c-k>"]
 let g:SuperTabClosePreviewOnPopupClose=1
 let g:SuperTabNoCompleteAfter=['^', ',', '\s']
 "let g:SuperTabLongestHighlight=1
@@ -244,10 +269,10 @@ set tags=tags,./tags
 let g:tagbar_width     = 25  "default 40
 let g:tagbar_compact   = 1   "default 0
 let g:tagbar_foldlevel   = 2  "default 99
-let g:tagbar_ctags_bin   = 'ctags'
+let g:tagbar_ctags_bin   = '/usr/bin/ctags'
 let g:tagbar_autofocus   = 1   "default 0
 let g:tagbar_expand    = 0
-"let g:tagbar_iconchars  = ['¿', '¿']
+let g:tagbar_iconchars  = ['+', '-']
 let g:tagbar_autoclose   = 0
 let g:tagbar_singleclick = 1
 "let g:tagbar_map_closeallfolds = ['_', 'zM',]
@@ -298,6 +323,8 @@ map <C-Right> <C-w>l " focus the window to the right
 nmap <silent><C-tab> :tabnext<cr>
 nmap <silent><C-t> :tabnew<cr>
 nmap <silent><S-tab> :tabprev<cr>
+"FIND
+nmap <c-f> :Ack <C-r><C-w>
 "CUT
 vmap <leader>x "+x
 "YANK
@@ -350,11 +377,36 @@ imap {<CR> {<CR>}<Esc>O
 
 "{{{
 "YouCompleteMe
+"https://github.com/Valloric/YouCompleteMe
+let g:ycm_confirm_extra_conf=0
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
+"let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:syntastic_always_populate_loc_list = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_filetype_blacklist = {
+\ 'tagbar' : 1,
+\ 'qf' : 1,
+\ 'notes' : 1,
+\ 'markdown' : 1,
+\ 'unite' : 1,
+\ 'text' : 1,
+\ 'vimwiki' : 1,
+\ 'pandoc' : 1,
+\ 'infolog' : 1,
+\ 'mail' : 1,
+\ 'java' : 1,
+\ 'help' : 1,
+\ 'vim' : 1,
+\ 'sql' : 1
+\}
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"}
 "}}}
-
 
 " filetype {{{
 autocmd filetype java nnoremap <F5> :wa <cr> <bar> :!javac % <cr>
