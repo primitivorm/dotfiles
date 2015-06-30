@@ -122,6 +122,7 @@
 (auto-package-update-maybe)
 
 ;; idle-highlight-mode
+(require 'idle-highlight-mode)
 (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
 ;; end MELPA repository list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -164,6 +165,6 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set theme
-(load-theme 'dichromacy)
+(load-theme 'adwaita)
 ;; frame font
-(set-frame-font "Ubuntu Mono-12" t t)
+(set-frame-font "Ubuntu Mono-13" t t)
