@@ -30,3 +30,9 @@ alias ggmyemail="git config --global user.email \$1"
 # git config (locally)
 alias gmyname="git config user.name \$1"
 alias gmyemail="git config user.email \$1"
+
+#dos2unix
+alias dos2unixrec="find . -type f -exec dos2unix {} \;"
+
+#ack 
+alias ack="ack-grep -s -H --nogroup --column"

@@ -124,6 +124,14 @@
 ;; idle-highlight-mode
 (require 'idle-highlight-mode)
 (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
+
+;; powerline
+;;(require 'powerline)
+;;(powerline-default-theme)
+
+;; magit
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; end MELPA repository list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -165,6 +173,4 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set theme
-(load-theme 'adwaita)
-;; frame font
-(set-frame-font "Ubuntu Mono-13" t t)
+(load-theme 'wombat)
