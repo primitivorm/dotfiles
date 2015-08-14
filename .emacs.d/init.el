@@ -17,6 +17,10 @@
 ;; do default config for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
+
+(add-to-list 'completion-styles 'substring t)
+(add-to-list 'completion-styles 'initials t)
+
 ;; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -114,7 +118,7 @@
 ;; speedbar
 ;; sr-speedbar
 (require 'sr-speedbar)
-(global-set-key [f3] 'sr-speedbar-toggle)
+(global-set-key [C-f3] 'sr-speedbar-toggle)
 
 ;; install https://github.com/rranelli/auto-package-update.el
 ;; require emacs 24.4
@@ -126,17 +130,22 @@
 (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
 
 ;; powerline
-;;(require 'powerline)
-;;(powerline-default-theme)
+;; (require 'powerline)
+;; (powerline-default-theme)
 
 ;; magit
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; undo-tree
+;; http://www.emacswiki.org/emacs/UndoTree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
 ;; end MELPA repository list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; disable the splash screen (to enable it again, replace the t with 0)
 
+;; disable the splash screen (to enable it again, replace the t with 0)
+(setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 ;; disable backup
 (setq backup-inhibited t)
@@ -153,8 +162,8 @@
 ;; display column number in the mode line
 (setq column-number-mode t)
 ;; show highlight line
-(global-hl-line-mode 1)
-(setq scroll-step 1)
+;;(global-hl-line-mode 1)
+(setq scroll-step 10)
 ;; typed text replaces the selection if the selection is active
 (delete-selection-mode 1)
 ;; highlight parenthesis
@@ -163,6 +172,9 @@
 
 ;; disable bell (beep)
 (setq visible-bell 1)
+
+;; creates an additional line at the end and moves down into it
+(setq next-line-add-newlines 1)
 
 ;; enable all disabled commands
 (put 'upcase-region 'disabled nil)
@@ -173,4 +185,9 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set theme
-(load-theme 'wombat)
+;; (load-theme 'wombat)
+;; frame font
+;; (set-frame-font "Ubuntu Mono-12" t t)
+
+;; enable complete-mode
+(setq icomplete-mode t)
