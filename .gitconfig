@@ -1,5 +1,5 @@
 [user]
-	name = Primitivo R. Montero
+	name = primitivorm
 	email = cibercafe_montero@hotmail.com
 
 [push]
@@ -11,6 +11,15 @@
 
 [core]
     autocrlf = true
+    editor = vim
+
+[merge]
+    tool = vimdiff
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
 
 [rebase]
     autosquash = true
