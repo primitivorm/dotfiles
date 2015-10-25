@@ -1,6 +1,9 @@
 # editor
 alias vim="vim.nox"
 
+#terminal commands
+alias la="ls -al"
+
 # free memory
 alias free="free -m"
 
