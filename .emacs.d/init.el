@@ -118,8 +118,8 @@
   (let ((compilation-disable-input t))
     (compilation-start (concat command-args " < " null-device)
                        'grep-mode)))
-;; ctags-update 
-;; etags-table 
+;; ctags-update
+;; etags-table
 ;; etags-select
 ;; speedbar
 ;; sr-speedbar
@@ -135,10 +135,6 @@
 (require 'idle-highlight-mode)
 (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
 
-;; powerline
-;; (require 'powerline)
-;; (powerline-default-theme)
-
 ;; magit
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -147,11 +143,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-<<<<<<< HEAD
 ;;evil-mode
-=======
-;; evil-mode
->>>>>>> 19640a59dce33274105788ee8f448497e9015899
 ;; http://emacswiki.org/emacs/Evil
 (require 'evil)
 (evil-mode 1)
@@ -207,17 +199,3 @@
 
 ;; enable complete-mode
 (setq icomplete-mode t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-	(zenburn-theme yasnippet web-mode undo-tree sr-speedbar solarized-theme rainbow-mode rainbow-identifiers rainbow-delimiters rainbow-blocks powerline neotree multiple-cursors minimap indent-guide idle-highlight-mode hl-sexp highlight-symbol highlight-parentheses goto-chg git-rebase-mode git-commit-mode full-ack flycheck-irony expand-region etags-table etags-select dash-functional ctags-update csharp-mode company-irony color-identifiers-mode auto-auto-indent ack ac-c-headers))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
