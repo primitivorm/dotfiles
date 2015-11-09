@@ -203,7 +203,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(zenburn-theme yasnippet web-mode undo-tree sr-speedbar solarized-theme rainbow-mode rainbow-identifiers rainbow-delimiters rainbow-blocks powerline neotree multiple-cursors minimap indent-guide idle-highlight-mode hl-sexp highlight-symbol highlight-parentheses goto-chg git-rebase-mode git-commit-mode full-ack flycheck-irony expand-region etags-table etags-select dash-functional ctags-update csharp-mode company-irony color-identifiers-mode auto-auto-indent ack ac-c-headers))))
+	(undo-tree rainbow-identifiers rainbow-blocks minimap idle-highlight-mode hl-sexp goto-chg
+			   git-rebase-mode git-commit-mode full-ack etags-table etags-select ctags-update auto-auto-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
