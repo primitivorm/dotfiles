@@ -71,6 +71,12 @@
 ;; neotree
 (require 'neotree)
 (global-set-key [f2] 'neotree-toggle)
+(add-hook 'neotree-mode-hook
+            (lambda ()
+              (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+              (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 ;; expand-region
 (require 'expand-region)
@@ -112,8 +118,8 @@
   (let ((compilation-disable-input t))
     (compilation-start (concat command-args " < " null-device)
                        'grep-mode)))
-;; ctags-update 
-;; etags-table 
+;; ctags-update
+;; etags-table
 ;; etags-select
 ;; speedbar
 ;; sr-speedbar
@@ -129,10 +135,6 @@
 (require 'idle-highlight-mode)
 (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
 
-;; powerline
-;; (require 'powerline)
-;; (powerline-default-theme)
-
 ;; magit
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -141,7 +143,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; evil-mode
+;;evil-mode
 ;; http://emacswiki.org/emacs/Evil
 (require 'evil)
 (evil-mode 1)
@@ -193,9 +195,11 @@
 ;; (load-theme 'wombat)
 ;; frame font
 ;; (set-frame-font "Ubuntu Mono-12" t t)
+(set-frame-font "Consolas-11" t t)
 
 ;; enable complete-mode
 (setq icomplete-mode t)
+<<<<<<< HEAD
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -211,3 +215,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+=======
+>>>>>>> 5982bd5b60cb7c7577f6fda2234facd9a18f0a2b
