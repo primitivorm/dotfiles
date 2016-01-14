@@ -196,10 +196,6 @@
 ;; frame font
 ;; (set-frame-font "Ubuntu Mono-12" t t)
 (set-frame-font "Consolas-11" t t)
-
-;; enable complete-mode
-(setq icomplete-mode t)
-<<<<<<< HEAD
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -207,13 +203,10 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(undo-tree rainbow-identifiers rainbow-blocks minimap idle-highlight-mode hl-sexp goto-chg
-			   git-rebase-mode git-commit-mode full-ack etags-table etags-select ctags-update auto-auto-indent))))
+	(zenburn-theme yasnippet web-mode sr-speedbar solarized-theme rainbow-mode rainbow-identifiers rainbow-delimiters rainbow-blocks neotree multiple-cursors minimap indent-guide idle-highlight-mode hl-sexp highlight-symbol highlight-parentheses git-rebase-mode git-commit-mode full-ack flycheck-irony expand-region evil etags-table etags-select dash-functional ctags-update csharp-mode company-irony color-identifiers-mode auto-auto-indent ac-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-=======
->>>>>>> 5982bd5b60cb7c7577f6fda2234facd9a18f0a2b
