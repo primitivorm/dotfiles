@@ -20,10 +20,6 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-#set LANGUAGE
-LANG="en_US"
-LANGUAGE="en_US"
 
-#add android PATH
-export PATH=$PATH:~/Android/Sdk/tools
-export PATH=$PATH:~/Android/Sdk/platform-tools
+# set environment variable for Latino
+PATH="$HOME/src/latino/codeblocks/bin:$PATH"
