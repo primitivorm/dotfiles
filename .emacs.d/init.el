@@ -1,8 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-; vbnet-mode
+										; vbnet-mode
 (autoload 'vbnet-mode "vbnet-mode" "Mode for editing VB.NET code." t)
 (setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
-                                 vbnet-mode)) auto-mode-alist))
+								 vbnet-mode)) auto-mode-alist))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; add MELPA to repository list
@@ -29,12 +29,12 @@
 ;; add ac-c-headers and gets called for c/c++ hooks
 (require 'ac-c-headers)
 (add-hook 'c-mode-hook
-          (lambda ()
-            (add-to-list 'ac-sources 'ac-source-c-headers)
-            (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
-            (add-to-list 'cc-search-directories '"/usr/include/")
-            (when (string= (window-system) "w32")
-              (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
+		  (lambda ()
+			(add-to-list 'ac-sources 'ac-source-c-headers)
+			(add-to-list 'ac-sources 'ac-source-c-header-symbols t)
+			(add-to-list 'cc-search-directories '"/usr/include/")
+			(when (string= (window-system) "w32")
+			  (add-to-list 'cc-search-directories "C:/MinGW/include/"))))
 
 ;; irony-mode
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -45,18 +45,18 @@
 ;; irony-mode's buffers by irony-mode's function
 (defun my-irony-mode-hook ()
   (define-key irony-mode-map [remap completion-at-point]
-              'irony-completion-at-point-async)
+    'irony-completion-at-point-async)
   (define-key irony-mode-map [remap complete-symbol]
-              'irony-completion-at-point-async))
+    'irony-completion-at-point-async))
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 (if (string= (window-system) "w32")
-  (setq w32-pipe-read-delay 0))
+	(setq w32-pipe-read-delay 0))
 
 ;; company-irony
 (eval-after-load 'company
-                 '(add-to-list 'company-backends 'company-irony))
+  '(add-to-list 'company-backends 'company-irony))
 
 ;; (optional) adds CC special commands to `company-begin-commands' in order to
 ;; trigger completion at interesting places, such as after scope operator
@@ -72,11 +72,11 @@
 (require 'neotree)
 (global-set-key [f2] 'neotree-toggle)
 (add-hook 'neotree-mode-hook
-          (lambda ()
-            (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-            (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-            (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+            (lambda ()
+              (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+              (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 ;; expand-region
 (require 'expand-region)
@@ -93,8 +93,8 @@
 (require 'cc-mode)
 (setq c-default-style "k&r" c-basic-offset 4)
 (setq-default c-basic-offset 4
-              tab-width 4
-              indent-tabs-mode t)
+			  tab-width 4
+			  indent-tabs-mode t)
 (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 
 ;; web-mode http://web-mode.org/
@@ -106,15 +106,15 @@
 
 (defun ack (command-args)
   (interactive
-    (if (string= (window-system) "w32")
-      (let ((ack-command "ack --nofilter --nogroup --with-filename "))
-        (list (read-shell-command "Run ack (like this): "
-                                  ack-command
-                                  'ack-history)))
-      (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
-        (list (read-shell-command "Run ack (like this): "
-                                  ack-command
-                                  'ack-history)))))
+   (if (string= (window-system) "w32")
+	   (let ((ack-command "ack --nofilter --nogroup --with-filename "))
+		 (list (read-shell-command "Run ack (like this): "
+								   ack-command
+								   'ack-history)))
+	 (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
+	   (list (read-shell-command "Run ack (like this): "
+								 ack-command
+								 'ack-history)))))
   (let ((compilation-disable-input t))
     (compilation-start (concat command-args " < " null-device)
                        'grep-mode)))
@@ -148,12 +148,6 @@
 (require 'evil)
 (evil-mode 1)
 
-;;https://github.com/yaruopooner/ac-clang
-(require 'ac-clang)
-;;(ac-clang-server-type 'debug)
-(ac-clang-initialize)
-
-
 ;; end MELPA repository list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -169,7 +163,7 @@
 (global-linum-mode t)
 ;; disable toolbar
 (if window-system
-  (tool-bar-mode -1))
+    (tool-bar-mode -1))
 ;; change yes-or-no to y-or-n
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; display column number in the mode line
@@ -198,9 +192,7 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set theme
-;; (require 'solarized)
-;; (provide 'solarized-theme)
-;; (load-theme 'solarized-dark t)
+;; (load-theme 'wombat)
 ;; frame font
 ;; (set-frame-font "Ubuntu Mono-12" t t)
 (set-frame-font "Consolas-11" t t)

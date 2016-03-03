@@ -1,5 +1,5 @@
 [user]
-	name = primitivorm
+	name = Primitivo R. Montero
 	email = cibercafe_montero@hotmail.com
 
 [push]
@@ -11,17 +11,8 @@
 
 [core]
     autocrlf = true
-    editor = vim
-
-[merge]
-    tool = vimdiff
-[mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
 
 [rebase]
     autosquash = true
 [credential]
-	helper = /usr/bin/git-credential-gnome-keyring
+	helper = /usr/bin/X11/gnome-keyring
