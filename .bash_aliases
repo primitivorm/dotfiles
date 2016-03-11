@@ -1,8 +1,11 @@
 # editor
-alias vim="vim.nox"
+#alias vim="vim.nox"
 
 #terminal commands
 alias la="ls -al"
+
+# show hidden files
+alias l.="las -d .* --color=auto"
 
 # free memory
 alias free="free -m"
@@ -37,5 +40,10 @@ alias gmyemail="git config user.email \$1"
 #dos2unix
 alias dos2unixrec="find . -type f -exec dos2unix {} \;"
 
-#ack 
+#ack
 alias ack="ack-grep -s -H --nogroup --column"
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
