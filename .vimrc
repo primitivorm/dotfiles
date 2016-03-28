@@ -6,6 +6,7 @@ filetype plugin indent on
 set ai
 set autoread
 set autowrite
+"set background=dark
 set background=light
 set cursorline
 set expandtab
@@ -15,7 +16,6 @@ set foldnestmax=10
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
 set nobackup
 set nocp
 set nofoldenable
@@ -30,9 +30,11 @@ set smarttab
 set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 set listchars=tab:»\-,trail:·,eol:¬
+"set guifont=Input\ 10
+"set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Monospace\ 10
 "set guifont=Consola\ Mono\ 10
-set guifont=Ubuntu\ Mono\ 12
-"set guifont=Consolas\ for\ Powerline\ 9
+"set guifont=Ubuntu\ Mono\ 11
 set guioptions-=T
 set mouse=a
 " first full match
@@ -50,12 +52,15 @@ set wildmode=list:longest,full " show a list when pressing tab and complete
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
-"set backspace=indent,eol,start
-"set backspace=2
-set backspace=
+set backspace=indent,eol,start
+set backspace=2
+"set backspace=
+set t_Co=256
 call pathogen#infect()
 
-colorscheme zenburn 
+"colo xoria256
+colo proman
+"colorscheme zenburn 
 
 "if exists('+colorcolumn')
   "set colorcolumn=79
@@ -112,7 +117,11 @@ Plugin 'sjl/gundo.vim'
 Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Zenburn'
-
+Plugin '29decibel/codeschool-vim-theme'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'idanarye/vim-vebugger'
+Plugin 'xoria256.vim'
+Plugin 'Chiel92/vim-autoformat'
 
 " Editor layout {{{
 "set lazyredraw " don't update the display while executing macros
@@ -131,8 +140,6 @@ if has("statusline")
   hi! User3  gui=NONE guifg=#bcc9db guibg=#073642 gui=bold
   hi! User4  gui=NONE guifg=#d7d7af guibg=#073642 gui=bold
 endif
-" if there is only one window
-set cmdheight=1 " use a status bar that is 2 rows high
 "}}}
 
 "Plugin 'primitivorm/vim-predictive'
@@ -206,19 +213,7 @@ nnoremap <leader>t :CtrlPTag<cr>
 " Remove dictionary lookup from the Vim keyword completion.  It did always
 " complete the first match for me.  If you edit files with tags you might
 " want to add those.
-"let g:acp_completeOption = '.,w,b,u,t,i'
 let g:acp_completeOption = '.,w,b,u,i'
-"length to trigger AutoComplPop
-"let g:acp_behaviorFileLength = 3
-"let g:acp_behaviorKeywordLength = 3
-"let g:acp_behaviorXmlOmniLength = 3
-"let g:acp_behaviorHtmlOmniLength = 3
-"let g:acp_behaviorPythonOmniLength = 3
-"let g:acp_behaviorCssOmniValueLength = 3
-"let g:acp_behaviorRubyOmniSymbolLength = 3
-"let g:acp_behaviorCssOmniPropertyLength = 3
-"let g:acp_behaviorSnipmateLength=3
-"let g:acp_behaviorRubyOmniMethodLength=3
 
 "predictive
 let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
@@ -312,6 +307,19 @@ nmap <silent> <leader>sc :SyntasticCheck<cr>
 "keymaps {{{
 let mapleader=','
 
+"center search {{{
+"http://vim.wikia.com/wiki/VimTip528
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+nmap { {zz
+nmap } }zz
+nmap G Gzz
+" }}}
+
 "vundle
 nmap <leader>bi :PluginInstall<cr>
 "HELP
@@ -351,7 +359,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Edit the vimrc file
 nmap <silent><leader>ed :tabnew $MYVIMRC<CR>
-nmap <silent><leader>ld :source $MYVIMRC<CR>
+nmap <silent><F5> :source $MYVIMRC<CR>
 
 " Fix: VIM UP and Down Keys Inserting A B C D 
 imap <ESC>oA <ESC>ki
@@ -373,6 +381,12 @@ nmap <leader>d :%s/\(\n\n\)\n\+/\1/<cr>
 
 "insert autoclose for {
 imap {<CR> {<CR>}<Esc>O
+
+" Create window splits easier. The default {{{
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nmap <silent>ss <C-w>s
+nmap <silent>vv <C-w>v
 "}}}
 
 "{{{
@@ -406,6 +420,22 @@ let g:ycm_filetype_blacklist = {
 \}
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "}
+"}}}
+
+" vim-autoformat {{{
+" https://github.com/Chiel92/vim-autoformat
+let g:formatprg_cs = "astyle"
+let g:formatprg_args_cs = "--mode=cs --style=ansi -pcHs4"
+let g:formatprg_args_expr_cs = '"--mode=cs --style=ansi -pcHs".&shiftwidth'
+let g:formatprg_c = "astyle"
+let g:formatprg_args_c = "--style=kr -C -N -m0 -M40 -w -xw -Y -c -p -H -U -xe -k3 -s4"
+let g:formatprg_args_expr_c = '"--style=kr -C -N -m0 -M40 -w -xw -Y -c -p -H -U -xe -k3 -s".&shiftwidth'
+let g:formatprg_cpp = "astyle"
+let g:formatprg_args_cpp =  "--style=kr -C -N -m0 -M40 -w -xw -Y -c -p -H -U -xe -k3 -s4"
+let g:formatprg_args_expr_cpp = '"--style=kr -C -N -m0 -M40 -w -xw -Y -c -p -H -U -xe -k3 -s".&shiftwidth'
+set equalprg=astyle
+autocmd BufRead,BufNewFile *.c nnoremap <leader>f :silent Autoformat<cr>
+autocmd BufRead,BufNewFile *.c vmap <leader>f :silent Autoformat<cr>
 "}}}
 
 " filetype {{{
