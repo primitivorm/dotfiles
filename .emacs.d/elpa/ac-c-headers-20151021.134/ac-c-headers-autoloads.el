@@ -1,10 +1,9 @@
 ;;; ac-c-headers-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil nil ("ac-c-headers.el") (22063 35638 269000
-;;;;;;  0))
+;;;### (autoloads nil nil ("ac-c-headers.el") (22268 7714 0 0))
 
 ;;;***
 
