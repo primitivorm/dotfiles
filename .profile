@@ -22,4 +22,10 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # set environment variable for Latino
-PATH="$HOME/src/latino/codeblocks/bin:$PATH"
+#PATH="$HOME/src/latino/codeblocks/bin:$PATH"
+
+#set environment variables for bison
+BISON_LOCALEDIR=/usr/local/share/locale/es/LC_MESSAGES/
+LATINO_HOME=~/src/latino/codeblocks/bin/
+LANG=es_MX.utf8
+LANGUAGE=es_MX.utf8
