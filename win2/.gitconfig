@@ -1,6 +1,10 @@
 [user]
-	name = Primitivo R. Montero
-	email = cibercafe_montero@hotmail.com
+	name = primitivorm
+    email = cibercafe_montero@hotmail.com
+
+[gui]
+	recentrepo = C:/Users/proman02/vimfiles
+    recentrepo = C:/Users/proman02/dotfiles
 
 [push]
     default = upstream
@@ -11,6 +15,9 @@
 
 [core]
     autocrlf = true
+	trustctime = false
+	editor = vim
+    filemode = false
 
 [rebase]
     autosquash = true
@@ -19,16 +26,16 @@
     ui = true
 
 [credential]
-    helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+    helper = wincred
 
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 
 [mergetool]
 	keeptemporaries = false
 	keepbackups = false
 	prompt = false
-	trustexitcode = false
+    trustexitcode = false
 
 [alias]
 	last = log -1 --stat
