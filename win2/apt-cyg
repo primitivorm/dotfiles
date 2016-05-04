@@ -125,7 +125,7 @@ function wget {
 
 function find-workspace {
   # default working directory and mirror
-  
+
   # work wherever setup worked last, if possible
   cache=$(awk '
   /last-cache/ {
@@ -372,8 +372,8 @@ function download {
   # check the md5
   digest=$4
   case ${#digest} in
-   32) hash=md5sum    ;;
   128) hash=sha512sum ;;
+   32) hash=md5sum    ;;
   esac
   mkdir -p "$cache/$mirrordir/$dn"
   cd "$cache/$mirrordir/$dn"
