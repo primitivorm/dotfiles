@@ -18,14 +18,17 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$HOME/src/julia:$HOME/bin:$PATH"
 fi
 
 # set environment variable for Latino
 #PATH="$HOME/src/latino/codeblocks/bin:$PATH"
 
 #set environment variables for bison
-BISON_LOCALEDIR=/usr/local/share/locale/es/LC_MESSAGES/
-LATINO_HOME=~/src/latino/codeblocks/bin/
+BISON_LOCALEDIR=/usr/local/share/locale/es/LC_MESSAGES
+LATINO_HOME=~/src/latino/codeblocks/bin
 LANG=es_MX.utf8
 LANGUAGE=es_MX.utf8
+NODE_PATH=$HOME/local/lib/node_modules
+JULIA_DIR=$HOME/src/julia
+LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
