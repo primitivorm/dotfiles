@@ -1,0 +1,12 @@
+"*":
+  core:
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  editor:
+    lineHeight: 1
+  "exception-reporting":
+    userId: "388d1954-e9a7-16b9-99c6-3d547c6668b3"
+  welcome:
+    showOnStartup: false
