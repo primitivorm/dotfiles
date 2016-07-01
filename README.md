@@ -8,6 +8,6 @@ $sudo apt-get install git
 $cd ~
 $git clone https://github.com/primitivorm/dotfiles
 $cd ~/dotfiles/
-$sudo ./Instalar.sh
+$sudo ./instalar.sh
 $./configurar.sh
 ```
