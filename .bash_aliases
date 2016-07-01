@@ -47,3 +47,6 @@ alias ack="ack-grep -s -H --nogroup --column"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+#add tmuxifier command
+alias tmuxifier="tmuxifier load-window ~/.dev-window.sh"

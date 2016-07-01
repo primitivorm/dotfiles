@@ -113,3 +113,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#configure for tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(~/.tmuxifier/bin/tmuxifier init -)"

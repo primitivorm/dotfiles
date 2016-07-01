@@ -6,8 +6,8 @@ filetype plugin indent on
 set ai
 set autoread
 set autowrite
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 set cursorline
 set expandtab
 set foldlevel=1
@@ -22,6 +22,7 @@ set nofoldenable
 set noswapfile
 set nowritebackup
 set nu
+set rnu
 set scrolloff=3
 set shiftwidth=4
 set smartcase
@@ -58,8 +59,9 @@ set backspace=2
 set t_Co=256
 call pathogen#infect()
 
+colo default
 "colo xoria256
-colo proman
+"colo proman
 "colorscheme zenburn 
 
 "if exists('+colorcolumn')
