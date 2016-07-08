@@ -59,9 +59,9 @@ set backspace=2
 set t_Co=256
 call pathogen#infect()
 
-colo default
+"colo default
 "colo xoria256
-"colo proman
+colo proman
 "colorscheme zenburn 
 
 "if exists('+colorcolumn')
