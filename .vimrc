@@ -21,6 +21,7 @@ set nocp
 set nofoldenable
 set noswapfile
 set nowritebackup
+set nowrap
 set nu
 set rnu
 set scrolloff=3
@@ -33,7 +34,7 @@ set tabstop=4
 set listchars=tab:»\-,trail:·,eol:¬
 "set guifont=Input\ 10
 "set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Monospace\ 10
+set guifont=Monospace\ 9
 "set guifont=Consola\ Mono\ 10
 "set guifont=Ubuntu\ Mono\ 11
 set guioptions-=T
