@@ -99,7 +99,7 @@ set nocompatible " be iMproved
 call vundle#begin('~/.vim/bundle/')
 "" let Vundle manage Vundle
 "" required!
-Plugin 'Align'
+Plugin 'primitivorm/Align'
 Plugin 'L9'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
