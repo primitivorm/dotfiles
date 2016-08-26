@@ -43,3 +43,6 @@ if [ ! -d ~/.tmuxifier ]; then
     ./init.sh
     cp ~/dotfiles/.dev-window.sh ~/
 fi
+
+cd ~/dotfiles/
+

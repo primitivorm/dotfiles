@@ -1,11 +1,12 @@
 #!/bin/bash
 DLPATH="https://atom.io/download/deb"
-DLDEST="$HOME/Downloads/atom-amd64.deb"
+#DLDEST="$HOME/Downloads/atom-amd64.deb"
+DLDEST="$HOME/Descargas/atom-amd64.deb"
 
 if ! [ -z "$1" ] && [ $1=="beta" ];  then
   echo "Updating beta"
   DLPATH="$DLPATH?channel=beta"
-  DLDEST="$HOME/Downloads/atom-amd64-beta.deb"
+  DLDEST="$HOME/Descargas/atom-amd64-beta.deb"
 else
   echo "Updating stable"
 fi
