@@ -2,7 +2,6 @@
 #copy configurations
 #########################################################
 echo "configurando sistema..."
-cp -fr .vim ~/
 cp -fr .dircolors ~/
 cp -f .vimrc ~/
 cp -f .bashrc ~/
@@ -30,6 +29,7 @@ if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then
     cd ~/.vim/bundle/YouCompleteMe/
     python install.py --clang-completer
 fi
+cp -fr .vim ~/
 
 #########################################################
 #configure tmux
@@ -43,3 +43,6 @@ if [ ! -d ~/.tmuxifier ]; then
     ./init.sh
     cp ~/dotfiles/.dev-window.sh ~/
 fi
+
+cd ~/dotfiles/
+
