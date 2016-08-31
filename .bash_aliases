@@ -1,11 +1,11 @@
 # editor
-#alias vim="vim.nox"
+alias vim="gvim"
 
 #terminal commands
 alias la="ls -al"
 
 # show hidden files
-alias l.="las -d .* --color=auto"
+alias l.="ls -d .* --color=auto"
 
 # free memory
 alias free="free -m"
@@ -29,7 +29,7 @@ alias ga="git add ."
 alias gc="git commit -m \$1"
 alias gs="git status"
 alias gd="git diff"
-alias gi="vim.nox .gitignore"
+alias gi="gvim .gitignore"
 
 # git config (globally)
 alias ggmyname="git config --global user.name \$1"
