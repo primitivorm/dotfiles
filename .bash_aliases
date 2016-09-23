@@ -29,6 +29,8 @@ alias ga="git add ."
 alias gc="git commit -m \$1"
 alias gs="git status"
 alias gd="git diff"
+alias gdn="git diff --name-only"
+alias gco="git checkout ."
 alias gi="vim.nox .gitignore"
 
 # git config (globally)
