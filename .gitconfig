@@ -10,7 +10,7 @@
     fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 
 [core]
-    autocrlf = true
+    autocrlf = input
     white-space = cr-at-eol
 
 [rebase]

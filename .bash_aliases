@@ -31,7 +31,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gdn="git diff --name-only"
 alias gco="git checkout ."
-alias gi="gvim .gitignore"
+alias gi="vim .gitignore"
 
 # git config (globally)
 alias ggmyname="git config --global user.name \$1"
