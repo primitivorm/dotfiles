@@ -13,6 +13,9 @@ cp -f .tmux.conf ~/
 #########################################################
 #install vim plugins
 #########################################################
+if [ ! -d ~/.vim/bundle ]; then 
+    mkdir ~/.vim/bundle/
+fi
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
     echo "instalando vim plugins..."
     cd ~/.vim/bundle/
@@ -45,4 +48,3 @@ if [ ! -d ~/.tmuxifier ]; then
 fi
 
 cd ~/dotfiles/
-
