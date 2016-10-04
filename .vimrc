@@ -32,9 +32,10 @@ set smarttab
 set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 set listchars=tab:»\-,trail:·,eol:¬
+set guifont=Fira\ Mono\ 11
 "set guifont=Input\ 10
 "set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Monospace\ 10
+"set guifont=Monospace\ 10
 "set guifont=Consola\ Mono\ 10
 "set guifont=Ubuntu\ Mono\ 11
 set guioptions-=T
