@@ -1,14 +1,14 @@
 "*":
   core:
+    projectHome: "/home/latino/src/"
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "atom-dark-ui"
+      "selly-syntax-ide"
     ]
   editor:
-    lineHeight: 1
-  fonts:
-    fontFamily: "Liberation Mono, Ubuntu Mono, Consolas"
+    fontFamily: "Fira Mono"
+    fontSize: 12
   "exception-reporting":
-    userId: "388d1954-e9a7-16b9-99c6-3d547c6668b3"
+    userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
   welcome:
     showOnStartup: false

@@ -2,6 +2,19 @@
 
 Agrega resaltado de sintaxis y fragmentos de codigo latino en Atom.
 
+###Para instalar siga las siguientes instrucciones:
+
+![latino atom instalar](https://raw.githubusercontent.com/primitivorm/language-latino/master/latino_atom_instalar.png "latino atom instalar")
+
+1. Abra su editor de texto Atom
+2. Clic en el menu Archivo->Preferencias (File->Settings)
+    o Editar->Preferencias (Edit->Settings) dependiendo su sistema operativo
+3. Clic en Instalar (Install)
+4. Abra un archivo de Latino extension (*.lat)
+
+![latino atom](https://raw.githubusercontent.com/primitivorm/language-latino/master/latino_atom.png "latino atom")
+
+
 Fragmentos de codigo (snippets)
 ---
 | Desencadenador | Nombre                                  | codigo                                          |
@@ -16,8 +29,8 @@ Fragmentos de codigo (snippets)
 | esc            | escribir                                | escribir("mensaje")                             |
 | inc            | incluir                                 | incluir "modulo"                                |
 
-License
-------
+Licencia
+---
 Latino Atom Plugin se distribuye bajo la licencia MIT.
 
 ####Cualquier aportacion o sugerencia es bienvenida.

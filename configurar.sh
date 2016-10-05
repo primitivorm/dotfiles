@@ -47,4 +47,9 @@ if [ ! -d ~/.tmuxifier ]; then
     cp ~/dotfiles/.dev-window.sh ~/
 fi
 
+#########################################################
+#configure nano
+#########################################################
+cp usr/share/nano/latino.nanorc /usr/share/nano/
+
 cd ~/dotfiles/

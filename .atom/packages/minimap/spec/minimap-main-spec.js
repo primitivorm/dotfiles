@@ -2,7 +2,6 @@
 
 import './helpers/workspace'
 import Minimap from '../lib/minimap'
-import MinimapElement from '../lib/minimap-element'
 
 describe('Minimap package', () => {
   let [editor, minimap, editorElement, minimapElement, workspaceElement, minimapPackage] = []
@@ -12,8 +11,6 @@ describe('Minimap package', () => {
 
     workspaceElement = atom.views.getView(atom.workspace)
     jasmine.attachToDOM(workspaceElement)
-
-    MinimapElement.registerViewProvider(Minimap)
 
     waitsForPromise(() => {
       return atom.workspace.open('sample.coffee')
@@ -54,6 +51,28 @@ describe('Minimap package', () => {
 
     it('attaches a minimap element to the editor view', () => {
       expect(editorElement.shadowRoot.querySelector('atom-text-editor-minimap')).toExist()
+    })
+
+    describe('when the package is deactivated', () => {
+      beforeEach(() => {
+        atom.packages.deactivatePackage('minimap')
+      })
+      it('removes the minimap from their editor parent', () => {
+        expect(editorElement.shadowRoot.querySelector('atom-text-editor-minimap')).not.toExist()
+      })
+
+      describe('and reactivated with a remaining minimap in the DOM', () => {
+        beforeEach(() => {
+          const m = new Minimap({textEditor: editor})
+          const v = atom.views.getView(m)
+          editorElement.shadowRoot.appendChild(v)
+          waitsForPromise(() => atom.packages.activatePackage('minimap'))
+        })
+
+        it('removes the remaining minimap', () => {
+          expect(editorElement.shadowRoot.querySelectorAll('atom-text-editor-minimap').length).toEqual(1)
+        })
+      })
     })
   })
 
@@ -147,8 +166,8 @@ describe('Minimap package', () => {
         })
 
         it('creates a default config for the plugin', () => {
-          expect(minimapPackage.config.plugins.properties.dummy).toBeDefined()
-          expect(minimapPackage.config.plugins.properties.dummyDecorationsZIndex).toBeDefined()
+          expect(minimapPackage.getConfigSchema().plugins.properties.dummy).toBeDefined()
+          expect(minimapPackage.getConfigSchema().plugins.properties.dummyDecorationsZIndex).toBeDefined()
         })
 
         it('sets the corresponding config', () => {

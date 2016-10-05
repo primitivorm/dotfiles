@@ -20,3 +20,5 @@ pip install --user cpp-coveralls --upgrade
 #########################################################
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
 make
+
+sudo cp -f ~/dotfiles/usr/share/nano/latino.nanorc /usr/share/nano/

@@ -1,28 +1,31 @@
 '.source.latino':
   'si conditional':
     'prefix': 'si',
-    'body': 'si ${1:condicion}\n\t${0:#codigo}\nfin'
+    'body': 'si ${1:condicion}\n\t${2:#codigo}\nfin'
   'si sino conditional':
     'prefix': 'sn',
-    'body': 'si ${1:condicion}\n\t${0:#codigo}\nsino\n\t${1:#codigo}\nfin'
+    'body': 'si ${1:condicion}\n\t${2:#codigo}\nsino\n\t${3:#codigo}\nfin'
   'ciclo mientras':
     'prefix': 'mientras'
-    'body': 'mientras ${1:condicion}\n\t${0:#codigo}\nfin'
+    'body': 'mientras ${1:condicion}\n\t${2:#codigo}\nfin'
   'ciclo hacer':
     'prefix': 'hacer'
-    'body': 'hacer\n\t${0:#codigo}\ncuando ${1:condicion}'
+    'body': 'hacer\n\t${2:#codigo}\ncuando ${1:condicion}'
   'ciclo desde':
     'prefix': 'desde'
-    'body': 'desde (${1:inicio}; ${2:condicion}; ${3:incremento})\n\t${0:#body}\nfin'
+    'body': 'desde (${1:inicio}; ${2:condicion}; ${3:incremento})\n\t${4:#body}\nfin'
   'funcion':
     'prefix': 'fun'
-    'body': 'funcion ${1:nombre_funcion} (${2:argumentos})\n\t${0:#codigo}\nfin'
+    'body': 'funcion ${1:nombre_funcion} (${2:argumentos})\n\t${3:#codigo}\nfin'
   'retorno':
     'prefix': 'ret'
-    'body': 'retorno ${0:valor}'
+    'body': 'retorno ${1:valor}'
   'escribir':
     'prefix': 'esc'
-    'body': 'escribir("${0:mensaje}")'
+    'body': 'escribir("${1:mensaje}")'
+  'imprimir':
+    'prefix': 'imp'
+    'body': 'imprimir("${1:mensaje}")'
   'incluir':
     'prefix': 'inc'
-    'body': 'incluir "${1:modulo}"'
+    'body': 'incluir("${1:modulo}")'
