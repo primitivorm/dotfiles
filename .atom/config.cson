@@ -10,5 +10,10 @@
     fontSize: 12
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
+  "linter-gcc":
+    gccDefaultCFlags: "-c -Wall -std=c11"
   welcome:
     showOnStartup: false
+  "you-complete-me":
+    globalExtraConfig: "~/.vim/.ycm_extra_conf.py"
+    ycmdPath: ".vim/bundle/YouCompleteMe/third_party/ycmd"

@@ -1,0 +1,162 @@
+/*
+  Atom-terminal-panel
+  Copyright by isis97
+  MIT licensed
+
+  This file is the main LESS entry point for the atom-terminal-panel.
+  It's problably not this what are you lookin for.
+  To change the file icons by their types see "config/extensions.less"
+  or if you want to change the basic terminal appearance edit "config/terminal-style.less"
+*/
+@import "ui-variables";
+
+
+.autocomplete-text {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 900;
+  font-size: 110%;
+}
+
+.autocomplete-dropdown {
+  color: white;
+  font-size: 90%;
+  font-family: "Lucida Console";
+  background-color: black;
+  font-weight: normal;
+  border-radius: 5px;
+}
+
+.autocomplete-hover-item {
+  background-color: #626262;
+  color: black;
+  font-weight: normal;
+}
+
+.autocomplete-hint {
+  color: gray;
+}
+
+
+.atp-panel {
+
+
+  .atp-terminal-action-button(@content:'', @location:40px) {
+    position: absolute;
+    right: @location;
+    background-color: transparent;
+    cursor: pointer;
+    border-style:none;
+    color: gray;
+    font-size: 150%;
+    &:hover::before {
+      color: black;
+    }
+    &:before {
+      content: @content;
+    }
+  }
+
+  .atp-close-btn {
+    .atp-terminal-action-button('\25BC', 40px);
+  }
+
+  .atp-destroy-btn {
+    .atp-terminal-action-button('✖', 10px);
+  }
+
+  .atp-maximize-btn {
+    .atp-terminal-action-button('\25B2', 70px);
+  }
+
+  &.panel {
+    margin-bottom: 0px;
+    white-space: pre;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-family: "Lucida Console";
+  }
+
+  .welcome-panel {
+    .panel-heading {
+      background-color: @button-background-color-hover;
+    }
+  }
+
+  .panel-heading {
+    padding: 2px;
+    text-align: right;
+    .btn {
+      top: 0px;
+    }
+    .button-settings {
+      float: left;
+    }
+  }
+
+  @import "../config/terminal-style";
+
+  .terminal {
+    max-height: 300px;
+    overflow-y: scroll;
+    bottom: @component-padding;
+
+    .file-extension {
+      .parent-folder {
+        font-weight: 900;
+        color: red;
+      }
+      @import "../config/extensions";
+    }
+
+    .file-info {
+      width: 140px;
+      display: inline-block;
+      // height: 2.5em;
+      float: left;
+    }
+    .file-not-found {
+        text-decoration: line-through;
+        color: #A41629;
+        cursor: not-allowed;
+    }
+    .console-link {
+      cursor: pointer;
+    }
+    .console-link:hover {
+      text-decoration: underline;
+    }
+    .console-link.link-used {
+      font-weight: bold;
+      color: #8B3E2F;
+    }
+    .stat-program {
+      color: #26c26a;
+    }
+    .stat-link {
+      color: hsl(285, 0.7, 0.7);
+    }
+    .clear {
+      clear: both;
+    }
+  }
+  .status-ignored {
+    opacity: 0.5;
+  }
+  .status-running {
+    color: hsl(180, 1, 0.5);
+  }
+  .status-info {
+    color: hsl(220, 1, 0.5);
+  }
+  .status-success {
+    color: hsl(100, 1, 0.5);
+  }
+  .status-error {
+    color: hsl(0, 1, 0.5);
+  }
+  .icon-terminal, .icon-plus {
+    cursor: pointer;
+  }
+}
