@@ -46,10 +46,11 @@ if [ ! -d ~/.tmuxifier ]; then
     ./init.sh
     cp ~/dotfiles/.dev-window.sh ~/
 fi
-
 #########################################################
-#configure nano
+#configure atom
 #########################################################
-cp usr/share/nano/latino.nanorc /usr/share/nano/
-
-cd ~/dotfiles/
+if [ ! -d ~/.atom ]; then 
+    echo "configurando atom..."
+    bash ./usr/local/bin/atom-update
+    cp -r .atom ~/.atom
+fi
