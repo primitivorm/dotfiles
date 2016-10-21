@@ -14,9 +14,14 @@
   "linter-gcc":
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
-  minimap: {}
+  minimap:
+    charHeight: 3
+    charWidth: 1.5
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
   welcome:
     showOnStartup: false
   "you-complete-me":
     globalExtraConfig: "~/.vim/.ycm_extra_conf.py"
-    ycmdPath: ".vim/bundle/YouCompleteMe/third_party/ycmd"
+    ycmdPath: "/home/latino/.vim/bundle/YouCompleteMe/third_party/ycmd"
