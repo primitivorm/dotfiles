@@ -116,4 +116,5 @@ fi
 
 #configure for tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+export LATINO_LIB="$HOME/src/latino-backup/latino_lib"
 eval "$(~/.tmuxifier/bin/tmuxifier init -)"

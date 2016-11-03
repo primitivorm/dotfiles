@@ -5,7 +5,7 @@ apt-get install aptitude build-essential gcc g++ automake clang-format -y
 apt-get install git make cmake flex bison clang llvm -y
 apt-get install valgrind vim-gnome dos2unix -y
 apt-get install python python-dev libxml2-dev libxslt-dev -y
-apt-get install tmux ack-grep astyle -y
+apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 apt-get install dpkg-dev libgnome-keyring-dev -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 apt-get install default-jre default-jdk -y
