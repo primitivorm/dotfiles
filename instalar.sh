@@ -9,7 +9,7 @@ apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 apt-get install dpkg-dev libgnome-keyring-dev -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 apt-get install default-jre default-jdk -y
-apt-get install lua5.2 liblua5.2-dev -y
+apt-get install lua5.2 liblua5.2-dev meld -y
 apt-get install gnome-system-monitor clisp -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 apt-get autoremove -qq -y
