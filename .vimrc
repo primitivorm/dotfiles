@@ -127,23 +127,27 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'idanarye/vim-vebugger'
 Plugin 'xoria256.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'powerline/powerline'
 
 " Editor layout {{{
 "set lazyredraw " don't update the display while executing macros
 " tell VIM to always put a status line in, even
 set laststatus=2
 if has("statusline")
-  set runtimepath+=~/vimfiles/cream/
-  source $HOME/.vim/cream/genutils.vim
-  source $HOME/.vim/cream/cream-lib.vim
-  source $HOME/.vim/cream/cream-lib-os.vim
-  source $HOME/.vim/cream/cream-statusline.vim
+  "for powerline
+  set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+  set guifont=Fira\ Mono\ for\ Powerline\ 11
+  "set runtimepath+=~/vimfiles/cream/
+  "source $HOME/.vim/cream/genutils.vim
+  "source $HOME/.vim/cream/cream-lib.vim
+  "source $HOME/.vim/cream/cream-lib-os.vim
+  "source $HOME/.vim/cream/cream-statusline.vim
 
-  " for cream statusline
-  hi! User1  gui=NONE guifg=#999999 guibg=#073642 gui=bold
-  hi! User2  gui=NONE guifg=#93a1a1 guibg=#073642 gui=NONE
-  hi! User3  gui=NONE guifg=#bcc9db guibg=#073642 gui=bold
-  hi! User4  gui=NONE guifg=#d7d7af guibg=#073642 gui=bold
+  "" for cream statusline
+  "hi! User1  gui=NONE guifg=#999999 guibg=#073642 gui=bold
+  "hi! User2  gui=NONE guifg=#93a1a1 guibg=#073642 gui=NONE
+  "hi! User3  gui=NONE guifg=#bcc9db guibg=#073642 gui=bold
+  "hi! User4  gui=NONE guifg=#d7d7af guibg=#073642 gui=bold
 endif
 "}}}
 

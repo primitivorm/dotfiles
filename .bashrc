@@ -118,3 +118,15 @@ fi
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export LATINO_LIB="$HOME/src/latino-backup/latino_lib"
 eval "$(~/.tmuxifier/bin/tmuxifier init -)"
+
+export PATH="/usr/local/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+
+#for powerline
+function _update_ps1() {
+    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi

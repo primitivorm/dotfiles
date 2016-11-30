@@ -10,10 +10,15 @@ apt-get install dpkg-dev libgnome-keyring-dev -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 apt-get install default-jre default-jdk -y
 apt-get install lua5.2 liblua5.2-dev meld -y
-apt-get install gnome-system-monitor clisp -y
+apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
+apt-get install libgccjit-5-dev -y
 apt-get autoremove -qq -y
+
+#install pip packages
+pip install --upgrade pip
 pip install --user cpp-coveralls --upgrade
+pip install powerline-status
 
 gem install grammars
 gem install pry
