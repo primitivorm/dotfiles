@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+        "spec": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11697-9301-1yxsc13"
+    ]
+  ],
+  "_from": "../d-11697-9301-rqgcpb/package.tgz",
+  "_id": "linter-gcc@0.6.15",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/linter-gcc",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+    "spec": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11697-9301-rqgcpb/package.tgz",
+  "_shasum": "bfe739708160a9d79b558768248060496c8183f5",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11697-9301-rqgcpb/package.tgz",
+  "_where": "/tmp/apm-install-dir-11697-9301-1yxsc13",
+  "bugs": {
+    "url": "https://github.com/hebaishi/linter-gcc/issues"
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "1.0.0": "consumeLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^4.3.3",
+    "atom-package-deps": "^2.0.1",
+    "fs-extra": "^0.26.1",
+    "shelljs": "^0.5.0",
+    "split-string": "^0.1.0",
+    "tempfile": "^1.1.0"
+  },
+  "description": "Lint C and C++ source files using gcc / g++",
+  "devDependencies": {
+    "eslint": "latest"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "globals": {
+      "atom": true
+    }
+  },
+  "homepage": "https://github.com/hebaishi/linter-gcc#readme",
+  "keywords": [
+    "lint",
+    "linter",
+    "c",
+    "c++",
+    "gcc",
+    "g++",
+    "error"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "linter-gcc",
+  "optionalDependencies": {},
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "readme": "# linter-gcc\n[![Travis](https://img.shields.io/travis/hebaishi/linter-gcc.svg?style=flat-square)](https://travis-ci.org/hebaishi/linter-gcc) [![apm](https://img.shields.io/apm/dm/linter-gcc.svg?style=flat-square)](https://atom.io/packages/linter-gcc)\n[![Paypal](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=44GUEE2BT7XVG)\n\nLinter plugin for [Linter](https://github.com/AtomLinter/Linter), provides an interface to gcc/g++.\n\nUsed with files with grammar \"C\", \"C++\" and [\"C++14\"](https://atom.io/packages/language-cpp14).\n\nNow with linting **on-the-fly**! This is a new feature so please open an issue if you encounter any problems.\n\n## Important info for Mac OSX users!\nIf you have XCode installed on OSX, the `gcc/g++` commands will both link to `clang`. This can cause issues with the `-fmax-errors` option used by linter-gcc, which isn't recognised by clang. To properly install GCC, you need to install it with Homebrew (instructions [here](https://github.com/hebaishi/linter-gcc/issues/62)).\n\n## Linter in action!\n\n![linter-gcc screenshot](https://raw.githubusercontent.com/hebaishi/images/master/lintergcc_onthefly.gif)\n\n## File/Project-Specific settings\n\nAssuming you have the a file called ```sample.cpp``` open, linter-gcc performs the following actions:\n\n1. Looks for file called ```sample.cpp.gcc-flags.json``` in the same directory as your source file (file-specific settings)\n2. Looks for a file called ```.gcc-flags.json``` in every subdirectory from the current up to your project root (subdirectory/project-specific settings)\n3. If no ```.gcc-flags.json``` is found, the settings in your configuration page are used.\n\nThe package takes its settings from the first configuration file that is found.\n\nYou can specify your settings in ```.gcc-flags.json```, at any level (file/subdirectory/project) using the following syntax:\n\n```json\n{\n  \"execPath\": \"/usr/bin/g++\",\n  \"gccDefaultCFlags\": \"-Wall\",\n  \"gccDefaultCppFlags\": \"-Wall -std=c++11\",\n  \"gccErrorLimit\": 15,\n  \"gccIncludePaths\": \".,./include,./path\",\n  \"gccSuppressWarnings\": true\n}\n```\n\nNote that the include paths need to be separated by commas. If this file is present, it will replace the settings you specified in the settings window. Relative paths (starting with ```.``` or ```..```) are expanded with respect to the root folder. Both ```execPath``` and ```gccIncludePaths``` are expanded.\n\nIn order to avoid unwanted behavior associated with having multiple projects open, only the paths within the first project are used, and the package limits its search to 30 levels when looking for a configuration file. You can work with multiple projects, as long as each is open in a separate window. Additionally, within each project, you may have as many file/directory-specific configuration files as you wish.\n\n### Usage notes:\n* Add ```-fsyntax-only``` to your C/C++ compilation flags to prevent the generation of ```.gch``` files when linting headers\n* Add ```-c``` to your flags to avoid linking errors.\n\n### Plugin installation\nPress ctrl and ',' or cmd and ',' , click on 'Packages', search 'linter gcc', or:\n```\n$ apm install linter-gcc\n```\n### Reporting Issues\n\nPlease read the [Wiki](https://github.com/hebaishi/linter-gcc/wiki/) before reporting any issues.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebaishi/linter-gcc.git"
+  },
+  "version": "0.6.15"
+}

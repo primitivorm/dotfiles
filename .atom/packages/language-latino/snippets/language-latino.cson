@@ -8,9 +8,9 @@
   'ciclo mientras':
     'prefix': 'mientras'
     'body': 'mientras ${1:condicion}\n\t${2:#codigo}\nfin'
-  'ciclo hacer':
-    'prefix': 'hacer'
-    'body': 'hacer\n\t${2:#codigo}\ncuando ${1:condicion}'
+  'ciclo repetir':
+    'prefix': 'repetir'
+    'body': 'repetir\n\t${2:#codigo}\nhasta ${1:condicion}'
   'ciclo desde':
     'prefix': 'desde'
     'body': 'desde (${1:inicio}; ${2:condicion}; ${3:incremento})\n\t${4:#body}\nfin'

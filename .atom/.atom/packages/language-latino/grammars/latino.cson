@@ -1,0 +1,128 @@
+'comment': 'Latino Syntax: version 0.1.1'
+'fileTypes': [
+  'lat'
+]
+'scopeName' : 'source.latino'
+'name': 'latino'
+'patterns': [
+  {
+    'include': '#comment'
+  }
+  {
+    'match': '\\b(si|fin|sino|elegir|caso|defecto|hacer|desde|hasta|mientras|cuando|funcion|retorno)\\b'
+    'name': 'keyword.control.latino'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(falso|nulo|cierto|verdadero)\\b|(?<![.])\\.{3}(?!\\.)'
+    'name': 'constant.language.latino'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(esta)\\b'
+    'name': 'variable.language.self.latino'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(A-Za-z0-9_)\\b(?=\\s*(?:[({"\']|\\[\\[))'
+    'name': 'support.function.latino'
+  }
+  {
+    'match': '\\b([A-Za-z_]\\w*)\\b(?=\\s*(?:[({"\']|\\[\\[))'
+    'name': 'support.function.any-method.latino'
+  }
+  {
+    'match': '(?<=[^.]\\.|:)\\b([A-Za-z_]\\w*)'
+    'name': 'variable.other.latino'
+  }
+  {
+    'match': '\\+|-|%|#|\\*|\\/|\\^|==?|~=|<=?|>=?|(?<!\\.)\\.{2}(?!\\.)'
+    'name': 'keyword.operator.latino'
+  }
+  {
+    'match': '(?<![\\d.])\\s0x[a-fA-F\\d]+|\\b\\d+(\\.\\d+)?([eE]-?\\d+)?|\\.\\d+([eE]-?\\d+)?'
+    'name': 'constant.numeric.latino'
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.latino'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.latino'
+    'name': 'string.quoted.double.latino'
+    'patterns': [
+      {
+        'include': 'punctuation.definition.string.begin.latino'
+      }
+      {
+        'include': 'punctuation.definition.string.end.latino'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.latino'
+      }
+    ]
+  }
+  {
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.latino'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.latino'
+    'name': 'string.quoted.double.latino'
+    'patterns': [
+      {
+        'include': 'punctuation.definition.string.begin.latino'
+      }
+      {
+        'include': 'punctuation.definition.string.end.latino'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.latino'
+      }
+    ]
+  }
+]
+'repository':
+  'comment':
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'comment.line.number-sign.latino'
+          '2':
+            'name': 'punctuation.definition.comment.latino'
+          '3':
+            'name': 'comment.line.semi-colon.latino'
+          '4':
+            'name': 'punctuation.definition.comment.latino'
+        'match': '((#).*$\\n?)'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'comment.line.number-sign.latino'
+          '2':
+            'name': 'punctuation.definition.comment.latino'
+          '3':
+            'name': 'comment.line.semi-colon.latino'
+          '4':
+            'name': 'punctuation.definition.comment.latino'
+        'match': '((//).*$\\n?)'
+      }
+      {
+        'begin': '/\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.latino'
+        'end': '\\*/'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.end.latino'
+        'name': 'comment.block.c'
+      }
+    ]

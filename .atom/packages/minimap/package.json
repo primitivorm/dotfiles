@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116920-8713-1xa35ih/package.tgz",
+        "raw": "/tmp/d-116924-22721-11y756k/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116920-8713-1xa35ih/package.tgz",
-        "spec": "/tmp/d-116920-8713-1xa35ih/package.tgz",
+        "rawSpec": "/tmp/d-116924-22721-11y756k/package.tgz",
+        "spec": "/tmp/d-116924-22721-11y756k/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116920-8713-164hkjf"
+      "/tmp/apm-install-dir-116924-22721-cms0ov"
     ]
   ],
-  "_from": "../d-116920-8713-1xa35ih/package.tgz",
-  "_id": "minimap@4.25.4",
+  "_from": "../d-116924-22721-11y756k/package.tgz",
+  "_id": "minimap@4.25.6",
   "_inCache": true,
   "_installable": true,
   "_location": "/minimap",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116920-8713-1xa35ih/package.tgz",
+    "raw": "/tmp/d-116924-22721-11y756k/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116920-8713-1xa35ih/package.tgz",
-    "spec": "/tmp/d-116920-8713-1xa35ih/package.tgz",
+    "rawSpec": "/tmp/d-116924-22721-11y756k/package.tgz",
+    "spec": "/tmp/d-116924-22721-11y756k/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116920-8713-1xa35ih/package.tgz",
-  "_shasum": "323c065171b5b272070981270139ee4d9e8b9117",
+  "_resolved": "file:../d-116924-22721-11y756k/package.tgz",
+  "_shasum": "57019a8114f46004373fecdf8b00ddb4fb8e39ca",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116920-8713-1xa35ih/package.tgz",
-  "_where": "/tmp/apm-install-dir-116920-8713-164hkjf",
+  "_spec": "/tmp/d-116924-22721-11y756k/package.tgz",
+  "_where": "/tmp/apm-install-dir-116924-22721-cms0ov",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com"
@@ -250,7 +250,7 @@
       "MouseEvent"
     ]
   },
-  "version": "4.25.4",
+  "version": "4.25.6",
   "viewProviders": [
     "minimapViewProvider"
   ]

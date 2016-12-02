@@ -22,7 +22,7 @@ Fragmentos de codigo (snippets)
 | si             | si condicional                          | si condicion #codigo fin                        |
 | sn             | si sino condicional                     | si condicion #codigo sino #codigo fin           |
 | mientras       | ciclo mientras                          | mientras condition #codigo fin                  |
-| hacer          | ciclo hacer                             | hacer #codigo mientras condicion                |
+| repetir        | ciclo repetir                           | repetir #codigo hasta condicion                 |
 | desde          | ciclo desde                             | desde ( i = 0; i < 10; i++) #codigo fin         |
 | fun            | funcion                                 | funcion nombre_funcion (argumentos) #codigo fin |
 | ret            | retorno                                 | retorno valor                                   |

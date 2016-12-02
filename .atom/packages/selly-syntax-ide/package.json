@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11694-3684-2zfeaj/package.tgz",
+        "raw": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11694-3684-2zfeaj/package.tgz",
-        "spec": "/tmp/d-11694-3684-2zfeaj/package.tgz",
+        "rawSpec": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
+        "spec": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11694-3684-srlpsw"
+      "/tmp/apm-install-dir-116107-3793-1pntso9"
     ]
   ],
-  "_from": "../d-11694-3684-2zfeaj/package.tgz",
-  "_id": "selly-syntax-ide@2.0.1",
+  "_from": "../d-116107-3793-1k0gtp2/package.tgz",
+  "_id": "selly-syntax-ide@2.0.2",
   "_inCache": true,
   "_installable": true,
   "_location": "/selly-syntax-ide",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11694-3684-2zfeaj/package.tgz",
+    "raw": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11694-3684-2zfeaj/package.tgz",
-    "spec": "/tmp/d-11694-3684-2zfeaj/package.tgz",
+    "rawSpec": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
+    "spec": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11694-3684-2zfeaj/package.tgz",
-  "_shasum": "7d22ea2c582aad7e397208eb3938c3b5d4711894",
+  "_resolved": "file:../d-116107-3793-1k0gtp2/package.tgz",
+  "_shasum": "98b4e907c975e4688c87753ab91bd8b90cc2dea3",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11694-3684-2zfeaj/package.tgz",
-  "_where": "/tmp/apm-install-dir-11694-3684-srlpsw",
+  "_spec": "/tmp/d-116107-3793-1k0gtp2/package.tgz",
+  "_where": "/tmp/apm-install-dir-116107-3793-1pntso9",
   "bugs": {
     "url": "https://github.com/AdrianVovk/selly-syntax/issues"
   },
@@ -63,5 +63,5 @@
     "url": "git+https://github.com/AdrianVovk/selly-syntax.git"
   },
   "theme": "syntax",
-  "version": "2.0.1"
+  "version": "2.0.2"
 }

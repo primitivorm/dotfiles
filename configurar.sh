@@ -58,17 +58,17 @@ fi
 #########################################################
 #configure powerline shell
 #########################################################
-if [ ! -d ~/powerline-shell ]; then 
-    cd ~
-    git clone https://github.com/banga/powerline-shell
-    cd powerline-shell
-    cp config.py.dist config.py
-    python install.py
-    cd ~
-    ln -s ~/powerline-shell/powerline-shell.py
-    #install fonts
-    git clone https://github.com/powerline/fonts
-    cd fonts
-    ./install.sh
-    rm -fr fonts
-fi
+#if [ ! -d ~/powerline-shell ]; then 
+#    cd ~
+#    git clone https://github.com/banga/powerline-shell
+#    cd powerline-shell
+#    cp config.py.dist config.py
+#    python install.py
+#    cd ~
+#    ln -s ~/powerline-shell/powerline-shell.py
+#    #install fonts
+#    git clone https://github.com/powerline/fonts
+#    cd fonts
+#    ./install.sh
+#    rm -fr fonts
+#fi
