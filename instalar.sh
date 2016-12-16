@@ -12,7 +12,7 @@ apt-get install default-jre default-jdk -y
 apt-get install lua5.2 liblua5.2-dev meld -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
-apt-get install libgccjit-5-dev -y
+apt-get install libgccjit-5-dev xd mono-xbuild -y
 apt-get autoremove -qq -y
 
 #install pip packages
