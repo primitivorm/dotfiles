@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116920-15427-13r3d9j/package.tgz",
+        "raw": "/tmp/d-117016-15026-xyfrgg/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116920-15427-13r3d9j/package.tgz",
-        "spec": "/tmp/d-116920-15427-13r3d9j/package.tgz",
+        "rawSpec": "/tmp/d-117016-15026-xyfrgg/package.tgz",
+        "spec": "/tmp/d-117016-15026-xyfrgg/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116920-15427-174giri"
+      "/tmp/apm-install-dir-117016-15026-iesxdz"
     ]
   ],
-  "_from": "../d-116920-15427-13r3d9j/package.tgz",
-  "_id": "highlight-selected@0.11.2",
+  "_from": "../d-117016-15026-xyfrgg/package.tgz",
+  "_id": "highlight-selected@0.12.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116920-15427-13r3d9j/package.tgz",
+    "raw": "/tmp/d-117016-15026-xyfrgg/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116920-15427-13r3d9j/package.tgz",
-    "spec": "/tmp/d-116920-15427-13r3d9j/package.tgz",
+    "rawSpec": "/tmp/d-117016-15026-xyfrgg/package.tgz",
+    "spec": "/tmp/d-117016-15026-xyfrgg/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116920-15427-13r3d9j/package.tgz",
-  "_shasum": "b218d2f9dd493e9dfb6b0d206e69f0cc831cb221",
+  "_resolved": "file:../d-117016-15026-xyfrgg/package.tgz",
+  "_shasum": "b73bbec5b00d28cb5d54c4fbebbfd4aff41cd331",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116920-15427-13r3d9j/package.tgz",
-  "_where": "/tmp/apm-install-dir-116920-15427-174giri",
+  "_spec": "/tmp/d-117016-15026-xyfrgg/package.tgz",
+  "_where": "/tmp/apm-install-dir-117016-15026-iesxdz",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
@@ -59,7 +59,7 @@
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
   },
   "engines": {
-    "atom": ">=0.174.0 <2.0.0"
+    "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/richrace/highlight-selected",
   "license": "MIT",
@@ -80,5 +80,5 @@
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.11.2"
+  "version": "0.12.0"
 }

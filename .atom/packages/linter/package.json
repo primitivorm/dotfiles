@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11697-9211-7be7su/package.tgz",
+        "raw": "/tmp/d-117016-15047-d6vpla/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11697-9211-7be7su/package.tgz",
-        "spec": "/tmp/d-11697-9211-7be7su/package.tgz",
+        "rawSpec": "/tmp/d-117016-15047-d6vpla/package.tgz",
+        "spec": "/tmp/d-117016-15047-d6vpla/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11697-9211-jt33ob"
+      "/tmp/apm-install-dir-117016-15047-f6vih7"
     ]
   ],
-  "_from": "../d-11697-9211-7be7su/package.tgz",
-  "_id": "linter@1.11.18",
+  "_from": "../d-117016-15047-d6vpla/package.tgz",
+  "_id": "linter@1.11.21",
   "_inCache": true,
   "_installable": true,
   "_location": "/linter",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11697-9211-7be7su/package.tgz",
+    "raw": "/tmp/d-117016-15047-d6vpla/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11697-9211-7be7su/package.tgz",
-    "spec": "/tmp/d-11697-9211-7be7su/package.tgz",
+    "rawSpec": "/tmp/d-117016-15047-d6vpla/package.tgz",
+    "spec": "/tmp/d-117016-15047-d6vpla/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11697-9211-7be7su/package.tgz",
-  "_shasum": "5169f5a4ac6ac03953a8e100220ef4138250f13e",
+  "_resolved": "file:../d-117016-15047-d6vpla/package.tgz",
+  "_shasum": "03a2ae350e04482afb21aa9408018537f5768ea0",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11697-9211-7be7su/package.tgz",
-  "_where": "/tmp/apm-install-dir-11697-9211-jt33ob",
+  "_spec": "/tmp/d-117016-15047-d6vpla/package.tgz",
+  "_where": "/tmp/apm-install-dir-117016-15047-f6vih7",
   "author": {
     "name": "atom-community"
   },
@@ -61,7 +61,7 @@
   "description": "A Base Linter with Cow Powers",
   "devDependencies": {},
   "engines": {
-    "atom": ">=0.174.0 <2.0.0"
+    "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/atom-community/linter#readme",
   "license": "MIT",
@@ -89,5 +89,5 @@
   "scripts": {
     "lint": "coffeelint lib && eslint lib"
   },
-  "version": "1.11.18"
+  "version": "1.11.21"
 }

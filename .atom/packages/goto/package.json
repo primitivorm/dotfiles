@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
+        "raw": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
-        "spec": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
+        "rawSpec": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
+        "spec": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11697-10849-1udthsk"
+      "/tmp/apm-install-dir-1161112-3770-5bnfx5"
     ]
   ],
-  "_from": "../d-11697-10849-1lqq8xt/package.tgz",
-  "_id": "goto@1.7.1",
+  "_from": "../d-1161112-3770-rc5nf2/package.tgz",
+  "_id": "goto@1.8.2",
   "_inCache": true,
   "_installable": true,
   "_location": "/goto",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
+    "raw": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
-    "spec": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
+    "rawSpec": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
+    "spec": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11697-10849-1lqq8xt/package.tgz",
-  "_shasum": "159063f15e6febdcee0dacf4742d6596323b3703",
+  "_resolved": "file:../d-1161112-3770-rc5nf2/package.tgz",
+  "_shasum": "25eed3f7a9b31f81b71108e866f285b37f0dd143",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11697-10849-1lqq8xt/package.tgz",
-  "_where": "/tmp/apm-install-dir-11697-10849-1udthsk",
+  "_spec": "/tmp/d-1161112-3770-rc5nf2/package.tgz",
+  "_where": "/tmp/apm-install-dir-1161112-3770-5bnfx5",
   "activationCommands": {
     "atom-text-editor": [
       "goto:file-symbol",
@@ -55,9 +55,9 @@
     "url": "http://github.com/v3ss0n/goto/issues"
   },
   "dependencies": {
-    "atom-space-pen-views": "^2.0.3",
-    "minimatch": "0.2.14",
-    "underscore": "~1.6.0"
+    "atom-space-pen-views": "^2.2.0",
+    "fs-plus": "^2.9.3",
+    "minimatch": "^3.0.3"
   },
   "description": "Provides Go To Symbol based on syntaxes",
   "devDependencies": {},
@@ -75,5 +75,5 @@
     "type": "git",
     "url": "git+https://github.com/v3ss0n/goto.git"
   },
-  "version": "1.7.1"
+  "version": "1.8.2"
 }

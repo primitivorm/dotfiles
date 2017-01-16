@@ -9,14 +9,19 @@ module.exports =
     findTheseTodos:
       type: 'array'
       default: [
-        'FIXME'
         'TODO'
+        'FIXME'
         'CHANGED'
         'XXX'
         'IDEA'
         'HACK'
         'NOTE'
         'REVIEW'
+        'NB'
+        'BUG'
+        'QUESTION'
+        'COMBAK'
+        'TEMP'
       ]
       items:
         type: 'string'

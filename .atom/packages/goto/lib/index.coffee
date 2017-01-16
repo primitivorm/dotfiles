@@ -4,10 +4,19 @@ GotoView = require('./goto-view')
 
 module.exports =
 
-  configDefaults:
-    logToConsole: false
-    moreIgnoredNames: ''
-    autoScroll: true
+  config:
+    logToConsole:
+      default: false
+      type: 'boolean'
+      description: 'Enable debug information logging for goto commands'
+    moreIgnoredNames:
+      default: ''
+      type: 'string'
+      description: 'Whitespace- or comma-separated list of globs for files that goto should skip. These files are in addition to those specified in the core.ignoredNames setting'
+    autoScroll:
+      default: true
+      type: 'boolean'
+      description: 'Disable this option to prevent goto from restoring your selection back to your original cursor position after cancelling a goto method'
 
   index: null
   gotoView: null
@@ -16,7 +25,6 @@ module.exports =
     @index = new SymbolIndex(state?.entries)
     @gotoView = new GotoView()
     atom.commands.add 'atom-workspace', {
-      'mobile-preview:toggle': => @toggle()
       'goto:project-symbol': => @gotoProjectSymbol()
       'goto:file-symbol': => @gotoFileSymbol()
       'goto:declaration': => @gotoDeclaration()
