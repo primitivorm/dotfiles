@@ -53,3 +53,6 @@ alias fgrep='fgrep --color=auto'
 
 #add tmuxifier command
 alias tmuxifier="tmuxifier load-window ~/.dev-window.sh"
+
+#color cat
+alias pcat='pygmentize -g'

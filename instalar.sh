@@ -19,6 +19,7 @@ apt-get autoremove -qq -y
 pip install --upgrade pip
 pip install --user cpp-coveralls --upgrade
 pip install powerline-status
+pip install pygments
 
 gem install grammars
 gem install pry
