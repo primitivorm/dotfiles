@@ -9,7 +9,7 @@
     telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
-      "selly-syntax-ide"
+      "one-dark-syntax"
     ]
   editor:
     fontFamily: "Fira Mono"
