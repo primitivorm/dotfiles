@@ -18,6 +18,7 @@ apt-get autoremove -qq -y
 #install pip packages
 pip install --upgrade pip
 pip install --user cpp-coveralls --upgrade
+pip install flake8
 pip install powerline-status
 pip install pygments
 
