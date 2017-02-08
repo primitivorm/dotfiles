@@ -1,10 +1,6 @@
 "*":
+  "clang-format": {}
   core:
-    disabledPackages: [
-      "editorconfig"
-      "linter"
-      "linter-gcc"
-    ]
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
@@ -15,6 +11,8 @@
     fontFamily: "Fira Mono"
     fontSize: 12
     invisibles: {}
+    showIndentGuide: true
+    tabLength: 8
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
   "linter-gcc":
