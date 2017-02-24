@@ -2,7 +2,7 @@
 echo "instalando paquetes..."
 apt-get update -qq -y
 apt-get install aptitude build-essential gcc g++ automake clang-format -y
-apt-get install git make cmake flex bison clang llvm -y
+apt-get install git make cmake flex bison clang-3.9 llvm-3.9 llvm-3.9-dev -y
 apt-get install valgrind vim-gnome dos2unix -y
 apt-get install python python-dev libxml2-dev libxslt-dev -y
 apt-get install tmux ack-grep astyle libtool libunistring-dev -y
