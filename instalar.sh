@@ -2,7 +2,7 @@
 echo "instalando paquetes..."
 apt-get update -qq -y
 apt-get install aptitude build-essential gcc g++ automake clang-format -y
-apt-get install git make cmake flex bison clang-3.9 llvm-3.9 llvm-3.9-dev -y
+apt-get install git make cmake flex bison clang llvm llvm-dev lldb -y
 apt-get install valgrind vim-gnome dos2unix -y
 apt-get install python python-dev libxml2-dev libxslt-dev -y
 apt-get install tmux ack-grep astyle libtool libunistring-dev -y
@@ -13,7 +13,7 @@ apt-get install lua5.2 liblua5.2-dev meld -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 apt-get install libgccjit-5-dev xd mono-xbuild -y
-apt-get install konsole dump -y
+apt-get install konsole dump gwhere -y
 apt-get autoremove -qq -y
 
 #install pip packages
