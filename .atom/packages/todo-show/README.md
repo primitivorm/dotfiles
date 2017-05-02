@@ -21,12 +21,12 @@ Four different scopes are available to narrow down your search for todos. Change
 Name                  | Default                                 | Description
 ----------------------|-----------------------------------------|------------
 _findTheseTodos_      | `['FIXME', 'TODO', 'CHANGED', 'XXX', 'IDEA', 'HACK', 'NOTE', 'REVIEW', 'NB', 'BUG', 'QUESTION', 'COMBAK', 'TEMP']` | An array of todo types used by the search regex
-_findUsingRegex_      | See 'Regular Expression Search' section | Regex string used to find all your todos. `${TODOS}` is replaced with `findTheseTodos` from above
-_ignoreThesePaths_    | `['**/node_modules/', '**/vendor/', '**/bower_components/']` | An array of files / folders to exclude (syntax according to [scandal](https://github.com/atom/scandal) used internally by Atom). <br> ⚬ _globally_: `Ignored Names` from atom core settings. <br> ⚬ _locally_: Ignores anything in your `.gitignore` file if the current project is a valid git repository and atom core setting `Exclude VCS Ignored Paths` is checked.
+_findUsingRegex_      | See 'Regular Expression Search' section | Regex string used to find all your todos. `${TODOS}` is replaced with `FindTheseTodos` from above
+_ignoreThesePaths_    | `['node_modules', 'vendor', 'bower_components']` | An array of files / folders to exclude (syntax according to [scandal](https://github.com/atom/scandal) used internally by Atom). <br> ⚬ _globally_: `Ignored Names` from atom core settings. <br> ⚬ _locally_: Ignores anything in your `.gitignore` file, if the current project is a valid git repository and atom core setting `Exclude VCS Ignored Paths` is checked.
 _showInTable_         | `['Text', 'Type', 'Path']`              | An array of properties to show for each todo in table
 _sortBy_              | `'Text'`                                | Sort table by this todo property
 _sortAscending_       | `true`                                  | Sort table in ascending or descending order
-_openListInDirection_ | `'right'`                               | Defines where the todo list is shown
+_openListInDirection_ | `'right'`                               | Defines where the todo list is shown when opened
 _rememberViewSize_    | `true`                                  | Remember the todo list width or split in the middle
 _saveOutputAs_        | `'List'`                                | Choose which format to use for saved markdown
 _statusBarIndicator_  | `false`                                 | Show todo count in status bar (this is only shown and updated when the 'Todo Show' tab is open)
@@ -47,7 +47,7 @@ Default regex string: `'/\\b(${TODOS})[:;.,]?\\d*($|\\s.*$|\\(.*$)/g'`
 
 Todos can be tagged using hashtag (e.g. `TODO: do this #object #profile`), which is presented in the tags column.
 
-To extend the default todo types and search regex, the existing config needs to be copied into your config.cson. See [show-todo.coffee](https://github.com/mrodalgaard/atom-todo-show/blob/master/lib/show-todo.coffee) for current defaults.
+To extend the default todo types and search regex, the existing config needs to be copied into your config.cson.
 
 ## Credits
 Originally created by [Jamis Charles](https://github.com/jamischarles)

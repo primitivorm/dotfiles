@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116924-22713-kq9chd/package.tgz",
+        "raw": "/tmp/d-11742-2935-1uokm0z/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116924-22713-kq9chd/package.tgz",
-        "spec": "/tmp/d-116924-22713-kq9chd/package.tgz",
+        "rawSpec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+        "spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116924-22713-1bgxjr3"
+      "/tmp/apm-install-dir-11742-2935-jzr9ms"
     ]
   ],
-  "_from": "../d-116924-22713-kq9chd/package.tgz",
-  "_id": "language-assembly@0.7.1",
+  "_from": "../d-11742-2935-1uokm0z/package.tgz",
+  "_id": "language-assembly@0.7.2",
   "_inCache": true,
   "_installable": true,
   "_location": "/language-assembly",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116924-22713-kq9chd/package.tgz",
+    "raw": "/tmp/d-11742-2935-1uokm0z/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116924-22713-kq9chd/package.tgz",
-    "spec": "/tmp/d-116924-22713-kq9chd/package.tgz",
+    "rawSpec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+    "spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116924-22713-kq9chd/package.tgz",
-  "_shasum": "22bf8ba67bbff46b468ad03a17eb3532f8f1a50c",
+  "_resolved": "file:../d-11742-2935-1uokm0z/package.tgz",
+  "_shasum": "ed80126e3284cd62b5ca4bc66c87e0659da17b14",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116924-22713-kq9chd/package.tgz",
-  "_where": "/tmp/apm-install-dir-116924-22713-1bgxjr3",
+  "_spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+  "_where": "/tmp/apm-install-dir-11742-2935-jzr9ms",
   "bugs": {
     "url": "https://github.com/oliverkeeble/atom-language-assembly/issues"
   },
@@ -55,5 +55,5 @@
     "type": "git",
     "url": "git+https://github.com/oliverkeeble/atom-language-assembly.git"
   },
-  "version": "0.7.1"
+  "version": "0.7.2"
 }

@@ -1,5 +1,7 @@
 "*":
-  "clang-format": {}
+  "clang-format":
+    formatCOnSave: true
+    formatCPlusPlusOnSave: true
   core:
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
@@ -9,10 +11,8 @@
     ]
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 12
     invisibles: {}
-    showIndentGuide: true
-    tabLength: 8
+    tabLength: 4
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
   "linter-gcc":

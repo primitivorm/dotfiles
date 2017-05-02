@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11717-6442-s94hv2/package.tgz",
+        "raw": "/tmp/d-11742-2925-18t30m9/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11717-6442-s94hv2/package.tgz",
-        "spec": "/tmp/d-11717-6442-s94hv2/package.tgz",
+        "rawSpec": "/tmp/d-11742-2925-18t30m9/package.tgz",
+        "spec": "/tmp/d-11742-2925-18t30m9/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11717-6442-1awb0uo"
+      "/tmp/apm-install-dir-11742-2925-1h6mhsx"
     ]
   ],
-  "_from": "../d-11717-6442-s94hv2/package.tgz",
-  "_id": "clang-format@1.27.0",
+  "_from": "../d-11742-2925-18t30m9/package.tgz",
+  "_id": "clang-format@1.29.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/clang-format",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11717-6442-s94hv2/package.tgz",
+    "raw": "/tmp/d-11742-2925-18t30m9/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11717-6442-s94hv2/package.tgz",
-    "spec": "/tmp/d-11717-6442-s94hv2/package.tgz",
+    "rawSpec": "/tmp/d-11742-2925-18t30m9/package.tgz",
+    "spec": "/tmp/d-11742-2925-18t30m9/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11717-6442-s94hv2/package.tgz",
-  "_shasum": "37f13f49c78834a47422e26fcc6903afb833a9de",
+  "_resolved": "file:../d-11742-2925-18t30m9/package.tgz",
+  "_shasum": "7758eb7713e8ef9b4357619b45353745c76ff8e6",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11717-6442-s94hv2/package.tgz",
-  "_where": "/tmp/apm-install-dir-11717-6442-1awb0uo",
+  "_spec": "/tmp/d-11742-2925-18t30m9/package.tgz",
+  "_where": "/tmp/apm-install-dir-11742-2925-1h6mhsx",
   "bugs": {
     "url": "https://github.com/LiquidHelium/atom-clang-format/issues"
   },
@@ -56,5 +56,5 @@
     "type": "git",
     "url": "git+https://github.com/LiquidHelium/atom-clang-format.git"
   },
-  "version": "1.27.0"
+  "version": "1.29.0"
 }

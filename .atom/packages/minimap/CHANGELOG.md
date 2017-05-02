@@ -1,3 +1,29 @@
+<a name="v4.28.0"></a>
+# v4.28.0 (2017-04-27)
+
+## :sparkles: Features
+
+- Kite promotion ([16c11d82](https://github.com/atom-minimap/minimap/commit/16c11d82b889ce1260342e4fa7d6d1905c0fde45))
+
+<a name="v4.27.1"></a>
+# v4.27.1 (2017-04-05)
+
+## :bug: Bug Fixes
+
+- Fix flickers on retina screen with absolute mode adjustable height ([a81abbea](https://github.com/atom-minimap/minimap/commit/a81abbea715d329691272b3cb5d13317a50d3913))
+- Enable pointer events for visible area in adjusted absolute mode ([8210e1e9](https://github.com/atom-minimap/minimap/commit/8210e1e915fe94caf08066543e86293418fe7ce8), [#564](https://github.com/atom-minimap/minimap/issues/564))
+
+<a name="v4.27.0"></a>
+# v4.27.0 (2017-03-30)
+
+## :sparkles: Features
+
+- Implement configurable minimap redraw delay ([c1ec247d](https://github.com/atom-minimap/minimap/commit/c1ec247d0f94497d9bdfaaded9d2315d2767d1e0))
+
+## :racehorse: Performances
+
+- Epic performance boost for large files ([07e65ed8](https://github.com/atom-minimap/minimap/commit/07e65ed88d31a36d49749cc1b02c1fef993faa28))
+
 <a name="v4.26.8"></a>
 # v4.26.8 (2017-01-31)
 

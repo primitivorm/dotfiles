@@ -102,6 +102,8 @@ class ClangFormat
       return true
     if atom.config.get('clang-format.formatJavascriptOnSave') and scope in ['source.js']
       return true
+    if atom.config.get('clang-format.formatJavaOnSave') and scope in ['source.java']
+      return true
     return false
 
   getEndJSONPosition: (text) ->
@@ -111,6 +113,7 @@ class ClangFormat
     return -1
 
   getReturnedCursorPosition: (stdout) ->
+    return 0 unless stdout
     parsed = JSON.parse stdout.slice(0, @getEndJSONPosition(stdout))
     return parsed.Cursor
 
