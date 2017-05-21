@@ -128,6 +128,7 @@ Plugin 'idanarye/vim-vebugger'
 Plugin 'xoria256.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
+Plugin 'tpope/vim-pathogen'
 
 " Editor layout {{{
 "set lazyredraw " don't update the display while executing macros
