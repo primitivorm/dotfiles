@@ -56,6 +56,19 @@ if [ ! -d ~/.atom ]; then
 fi
 
 #########################################################
+#install powerline fonts
+#########################################################
+cd /tmp
+# clone
+git clone https://github.com/powerline/fonts.git
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+#########################################################
 #configure powerline shell
 #########################################################
 #if [ ! -d ~/powerline-shell ]; then 

@@ -32,7 +32,7 @@ set smarttab
 set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 set listchars=tab:»\-,trail:·,eol:¬
-set guifont=Fira\ Mono\ 11
+"set guifont=Fira\ Mono\ 11
 "set guifont=Input\ 10
 "set guifont=DejaVu\ Sans\ Mono\ 10
 "set guifont=Monospace\ 10
@@ -63,7 +63,8 @@ call pathogen#infect()
 
 "colo default
 "colo xoria256
-colo proman
+"colo proman
+colo onedark
 "colorscheme zenburn 
 
 "if exists('+colorcolumn')
@@ -129,6 +130,7 @@ Plugin 'xoria256.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
 Plugin 'tpope/vim-pathogen'
+Plugin 'joshdick/onedark.vim'
 
 " Editor layout {{{
 "set lazyredraw " don't update the display while executing macros
