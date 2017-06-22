@@ -133,7 +133,7 @@ set laststatus=2
 if has("statusline")
   "for powerline
   set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-  set guifont=PragmataPro\ 12
+  set guifont=PragmataPro\ for\ Powerline\ 12
   "set guifont=Fira\ Mono\ for\ Powerline\ 11
   "set guifont=Fira\ Mono\ 11
   "set guifont=Input\ 10
