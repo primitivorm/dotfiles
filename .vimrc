@@ -32,12 +32,6 @@ set smarttab
 set tabstop=4
 "set listchars=tab:\|-,trail:-,eol:¬
 set listchars=tab:»\-,trail:·,eol:¬
-"set guifont=Fira\ Mono\ 11
-"set guifont=Input\ 10
-"set guifont=DejaVu\ Sans\ Mono\ 10
-"set guifont=Monospace\ 10
-"set guifont=Consola\ Mono\ 10
-"set guifont=Ubuntu\ Mono\ 11
 set guioptions-=T
 set mouse=a
 " first full match
@@ -139,7 +133,14 @@ set laststatus=2
 if has("statusline")
   "for powerline
   set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-  set guifont=Fira\ Mono\ for\ Powerline\ 11
+  set guifont=PragmataPro\ 12
+  "set guifont=Fira\ Mono\ for\ Powerline\ 11
+  "set guifont=Fira\ Mono\ 11
+  "set guifont=Input\ 10
+  "set guifont=DejaVu\ Sans\ Mono\ 10
+  "set guifont=Monospace\ 10
+  "set guifont=Consola\ Mono\ 10
+  "set guifont=Ubuntu\ Mono\ 11
   "set runtimepath+=~/vimfiles/cream/
   "source $HOME/.vim/cream/genutils.vim
   "source $HOME/.vim/cream/cream-lib.vim
