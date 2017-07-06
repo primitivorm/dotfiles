@@ -15,6 +15,8 @@ apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 apt-get install libgccjit-5-dev xd mono-xbuild -y
 apt-get install konsole dump gwhere gnuplot plotutils -y
 apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
+apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
+apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
 apt-get autoremove -qq -y
 
 #install pip packages
@@ -23,6 +25,7 @@ pip install --user cpp-coveralls --upgrade
 pip install flake8
 pip install powerline-status
 pip install pygments
+pip install sphinx sphinx-autobuild
 
 gem install grammars
 gem install pry
