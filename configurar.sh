@@ -16,14 +16,13 @@ cp -f .tmux.conf ~/
 if [ ! -d ~/.vim/bundle ]; then 
     mkdir ~/.vim/bundle/
 fi
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
-    echo "instalando vim plugins..."
-    cd ~/.vim/bundle/
-    git clone https://github.com/VundleVim/Vundle.vim
-    find . -type f -exec dos2unix {} \;
-    vim -c ":PluginInstall" ~/.vimrc
-    find . -type f -exec dos2unix {} \;
-fi
+echo "instalando vim plugins..."
+cd ~/.vim/bundle/
+rm -fr Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim
+find . -type f -exec dos2unix {} \;
+vim -c ":PluginInstall" ~/.vimrc
+find . -type f -exec dos2unix {} \;
 if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
     #compile YouCompleteMe plugin
     echo "compilando YouCompleteMe plugin..."
@@ -32,7 +31,6 @@ if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then
     cd ~/.vim/bundle/YouCompleteMe/
     python install.py --clang-completer
 fi
-cp -fr .vim ~/
 
 #########################################################
 #configure tmux
@@ -67,6 +65,12 @@ cd fonts
 # clean-up a bit
 cd ..
 rm -rf fonts
+#install .fonts/*
+cp -R ~/dotfiles/.fonts/ ~/.fonts/
+cd ~/.fonts/
+sudo fc-cache -fv
+#Fira Mono
+sh ~/dotfiles/getFirafonts.sh
 
 #########################################################
 #configure powerline shell
