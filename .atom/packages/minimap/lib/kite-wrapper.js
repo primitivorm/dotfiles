@@ -1,5 +1,6 @@
 'use strict'
 
+const os = require('os')
 const element = require('./decorators/element')
 const include = require('./decorators/include')
 const {EventsDelegation} = require('atom-utils')
@@ -44,7 +45,7 @@ class KiteWrapper {
 
   static isLegible (textEditor) {
     const path = textEditor.getPath()
-    return path && /\.py$/.test(path) && !atom.packages.getLoadedPackage('kite')
+    return path && /\.py$/.test(path) && os.platform() !== 'linux' && !atom.packages.getLoadedPackage('kite')
   }
 
   static handle (textEditor, minimapElement) {
@@ -55,9 +56,18 @@ class KiteWrapper {
     wrapper.wrap(minimapElement)
   }
 
+  destroy () {
+    this.subscriptions.dispose()
+    this.observer.disconnect()
+    delete this.minimap
+    delete this.minimapElement
+    delete this.textEditor
+    this.remove()
+  }
+
   unwrap () {
     this.parentNode.insertBefore(this.minimapElement, this)
-    this.remove()
+    this.destroy()
   }
 
   wrap (minimapElement) {
@@ -90,9 +100,9 @@ class KiteWrapper {
   }
 
   update () {
-    const matches = []
-    this.textEditor.scan(/(import|from)\s+(\w+)/g, (m) => {
-      matches.push(m.match[2])
+    let matches = []
+    this.textEditor.scan(/(import|from)\s+(([\w]+(,\s)*)+)/g, (m) => {
+      matches = matches.concat(m.match[2].split(/,\s/g))
     })
     const links = modules.filter(m => matches.includes(m)).slice(0, 5).map(this.link)
 
@@ -108,7 +118,7 @@ class KiteWrapper {
   }
 
   link (mod) {
-    return `<li><a href="https://alpha.kite.com/docs/python/${mod}?source=minimap">${mod}</a></li>`
+    return `<li><a href="https://kite.com/docs/python/${mod}?source=minimap">${mod}</a></li>`
   }
 
   attachedCallback () {
@@ -119,7 +129,7 @@ class KiteWrapper {
     }))
 
     this.subscriptions.add(this.minimap.onDidDestroy(() => {
-      this.remove()
+      this.destroy()
     }))
 
     this.subscriptions.add(atom.config.observe('minimap.disablePythonDocLinks', (v) => {
@@ -137,14 +147,6 @@ class KiteWrapper {
         atom.config.set('minimap.disablePythonDocLinks', true)
       }
     }))
-  }
-
-  detachedCallback () {
-    this.subscriptions.dispose()
-    this.observer.disconnect()
-    delete this.minimap
-    delete this.minimapElement
-    delete this.textEditor
   }
 }
 
