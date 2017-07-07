@@ -133,7 +133,7 @@ set laststatus=2
 if has("statusline")
   "for powerline
   set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-  set guifont=PragmataPro\ for\ Powerline\ 10
+  set guifont=PragmataPro\ for\ Powerline\ 11
   "set guifont=Fira\ Mono\ for\ Powerline\ 11
   "set guifont=Input\ 10
   "set guifont=DejaVu\ Sans\ Mono\ 10
@@ -170,8 +170,8 @@ let g:NERDTreeShowBookmarks     = 1
 let g:NERDTreeWinSize           = 25
 let g:NERDTreeChristmasTree     = 1
 let g:NERDTreeCaseSensitiveSort = 0
-let g:NERDTreeQuitOnOpen        = 1
-let g:NERDTreeMouseMode         = 2
+let g:NERDTreeQuitOnOpen        = 0
+let g:NERDTreeMouseMode         = 1
 let NERDTreeShowHidden          = 1
 "the working directory is always the one where the active buffer is located.
 set autochdir

@@ -29,6 +29,9 @@ if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then
     cd ~/.vim/bundle/
     git clone https://github.com/Valloric/YouCompleteMe
     cd ~/.vim/bundle/YouCompleteMe/
+    git clean -f
+    git pull
+    git submodule update --recursive --init
     python install.py --clang-completer
 fi
 
@@ -56,21 +59,20 @@ fi
 #########################################################
 #install powerline fonts
 #########################################################
-cd /tmp
-# clone
-git clone https://github.com/powerline/fonts.git
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-#install .fonts/*
-cp -R ~/dotfiles/.fonts/ ~/.fonts/
-cd ~/.fonts/
-sudo fc-cache -fv
-#Fira Mono
-sh ~/dotfiles/getFirafonts.sh
+if [ ! -d /tmp/fonts ]; then 
+    cd /tmp
+    # clone
+    git clone https://github.com/powerline/fonts.git
+    # install
+    cd fonts
+    ./install.sh
+    #install .fonts/*
+    cp -r ~/dotfiles/.fonts/ ~/.fonts/
+    cd ~/.fonts/
+    sudo fc-cache -fv
+    #Fira Mono
+    sh ~/dotfiles/getFirafonts.sh
+fi
 
 #########################################################
 #configure powerline shell
