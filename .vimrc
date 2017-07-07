@@ -45,7 +45,9 @@ set showcmd " show (partial) command in the last line of the screen
 " this also shows visual selection info
 " set nomodeline " disable mode lines (security measure)
 set wildmenu " make tab completion for files/buffers act like bash
-set wildmode=list:longest,full " show a list when pressing tab and complete
+"set wildmode=list:longest,full " show a list when pressing tab and complete
+set wildmode=list " show a list when pressing tab and complete
+set completeopt+=preview
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode

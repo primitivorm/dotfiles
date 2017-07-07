@@ -35,3 +35,33 @@ gem install pry
 #########################################################
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
 make
+
+
+#########################################################
+#install vim
+#########################################################
+apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
+    ruby-dev mercurial -y
+apt-get remove vim vim-runtime gvim --q -y
+apt-get remove vim-tiny vim-common vim-gui-common --q -y
+cd ~/src
+hg clone https://vim.googlecode.com/hg/ vim
+cd vim
+hg pull
+hg update
+cd src
+make distclean  # if you build Vim before
+autoreconf -i	# optional
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp \
+            --enable-pythoninterp \
+            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+            --enable-perlinterp \
+            --enable-luainterp \
+            --enable-gui=gnome2 --enable-cscope
+
+make
+make install
