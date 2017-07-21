@@ -9,7 +9,7 @@ apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 apt-get install dpkg-dev libgnome-keyring-dev -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 apt-get install default-jre default-jdk indent -y
-apt-get install lua5.2 liblua5.2-dev meld -y
+apt-get install lua5.2 liblua5.2-dev meld libz3 -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 apt-get install libgccjit-5-dev xd mono-xbuild -y
@@ -34,34 +34,36 @@ gem install pry
 #install gnome-keyring
 #########################################################
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
-make
+make -j$(nproc)
 
 
 #########################################################
 #install vim
 #########################################################
-apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
-    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-    ruby-dev mercurial -y
-apt-get remove vim vim-runtime gvim --q -y
-apt-get remove vim-tiny vim-common vim-gui-common --q -y
-cd ~/src
-hg clone https://vim.googlecode.com/hg/ vim
-cd vim
-hg pull
-hg update
-cd src
-make distclean  # if you build Vim before
-autoreconf -i	# optional
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
-            --enable-perlinterp \
-            --enable-luainterp \
-            --enable-gui=gnome2 --enable-cscope
+if [ ! -d ~/src/vim ]; then 
+    apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
+        ruby-dev mercurial -y
+    apt-get remove vim vim-runtime gvim --q -y
+    apt-get remove vim-tiny vim-common vim-gui-common --q -y
+    cd ~/src
+    hg clone https://vim.googlecode.com/hg/ vim
+    cd vim
+    hg pull
+    hg update
+    cd src
+    make distclean  # if you build Vim before
+    autoreconf -i	# optional
+    ./configure --with-features=huge \
+                --enable-multibyte \
+                --enable-rubyinterp \
+                --enable-pythoninterp \
+                --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+                --enable-perlinterp \
+                --enable-luainterp \
+                --enable-gui=gnome2 --enable-cscope
 
-make
-make install
+    make -j$(nproc)
+    make install
+fi
