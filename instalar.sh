@@ -9,7 +9,7 @@ apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 apt-get install dpkg-dev libgnome-keyring-dev java -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 apt-get install default-jre default-jdk indent -y
-apt-get install lua5.2 liblua5.2-dev meld -y
+apt-get install lua5.2 liblua5.2-dev meld libz3 -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 apt-get install libgccjit-5-dev xd mono-xbuild -y
@@ -42,6 +42,8 @@ make -j$(nproc)
 #########################################################
 if [ ! -d ~/src/vim ]; then
     echo "compilando e instalando vim..."
+=======
+if [ ! -d ~/src/vim ]; then 
     apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
