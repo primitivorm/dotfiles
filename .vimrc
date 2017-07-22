@@ -47,7 +47,7 @@ set showcmd " show (partial) command in the last line of the screen
 set wildmenu " make tab completion for files/buffers act like bash
 "set wildmode=list:longest,full " show a list when pressing tab and complete
 set wildmode=list " show a list when pressing tab and complete
-set completeopt+=preview
+"set completeopt+=preview
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
@@ -135,7 +135,7 @@ set laststatus=2
 if has("statusline")
   "for powerline
   set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-  set guifont=PragmataPro\ for\ Powerline\ 11
+  set guifont=PragmataPro\ for\ Powerline\ 10
   "set guifont=Fira\ Mono\ for\ Powerline\ 11
   "set guifont=Input\ 10
   "set guifont=DejaVu\ Sans\ Mono\ 10

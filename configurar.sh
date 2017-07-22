@@ -17,17 +17,15 @@ if [ ! -d ~/.vim/bundle ]; then
     mkdir ~/.vim/bundle/
 fi
 echo "instalando vim plugins..."
-cd ~/.vim/bundle/
-rm -fr Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim
+rm -fr ~/.vim/bundle/Vundle.vim
+cd ~/.vim/bundle/ && git clone https://github.com/VundleVim/Vundle.vim
 find . -type f -exec dos2unix {} \;
 vim -c ":PluginInstall" ~/.vimrc
 find . -type f -exec dos2unix {} \;
 if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
     #compile YouCompleteMe plugin
     echo "compilando YouCompleteMe plugin..."
-    cd ~/.vim/bundle/
-    git clone https://github.com/Valloric/YouCompleteMe
+    cd ~/.vim/bundle/ && git clone https://github.com/Valloric/YouCompleteMe
     cd ~/.vim/bundle/YouCompleteMe/
     git clean -f
     git pull
@@ -59,18 +57,16 @@ fi
 #########################################################
 #install powerline fonts
 #########################################################
-if [ ! -d /tmp/fonts ]; then 
-    cd /tmp
-    # clone
+if [ ! -d /src/fonts ]; then 
+    cd ~/src
     git clone https://github.com/powerline/fonts.git
-    # install
     cd fonts
     ./install.sh
     #install .fonts/*
     cp -r ~/dotfiles/.fonts/ ~/.fonts/
     cd ~/.fonts/
     sudo fc-cache -fv
-    #Fira Mono
+    #install Fira Mono
     sh ~/dotfiles/getFirafonts.sh
 fi
 
