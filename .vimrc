@@ -47,7 +47,7 @@ set showcmd " show (partial) command in the last line of the screen
 set wildmenu " make tab completion for files/buffers act like bash
 "set wildmode=list:longest,full " show a list when pressing tab and complete
 set wildmode=list " show a list when pressing tab and complete
-set completeopt+=preview
+set completeopt-=preview
 set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
@@ -57,10 +57,10 @@ set backspace=2
 set t_Co=256
 call pathogen#infect()
 
+"colo onedark
+colo proman
 "colo default
 "colo xoria256
-"colo proman
-colo onedark
 "colorscheme zenburn 
 
 "if exists('+colorcolumn')
@@ -118,6 +118,7 @@ Plugin 'shawncplus/Vim-toCterm'
 Plugin 'sjl/gundo.vim'
 Plugin 'skammer/vim-swaplines'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
 Plugin 'Zenburn'
 Plugin '29decibel/codeschool-vim-theme'
 Plugin 'Shougo/vimproc.vim'
@@ -127,6 +128,9 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
 Plugin 'tpope/vim-pathogen'
 Plugin 'joshdick/onedark.vim'
+"Plugin 'primitivorm/vim-predictive'
+call vundle#end()
+" }}}
 
 " Editor layout {{{
 "set lazyredraw " don't update the display while executing macros
@@ -142,23 +146,8 @@ if has("statusline")
   "set guifont=Monospace\ 10
   "set guifont=Consola\ Mono\ 10
   "set guifont=Ubuntu\ Mono\ 11
-  "set runtimepath+=~/vimfiles/cream/
-  "source $HOME/.vim/cream/genutils.vim
-  "source $HOME/.vim/cream/cream-lib.vim
-  "source $HOME/.vim/cream/cream-lib-os.vim
-  "source $HOME/.vim/cream/cream-statusline.vim
-
-  "" for cream statusline
-  "hi! User1  gui=NONE guifg=#999999 guibg=#073642 gui=bold
-  "hi! User2  gui=NONE guifg=#93a1a1 guibg=#073642 gui=NONE
-  "hi! User3  gui=NONE guifg=#bcc9db guibg=#073642 gui=bold
-  "hi! User4  gui=NONE guifg=#d7d7af guibg=#073642 gui=bold
 endif
-"}}}
-
-"Plugin 'primitivorm/vim-predictive'
-call vundle#end()
-"}}}
+" }}}
 
 "NERDTree {{{
 if !&diff
@@ -189,7 +178,7 @@ let g:NERDTreeIgnore=[
     \'tags', '\.suo$','\.vspscc$']
 
 map <F2> :NERDTreeToggle<CR>
-"}}}
+" }}}
 
 " CtrlP {{{
 "https://github.com/kien/ctrlp.vim
@@ -220,8 +209,7 @@ imap <C-p> <esc>:CtrlP<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 imap <C-b> <esc>:CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlPTag<cr>
-
-"}}}
+" }}}
 
 " AutoComplPop {{{
 " Remove dictionary lookup from the Vim keyword completion.  It did always
@@ -234,7 +222,7 @@ let g:predictive#dict_path=expand($HOME.'/quick_references/predictive_dict.txt')
 let g:predictive#file_types = ['*', 'text', 'vim', 'python', 'cs', 'sql', 'java', 'ruby', 'html', 'xml', 'javascript']
 let g:predictive#keyword_patterns = '^[a-zA-ZÒ—·ÈÌÛ˙¡…Õ”⁄]+$'
 let g:predictive#disable=0
-"}}}
+" }}}
 
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType='context'
@@ -242,14 +230,12 @@ let g:SuperTabContextDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabDefaultCompletionTypeDiscovery=["&completefunc:<c-x><c-o>","&omnifunc:<c-x><c-u>", "&omnifunc:<c-x><c-k>"]
 let g:SuperTabClosePreviewOnPopupClose=1
 let g:SuperTabNoCompleteAfter=['^', ',', '\s']
-"let g:SuperTabLongestHighlight=1
 let g:SuperTabLongestHighlight=0
 "defaults
 let g:SuperTabMappingForward='<tab>'
 let g:SuperTabMappingBackward='<s-tab>'
-"let g:SuperTabLongestEnhanced=1
 let g:SuperTabLongestEnhanced=0
-"}}}
+" }}}
 
 " Ultisnip {{{
 "https://github.com/vim-scripts/UltiSnips
@@ -258,7 +244,7 @@ let g:UltiSnipsExpandTrigger         = '<tab>'
 let g:UltiSnipsListSnippets          = '<c-space>'
 let g:UltiSnipsJumpForwardTrigger    = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger   = '<s-tab>'
-"}}}
+" }}}
 
 " GUndo {{{
 nmap <silent><S-U> :GundoToggle<CR>
@@ -284,12 +270,11 @@ let g:tagbar_expand    = 0
 let g:tagbar_iconchars  = ['+', '-']
 let g:tagbar_autoclose   = 0
 let g:tagbar_singleclick = 1
-"let g:tagbar_map_closeallfolds = ['_', 'zM',]
 
 map <F3> :TagbarToggle<CR>
 nmap <C-]> :tabnew %<CR>g<C-]>
 vmap <C-]> <Esc>:tabnew %<CR>gvg<C-]>
-""}}}
+" }}}
 
 " Syntastic {{{
 " https://github.com/scrooloose/syntastic
@@ -313,15 +298,16 @@ let g:syntastic_python_checkers=['pylint']
 if !&diff
   let g:syntastic_check_on_open=1
 endif
-"quickfix
+" }}}
+
+"quickfix {{{
 set cscopequickfix=s-,c-,d-,i-,t-,e-,g-,f-
 nmap <silent> <leader>sc :SyntasticCheck<cr>
-"}}}
+" }}}
 
 "keymaps {{{
 let mapleader=','
-
-"center search {{{
+"center search
 "http://vim.wikia.com/wiki/VimTip528
 nmap n nzz
 nmap N Nzz
@@ -401,7 +387,7 @@ imap {<CR> {<CR>}<Esc>O
 " this to vv and ss
 nmap <silent>ss <C-w>s
 nmap <silent>vv <C-w>v
-"}}}
+" }}}
 
 "{{{
 "YouCompleteMe
@@ -410,7 +396,6 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
-"let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_completion=0
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
@@ -433,8 +418,7 @@ let g:ycm_filetype_blacklist = {
 \ 'sql' : 1
 \}
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"}
-"}}}
+" }}}
 
 " vim-autoformat {{{
 " https://github.com/Chiel92/vim-autoformat
@@ -450,7 +434,7 @@ let g:formatprg_args_expr_cpp = '"--style=kr -C -N -m0 -M40 -w -xw -Y -c -p -H -
 set equalprg=astyle
 autocmd BufRead,BufNewFile *.c nnoremap <leader>f :silent Autoformat<cr>
 autocmd BufRead,BufNewFile *.c vmap <leader>f :silent Autoformat<cr>
-"}}}
+" }}}
 
 " filetype {{{
 autocmd filetype java nnoremap <F5> :wa <cr> <bar> :!javac % <cr>
