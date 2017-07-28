@@ -57,7 +57,7 @@ fi
 #########################################################
 #install powerline fonts
 #########################################################
-if [ ! -d /src/fonts ]; then 
+if [ ! -d ~/src/fonts ]; then 
     cd ~/src
     git clone https://github.com/powerline/fonts.git
     cd fonts
