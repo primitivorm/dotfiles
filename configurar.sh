@@ -9,6 +9,7 @@ cp -f .bash_aliases ~/
 cp -f .gitconfig ~/
 cp -f .profile ~/
 cp -f .tmux.conf ~/
+cp -fr .atom ~/
 
 #########################################################
 #install vim plugins

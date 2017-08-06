@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "e41755fc-0a88-458c-997d-6a44e6661d10"
   "clang-format":
     formatCOnSave: true
     formatCPlusPlusOnSave: true
@@ -10,9 +13,8 @@
       "one-dark-syntax"
     ]
   editor:
-    fontFamily: "Fira Mono"
+    fontFamily: "PragmataPro"
     invisibles: {}
-    tabLength: 4
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
   "linter-gcc":
