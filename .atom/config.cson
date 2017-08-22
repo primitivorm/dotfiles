@@ -25,6 +25,7 @@
   minimap:
     charHeight: 3
     charWidth: 1.5
+    moveCursorOnMinimapClick: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
