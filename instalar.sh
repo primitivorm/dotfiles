@@ -12,7 +12,7 @@ apt-get install default-jre default-jdk indent -y
 apt-get install lua5.2 liblua5.2-dev meld libz3 -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
-apt-get install libgccjit-5-dev xd mono-xbuild -y
+apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y
 apt-get install konsole dump gwhere gnuplot plotutils -y
 apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
 apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 

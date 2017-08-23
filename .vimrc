@@ -57,8 +57,8 @@ set backspace=2
 set t_Co=256
 call pathogen#infect()
 
-"colo onedark
 colo proman
+"colo onedark
 "colo default
 "colo xoria256
 "colorscheme zenburn 
@@ -139,7 +139,7 @@ set laststatus=2
 if has("statusline")
   "for powerline
   set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-  set guifont=PragmataPro\ for\ Powerline\ 11
+  set guifont=PragmataPro\ for\ Powerline\ 12
   "set guifont=Fira\ Mono\ for\ Powerline\ 11
   "set guifont=Input\ 10
   "set guifont=DejaVu\ Sans\ Mono\ 10
