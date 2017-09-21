@@ -2,14 +2,16 @@
 #copy configurations
 #########################################################
 echo "configurando sistema..."
-cp -fr .dircolors ~/
+cp -fr .atom/ ~/
+cp -fr .emacs-d/ ~/
+cp -f .dircolors ~/
+cp -f usr/local/bin/atom-update /usr/local/bin/
 cp -f .vimrc ~/
 cp -f .bashrc ~/
 cp -f .bash_aliases ~/
 cp -f .gitconfig ~/
 cp -f .profile ~/
 cp -f .tmux.conf ~/
-cp -fr .atom ~/
 
 #########################################################
 #install vim plugins
@@ -43,7 +45,7 @@ if [ ! -d ~/.tmuxifier ]; then
     cd ~/.tmuxifier/
     find . -type f -exec dos2unix {} \;
     chmod +x init.sh
-    ./init.sh
+    bash init.sh
     cp ~/dotfiles/.dev-window.sh ~/
 fi
 #########################################################
@@ -51,7 +53,7 @@ fi
 #########################################################
 if [ ! -d ~/.atom ]; then 
     echo "configurando atom..."
-    bash ./usr/local/bin/atom-update
+    bash /usr/local/bin/atom-update
     cp -r .atom ~/.atom
 fi
 
@@ -62,7 +64,7 @@ if [ ! -d ~/src/fonts ]; then
     cd ~/src
     git clone https://github.com/powerline/fonts.git
     cd fonts
-    ./install.sh
+    bash install.sh
     #install .fonts/*
     cp -r ~/dotfiles/.fonts/ ~/.fonts/
     cd ~/.fonts/
@@ -85,6 +87,6 @@ fi
 #    #install fonts
 #    git clone https://github.com/powerline/fonts
 #    cd fonts
-#    ./install.sh
+#    bash install.sh
 #    rm -fr fonts
 #fi

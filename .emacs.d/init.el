@@ -192,7 +192,7 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set theme
-;; (load-theme 'wombat)
+(load-theme 'wombat)
 ;; frame font
 ;; (set-frame-font "Ubuntu Mono-12" t t)
 (set-frame-font "Consolas-11" t t)

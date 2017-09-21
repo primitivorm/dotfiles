@@ -8,7 +8,7 @@ apt-get install python python-dev libxml2-dev libxslt-dev -y
 apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 apt-get install dpkg-dev libgnome-keyring-dev java -y
 apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
-apt-get install default-jre default-jdk indent -y
+apt-get install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
 apt-get install lua5.2 liblua5.2-dev meld libz3 -y
 apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 apt-get install libjansson-dev libcurl4-openssl-dev curl -y
@@ -56,7 +56,7 @@ if [ ! -d ~/src/vim ]; then
 	cd src
 	make distclean  # if you build Vim before
 	autoreconf -i	# optional
-	./configure --with-features=huge \
+	bash configure --with-features=huge \
 		    --enable-multibyte \
 		    --enable-rubyinterp \
 		    --enable-pythoninterp \
@@ -67,4 +67,16 @@ if [ ! -d ~/src/vim ]; then
 
 	make -j$(nproc)
 	make install
+fi
+
+#########################################################
+#install emacs
+#########################################################
+if [ ! -d ~/src/emacs ]; then
+    cd ~/src
+    git clone https://github.com/emacs-mirror/emacs
+    cd emacs
+    bash configure
+    make
+    make install
 fi
