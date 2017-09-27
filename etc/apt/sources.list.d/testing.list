@@ -1,2 +1,6 @@
 deb http://httpredir.debian.org/debian/ testing main contrib non-free
 deb-src http://httpredir.debian.org/debian/ testing main contrib non-free
+
+# llvm-toolchain-4.0 
+deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-4.0 main
+deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-4.0 main

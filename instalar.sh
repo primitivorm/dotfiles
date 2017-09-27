@@ -1,19 +1,26 @@
 #!/bin/bash
 
-#add repositories for testing y llvm-toolchain-5.0
+#add repositories for testing y llvm-toolchain-4.0
 sudo cp etc/apt/sources.list.d/testing.list /etc/apt/sources.list.d/
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
 #update sources
 echo "actualizando fuentes..."
 sudo apt-get update -qq -y
 
 #remove some packages
-sudo apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common -y
+sudo apt-get remove vim vim-runtime vim-tiny vim-common vim-gui-common -y
+
+echo "instalando paquetes..."
+#install llvm-toolchain
+sudo apt-get install clang-4.0 clang-4.0-doc libclang-common-4.0-dev libclang-4.0-dev \
+libclang1-4.0 libclang1-4.0-dbg libllvm-4.0-ocaml-dev libllvm4.0 libllvm4.0-dbg \
+lldb-4.0 llvm-4.0 llvm-4.0-dev llvm-4.0-doc llvm-4.0-examples llvm-4.0-runtime \
+clang-format-4.0 python-clang-4.0 libfuzzer-4.0-dev -y
 
 #install packages
 sudo apt-get install aptitude build-essential gcc g++ automake -y
 sudo apt-get install git make cmake flex bison -y
-sudo apt-get install clang clang-format llvm llvm-dev lldb libc++-dev -y
 sudo apt-get install valgrind dos2unix exuberant-ctags -y
 sudo apt-get install python python-dev libxml2-dev libxslt-dev libssl-dev -y
 sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
@@ -41,7 +48,6 @@ sudo apt-get install ttf-liberation ttf-mscorefonts-installer -y
 
 #remover paquetes temporales
 sudo apt-get autoremove -qq -y
-echo "instalando paquetes..."
 
 #install pip packages
 pip install --upgrade pip
