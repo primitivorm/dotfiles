@@ -1,23 +1,29 @@
+#!/bin/bash
+
 #install packages
-echo "instalando paquetes..."
-apt-get update -qq -y
-apt-get install aptitude build-essential gcc g++ automake clang-format -y
-apt-get install git make cmake flex bison clang llvm llvm-dev lldb libc++-dev -y
-apt-get install valgrind vim-gnome dos2unix exuberant-ctags -y
-apt-get install python python-dev libxml2-dev libxslt-dev -y
-apt-get install tmux ack-grep astyle libtool libunistring-dev -y
-apt-get install dpkg-dev libgnome-keyring-dev java -y
-apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
-apt-get install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
-apt-get install lua5.2 liblua5.2-dev meld libz3 -y
-apt-get install gnome-system-monitor clisp libgtk-3-dev -y
-apt-get install libjansson-dev libcurl4-openssl-dev curl -y
-apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y
-apt-get install konsole dump gwhere gnuplot plotutils -y
-apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
-apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
-apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
-apt-get autoremove -qq -y
+sudo apt-get update -qq -y
+sudo apt-get install aptitude build-essential gcc g++ automake clang-format -y
+sudo apt-get install git make cmake flex bison clang llvm llvm-dev lldb libc++-dev -y
+sudo apt-get install valgrind vim-gnome dos2unix exuberant-ctags -y
+sudo apt-get install python python-dev libxml2-dev libxslt-dev libssl-dev -y
+sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
+sudo apt-get install dpkg-dev libgnome-keyring-dev java -y
+sudo apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
+sudo apt-get install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
+sudo apt-get install lua5.2 liblua5.2-dev meld libz3 -y
+sudo apt-get install gnome-system-monitor clisp libgtk-3-dev -y
+sudo apt-get install libjansson-dev libcurl4-openssl-dev curl -y
+sudo apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y
+sudo apt-get install konsole dump gwhere gnuplot plotutils -y
+sudo apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
+sudo apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
+sudo apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
+sudo apt-get install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+#extras
+sudo apt-get install ttf-liberation ttf-mscorefonts-installer -y
+#remover paquetes temporales
+sudo apt-get autoremove -qq -y
+echo "instalando paquetes..."s
 
 #install pip packages
 pip install --upgrade pip
@@ -27,8 +33,9 @@ pip install powerline-status
 pip install pygments
 pip install sphinx sphinx-autobuild
 
-gem install grammars
-gem install pry
+#install ruby gems
+sudo gem install grammars
+sudo gem install pry
 
 #########################################################
 #install gnome-keyring
@@ -42,12 +49,12 @@ make -j$(nproc)
 #########################################################
 if [ ! -d ~/src/vim ]; then
     echo "compilando e instalando vim..."
-    apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+    sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
         ruby-dev mercurial -y
-    apt-get remove vim vim-runtime gvim -y
-    apt-get remove vim-tiny vim-common vim-gui-common -y
+    sudo apt-get remove vim vim-runtime gvim -y
+    sudo apt-get remove vim-tiny vim-common vim-gui-common -y
 	cd ~/src
 	git clone https://github.com/vim/vim
 	cd vim
@@ -66,7 +73,7 @@ if [ ! -d ~/src/vim ]; then
 		    --enable-gui=gnome2 --enable-cscope
 
 	make -j$(nproc)
-	make install
+	sudo make install
 fi
 
 #########################################################
@@ -77,6 +84,6 @@ if [ ! -d ~/src/emacs ]; then
     git clone https://github.com/emacs-mirror/emacs
     cd emacs
     bash configure
-    make
-    make install
+    make -j$(nproc)
+    sudo make install
 fi

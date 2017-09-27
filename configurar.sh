@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #########################################################
 #copy configurations
 #########################################################
@@ -70,7 +72,7 @@ if [ ! -d ~/src/fonts ]; then
     cd ~/.fonts/
     sudo fc-cache -fv
     #install Fira Mono
-    sh ~/dotfiles/getFirafonts.sh
+    bash ~/dotfiles/getFirafonts.sh
 fi
 
 #########################################################
