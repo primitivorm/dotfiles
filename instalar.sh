@@ -1,10 +1,20 @@
 #!/bin/bash
 
-#install packages
+#add repositories for testing y llvm-toolchain-5.0
+sudo cp etc/apt/sources.list.d/testing.list /etc/apt/sources.list.d/
+
+#update sources
+echo "actualizando fuentes..."
 sudo apt-get update -qq -y
-sudo apt-get install aptitude build-essential gcc g++ automake clang-format -y
-sudo apt-get install git make cmake flex bison clang llvm llvm-dev lldb libc++-dev -y
-sudo apt-get install valgrind vim-gnome dos2unix exuberant-ctags -y
+
+#remove some packages
+sudo apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common -y
+
+#install packages
+sudo apt-get install aptitude build-essential gcc g++ automake -y
+sudo apt-get install git make cmake flex bison -y
+sudo apt-get install clang clang-format llvm llvm-dev lldb libc++-dev -y
+sudo apt-get install valgrind dos2unix exuberant-ctags -y
 sudo apt-get install python python-dev libxml2-dev libxslt-dev libssl-dev -y
 sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 sudo apt-get install dpkg-dev libgnome-keyring-dev java -y
@@ -19,11 +29,19 @@ sudo apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk
 sudo apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
 sudo apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
 sudo apt-get install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+
+#necesarios para compilar gvim
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
+        ruby-dev mercurial -y
+
 #extras
 sudo apt-get install ttf-liberation ttf-mscorefonts-installer -y
+
 #remover paquetes temporales
 sudo apt-get autoremove -qq -y
-echo "instalando paquetes..."s
+echo "instalando paquetes..."
 
 #install pip packages
 pip install --upgrade pip
@@ -48,13 +66,7 @@ make -j$(nproc)
 #install vim
 #########################################################
 if [ ! -d ~/src/vim ]; then
-    echo "compilando e instalando vim..."
-    sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
-        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-        ruby-dev mercurial -y
-    sudo apt-get remove vim vim-runtime gvim -y
-    sudo apt-get remove vim-tiny vim-common vim-gui-common -y
+    	echo "compilando e instalando vim..."
 	cd ~/src
 	git clone https://github.com/vim/vim
 	cd vim
@@ -80,10 +92,10 @@ fi
 #install emacs
 #########################################################
 if [ ! -d ~/src/emacs ]; then
-    cd ~/src
-    git clone https://github.com/emacs-mirror/emacs
-    cd emacs
-    bash configure
-    make -j$(nproc)
-    sudo make install
+	cd ~/src
+	git clone https://github.com/emacs-mirror/emacs
+	cd emacs
+	bash configure
+	make -j$(nproc)
+	sudo make install
 fi

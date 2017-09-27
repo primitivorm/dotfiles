@@ -71,8 +71,6 @@ if [ ! -d ~/src/fonts ]; then
     cp -r ~/dotfiles/.fonts/ ~/.fonts/
     cd ~/.fonts/
     sudo fc-cache -fv
-    #install Fira Mono
-    bash ~/dotfiles/getFirafonts.sh
 fi
 
 #########################################################

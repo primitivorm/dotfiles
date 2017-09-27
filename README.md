@@ -1,13 +1,13 @@
 ##dotfiles
 
-Archivos de configuracion para linux debian
+Archivos de configuracion para linux debian/ubuntu
 
 ###Instalar configuracion
 ```
-$sudo apt-get install git
-$cd ~
-$git clone https://github.com/primitivorm/dotfiles
-$cd ~/dotfiles/
-$sudo ./instalar.sh
-$./configurar.sh
+sudo apt-get install git
+cd ~
+git clone https://github.com/primitivorm/dotfiles
+cd ~/dotfiles/
+bash instalar.sh
+bash configurar.sh
 ```
