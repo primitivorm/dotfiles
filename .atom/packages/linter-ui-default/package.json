@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
+        "raw": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
-        "spec": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
+        "rawSpec": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
+        "spec": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117722-9308-xv70uk.wjckztcsor"
+      "/tmp/apm-install-dir-117827-27645-1cwpy9t.py3izwu3di"
     ]
   ],
-  "_from": "../d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
-  "_id": "linter-ui-default@1.6.7",
+  "_from": "../d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
+  "_id": "linter-ui-default@1.6.10",
   "_inCache": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
+    "raw": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
-    "spec": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
+    "rawSpec": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
+    "spec": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
-  "_shasum": "07403d5721893afd753faf415a43345538154ca9",
+  "_resolved": "file:../d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
+  "_shasum": "032008e7df39bb3f54de72c98e58a166f7638d47",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117722-9308-o7yv2w.ntionr8uxr/package.tgz",
-  "_where": "/tmp/apm-install-dir-117722-9308-xv70uk.wjckztcsor",
+  "_spec": "/tmp/d-117827-27645-o6j4xw.jcs8wr8uxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-117827-27645-1cwpy9t.py3izwu3di",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -192,7 +192,7 @@
     "rimraf": "^2.5.4"
   },
   "engines": {
-    "atom": ">=1.17.0 <2.0.0"
+    "atom": ">=1.19.0 <2.0.0"
   },
   "homepage": "https://github.com/steelbrain/linter-ui-default#readme",
   "keywords": [
@@ -228,7 +228,7 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.6.7",
+  "version": "1.6.10",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -259,7 +259,7 @@
       },
       {
         "name": "create-react-class",
-        "version": "15.6.0",
+        "version": "15.6.2",
         "path": "node_modules/create-react-class/index.js"
       },
       {
@@ -274,12 +274,12 @@
       },
       {
         "name": "fbjs",
-        "version": "0.8.14",
+        "version": "0.8.16",
         "path": "node_modules/fbjs/index.js"
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.18",
+        "version": "0.4.19",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
@@ -319,7 +319,7 @@
       },
       {
         "name": "node-fetch",
-        "version": "1.7.2",
+        "version": "1.7.3",
         "path": "node_modules/node-fetch/index.js"
       },
       {
@@ -334,17 +334,17 @@
       },
       {
         "name": "prop-types",
-        "version": "15.5.10",
+        "version": "15.6.0",
         "path": "node_modules/prop-types/index.js"
       },
       {
         "name": "react",
-        "version": "15.6.1",
+        "version": "15.6.2",
         "path": "node_modules/react/react.js"
       },
       {
         "name": "react-dom",
-        "version": "15.6.1",
+        "version": "15.6.2",
         "path": "node_modules/react-dom/index.js"
       },
       {
@@ -1977,8 +1977,9 @@
           "node_modules/prop-types/lib"
         ],
         "dependencies": {
-          "fbjs": "^0.8.9",
-          "loose-envify": "^1.3.1"
+          "fbjs": "^0.8.16",
+          "loose-envify": "^1.3.1",
+          "object-assign": "^4.1.1"
         }
       },
       {

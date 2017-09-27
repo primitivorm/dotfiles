@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
+        "raw": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
-        "spec": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
+        "rawSpec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+        "spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117717-9659-1cz424a.3sqe9ltyb9"
+      "/tmp/apm-install-dir-117827-27655-rvlczj.nxwn2n8kt9"
     ]
   ],
-  "_from": "../d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
-  "_id": "minimap@4.29.6",
+  "_from": "../d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+  "_id": "minimap@4.29.7",
   "_inCache": true,
   "_location": "/minimap",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
+    "raw": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
-    "spec": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
+    "rawSpec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+    "spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
-  "_shasum": "4a0a2f27e91527ac32b7a132707f8d2b01ccac29",
+  "_resolved": "file:../d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+  "_shasum": "55a8dfc8003d29c8fc895a8583ddf4a80e85191e",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117717-9659-p1h40.xu7jw3tyb9/package.tgz",
-  "_where": "/tmp/apm-install-dir-117717-9659-1cz424a.3sqe9ltyb9",
+  "_spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+  "_where": "/tmp/apm-install-dir-117827-27655-rvlczj.nxwn2n8kt9",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com"
@@ -255,7 +255,7 @@
       "IntersectionObserver"
     ]
   },
-  "version": "4.29.6",
+  "version": "4.29.7",
   "viewProviders": [
     "minimapViewProvider"
   ],
@@ -314,7 +314,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.27",
+        "version": "0.10.30",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -374,12 +374,12 @@
       },
       {
         "name": "grim",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "path": "node_modules/grim/lib/grim.js"
       },
       {
         "name": "event-kit",
-        "version": "2.3.0",
+        "version": "2.4.0",
         "path": "node_modules/grim/node_modules/event-kit/lib/event-kit.js"
       },
       {
@@ -429,7 +429,7 @@
       },
       {
         "name": "rimraf",
-        "version": "2.6.1",
+        "version": "2.6.2",
         "path": "node_modules/rimraf/rimraf.js"
       },
       {
@@ -602,6 +602,7 @@
         "node_modules/es5-ext/array/#/indexes-of.js",
         "node_modules/es5-ext/array/#/intersection.js",
         "node_modules/es5-ext/array/#/is-copy.js",
+        "node_modules/es5-ext/array/#/is-empty.js",
         "node_modules/es5-ext/array/#/is-uniq.js",
         "node_modules/es5-ext/array/#/keys/implement.js",
         "node_modules/es5-ext/array/#/keys/index.js",
@@ -825,6 +826,7 @@
         "node_modules/es5-ext/object/copy.js",
         "node_modules/es5-ext/object/count.js",
         "node_modules/es5-ext/object/create.js",
+        "node_modules/es5-ext/object/ensure-array.js",
         "node_modules/es5-ext/object/ensure-finite-number.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
@@ -961,6 +963,7 @@
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
         "node_modules/es5-ext/string/raw/shim.js",
+        "node_modules/es5-ext/to-short-string-representation.js",
         "node_modules/es6-iterator/#/chain.js",
         "node_modules/es6-iterator/array.js",
         "node_modules/es6-iterator/for-of.js",
