@@ -69,6 +69,7 @@
 (add-hook 'c++-mode-hook 'company-mode)
 
 ;; neotree
+;; https://www.emacswiki.org/emacs/NeoTree
 (require 'neotree)
 (global-set-key [f2] 'neotree-toggle)
 ;(add-hook 'neotree-mode-hook
@@ -111,7 +112,7 @@
 		 (list (read-shell-command "Run ack (like this): "
 								   ack-command
 								   'ack-history)))
-	 (let ((ack-command "ack-grep --nofilter --nogroup --with-filename "))
+	 (let ((ack-command "ack --nofilter --nogroup --with-filename "))
 	   (list (read-shell-command "Run ack (like this): "
 								 ack-command
 								 'ack-history)))))
