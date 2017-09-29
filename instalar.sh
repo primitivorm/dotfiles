@@ -13,10 +13,10 @@ sudo apt-get remove vim vim-runtime vim-tiny vim-common vim-gui-common -y
 
 echo "instalando paquetes..."
 #install llvm-toolchain
-sudo apt-get install clang-4.0 clang-4.0-doc libclang-common-4.0-dev libclang-4.0-dev \
-libclang1-4.0 libclang1-4.0-dbg libllvm-4.0-ocaml-dev libllvm4.0 libllvm4.0-dbg \
-lldb-4.0 llvm-4.0 llvm-4.0-dev llvm-4.0-doc llvm-4.0-examples llvm-4.0-runtime \
-clang-format-4.0 python-clang-4.0 libfuzzer-4.0-dev -y
+#sudo apt-get install clang-4.0 clang-4.0-doc libclang-common-4.0-dev libclang-4.0-dev \
+#libclang1-4.0 libclang1-4.0-dbg libllvm-4.0-ocaml-dev libllvm4.0 libllvm4.0-dbg \
+#lldb-4.0 llvm-4.0 llvm-4.0-dev llvm-4.0-doc llvm-4.0-examples llvm-4.0-runtime \
+#clang-format-4.0 python-clang-4.0 python-lldb-4.0 libfuzzer-4.0-dev -y
 
 #install packages
 sudo apt-get install aptitude build-essential gcc g++ automake -y
@@ -98,6 +98,7 @@ fi
 #install emacs
 #########################################################
 if [ ! -d ~/src/emacs ]; then
+	echo "compilando e instalando emacs..."
 	cd ~/src
 	git clone https://github.com/emacs-mirror/emacs
 	cd emacs
