@@ -63,38 +63,38 @@ make -j$(nproc)
 #########################################################
 #install vim
 #########################################################
-#if [ ! -d ~/src/vim ]; then
-#    	echo "compilando e instalando vim..."
-#	cd ~/src
-#	git clone https://github.com/vim/vim
-#	cd vim
-#	hg pull
-#	hg update
-#	cd src
-#	make distclean  # if you build Vim before
-#	autoreconf -i	# optional
-#	bash configure --with-features=huge \
-#		    --enable-multibyte \
-#		    --enable-rubyinterp \
-#		    --enable-pythoninterp \
-#		    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
-#		    --enable-perlinterp \
-#		    --enable-luainterp \
-#		    --enable-gui=gnome2 --enable-cscope
-#
-#	make -j$(nproc)
-#	sudo make install
-#fi
+if [ ! -d ~/src/vim ]; then
+    	echo "compilando e instalando vim..."
+	cd ~/src
+	git clone https://github.com/vim/vim
+	cd vim
+	hg pull
+	hg update
+	cd src
+	make distclean  # if you build Vim before
+	autoreconf -i	# optional
+	bash configure --with-features=huge \
+		    --enable-multibyte \
+		    --enable-rubyinterp \
+		    --enable-pythoninterp \
+		    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+		    --enable-perlinterp \
+		    --enable-luainterp \
+		    --enable-gui=gnome2 --enable-cscope
+
+	make -j$(nproc)
+	sudo make install
+fi
 
 #########################################################
 #install emacs
 #########################################################
-#if [ ! -d ~/src/emacs ]; then
-#	echo "compilando e instalando emacs..."
-#	cd ~/src
-#	git clone https://github.com/emacs-mirror/emacs
-#	cd emacs
-#	bash configure
-#	make -j$(nproc)
-#	sudo make install
-#fi
+if [ ! -d ~/src/emacs ]; then
+	echo "compilando e instalando emacs..."
+	cd ~/src
+	git clone https://github.com/emacs-mirror/emacs
+	cd emacs
+	bash configure
+	make -j$(nproc)
+	sudo make install
+fi
