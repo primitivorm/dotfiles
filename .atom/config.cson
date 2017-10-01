@@ -13,7 +13,7 @@
       "one-dark-syntax"
     ]
   editor:
-    fontFamily: "Fira Mono"
+    fontFamily: "Inconsolata"
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"

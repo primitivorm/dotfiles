@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#add repositories for testing y llvm-toolchain-4.0
-sudo cp etc/apt/sources.list.d/testing.list /etc/apt/sources.list.d/
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-
 #update sources
 echo "actualizando fuentes..."
 sudo apt-get update -qq -y
@@ -12,15 +8,9 @@ sudo apt-get update -qq -y
 sudo apt-get remove vim vim-runtime vim-tiny vim-common vim-gui-common -y
 
 echo "instalando paquetes..."
-#install llvm-toolchain
-#sudo apt-get install clang-4.0 clang-4.0-doc libclang-common-4.0-dev libclang-4.0-dev \
-#libclang1-4.0 libclang1-4.0-dbg libllvm-4.0-ocaml-dev libllvm4.0 libllvm4.0-dbg \
-#lldb-4.0 llvm-4.0 llvm-4.0-dev llvm-4.0-doc llvm-4.0-examples llvm-4.0-runtime \
-#clang-format-4.0 python-clang-4.0 python-lldb-4.0 libfuzzer-4.0-dev -y
-
 #install packages
 sudo apt-get install aptitude build-essential gcc g++ automake -y
-sudo apt-get install git make cmake flex bison -y
+sudo apt-get install git make cmake flex bison libreadline-dev -y
 sudo apt-get install valgrind dos2unix exuberant-ctags -y
 sudo apt-get install python python-dev libxml2-dev libxslt-dev libssl-dev -y
 sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
@@ -67,42 +57,44 @@ sudo gem install pry
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
 make -j$(nproc)
 
-
+#if [ ! -d ~/src ]; then
+#    mkdir ~/src
+#fi
 #########################################################
 #install vim
 #########################################################
-if [ ! -d ~/src/vim ]; then
-    	echo "compilando e instalando vim..."
-	cd ~/src
-	git clone https://github.com/vim/vim
-	cd vim
-	hg pull
-	hg update
-	cd src
-	make distclean  # if you build Vim before
-	autoreconf -i	# optional
-	bash configure --with-features=huge \
-		    --enable-multibyte \
-		    --enable-rubyinterp \
-		    --enable-pythoninterp \
-		    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
-		    --enable-perlinterp \
-		    --enable-luainterp \
-		    --enable-gui=gnome2 --enable-cscope
-
-	make -j$(nproc)
-	sudo make install
-fi
+#if [ ! -d ~/src/vim ]; then
+#    	echo "compilando e instalando vim..."
+#	cd ~/src
+#	git clone https://github.com/vim/vim
+#	cd vim
+#	hg pull
+#	hg update
+#	cd src
+#	make distclean  # if you build Vim before
+#	autoreconf -i	# optional
+#	bash configure --with-features=huge \
+#		    --enable-multibyte \
+#		    --enable-rubyinterp \
+#		    --enable-pythoninterp \
+#		    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+#		    --enable-perlinterp \
+#		    --enable-luainterp \
+#		    --enable-gui=gnome2 --enable-cscope
+#
+#	make -j$(nproc)
+#	sudo make install
+#fi
 
 #########################################################
 #install emacs
 #########################################################
-if [ ! -d ~/src/emacs ]; then
-	echo "compilando e instalando emacs..."
-	cd ~/src
-	git clone https://github.com/emacs-mirror/emacs
-	cd emacs
-	bash configure
-	make -j$(nproc)
-	sudo make install
-fi
+#if [ ! -d ~/src/emacs ]; then
+#	echo "compilando e instalando emacs..."
+#	cd ~/src
+#	git clone https://github.com/emacs-mirror/emacs
+#	cd emacs
+#	bash configure
+#	make -j$(nproc)
+#	sudo make install
+#fi
