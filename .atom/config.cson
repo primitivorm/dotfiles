@@ -14,7 +14,6 @@
     ]
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 14
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"

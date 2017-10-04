@@ -1,0 +1,219 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+        "spec": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11792-10460-12yeydo.t99cdnp14i"
+    ]
+  ],
+  "_from": "../d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+  "_id": "markdown-table-editor@0.6.4",
+  "_inCache": true,
+  "_location": "/markdown-table-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+    "spec": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+  "_shasum": "f3a9d81c08bfe84826f9f48548c3cc887998b30b",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11792-10460-6qij50.ibis1hsemi/package.tgz",
+  "_where": "/tmp/apm-install-dir-11792-10460-12yeydo.t99cdnp14i",
+  "activationCommands": {},
+  "bugs": {
+    "url": "https://github.com/susisu/markdown-table-editor/issues"
+  },
+  "configSchema": {
+    "scopes": {
+      "order": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "table.gfm",
+        "table.storage.md"
+      ],
+      "description": "List of scopes in which the table editor will be enabled."
+    },
+    "formatType": {
+      "order": 2,
+      "type": "string",
+      "default": "whole",
+      "enum": [
+        {
+          "value": "whole",
+          "description": "Whole Table"
+        },
+        {
+          "value": "row",
+          "description": "Each Row"
+        }
+      ],
+      "description": "Specifies how a table is formatted on each operation."
+    },
+    "defaultAlignment": {
+      "order": 3,
+      "type": "string",
+      "default": "left",
+      "enum": [
+        {
+          "value": "left",
+          "description": "Left"
+        },
+        {
+          "value": "right",
+          "description": "Right"
+        },
+        {
+          "value": "center",
+          "description": "Center"
+        }
+      ],
+      "description": "Default alignment of table cells."
+    },
+    "headerAlignment": {
+      "order": 4,
+      "type": "string",
+      "default": "follow",
+      "enum": [
+        {
+          "value": "follow",
+          "description": "Follow column's alignment"
+        },
+        {
+          "value": "left",
+          "description": "Left"
+        },
+        {
+          "value": "right",
+          "description": "Right"
+        },
+        {
+          "value": "center",
+          "description": "Center"
+        }
+      ],
+      "description": "Alignment of table header cells."
+    },
+    "minimumContentWidth": {
+      "order": 5,
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "description": "Minimum content width of table cells."
+    },
+    "eawAmbiguousAsWide": {
+      "order": 6,
+      "title": "Treat East Asian Ambiguous Characters As Wide",
+      "type": "boolean",
+      "default": false,
+      "description": "Unicode East Asian Ambiguous characters are treated as wide."
+    },
+    "alwaysWideChars": {
+      "order": 7,
+      "title": "Always Wide Characters",
+      "type": "string",
+      "default": "",
+      "description": "String of characters that should be treated as wide."
+    },
+    "alwaysNarrowChars": {
+      "order": 8,
+      "title": "Always Narrow Characters",
+      "type": "string",
+      "default": "",
+      "description": "String of characters that should be treated as narrow."
+    },
+    "smartCursor": {
+      "order": 9,
+      "type": "boolean",
+      "default": false,
+      "description": "Remembers the column where the cursor will return back on \"Next Row\" command."
+    }
+  },
+  "dependencies": {
+    "meaw": "^1.0.0"
+  },
+  "description": "Markdown table editor/formatter",
+  "devDependencies": {
+    "eslint": "^4.3.0"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/susisu/markdown-table-editor#readme",
+  "keywords": [
+    "markdown",
+    "table"
+  ],
+  "license": "MIT",
+  "main": "./lib/markdown-table-editor.js",
+  "name": "markdown-table-editor",
+  "optionalDependencies": {},
+  "readme": "# markdown-table-editor\nMarkdown table editor/formatter\n\n![screenshot](https://github.com/susisu/markdown-table-editor/wiki/images/demo.gif)\n\n## Quick guide\n0. Set editor's grammar to `GitHub Markdown` or `Markdown`.\n1. Input a pipe `|` and some content (cursor position is indicated by `_`).\n    ``` markdown\n    | foo_\n    ```\n    (If you are using [language-markdown](https://atom.io/packages/language-markdown), don't forget a   space after the pipe.)\n2. Hit <kbd>tab</kbd> to move to the next cell.\n    ``` markdown\n    | foo | _\n    | --- |\n    ```\n3. Continue typing.\n    ``` markdown\n    | foo | bar | _\n    | --- | --- |\n    ```\n4. Hit <kbd>enter</kbd> to move to the next row.\n    ``` markdown\n    | foo | bar |\n    | --- | --- |\n    | _   |     |\n    ```\n5. Continue typing...\n    ``` markdown\n    | foo | bar |\n    | --- | --- |\n    | baz | _   |\n    ```\n6. Hit <kbd>esc</kbd> to finish editing table.\n    ``` markdown\n    | foo | bar |\n    | --- | --- |\n    | baz |     |\n    _\n    ```\n\n## Features\n* Format tables\n* Move the cursor from cell to cell\n* Alter column's alignment\n* Insert and delete rows and columns\n\n### Commands\n| Name               | Description                   | Keybinding                        |\n| ------------------ | ----------------------------- | --------------------------------- |\n| Next Cell          | Move to the next cell         | <kbd>tab</kbd>                    |\n| Previous Cell      | Move to the previous cell     | <kbd>shift</kbd> + <kbd>tab</kbd> |\n| Next Row           | Move to the next row          | <kbd>enter</kbd>                  |\n| Escape             | Escape from the table         | <kbd>escape</kbd>                 |\n| Format             | Just format the table         |                                   |\n| Align Left         | Left-align the column         |                                   |\n| Align Right        | Right-align the column        |                                   |\n| Align Center       | Center-align the column       |                                   |\n| Align Default      | Remove the column's alignment |                                   |\n| Select Cell        | Select the cell content       |                                   |\n| Move Left          | Move to the left cell         |                                   |\n| Move Right         | Move to the right cell        |                                   |\n| Move Up            | Move to the upper cell        |                                   |\n| Move Down          | Move to the lower cell        |                                   |\n| Insert Row         | Insert an empty row           |                                   |\n| Delete Row         | Delete the row                |                                   |\n| Move Row Up        | Move the row up               |                                   |\n| Move Row Down      | Move the row down             |                                   |\n| Insert Column      | Insert an empty column        |                                   |\n| Delete Column      | Delete the column             |                                   |\n| Move Column Left   | Move the column left          |                                   |\n| Move Column Right  | Move the column right         |                                   |\n| Switch Format Type | Switch \"Format Type\" config   |                                   |\n\n*NOTE: To input a newline purposely in a table, press <kbd>shift</kbd> + <kbd>enter</kbd> (or some equivalent) instead.*\n\nYou can execute commands from the command palette (Windows, Linux: <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd> / macOS: <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>) or from the Packages menu.\n\nIt will be more convenient if you add keybindings to your `keymap.cson`.\nThese are the ones which I use, FYI:\n\n``` coffee\n'atom-text-editor:not(.mini):not(.autocomplete-active).markdown-table-editor-active':\n  'cmd-left'           : 'markdown-table-editor:move-left'\n  'cmd-right'          : 'markdown-table-editor:move-right'\n  'cmd-up'             : 'markdown-table-editor:move-up'\n  'cmd-down'           : 'markdown-table-editor:move-down'\n  'shift-cmd-left'     : 'markdown-table-editor:align-left'\n  'shift-cmd-right'    : 'markdown-table-editor:align-right'\n  'shift-cmd-up'       : 'markdown-table-editor:align-center'\n  'shift-cmd-down'     : 'markdown-table-editor:align-default'\n  'alt-shift-cmd-left' : 'markdown-table-editor:move-column-left'\n  'alt-shift-cmd-right': 'markdown-table-editor:move-column-right'\n  'alt-shift-cmd-up'   : 'markdown-table-editor:move-row-up'\n  'alt-shift-cmd-down' : 'markdown-table-editor:move-row-down'\n  'cmd-k cmd-i'        : 'markdown-table-editor:insert-row'\n  'cmd-k alt-cmd-i'    : 'markdown-table-editor:delete-row'\n  'cmd-k cmd-j'        : 'markdown-table-editor:insert-column'\n  'cmd-k alt-cmd-j'    : 'markdown-table-editor:delete-column'\n```\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susisu/markdown-table-editor.git"
+  },
+  "scripts": {
+    "fix": "eslint lib spec --fix",
+    "lint": "eslint lib spec"
+  },
+  "version": "0.6.4",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "meaw",
+        "version": "1.0.0",
+        "path": "node_modules/meaw/lib/meaw.cjs.js"
+      }
+    ],
+    "extensions": {
+      ".json": [
+        ".eslintrc.json",
+        "node_modules/meaw/package.json",
+        "package.json"
+      ],
+      ".js": [
+        "lib/controller.js",
+        "lib/editor-controller.js",
+        "lib/markdown-table-editor.js",
+        "lib/table.js",
+        "node_modules/meaw/lib/meaw.cjs.js",
+        "node_modules/meaw/lib/meaw.es.js"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "",
+          "keymaps",
+          "lib",
+          "menus",
+          "spec"
+        ],
+        "dependencies": {
+          "meaw": "^1.0.0"
+        }
+      }
+    ]
+  }
+}

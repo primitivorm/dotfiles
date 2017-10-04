@@ -98,13 +98,16 @@ class ShowTodoView extends ScrollView
         @search()
 
     @disposables.add atom.workspace.onDidAddTextEditor ({textEditor}) =>
-      @search() if @collection.scope is 'open'
+      if @collection.scope is 'open' and atom.config.get 'todo-show.autoRefresh'
+        @search()
 
     @disposables.add atom.workspace.onDidDestroyPaneItem ({item}) =>
-      @search() if @collection.scope is 'open'
+      if @collection.scope is 'open' and atom.config.get 'todo-show.autoRefresh'
+        @search()
 
     @disposables.add atom.workspace.observeTextEditors (editor) =>
-      @disposables.add editor.onDidSave => @search()
+      @disposables.add editor.onDidSave =>
+        @search() if atom.config.get 'todo-show.autoRefresh'
 
     @filterEditorView.getModel().onDidStopChanging =>
       @filter() if @firstTimeFilter
@@ -123,6 +126,7 @@ class ShowTodoView extends ScrollView
   serialize: ->
     deserializer: 'todo-show/todo-view'
     scope: @collection.scope
+    customPath: @collection.getCustomPath()
 
   getTitle: -> "Todo Show"
   getIconName: -> "checklist"
@@ -167,6 +171,8 @@ class ShowTodoView extends ScrollView
         "in open files"
       when 'project'
         "in project <code>#{@getProjectName()}</code>"
+      when 'custom'
+        "in <code>#{@collection.customPath}</code>"
       else
         "in workspace"
 
@@ -193,10 +199,11 @@ class ShowTodoView extends ScrollView
 
   setScopeButtonState: (state) =>
     switch state
-      when 'workspace' then @scopeButton.text 'Workspace'
       when 'project' then @scopeButton.text 'Project'
       when 'open' then @scopeButton.text 'Open Files'
       when 'active' then @scopeButton.text 'Active File'
+      when 'custom' then @scopeButton.text 'Custom'
+      else @scopeButton.text 'Workspace'
 
   toggleOptions: =>
     unless @todoOptions

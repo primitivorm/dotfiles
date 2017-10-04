@@ -1,0 +1,36 @@
+'menu': [ {
+    'label': 'Packages'
+    'submenu': [
+        'label': 'SASS Autocompile'
+        'submenu': [
+            { 'label' : 'Compile to file', 'command': 'sass-autocompile:compile-to-file' }
+            { 'label' : 'Direct compilation', 'command': 'sass-autocompile:compile-direct' }
+
+            { 'type' : 'separator' }
+
+            { 'label' : 'Compile on Save', 'command': 'sass-autocompile:toggle-compile-on-save' }
+            { 'label' : 'Check output file already exists', 'command': 'sass-autocompile:toggle-check-output-file-already-exists', 'type': 'checkbox' }
+            { 'label' : 'Directly jump to error', 'command': 'sass-autocompile:toggle-directly-jump-to-error', 'type': 'checkbox' }
+            { 'label' : 'Show \'Compile SASS\' item in tree view context menu', 'command': 'sass-autocompile:toggle-show-compile-sass-item-in-tree-view-context-menu', 'type': 'checkbox' }
+
+            { 'type' : 'separator' }
+
+            { 'label' : 'Compile files...', 'submenu': [
+                { 'label': 'Every SASS file', 'command': 'sass-autocompile:compile-every-sass-file', 'type': 'radio' }
+                { 'label': 'Only with first-line-comment', 'command': 'sass-autocompile:compile-only-with-first-line-comment', 'type': 'radio' }
+            ] }
+
+            { 'label' : 'Output style', 'submenu': [
+                { 'label': 'Compressed', 'command': 'sass-autocompile:toggle-output-style-compressed', 'type': 'checkbox' }
+                { 'label': 'Compact', 'command': 'sass-autocompile:toggle-output-style-compact', 'type': 'checkbox' }
+                { 'label': 'Nested', 'command': 'sass-autocompile:toggle-output-style-nested', 'type': 'checkbox' }
+                { 'label': 'Expanded', 'command': 'sass-autocompile:toggle-output-style-expanded', 'type': 'checkbox' }
+            ] }
+        ]
+    ]
+} ]
+
+'context-menu':
+    '.tree-view': [
+        {'label': 'Compile SASS', 'command': 'sass-autocompile:compile-to-file', 'id': 'sass-autocompile-context-menu-compile' }
+    ]
