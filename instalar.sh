@@ -55,7 +55,7 @@ sudo gem install pry
 #install gnome-keyring
 #########################################################
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
-make -j$(nproc)
+sudo make -j$(nproc)
 
 #if [ ! -d ~/src ]; then
 #    mkdir ~/src
