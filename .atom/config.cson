@@ -13,15 +13,15 @@
       "one-dark-syntax"
     ]
   editor:
-    fontFamily: "Fira Mono"
+    fontFamily: "Inconsolata"
+    fontSize: 16
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
   "linter-gcc":
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   minimap:
     charHeight: 3
     charWidth: 1.5
