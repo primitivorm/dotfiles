@@ -52,8 +52,8 @@ set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-set backspace=2
-"set backspace=
+"set backspace=2
+set backspace=
 set t_Co=256
 call pathogen#infect()
 
@@ -160,7 +160,7 @@ if !&diff
 endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "custom settings
-let g:NERDTreeBookmarksFile     = expand($HOME.'/_NERDTreeBookmarks')
+let g:NERDTreeBookmarksFile     = expand($HOME.'/.NERDTreeBookmarks')
 let g:NERDTreeShowBookmarks     = 1
 let g:NERDTreeWinSize           = 25
 let g:NERDTreeChristmasTree     = 1
@@ -419,6 +419,7 @@ let g:ycm_filetype_blacklist = {
 \ 'java' : 1,
 \ 'help' : 1,
 \ 'vim' : 1,
+\ 'sh' : 1,
 \ 'sql' : 1
 \}
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

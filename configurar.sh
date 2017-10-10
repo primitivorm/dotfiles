@@ -15,6 +15,7 @@ cp -f .bash_aliases ~/
 cp -f .gitconfig ~/
 cp -f .profile ~/
 cp -f .tmux.conf ~/
+cp -f .NERDTreeBookmarks ~/
 
 #########################################################
 #install vim plugins
@@ -25,9 +26,9 @@ fi
 echo "instalando vim plugins..."
 rm -fr ~/.vim/bundle/Vundle.vim
 cd ~/.vim/bundle/ && git clone https://github.com/VundleVim/Vundle.vim
-#find . -type f -exec dos2unix {} \;
+find . -type f -exec dos2unix {} \;
 gvim -c ":PluginInstall" ~/.vimrc
-#find . -type f -exec dos2unix {} \;
+find . -type f -exec dos2unix {} \;
 if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
     #compile YouCompleteMe plugin
     echo "compilando YouCompleteMe plugin..."
@@ -46,7 +47,7 @@ if [ ! -d ~/.tmuxifier ]; then
     echo "configurando tmuxifier..."
     git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
     cd ~/.tmuxifier/
-    #find . -type f -exec dos2unix {} \;
+    find . -type f -exec dos2unix {} \;
     chmod +x init.sh
     bash init.sh
     cp ~/dotfiles/.dev-window.sh ~/
