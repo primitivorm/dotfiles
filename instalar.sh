@@ -17,7 +17,7 @@ sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 sudo apt-get install dpkg-dev libgnome-keyring-dev java -y
 sudo apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
 sudo apt-get install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
-sudo apt-get install lua5.2 liblua5.2-dev meld libz3 -y
+sudo apt-get install lua5.2 liblua5.2-dev meld libz3 clang-format -y
 sudo apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 sudo apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 sudo apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y

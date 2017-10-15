@@ -2,7 +2,10 @@
   "atom-beautify":
     general:
       _analyticsUserId: "e41755fc-0a88-458c-997d-6a44e6661d10"
+  "atom-terminal":
+    app: "/usr/bin/gnome-terminal"
   "clang-format":
+    executable: "clang-format"
     formatCOnSave: true
     formatCPlusPlusOnSave: true
   core:
@@ -21,7 +24,8 @@
   "linter-gcc":
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   minimap:
     charHeight: 3
     charWidth: 1.5

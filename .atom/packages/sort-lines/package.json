@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
+        "raw": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
-        "spec": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
+        "rawSpec": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
+        "spec": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11798-3850-1sj3tum.5bjadfs9k9"
+      "/tmp/apm-install-dir-117913-4393-mrlz8x.g834z5xw29"
     ]
   ],
-  "_from": "../d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
-  "_id": "sort-lines@0.17.0",
+  "_from": "../d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
+  "_id": "sort-lines@0.18.0",
   "_inCache": true,
   "_location": "/sort-lines",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
+    "raw": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
-    "spec": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
+    "rawSpec": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
+    "spec": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
-  "_shasum": "3cd494aa600bd472a6a4e0ed6169a90cc9431758",
+  "_resolved": "file:../d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
+  "_shasum": "e7a421bc0e8655fa90b46cdc881c60983ade0816",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11798-3850-18gw4gx.5lun1urf6r/package.tgz",
-  "_where": "/tmp/apm-install-dir-11798-3850-1sj3tum.5bjadfs9k9",
+  "_spec": "/tmp/d-117913-4393-kw53fz.oo1yw7mn29/package.tgz",
+  "_where": "/tmp/apm-install-dir-117913-4393-mrlz8x.g834z5xw29",
   "activationCommands": {
     "atom-text-editor": [
       "sort-lines:sort",
@@ -69,7 +69,7 @@
     "type": "git",
     "url": "git+https://github.com/atom/sort-lines.git"
   },
-  "version": "0.17.0",
+  "version": "0.18.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
