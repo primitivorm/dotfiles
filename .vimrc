@@ -52,8 +52,8 @@ set modeline
 set cmdheight=2 " use a status bar that is 2 rows high
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-"set backspace=2
-set backspace=
+set backspace=2
+"set backspace=
 set t_Co=256
 call pathogen#infect()
 
