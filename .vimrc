@@ -420,6 +420,7 @@ let g:ycm_filetype_blacklist = {
 \ 'help' : 1,
 \ 'vim' : 1,
 \ 'sh' : 1,
+\ 'json' : 1,
 \ 'sql' : 1
 \}
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
