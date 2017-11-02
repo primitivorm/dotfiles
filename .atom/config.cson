@@ -17,7 +17,6 @@
     ]
   editor:
     fontFamily: "Inconsolata"
-    fontSize: 16
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
@@ -25,7 +24,7 @@
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
   "linter-ui-default":
-    panelHeight: 213
+    panelHeight: 59
     showPanel: true
   minimap:
     charHeight: 3

@@ -40,12 +40,12 @@ sudo apt-get install ttf-liberation ttf-mscorefonts-installer -y
 sudo apt-get autoremove -qq -y
 
 #install pip packages
-pip install --upgrade pip
-pip install --user cpp-coveralls --upgrade
-pip install flake8
-pip install powerline-status
-pip install pygments
-pip install sphinx sphinx-autobuild
+sudo pip install --upgrade pip
+sudo pip install --user cpp-coveralls --upgrade
+sudo pip install flake8
+sudo pip install powerline-status
+sudo pip install pygments
+sudo pip install sphinx sphinx-autobuild
 
 #install ruby gems
 sudo gem install grammars
