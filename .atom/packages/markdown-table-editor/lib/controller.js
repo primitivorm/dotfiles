@@ -1,14 +1,13 @@
-'use babel';
+import { CompositeDisposable } from "atom";
+import { FormatType } from "@susisu/mte-kernel";
 
-import { CompositeDisposable } from 'atom';
+import EditorController from "./editor-controller.js";
 
-import EditorController from './editor-controller.js';
+const COMMAND_TARGET = "atom-text-editor:not(.mini):not(.autocomplete-active)";
+const EDITOR_COMMAND_TARGET = COMMAND_TARGET + ".markdown-table-editor-active";
+const NAMESPACE = "markdown-table-editor";
 
-const COMMAND_TARGET = 'atom-text-editor:not(.mini):not(.autocomplete-active)';
-const EDITOR_COMMAND_TARGET = COMMAND_TARGET + '.markdown-table-editor-active';
-const NAMESPACE = 'markdown-table-editor';
-
-const FORMAT_TYPES = ['whole', 'row'];
+const FORMAT_TYPES = [FormatType.NORMAL, FormatType.WEAK];
 
 export default class Controller {
   constructor() {
@@ -27,9 +26,15 @@ export default class Controller {
 
     // commands
     this.subscriptions.add(atom.commands.add(COMMAND_TARGET, {
+      [`${NAMESPACE}:toggle-format-on-save`]: () => {
+        this.toggleFormatOnSave();
+      },
       [`${NAMESPACE}:switch-format-type`]: () => {
         this.switchFormatType();
-      }
+      },
+      [`${NAMESPACE}:format-all`]: this.editorCommand(editorCtrler => {
+        editorCtrler.formatAll();
+      })
     }));
     this.subscriptions.add(atom.commands.add(EDITOR_COMMAND_TARGET, {
       [`${NAMESPACE}:format`]: this.editorCommand(editorCtrler => {
@@ -47,8 +52,11 @@ export default class Controller {
       [`${NAMESPACE}:align-center`]: this.editorCommand(editorCtrler => {
         editorCtrler.alignCenter();
       }),
+      [`${NAMESPACE}:align-none`]: this.editorCommand(editorCtrler => {
+        editorCtrler.alignNone();
+      }),
       [`${NAMESPACE}:align-default`]: this.editorCommand(editorCtrler => {
-        editorCtrler.alignDefault();
+        editorCtrler.alignNone();
       }),
       [`${NAMESPACE}:select-cell`]: this.editorCommand(editorCtrler => {
         editorCtrler.selectCell();
@@ -110,10 +118,16 @@ export default class Controller {
     this.editorCtrlers.delete(editor.element);
   }
 
+  toggleFormatOnSave() {
+    const formatOnSave = atom.config.get(`${NAMESPACE}.formatOnSave`);
+    atom.config.set(`${NAMESPACE}.formatOnSave`, !formatOnSave);
+  }
+
   switchFormatType() {
     const formatType = atom.config.get(`${NAMESPACE}.formatType`);
     const i = FORMAT_TYPES.indexOf(formatType);
-    atom.config.set(`${NAMESPACE}.formatType`, FORMAT_TYPES[i + 1] || 'whole');
+    const newFormatType = FORMAT_TYPES[i + 1 > FORMAT_TYPES.length - 1 ? 0 : i + 1];
+    atom.config.set(`${NAMESPACE}.formatType`, newFormatType);
   }
 
   editorCommand(callback) {

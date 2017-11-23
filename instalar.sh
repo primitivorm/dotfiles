@@ -98,3 +98,10 @@ if [ ! -d ~/src/emacs ]; then
 	make -j$(nproc)
 	sudo make install
 fi
+
+#########################################################
+#install atom
+#########################################################
+cd ~/Descargas
+wget https://atom.io/download/deb/atom-amd64.deb
+sudo dpkg -i atom-amd64.deb

@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+        "spec": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-1171023-5968-v8td3.3vaq0k9"
+    ]
+  ],
+  "_from": "../d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+  "_id": "you-complete-me@0.8.0",
+  "_inCache": true,
+  "_location": "/you-complete-me",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+    "spec": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+  "_shasum": "4256493ad74eab447fccf2b1410b6bec918e8d6a",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-1171023-5968-1c6jypr.m7pejw0zfr/package.tgz",
+  "_where": "/tmp/apm-install-dir-1171023-5968-v8td3.3vaq0k9",
+  "bugs": {
+    "url": "https://github.com/Qusic/atom-youcompleteme/issues"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.5.0"
+  },
+  "description": "YouCompleteMe for Atom Editor",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.14.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Qusic/atom-youcompleteme#readme",
+  "keywords": [
+    "autocomplete",
+    "linter"
+  ],
+  "license": "MIT",
+  "main": "./lib/ycm",
+  "name": "you-complete-me",
+  "optionalDependencies": {},
+  "package-deps": [
+    "autocomplete-plus",
+    "linter",
+    "hyperclick"
+  ],
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provide"
+      }
+    },
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    },
+    "hyperclick.provider": {
+      "versions": {
+        "0.0.0": "provideHyperclick"
+      }
+    }
+  },
+  "readme": "# Atom YouCompleteMe package\n\n[YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for Atom\n\n## Previews\n\n![](https://cloud.githubusercontent.com/assets/2141853/18661117/ce2259ee-7f46-11e6-908f-50b52e121dc8.png)\n![](https://cloud.githubusercontent.com/assets/2141853/18661116/cdcdf7a0-7f46-11e6-80ce-62aa042a5ef0.png)\n\n## Features\n\n* Semantic code completion using [autocomplete+](https://atom.io/packages/autocomplete-plus)\n* Diagnostic display and quick fix using [linter](https://atom.io/packages/linter)\n* Commands and context menus to query the type of variables or methods\n* Commands and context menus to go to declaration or definition\n* Go to declaration or definition with mouse click using [hyperclick](https://atom.io/packages/hyperclick)\n\n## Keymaps\n\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>t</kbd> Get Type\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>p</kbd> Get Parent\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>g</kbd> Go To\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>i</kbd> Go To Imprecise\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>c</kbd> Go To Declaration\n* <kbd>alt</kbd>+<kbd>y</kbd> <kbd>d</kbd> Go To Definition\n\n## Usage\n\n* Install the package.\n* Configure the path to your python executable and ycmd installation.  \n  For detailed instructions and troubleshooting on building ycmd, see [ycmd's README](https://github.com/Valloric/ycmd#building).\n* By default this package is enabled for C/C++/Objective-C/Objective-C++ only.  \n  You can enable it for other filetypes that YouCompleteMe supports.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qusic/atom-youcompleteme.git"
+  },
+  "version": "0.8.0"
+}
