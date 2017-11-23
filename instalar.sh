@@ -57,9 +57,9 @@ sudo gem install pry
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
 sudo make -j$(nproc)
 
-#if [ ! -d ~/src ]; then
-#    mkdir ~/src
-#fi
+if [ ! -d ~/src ]; then
+    mkdir ~/src
+fi
 #########################################################
 #install vim
 #########################################################
@@ -102,6 +102,9 @@ fi
 #########################################################
 #install atom
 #########################################################
-cd ~/Descargas
-wget https://atom.io/download/deb/atom-amd64.deb
-sudo dpkg -i atom-amd64.deb
+if [ ! -f ~/Descargas/atom-amd64.deb ]; then
+	cd ~/Descargas
+	wget https://atom.io/download/deb/
+	mv index.html atom-amd64.deb
+	sudo dpkg -i atom-amd64.deb
+fi
