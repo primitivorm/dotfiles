@@ -6,9 +6,8 @@
 echo "configurando sistema..."
 cp -fr .vim/ ~/
 cp -fr .atom/ ~/
-cp -fr .emacs-d/ ~/
+cp -fr .emacs.d/ ~/
 cp -f .dircolors ~/
-cp -f usr/local/bin/atom-update /usr/local/bin/
 cp -f .vimrc ~/
 cp -f .bashrc ~/
 cp -f .bash_aliases ~/
@@ -16,6 +15,7 @@ cp -f .gitconfig ~/
 cp -f .profile ~/
 cp -f .tmux.conf ~/
 cp -f .NERDTreeBookmarks ~/
+sudo cp -f usr/local/bin/atom-update /usr/local/bin/
 
 #########################################################
 #install vim plugins
