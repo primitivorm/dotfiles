@@ -12,7 +12,7 @@ echo "instalando paquetes..."
 sudo apt-get install aptitude build-essential gcc g++ automake -y
 sudo apt-get install git make cmake flex bison libreadline-dev -y
 sudo apt-get install valgrind dos2unix exuberant-ctags -y
-sudo apt-get install python python-dev libxml2-dev libxslt-dev libssl-dev -y
+sudo apt-get install python python-dev python-urllib3 libxml2-dev libxslt-dev libssl-dev -y
 sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
 sudo apt-get install dpkg-dev libgnome-keyring-dev java -y
 sudo apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
@@ -21,7 +21,7 @@ sudo apt-get install lua5.2 liblua5.2-dev meld libz3 clang-format -y
 sudo apt-get install gnome-system-monitor clisp libgtk-3-dev -y
 sudo apt-get install libjansson-dev libcurl4-openssl-dev curl -y
 sudo apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y
-sudo apt-get install konsole dump gwhere gnuplot plotutils -y
+sudo apt-get install konsole dump gwhere gnuplot plotutils libappindicator1 -y
 sudo apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
 sudo apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
 sudo apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
