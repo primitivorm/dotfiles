@@ -1,5 +1,6 @@
-latino ~/src/latino
-latino-backup ~/src/latino-backup
 quick_references ~/src/quick_references
 dotfiles ~/dotfiles
+bitbucket ~/src/bitbucket
+llvm ~/src/llvm-mirror/llvm
+clang ~/src/llvm-mirror/llvm/tools/clang
 

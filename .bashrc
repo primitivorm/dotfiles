@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
 fi
 
 #configure path for llvm
-export PATH="/usr/lib/llvm-3.8/bin:$PATH"
+export PATH="~/src/llvm-mirror/build/bin:$PATH"
 
 #configure for tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
