@@ -23,14 +23,13 @@ git clone --recursive https://github.com/llvm-mirror/openmp
 git clone --recursive https://github.com/llvm-mirror/libcxx
 git clone --recursive https://github.com/llvm-mirror/libcxxabi
 git clone --recursive https://github.com/llvm-mirror/test-suite
-cd ~/src/llvm-mirror/llvm/
+cd ~/src/llvm-mirror/
 if [ ! -d ~/src/llvm-mirror/build ]; then
     mkdir build
 fi
 cd ~/src/llvm-mirror/build
-rm CMakeCache.txt
 CC='clang' CXX='clang++' cmake -G "Unix Makefiles" -DLLVM_BUILD_EXAMPLES=ON \
 -DCLANG_BUILD_EXAMPLES=ON -DBUILD_SHARED_LIBS=ON -DLLVM_BUILD_LLVM_DYLIB=ON \
--DLLVM_ENABLE_PIC=False -DCMAKE_BUILD_TYPE=Release ../llvm
+-DLLVM_ENABLE_PIC=False -DCMAKE_BUILD_TYPE=Release ../llvm/
 make -j$(nproc)
 sudo make install
