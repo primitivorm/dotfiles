@@ -1,6 +1,5 @@
 #https://llvm.org/docs/CMake.html
 #https://llvm.org/docs/HowToCrossCompileLLVM.html
-
 cd ~
 if [ ! -d ~/src ]; then
     mkdir src
@@ -30,13 +29,12 @@ if [ ! -d ~/src/llvm-mirror/build ]; then
 fi
 cd ~/src/llvm-mirror/build
 CC='clang' CXX='clang++' cmake -G "Unix Makefiles" \
+-DLLVM_TARGETS_TO_BUILD=host \
 -DLLVM_BUILD_EXAMPLES=ON \
 -DCLANG_BUILD_EXAMPLES=ON \
+-DLLVM_ENABLE_OCAMLDOC=OFF \
+-DLLVM_BUILD_DOCS=OFF \
 -DCMAKE_BUILD_TYPE=Release ../llvm/
  
-#-DCMAKE_INSTALL_PREFIX=/usr/bin
-#-DLLVM_TARGETS_TO_BUILD="X86"
-#-DBUILD_SHARED_LIBS=ON
-#-DLLVM_BUILD_LLVM_DYLIB=ON 
 make -j$(nproc)
 sudo make install
