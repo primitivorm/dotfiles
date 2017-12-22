@@ -122,12 +122,14 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(~/.tmuxifier/bin/tmuxifier init -)"
 
 export PATH="/usr/local/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="~/src/llvm-mirror/build/lib:/usr/local/lib:$LD_LIBRARY_PATH"
 
 #configure for latino
 
 export LATINO_LIB="$HOME/src/latino-backup/latino_lib"
 export LATINO_LIBC="$HOME/src/latino-backup/latino_libc"
+
+export LLVM_CONFIG_PATH="/usr/local/bin/"
 
 ##for powerline
 #function _update_ps1() {
