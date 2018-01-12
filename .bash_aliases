@@ -3,7 +3,10 @@ alias vim="gvim"
 
 #terminal commands
 alias la="ls -al"
-
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias l='ls -CF'
+alias cd..='cd ..'
 # show hidden files
 alias l.="ls -d .* --color=auto"
 
