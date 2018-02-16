@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
+        "raw": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
-        "spec": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
+        "rawSpec": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
+        "spec": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-1171023-6353-prkq2x.oakmdyrpb9"
+      "/tmp/apm-install-dir-118022-3460-1eouk3.qzatdl5wmi"
     ]
   ],
-  "_from": "../d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
-  "_id": "markdown-table-editor@1.0.1",
+  "_from": "../d-118022-3460-110igz4.3oj0x561or/package.tgz",
+  "_id": "markdown-table-editor@1.0.2",
   "_inCache": true,
   "_location": "/markdown-table-editor",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
+    "raw": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
-    "spec": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
+    "rawSpec": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
+    "spec": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
-  "_shasum": "45ebbb2a045ed3548281ae5593420f851516951f",
+  "_resolved": "file:../d-118022-3460-110igz4.3oj0x561or/package.tgz",
+  "_shasum": "0b36c50e98352096b4334d52535a7477a029c322",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-1171023-6353-1s3h00s.k26cfbhuxr/package.tgz",
-  "_where": "/tmp/apm-install-dir-1171023-6353-prkq2x.oakmdyrpb9",
+  "_spec": "/tmp/d-118022-3460-110igz4.3oj0x561or/package.tgz",
+  "_where": "/tmp/apm-install-dir-118022-3460-1eouk3.qzatdl5wmi",
   "activationCommands": {},
   "atomTranspilers": [
     {
@@ -175,15 +175,14 @@
   "dependencies": {
     "@susisu/mte-kernel": "1.0.0",
     "atom-babel6-transpiler": "^1.1.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "meaw": "^1.0.0"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
   },
   "description": "Markdown table editor/formatter",
   "devDependencies": {
     "eslint": "^4.11.0"
   },
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.22.0 <2.0.0"
   },
   "homepage": "https://github.com/susisu/atom-markdown-table-editor#readme",
   "keywords": [
@@ -204,5 +203,5 @@
     "fix": "eslint lib spec --fix",
     "lint": "eslint lib spec"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

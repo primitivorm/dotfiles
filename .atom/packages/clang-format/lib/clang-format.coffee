@@ -72,7 +72,7 @@ class ClangFormat
       options['cwd'] = path.dirname(file_path)
 
     try
-      stdout = execSync("#{exe} #{args}", options).toString()
+      stdout = execSync("\"#{exe}\" #{args}", options).toString()
         # Update buffer with formatted text. setTextViaDiff minimizes re-rendering
       buffer.setTextViaDiff @getReturnedFormattedText(stdout)
         # Restore cursor position
@@ -101,6 +101,8 @@ class ClangFormat
     if atom.config.get('clang-format.formatObjectiveCOnSave') and scope in ['source.objc', 'source.objcpp']
       return true
     if atom.config.get('clang-format.formatJavascriptOnSave') and scope in ['source.js']
+      return true
+    if atom.config.get('clang-format.formatTypescriptOnSave') and scope in ['source.ts']
       return true
     if atom.config.get('clang-format.formatJavaOnSave') and scope in ['source.java']
       return true

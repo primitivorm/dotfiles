@@ -1,0 +1,115 @@
+// Import Styles from Atom
+@import "ui-variables";
+@import "syntax-variables";
+
+// Import Styles from Xterm
+@import (inline) "../node_modules/xterm/dist/xterm.css";
+
+.ui-syntax-color() { @syntax-background-color: hsl(198, 24%, 20%); } .ui-syntax-color(); // fallback color
+@ui-syntax-color: @syntax-background-color;
+
+terminal-view {
+
+  .xterm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .xterm-viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+}
+
+.terminal-view-color-elements {
+
+  [data-color-key="foreground"] {
+    color: @syntax-text-color;
+  }
+
+  [data-color-key="background"] {
+    color: @syntax-background-color;
+  }
+
+  [data-color-key="cursor"] {
+    color: @syntax-text-color;
+  }
+
+  [data-color-key="cursorAccent"] {
+    color: @syntax-text-color;
+  }
+
+  [data-color-key="selection"] {
+    color: @syntax-selection-color;
+  }
+
+  [data-color-key="black"] { // 0, Black
+    color: #2e3436;
+  }
+
+  [data-color-key="red"] { // 1, Red
+    color: @syntax-color-variable;
+  }
+
+  [data-color-key="green"] { // 2, Green
+    color: @syntax-color-snippet;
+  }
+
+  [data-color-key="yellow"] { // 3, Yellow
+    color: @syntax-color-constant;
+  }
+
+  [data-color-key="blue"] { // 4, Blue
+    color: @syntax-color-function;
+  }
+
+  [data-color-key="magenta"] { // 5, Magenta
+    color: @syntax-color-keyword;
+  }
+
+  [data-color-key="cyan"] { // 6, Cyan
+    color: @syntax-color-class;
+  }
+
+  [data-color-key="white"] { // 7, White
+    color: #d3d7cf;
+  }
+
+  [data-color-key="brightBlack"] { // 8, Bright Black
+    color: #555753;
+  }
+
+  [data-color-key="brightRed"] { // 9, Bright Red
+    color: @syntax-color-variable;
+  }
+
+  [data-color-key="brightGreen"] { // 10, Bright Green
+    color: @syntax-color-snippet;
+  }
+
+  [data-color-key="brightYellow"] { // 11, Bright Yellow
+    color: @syntax-color-constant;
+  }
+
+  [data-color-key="brightBlue"] { // 12, Bright Blue
+    color: @syntax-color-function;
+  }
+
+  [data-color-key="brightMagenta"] { // 13, Bright Magenta
+    color: @syntax-color-keyword;
+  }
+
+  [data-color-key="brightCyan"] { // 14, Bright Cyan
+    color: @syntax-color-class;
+  }
+
+  [data-color-key="brightWhite"] { // 15, Bright White
+    color: #eeeeec;
+  }
+
+}

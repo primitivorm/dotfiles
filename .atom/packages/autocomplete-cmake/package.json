@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+        "spec": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-118113-8504-56slf8.s5ch8jv2t9"
+    ]
+  ],
+  "_from": "../d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+  "_id": "autocomplete-cmake@0.3.1",
+  "_inCache": true,
+  "_location": "/autocomplete-cmake",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+    "spec": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+  "_shasum": "2e4ac86b870796f919ad14821ba1efc209968943",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-118113-8504-aix4pv.mpdwe9udi/package.tgz",
+  "_where": "/tmp/apm-install-dir-118113-8504-56slf8.s5ch8jv2t9",
+  "bugs": {
+    "url": "https://github.com/NealRame/autocomplete-cmake/issues"
+  },
+  "dependencies": {
+    "fuzzaldrin": "^2.1.0"
+  },
+  "description": "An Autocomplete Plus provider for CMake.",
+  "devDependencies": {
+    "eslint": "^1.8.0"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "rules": {
+      "camelcase": 0,
+      "curly": [
+        1,
+        "multi-line"
+      ],
+      "new-cap": [
+        1,
+        {
+          "newIsCap": true,
+          "capIsNew": false
+        }
+      ],
+      "quotes": [
+        1,
+        "single"
+      ],
+      "space-infix-ops": 0,
+      "strict": [
+        2,
+        "global"
+      ]
+    }
+  },
+  "homepage": "https://github.com/NealRame/autocomplete-cmake#readme",
+  "license": "MIT",
+  "main": "./lib/autocomplete-cmake",
+  "name": "autocomplete-cmake",
+  "optionalDependencies": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  },
+  "readme": "# autocomplete-cmake package\n\nAn Autocomplete Plus provider for CMake.\n\n![Screencast](https://dl.dropboxusercontent.com/u/23161414/autocomplete-cmake-screencast.gif)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NealRame/autocomplete-cmake.git"
+  },
+  "version": "0.3.1"
+}

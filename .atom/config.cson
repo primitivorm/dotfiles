@@ -17,6 +17,7 @@
     ]
   editor:
     fontFamily: "Inconsolata"
+    fontSize: 16
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
