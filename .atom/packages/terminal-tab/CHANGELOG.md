@@ -1,3 +1,8 @@
+## 0.5.4
+
+* Added support for specifying a custom font family.
+* Cleaned up the settings configuration with better descriptions and layout.
+
 ## 0.5.3
 
 * Fixed serialization of sanitized environment variables.

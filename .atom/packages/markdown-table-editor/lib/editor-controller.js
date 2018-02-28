@@ -12,34 +12,34 @@ export default class EditorController {
     this.editorIntf = new TextEditorInterface(this.editor, atom.config.get(`${NAMESPACE}.scopes`));
     this.tableEditor = new TableEditor(this.editorIntf);
 
-    this.updateActiveState(this.isActive());
+    this.updateActiveState();
 
     // event subscriptions
     this.subscriptions = new CompositeDisposable();
 
     // editor
     this.subscriptions.add(this.editor.onDidChangeGrammar(() => {
-      this.updateActiveState(this.isActive());
+      this.updateActiveState();
     }));
     this.subscriptions.add(this.editor.onDidAddCursor(() => {
-      this.updateActiveState(this.isActive());
+      this.updateActiveState();
     }));
     this.subscriptions.add(this.editor.onDidRemoveCursor(() => {
-      this.updateActiveState(this.isActive());
+      this.updateActiveState();
     }));
     this.subscriptions.add(this.editor.onDidChangeCursorPosition(event => {
       if (!this.editorIntf.transaction
         && event.newBufferPosition.row !== event.oldBufferPosition.row) {
-        this.updateActiveState(this.isActive());
+        this.updateActiveState();
       }
     }));
     this.subscriptions.add(this.editor.onDidStopChanging(() => {
       if (!this.editorIntf.transaction) {
-        this.updateActiveState(this.isActive());
+        this.updateActiveState();
       }
     }));
     this.subscriptions.add(this.editorIntf.onDidFinishTransaction(() => {
-      this.updateActiveState(this.isActive());
+      this.updateActiveState();
     }));
     this.subscriptions.add(this.editor.getBuffer().onWillSave(() => {
       if (atom.config.get(`${NAMESPACE}.formatOnSave`)) {
@@ -50,15 +50,13 @@ export default class EditorController {
     // config
     this.subscriptions.add(atom.config.observe(`${NAMESPACE}.scopes`, scopes => {
       this.editorIntf.scopes = scopes;
-      this.updateActiveState(this.isActive());
+      this.updateActiveState();
     }));
   }
 
-  isActive() {
-    return !this.editor.hasMultipleCursors() && this.tableEditor.cursorIsInTable();
-  }
-
-  updateActiveState(isActive) {
+  updateActiveState() {
+    const isActive = !this.editor.hasMultipleCursors()
+      && this.tableEditor.cursorIsInTable(this.getOptions());
     if (isActive) {
       this.editor.element.classList.add(ACTIVE_CLASS);
     }
@@ -69,17 +67,21 @@ export default class EditorController {
   }
 
   getOptions() {
+    const configOpt = {
+      scope: this.editor.scopeDescriptorForBufferPosition(this.editor.getCursorBufferPosition())
+    };
     return options({
-      formatType       : atom.config.get(`${NAMESPACE}.formatType`),
-      minDelimiterWidth: atom.config.get(`${NAMESPACE}.minDelimiterWidth`),
-      defaultAlignment : atom.config.get(`${NAMESPACE}.defaultAlignment`),
-      headerAlignment  : atom.config.get(`${NAMESPACE}.headerAlignment`),
-      smartCursor      : atom.config.get(`${NAMESPACE}.smartCursor`),
+      leftMarginChars  : new Set(atom.config.get(`${NAMESPACE}.leftMarginChars`, configOpt)),
+      formatType       : atom.config.get(`${NAMESPACE}.formatType`, configOpt),
+      minDelimiterWidth: atom.config.get(`${NAMESPACE}.minDelimiterWidth`, configOpt),
+      defaultAlignment : atom.config.get(`${NAMESPACE}.defaultAlignment`, configOpt),
+      headerAlignment  : atom.config.get(`${NAMESPACE}.headerAlignment`, configOpt),
+      smartCursor      : atom.config.get(`${NAMESPACE}.smartCursor`, configOpt),
       textWidthOptions : {
-        normalize      : atom.config.get(`${NAMESPACE}.normalize`),
-        wideChars      : new Set(atom.config.get(`${NAMESPACE}.wideChars`)),
-        narrowChars    : new Set(atom.config.get(`${NAMESPACE}.narrowChars`)),
-        ambiguousAsWide: atom.config.get(`${NAMESPACE}.ambiguousAsWide`)
+        normalize      : atom.config.get(`${NAMESPACE}.normalize`, configOpt),
+        wideChars      : new Set(atom.config.get(`${NAMESPACE}.wideChars`, configOpt)),
+        narrowChars    : new Set(atom.config.get(`${NAMESPACE}.narrowChars`, configOpt)),
+        ambiguousAsWide: atom.config.get(`${NAMESPACE}.ambiguousAsWide`, configOpt)
       }
     });
   }
