@@ -12,8 +12,8 @@
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
-      "atom-dark-ui"
-      "one-dark-syntax"
+      "atom-light-ui"
+      "one-light-syntax"
     ]
   editor:
     fontFamily: "Inconsolata"
@@ -25,7 +25,7 @@
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
   "linter-ui-default":
-    panelHeight: 59
+    panelHeight: 226
     showPanel: true
   minimap:
     charHeight: 3

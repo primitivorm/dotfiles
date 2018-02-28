@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
+        "raw": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
-        "spec": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
+        "rawSpec": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
+        "spec": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118116-13178-k6vemp.ok617nwmi"
+      "/tmp/apm-install-dir-118126-4144-1j0sd5f.hq5s0mgqfr"
     ]
   ],
-  "_from": "../d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
-  "_id": "terminal-tab@0.5.2",
+  "_from": "../d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
+  "_id": "terminal-tab@0.5.3",
   "_inCache": true,
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
+    "raw": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
-    "spec": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
+    "rawSpec": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
+    "spec": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
-  "_shasum": "f5f8b8695469490cf73974cc4b0bb17a5eca9381",
+  "_resolved": "file:../d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
+  "_shasum": "6e4ee5ac5aa96b7ffbcac8368748cfb33e3507ef",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118116-13178-msnvdi.o1w03eg66r/package.tgz",
-  "_where": "/tmp/apm-install-dir-118116-13178-k6vemp.ok617nwmi",
+  "_spec": "/tmp/d-118126-4144-1qsy9qz.lxu7bvs4i/package.tgz",
+  "_where": "/tmp/apm-install-dir-118126-4144-1j0sd5f.hq5s0mgqfr",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",
@@ -119,5 +119,5 @@
   "scripts": {
     "test": "apm test"
   },
-  "version": "0.5.2"
+  "version": "0.5.3"
 }
