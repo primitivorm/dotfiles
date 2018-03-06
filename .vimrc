@@ -6,8 +6,8 @@ filetype plugin indent on
 set ai
 set autoread
 set autowrite
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 set cursorline
 set expandtab
 set foldlevel=1

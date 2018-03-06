@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+        "raw": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
-        "spec": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+        "rawSpec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+        "spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118128-26524-1wmbody.fq6q0ejyvi"
+      "/tmp/apm-install-dir-11825-3427-q6jx0z.u5qsnvobt9"
     ]
   ],
-  "_from": "../d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+  "_from": "../d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
   "_id": "terminal-tab@0.5.4",
   "_inCache": true,
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+    "raw": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
-    "spec": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+    "rawSpec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+    "spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
+  "_resolved": "file:../d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
   "_shasum": "3ba8a1394b3946e8ce849c62905abd6994925bad",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118128-26524-2gbbka.b8n6ogvi/package.tgz",
-  "_where": "/tmp/apm-install-dir-118128-26524-1wmbody.fq6q0ejyvi",
+  "_spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11825-3427-q6jx0z.u5qsnvobt9",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",

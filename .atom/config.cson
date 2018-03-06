@@ -12,8 +12,8 @@
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
-      "atom-light-ui"
-      "one-light-syntax"
+      "atom-dark-ui"
+      "one-dark-syntax"
     ]
   editor:
     fontFamily: "Inconsolata"
