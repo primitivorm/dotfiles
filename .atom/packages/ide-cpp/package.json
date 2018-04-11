@@ -1,0 +1,139 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+        "spec": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-118311-7546-1b6u4z3.u4vilcv7vi"
+    ]
+  ],
+  "_from": "../d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+  "_id": "ide-cpp@0.0.3",
+  "_inCache": true,
+  "_location": "/ide-cpp",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+    "spec": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+  "_shasum": "9ccc5973d54b36ec0d34a4131ae521e9eb0394d8",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-118311-7546-1ti804s.t8e2b4vx6r/package.tgz",
+  "_where": "/tmp/apm-install-dir-118311-7546-1b6u4z3.u4vilcv7vi",
+  "bugs": {
+    "url": "https://github.com/thomasjo/atom-ide-cpp/issues"
+  },
+  "configSchema": {
+    "clangdPath": {
+      "type": "string",
+      "default": "/usr/bin/clangd"
+    }
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "NA_consumeLinterV2"
+      }
+    },
+    "datatip": {
+      "versions": {
+        "0.1.0": "NA_consumeDatatip"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-languageclient": "^0.6.3"
+  },
+  "description": "C++ and C language support for Atom-IDE",
+  "devDependencies": {
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "atom": ">=1.21.0"
+  },
+  "enhancedScopes": [
+    "source.c",
+    "source.cpp"
+  ],
+  "homepage": "https://github.com/thomasjo/atom-ide-cpp#readme",
+  "keywords": [
+    "c++",
+    "c",
+    "ide",
+    "clangd"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "ide-cpp",
+  "optionalDependencies": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "code-format.range": {
+      "versions": {
+        "0.1.0": "provideCodeFormat"
+      }
+    },
+    "code-highlight": {
+      "versions": {
+        "0.1.0": "provideCodeHighlight"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "NA_provideDefinitions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "NA_provideFindReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "NA_provideOutlines"
+      }
+    }
+  },
+  "readme": "# C/C++ language support for Atom-IDE\n\nThis project is still in its infancy, but the basic idea is to provide support\nfor C++ and C to Atom-IDE by virtue of the highly experimental LLVM tool,\n[Clangd][clangd].\n\n## Development Status\nThe current implementation should be considered **extremely** experimental,\nprimarily because [Clangd][clangd] is still under heavy, initial development,\nand is therefore missing key functionality, contains bugs, etc.\n\n<!--- List of References --->\n[clangd]: https://clang.llvm.org/extra/clangd.html\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasjo/atom-ide-cpp.git"
+  },
+  "standard": {
+    "globals": [
+      "afterEach",
+      "atom",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jasmine",
+      "runs",
+      "spyOn",
+      "waitsFor",
+      "waitsForPromise"
+    ]
+  },
+  "version": "0.0.3"
+}

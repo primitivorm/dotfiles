@@ -1,7 +1,15 @@
 # Next
 - ...
 
-# v0.31.0 (2018-03-02)
+# v0.32.2 (2018-03-10)
+- Revert fix package.json repository field (#2062)
+
+# v0.32.1 (2018-03-10)
+- Update Prettier to 1.11.1. (#2060)
+- Fix package.json repository field (#2062)
+- Fix "Reindent" option for sqlformat. (#2064)
+
+# v0.32.0 (2018-03-02)
 - See [#2026](https://github.com/Glavin001/atom-beautify/issues/2026) Add Vue support to ESLint Fixer beautifier. Should be used with [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue).
 - Fix Beauify File option for .lua files
 - Switch to Remark as a default markdown beautifier due to a more active state of its community compared to Tidy Markdown ([#2004](https://github.com/Glavin001/atom-beautify/pull/2004)).
@@ -40,8 +48,8 @@
 - Fix for [#1888](https://github.com/Glavin001/atom-beautify/issues/1888). Allow 0 for minor and patch versions of Docker
 - Add Atom-Beautify package settings menu item to Packages menu [#1869](https://github.com/Glavin001/atom-beautify/issues/1869)
 - Add `.ttslua` file extension to Lua language
-- Fix [#1638]. Update TypeScript Formatter dependency
-- Fix [#1833] `os.tmpDir` deprecation warning
+- Fix [#1638](https://github.com/Glavin001/atom-beautify/issues/1638). Update TypeScript Formatter dependency
+- Fix [#1833](https://github.com/Glavin001/atom-beautify/issues/1833) `os.tmpDir` deprecation warning
 
 # v0.30.5 (2017-08-11)
 - Fix for [#1721](https://github.com/Glavin001/atom-beautify/issues/1721). Changes required due to TextBuffer.save becoming async in Atom 1.19

@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+        "raw": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
-        "spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+        "rawSpec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+        "spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11825-3427-q6jx0z.u5qsnvobt9"
+      "/tmp/apm-install-dir-118310-2332-1gveiti.zsfoxyldi"
     ]
   ],
-  "_from": "../d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
-  "_id": "terminal-tab@0.5.4",
+  "_from": "../d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+  "_id": "terminal-tab@0.5.5",
   "_inCache": true,
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+    "raw": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
-    "spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
+    "rawSpec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+    "spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
-  "_shasum": "3ba8a1394b3946e8ce849c62905abd6994925bad",
+  "_resolved": "file:../d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+  "_shasum": "e82cd7de55e994419dcad8779973eab9c40aacd4",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11825-3427-14ak45n.wkakrwl8fr/package.tgz",
-  "_where": "/tmp/apm-install-dir-11825-3427-q6jx0z.u5qsnvobt9",
+  "_spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+  "_where": "/tmp/apm-install-dir-118310-2332-1gveiti.zsfoxyldi",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",
@@ -119,5 +119,5 @@
   "scripts": {
     "test": "apm test"
   },
-  "version": "0.5.4"
+  "version": "0.5.5"
 }

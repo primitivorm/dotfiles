@@ -2,6 +2,8 @@
   "atom-beautify":
     general:
       _analyticsUserId: "e41755fc-0a88-458c-997d-6a44e6661d10"
+  "atom-ide-ui":
+    use: {}
   "atom-terminal":
     app: "/usr/bin/gnome-terminal"
   "clang-format":
@@ -9,6 +11,9 @@
     formatCOnSave: true
     formatCPlusPlusOnSave: true
   core:
+    disabledPackages: [
+      "linter"
+    ]
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
@@ -21,6 +26,7 @@
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
+  "ide-cpp": {}
   "linter-gcc":
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
