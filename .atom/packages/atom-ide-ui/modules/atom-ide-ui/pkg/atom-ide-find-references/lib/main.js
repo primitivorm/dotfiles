@@ -47,7 +47,7 @@ function _load_UniversalDisposable() {
 var _analytics;
 
 function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons-atom/analytics'));
+  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
 }
 
 var _FindReferencesViewModel;
@@ -310,7 +310,10 @@ class Activation {
       const resultPromise = (0, (_promise || _load_promise()).asyncFind)(supported.map(function (provider) {
         return provider.findReferences(editor, point).catch(function (err) {
           (0, (_log4js || _load_log4js()).getLogger)('find-references').error('Error finding references', err);
-          return null;
+          return {
+            type: 'error',
+            message: String(err)
+          };
         });
       }), function (x) {
         return x;

@@ -4,10 +4,22 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _idx;
+
+function _load_idx() {
+  return _idx = _interopRequireDefault(require('idx'));
+}
+
 var _UniversalDisposable;
 
 function _load_UniversalDisposable() {
   return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
+}
+
+var _nullthrows;
+
+function _load_nullthrows() {
+  return _nullthrows = _interopRequireDefault(require('nullthrows'));
 }
 
 var _featureConfig;
@@ -48,7 +60,7 @@ const { devMode } = atom.getLoadSettings();
 
 class FeatureLoader {
 
-  constructor({ features, path: _path }) {
+  constructor({ features, path: _path, featureGroups }) {
     this._featureGroupMap = new (_collection || _load_collection()).MultiMap();
     this._currentPackageState = new Set();
 
@@ -56,6 +68,10 @@ class FeatureLoader {
     this._features = features;
     this._loadDisposable = new (_UniversalDisposable || _load_UniversalDisposable()).default();
     this._pkgName = packageNameFromPath(this._path);
+    this._featureGroups = featureGroups == null ? {} : featureGroups;
+
+    // Constructs the map from feature groups to features.
+    this.constructFeatureGroupMap();
     this._config = {
       use: {
         title: 'Enabled Features',
@@ -101,11 +117,6 @@ class FeatureLoader {
     this._features.forEach(feature => {
       const featurePkg = feature.pkg;
       const name = packageNameFromPath(feature.path);
-
-      // Add the feature to its feature group.
-      this.addToFeatureGroup(feature);
-
-      // Entry for enabling/disabling the feature
 
       // Migrate the current feature (from boolean on/off to enumerated states).
       this.migrateFeature(feature);
@@ -203,6 +214,24 @@ class FeatureLoader {
 
     localStorage.removeItem(rootPackage.getCanDeferMainModuleRequireStorageKey());
 
+    // Hack time!! Atom's repository APIs are synchronous. Any package that tries to use them before
+    // we've had a chance to provide our implementation are going to get wrong answers. The correct
+    // thing to do would be to always go through an async API that awaits until
+    // `atom.packages.onDidActivateInitialPackages()` completes. However, we have some legacy sync
+    // codepaths that make that difficult. As a temporary (I hope) workaround, we prioritize
+    // activation of the features that provide this service.
+    const originalOrder = new Map(this._features.map((feature, i) => [feature, i]));
+    this._features.sort((a, b) => {
+      const aIsRepoProvider = packageIsRepositoryProvider(a.pkg);
+      const bIsRepoProvider = packageIsRepositoryProvider(b.pkg);
+      if (aIsRepoProvider !== bIsRepoProvider) {
+        return aIsRepoProvider ? -1 : 1;
+      }
+      const aIndex = (0, (_nullthrows || _load_nullthrows()).default)(originalOrder.get(a));
+      const bIndex = (0, (_nullthrows || _load_nullthrows()).default)(originalOrder.get(b));
+      return aIndex - bIndex;
+    });
+
     this._features.forEach(feature => {
       // Since the migration from bool to enum occurs before the config defaults
       // are changed, the user's config gets filled with every Nuclide feature.
@@ -273,7 +302,7 @@ class FeatureLoader {
     //  * Add all packages in nuclide.use
     //  * Remove any feature not in an active featureGroup.
     let groupedPackages;
-    if (featureGroupState != null && featureGroupState.length > 0) {
+    if (featureGroupState != null) {
       groupedPackages = (0, (_collection || _load_collection()).setUnion)(...featureGroupState.map(featureGroup => this._featureGroupMap.get(featureGroup)));
     } else {
       // If featuregroups is empty or undefined, assume all features should be enabled.
@@ -288,11 +317,23 @@ class FeatureLoader {
     }));
   }
 
-  addToFeatureGroup(feature) {
-    const featureGroups = feature.pkg.featureGroups;
-    if (featureGroups != null) {
-      for (const featureGroup of featureGroups) {
-        this._featureGroupMap.add(featureGroup, feature);
+  constructFeatureGroupMap() {
+    /*
+     * Construct a map from feature name to feature. The _featureGroupMap
+     * must contain the true feature objects, but featureGroups.cson only has
+     * the feature names.
+     */
+    const featureMap = new Map();
+    this._features.forEach(feature => {
+      featureMap.set(_path2.default.basename(feature.path), feature);
+    });
+
+    for (const key of Object.keys(this._featureGroups)) {
+      if (Array.isArray(this._featureGroups[key])) {
+        const featuresForKey = this._featureGroups[key].map(featureName => featureMap.get(featureName)).filter(Boolean);
+        if (featuresForKey != null) {
+          this._featureGroupMap.set(key, featuresForKey);
+        }
       }
     }
   }
@@ -323,7 +364,7 @@ class FeatureLoader {
   }
 
   useKeyPathForFeatureGroup() {
-    return `${this._pkgName}.enabled-feature-groups`;
+    return `${this._pkgName}.enabledFeatureGroups`;
   }
 
   shouldEnable(feature) {
@@ -417,4 +458,10 @@ function safeSerialize(feature) {
 // explicit, and unifies it in the case this ever needs to change.
 function packageNameFromPath(pkgPath) {
   return _path2.default.basename(pkgPath);
+}
+
+function packageIsRepositoryProvider(pkg) {
+  var _ref, _ref2;
+
+  return Boolean((_ref = pkg) != null ? (_ref2 = _ref.providedServices) != null ? _ref2['atom.repository-provider'] : _ref2 : _ref);
 }

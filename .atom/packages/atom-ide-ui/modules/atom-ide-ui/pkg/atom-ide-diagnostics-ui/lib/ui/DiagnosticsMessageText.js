@@ -10,7 +10,29 @@ var _react = _interopRequireWildcard(require('react'));
 
 var _electron = require('electron');
 
+var _dompurify;
+
+function _load_dompurify() {
+  return _dompurify = _interopRequireDefault(require('dompurify'));
+}
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ * @format
+ */
+
+const domPurify = (0, (_dompurify || _load_dompurify()).default)();
 
 // Exported for testing.
 function separateUrls(message) {
@@ -46,21 +68,11 @@ function separateUrls(message) {
     });
   }
   return parts;
-} /**
-   * Copyright (c) 2017-present, Facebook, Inc.
-   * All rights reserved.
-   *
-   * This source code is licensed under the BSD-style license found in the
-   * LICENSE file in the root directory of this source tree. An additional grant
-   * of patent rights can be found in the PATENTS file in the same directory.
-   *
-   * 
-   * @format
-   */
+}
 
 const LEADING_WHITESPACE_RE = /^\s+/;
 const NBSP = '\xa0';
-function renderRowWithLinks(message, rowIndex) {
+function renderRowWithLinks(message, rowIndex, rows) {
   const messageWithWhitespace = message.replace(LEADING_WHITESPACE_RE, whitespace => NBSP.repeat(whitespace.length));
   const parts = separateUrls(messageWithWhitespace).map((part, index) => {
     if (!part.isUrl) {
@@ -83,7 +95,7 @@ function renderRowWithLinks(message, rowIndex) {
       'span',
       { key: rowIndex },
       parts,
-      _react.createElement('br', null)
+      rowIndex !== rows.length - 1 && _react.createElement('br', null)
     )
   );
 }
@@ -93,7 +105,9 @@ const DiagnosticsMessageText = exports.DiagnosticsMessageText = props => {
   if (message.html != null) {
     return _react.createElement('span', {
       title: message.text,
-      dangerouslySetInnerHTML: { __html: message.html }
+      dangerouslySetInnerHTML: {
+        __html: domPurify.sanitize(message.html)
+      }
     });
   } else if (message.text != null) {
     const rows = props.preserveNewlines !== false ? message.text.split('\n') : [message.text];

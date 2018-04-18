@@ -41,7 +41,7 @@ function _load_UniversalDisposable() {
 var _analytics;
 
 function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons-atom/analytics'));
+  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
 }
 
 var _event;
@@ -204,8 +204,9 @@ class StatusBarTileComponent extends _react.Component {
         'a',
         {
           className: errorClassName,
-          onClick: this._onClick,
-          ref: (0, (_addTooltip || _load_addTooltip()).default)({
+          onClick: this._onClick
+          // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+          , ref: (0, (_addTooltip || _load_addTooltip()).default)({
             title: `${errorLabel} error${errorSuffix}`,
             placement: 'top'
           }) },
@@ -216,8 +217,9 @@ class StatusBarTileComponent extends _react.Component {
         'a',
         {
           className: warningClassName,
-          onClick: this._onClick,
-          ref: (0, (_addTooltip || _load_addTooltip()).default)({
+          onClick: this._onClick
+          // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+          , ref: (0, (_addTooltip || _load_addTooltip()).default)({
             title: `${warningLabel} warning${warningSuffix}`,
             placement: 'top'
           }) },

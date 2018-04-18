@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+        "raw": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
-        "spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+        "rawSpec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+        "spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118310-2332-1gveiti.zsfoxyldi"
+      "/tmp/apm-install-dir-118318-11261-rf7nrg.ps0ki96bt9"
     ]
   ],
-  "_from": "../d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+  "_from": "../d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
   "_id": "terminal-tab@0.5.5",
   "_inCache": true,
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+    "raw": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
-    "spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+    "rawSpec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+    "spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
+  "_resolved": "file:../d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
   "_shasum": "e82cd7de55e994419dcad8779973eab9c40aacd4",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118310-2332-1xafil0.dqg4cjif6r/package.tgz",
-  "_where": "/tmp/apm-install-dir-118310-2332-1gveiti.zsfoxyldi",
+  "_spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+  "_where": "/tmp/apm-install-dir-118318-11261-rf7nrg.ps0ki96bt9",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",

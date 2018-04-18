@@ -31,8 +31,7 @@
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
   "linter-ui-default":
-    panelHeight: 226
-    showPanel: true
+    panelHeight: 245
   minimap:
     charHeight: 3
     charWidth: 1.5

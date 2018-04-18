@@ -106,8 +106,12 @@ class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable {
   }
 
   lift(operator) {
-    const obs = new DOMObserverObservable(this._DOMObserverCtor, ...this._observations[0]);
-    obs._observations = this._observations.slice();
+    const Constructor = this.constructor;
+    const [firstObservation, ...restObservations] = this._observations;
+    const obs = new Constructor(this._DOMObserverCtor, ...firstObservation);
+    for (const observation of restObservations) {
+      obs.observe(...observation);
+    }
     obs.source = this;
     obs.operator = operator;
     return obs;

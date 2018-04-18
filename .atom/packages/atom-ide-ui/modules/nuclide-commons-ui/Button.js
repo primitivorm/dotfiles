@@ -113,8 +113,9 @@ class Button extends _react.Component {
       _react.createElement(
         Wrapper,
         Object.assign({
-          className: newClassName,
-          ref: ref
+          className: newClassName
+          // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+          , ref: ref
         }, remainingProps, {
           title: titleToolTip }),
         children

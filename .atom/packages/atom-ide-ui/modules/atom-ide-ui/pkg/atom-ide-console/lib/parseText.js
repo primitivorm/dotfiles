@@ -5,12 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = parseText;
 
-var _goToLocation;
-
-function _load_goToLocation() {
-  return _goToLocation = require('nuclide-commons-atom/go-to-location');
-}
-
 var _react = _interopRequireWildcard(require('react'));
 
 var _featureConfig;
@@ -29,22 +23,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
+const DIFF_PATTERN = '\\b[dD][1-9][0-9]{5,}\\b'; /**
+                                                  * Copyright (c) 2017-present, Facebook, Inc.
+                                                  * All rights reserved.
+                                                  *
+                                                  * This source code is licensed under the BSD-style license found in the
+                                                  * LICENSE file in the root directory of this source tree. An additional grant
+                                                  * of patent rights can be found in the PATENTS file in the same directory.
+                                                  *
+                                                  * 
+                                                  * @format
+                                                  */
 
-const DIFF_PATTERN = '\\b[dD][1-9][0-9]{5,}\\b';
 const TASK_PATTERN = '\\b[tT]\\d+\\b';
-const FILE_PATH_PATTERN = '([/A-Za-z_-s0-9.-]+[.][A-Za-z]+)(:([0-9]+))?(:([0-9]+))?';
-const CLICKABLE_PATTERNS = `(${DIFF_PATTERN})|(${TASK_PATTERN})|(${(_string || _load_string()).URL_REGEX.source})|${FILE_PATH_PATTERN}`;
+
+/**
+ * This does NOT contain a pattern to match file references. It's difficult to write such a pattern
+ * that matches all and only file references, and it's even worse when you add remote development
+ * into the mix. The upshot is that it adds more confusion than convenience, and a proper solution
+ * will require moving to a more robust parsing and rendering approach entirely.
+ */
+const CLICKABLE_PATTERNS = `(${DIFF_PATTERN})|(${TASK_PATTERN})|(${(_string || _load_string()).URL_REGEX.source})`;
 const CLICKABLE_RE = new RegExp(CLICKABLE_PATTERNS, 'g');
 
 function toString(value) {
@@ -90,15 +89,6 @@ function parseText(text) {
     } else if (match[3] != null) {
       // It's a URL
       href = matchedText;
-    } else if (match[5] != null) {
-      // It's a file path
-      href = '#';
-      handleOnClick = () => {
-        (0, (_goToLocation || _load_goToLocation()).goToLocation)(match[5], {
-          line: match[7] ? parseInt(match[7], 10) - 1 : 0,
-          column: match[9] ? parseInt(match[9], 10) - 1 : 0
-        });
-      };
     }
 
     chunks.push(

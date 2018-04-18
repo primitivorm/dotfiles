@@ -1,6 +1,6 @@
 {
   "name": "nuclide-node-transpiler",
-  "version": "0.5.1-dev",
+  "version": "0.7.0-dev",
   "description": "Transpiles JavaScript files",
   "author": "NEEDS OWNER",
   "main": "./lib/main.js",
@@ -37,6 +37,5 @@
     "dedent": "0.6.0",
     "jasmine-node": "1.14.5",
     "yargs": "3.32.0"
-  },
-  "private": true
+  }
 }

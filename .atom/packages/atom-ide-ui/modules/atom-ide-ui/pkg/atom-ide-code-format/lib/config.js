@@ -14,8 +14,10 @@ function _load_featureConfig() {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function getFormatOnSave() {
-  const formatOnSave = (_featureConfig || _load_featureConfig()).default.get('atom-ide-code-format.formatOnSave');
+function getFormatOnSave(editor) {
+  const formatOnSave = (_featureConfig || _load_featureConfig()).default.get('atom-ide-code-format.formatOnSave', {
+    scope: editor.getRootScopeDescriptor()
+  });
   return formatOnSave == null ? false : formatOnSave;
 } /**
    * Copyright (c) 2017-present, Facebook, Inc.

@@ -2,49 +2,52 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
+        "raw": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
-        "spec": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
+        "rawSpec": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
+        "spec": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118311-7166-1sjciqw.wqn21vpldi"
+      "/tmp/apm-install-dir-118318-11275-sxk3hf.lobomeu3di"
     ]
   ],
-  "_from": "../d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
-  "_id": "atom-ide-ui@0.9.4",
+  "_from": "../d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
+  "_id": "atom-ide-ui@0.11.0",
   "_inCache": true,
   "_location": "/atom-ide-ui",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
+    "raw": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
-    "spec": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
+    "rawSpec": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
+    "spec": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
-  "_shasum": "72a5d9311e6b16db6f29dcb612cced16f201d461",
+  "_resolved": "file:../d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
+  "_shasum": "055ec230a2016c6a227b2b1e872837fe6f231829",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118311-7166-10hi7jb.4mbibb7qfr/package.tgz",
-  "_where": "/tmp/apm-install-dir-118311-7166-1sjciqw.wqn21vpldi",
+  "_spec": "/tmp/d-118318-11275-1vpl21c.2xzjq3erk9/package.tgz",
+  "_where": "/tmp/apm-install-dir-118318-11275-sxk3hf.lobomeu3di",
   "bugs": {
     "url": "https://github.com/facebook-atom/atom-ide-ui/issues"
   },
   "dependencies": {
     "async-to-generator": "1.1.0",
     "classnames": "2.2.5",
-    "command-exists": "1.2.2",
     "dedent": "0.6.0",
+    "domexception": "1.0.1",
+    "dompurify": "1.0.3",
+    "escape-html": "1.0.3",
     "escape-string-regexp": "1.0.5",
     "event-kit": "2.2.0",
+    "event-target-shim": "3.0.1",
     "fs-plus": "2.9.3",
     "fuzzaldrin-plus": "0.4.1",
     "glob": "7.1.1",
@@ -58,6 +61,7 @@
     "mime-types": "2.1.16",
     "mkdirp": "0.5.1",
     "mv": "2.1.1",
+    "nuclide-prebuilt-libs": "0.4.0",
     "nullthrows": "1.0.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
@@ -71,11 +75,14 @@
     "semver": "5.3.0",
     "shallowequal": "0.2.2",
     "shell-quote": "1.6.1",
+    "strip-ansi": "3.0.1",
     "tabbable": "1.1.0",
     "temp": "0.8.3",
     "uuid": "3.0.1",
+    "vscode-debugprotocol": "1.24.0",
     "vscode-jsonrpc": "3.3.0",
-    "vscode-uri": "1.0.1"
+    "vscode-uri": "1.0.1",
+    "xterm": "3.1.0"
   },
   "description": "A collection of Atom UIs to support language services.",
   "devDependencies": {
@@ -108,6 +115,9 @@
     "eslint-plugin-rulesdir": "0.1.0",
     "flow-bin": "0.67.1",
     "jasmine-node": "1.14.5",
+    "jest-cli": "22.4.2",
+    "jest-mock": "22.2.0",
+    "jest-util": "22.4.1",
     "nyc": "11.2.1",
     "prettier": "1.9.1",
     "react-addons-test-utils": "15.3.1",
@@ -123,7 +133,7 @@
   "main": "./index-entry.js",
   "name": "atom-ide-ui",
   "optionalDependencies": {},
-  "readme": "# atom-ide-ui &middot; [![Package version](https://img.shields.io/apm/v/atom-ide-ui.svg)](https://atom.io/packages/atom-ide-ui) [![CircleCI](https://img.shields.io/circleci/project/github/facebook-atom/atom-ide-ui.svg)](https://circleci.com/gh/facebook-atom/atom-ide-ui) [![codecov](https://img.shields.io/codecov/c/github/facebook-atom/atom-ide-ui.svg)](https://codecov.io/gh/facebook-atom/atom-ide-ui)\n\nA collection of Atom UIs to support language services as part of Atom IDE,\ndesigned for use with packages built on top of\n[atom-languageclient](https://github.com/atom/atom-languageclient).\n\n![Screenshot](https://raw.githubusercontent.com/facebook-atom/atom-ide-ui/master/docs/images/screenshot.png)\n\nContributions are welcome! File bugs and feature requests from the issues page,\nor read the [CONTRIBUTING.md](https://github.com/facebook-atom/atom-ide-ui/blob/master/CONTRIBUTING.md)\nfile for details on how to submit a pull request.\n\n## Getting Started\n\nFirst, make sure you have Atom 1.19+ installed.\nInstall `atom-ide-ui` from \"Install\" in Atom's settings or run:\n\n```\napm install atom-ide-ui\n```\n\nYou'll also want to install a suitable language package:\n`atom-ide-ui` doesn't provide any language features by default.\n\nPackages based on https://github.com/atom/atom-languageclient should work out of the box with `atom-ide-ui` installed, such as:\n\n* [ide-csharp](https://github.com/atom/ide-csharp)\n* [ide-flowtype](https://github.com/flowtype/ide-flowtype)\n* [ide-java](https://github.com/atom/ide-java)\n* [ide-php](https://github.com/atom/ide-php)\n* [ide-typescript](https://github.com/atom/ide-typescript)\n* [and more...](https://github.com/atom/atom-languageclient/wiki/List-of-Atom-packages-using-Atom-LanguageClient)\n\n## Feature Overview\n\nCheck out the documentation pages for more information about each feature!\n\n- [Busy Signal](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/busy-signal.md)\n- [Code Actions](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-actions.md)\n- [Code Format](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-format.md)\n- [Code Highlight](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-highlight.md)\n- [Console](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/console.md)\n- [Datatips](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/datatips.md)\n- [Definitions (plus Hyperclick)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/definitions.md)\n- [Diagnostics](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/diagnostics.md)\n- [Find References](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/find-references.md)\n- [Outline](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/outline-view.md)\n- [Signature Help (Experimental/WIP)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/signature-help.md)\n\nSee [Keybindings](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/keybindings.md) for a list of default keybindings.\n\n## License\n\n`atom-ide-ui` is BSD-licensed. We also provide an additional patent grant.\n",
+  "readme": "# atom-ide-ui &middot; [![Package version](https://img.shields.io/apm/v/atom-ide-ui.svg)](https://atom.io/packages/atom-ide-ui) [![CircleCI](https://img.shields.io/circleci/project/github/facebook-atom/atom-ide-ui.svg)](https://circleci.com/gh/facebook-atom/atom-ide-ui)\n\nAtom UIs to support language services and debuggers as part of Atom IDE.\n\nLanguage integrations should be built on top of\n[atom-languageclient](https://github.com/atom/atom-languageclient).\n\n![Screenshot](https://raw.githubusercontent.com/facebook-atom/atom-ide-ui/master/docs/images/screenshot.png)\n\nDebugger integrations should be modeled after [atom-ide-debugger-node](https://atom.io/packages/atom-ide-debugger-node).\n\n![Screenshot](https://raw.githubusercontent.com/facebook-atom/atom-ide-ui/master/docs/images/debugger.png)\n\nContributions are welcome! File bugs and feature requests from the issues page,\nor read the [CONTRIBUTING.md](https://github.com/facebook-atom/atom-ide-ui/blob/master/CONTRIBUTING.md)\nfile for details on how to submit a pull request.\n\n## Getting Started\n\nFirst, make sure you have Atom 1.19+ installed.\nInstall `atom-ide-ui` from \"Install\" in Atom's settings or run:\n\n```\napm install atom-ide-ui\n```\n\nYou'll also want to install a suitable language package and/or debugger package since `atom-ide-ui` doesn't provide any language or debugger support by default.\n\nLanguage support packages based on https://github.com/atom/atom-languageclient should work out of the box with `atom-ide-ui` installed, such as:\n\n* [ide-csharp](https://github.com/atom/ide-csharp)\n* [ide-flowtype](https://github.com/flowtype/ide-flowtype)\n* [ide-java](https://github.com/atom/ide-java)\n* [ide-php](https://github.com/atom/ide-php)\n* [ide-typescript](https://github.com/atom/ide-typescript)\n* [and more...](https://github.com/atom/atom-languageclient/wiki/List-of-Atom-packages-using-Atom-LanguageClient)\n\nThese debugger packages should work out of the box:\n* [Node Debugger](https://atom.io/packages/atom-ide-debugger-node)\n* [Python Debugger](https://atom.io/packages/atom-ide-debugger-python)\n* [React Native Debugger]( https://atom.io/packages/atom-ide-debugger-react-native)\n* [C/C++ GDB Debugger]( https://atom.io/packages/atom-ide-debugger-native-gdb)\n* [OCaml Debugger]( https://atom.io/packages/atom-ide-debugger-ocaml)\n\n## Language Features\n\nCheck out the documentation pages for more information about each feature!\n\n- [Busy Signal](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/busy-signal.md)\n- [Code Actions](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-actions.md)\n- [Code Format](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-format.md)\n- [Code Highlight](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/code-highlight.md)\n- [Console](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/console.md)\n- [Datatips](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/datatips.md)\n- [Definitions (plus Hyperclick)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/definitions.md)\n- [Diagnostics](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/diagnostics.md)\n- [Find References](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/find-references.md)\n- [Outline](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/outline-view.md)\n- [Signature Help (Experimental/WIP)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/signature-help.md)\n\n## Debugger Features\n- [Launch/Attach UI](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-launch-attach-ui.md)\n- [Breakpoints + conditional](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-breakpoints.md)\n- [Stepping (Pause, Continue, Step, Restart)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-controls.md)\n- [Threads (Running, Focus)](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-threads.md)\n- [Stacktraces & in-memory source views](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-stacktraces.md)\n- [Scopes & editable variables views](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-scopes.md)\n- [Watch expressions](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-watch-expressions.md)\n- [Console + Repl](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/debugger-console.md)\n\nSee [Keybindings](https://github.com/facebook-atom/atom-ide-ui/blob/master/docs/keybindings.md) for a list of default keybindings.\n\n## License\n\n`atom-ide-ui` is BSD-licensed. We also provide an additional patent grant.\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
@@ -136,5 +146,8 @@
     "release-transpile": "./modules/nuclide-node-transpiler/bin/release-transpile.js",
     "test": "npm run flow && npm run lint-all && ./scripts/test.js"
   },
-  "version": "0.9.4"
+  "version": "0.11.0",
+  "workspaces": [
+    "modules/*"
+  ]
 }

@@ -156,8 +156,9 @@ class ConsoleHeader extends _react.Component {
       {
         className: 'inline-block',
         size: (_Button || _load_Button()).ButtonSizes.SMALL,
-        onClick: this._handleCreatePasteButtonClick,
-        ref: (0, (_addTooltip || _load_addTooltip()).default)({
+        onClick: this._handleCreatePasteButtonClick
+        // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+        , ref: (0, (_addTooltip || _load_addTooltip()).default)({
           title: 'Creates a Paste from the current contents of the console'
         }) },
       'Create Paste'

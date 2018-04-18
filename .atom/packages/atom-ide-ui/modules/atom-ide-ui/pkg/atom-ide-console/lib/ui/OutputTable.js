@@ -4,6 +4,24 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _UniversalDisposable;
+
+function _load_UniversalDisposable() {
+  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
+}
+
+var _nullthrows;
+
+function _load_nullthrows() {
+  return _nullthrows = _interopRequireDefault(require('nullthrows'));
+}
+
+var _observableDom;
+
+function _load_observableDom() {
+  return _observableDom = require('nuclide-commons-ui/observable-dom');
+}
+
 var _Hasher;
 
 function _load_Hasher() {
@@ -18,6 +36,8 @@ function _load_List() {
   return _List = _interopRequireDefault(require('react-virtualized/dist/commonjs/List'));
 }
 
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
+
 var _RecordView;
 
 function _load_RecordView() {
@@ -30,12 +50,6 @@ function _load_recordsChanged() {
   return _recordsChanged = _interopRequireDefault(require('../recordsChanged'));
 }
 
-var _ResizeSensitiveContainer;
-
-function _load_ResizeSensitiveContainer() {
-  return _ResizeSensitiveContainer = require('nuclide-commons-ui/ResizeSensitiveContainer');
-}
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -46,23 +60,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 /* eslint-disable react/no-unused-prop-types */
-const OVERSCAN_COUNT = 5; /**
-                           * Copyright (c) 2017-present, Facebook, Inc.
-                           * All rights reserved.
-                           *
-                           * This source code is licensed under the BSD-style license found in the
-                           * LICENSE file in the root directory of this source tree. An additional grant
-                           * of patent rights can be found in the PATENTS file in the same directory.
-                           *
-                           * 
-                           * @format
-                           */
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ * @format
+ */
+
+const OVERSCAN_COUNT = 5;
 
 class OutputTable extends _react.Component {
-
-  // The currently rendered range.
+  // This is a <List> from react-virtualized (untyped library)
   constructor(props) {
     super(props);
+
+    this._handleRef = node => {
+      this._refs.next(node);
+    };
 
     this._handleListRender = opts => {
       this._startIndex = opts.startIndex;
@@ -87,8 +106,9 @@ class OutputTable extends _react.Component {
           key: this._hasher.getHash(displayableRecord.record),
           className: 'console-table-row-wrapper',
           style: style },
-        _react.createElement((_RecordView || _load_RecordView()).default, {
-          ref: view => {
+        _react.createElement((_RecordView || _load_RecordView()).default
+        // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+        , { ref: view => {
             if (view != null) {
               this._renderedRecords.set(record, view);
             } else {
@@ -117,6 +137,9 @@ class OutputTable extends _react.Component {
     };
 
     this._handleResize = (height, width) => {
+      if (height === this.state.height && width === this.state.width) {
+        return;
+      }
       this.setState({
         width,
         height
@@ -159,6 +182,7 @@ class OutputTable extends _react.Component {
       this.props.onScroll(clientHeight, scrollHeight, scrollTop);
     };
 
+    this._disposable = new (_UniversalDisposable || _load_UniversalDisposable()).default();
     this._hasher = new (_Hasher || _load_Hasher()).default();
     this._renderedRecords = new Map();
     this.state = {
@@ -167,8 +191,14 @@ class OutputTable extends _react.Component {
     };
     this._startIndex = 0;
     this._stopIndex = 0;
+    this._refs = new _rxjsBundlesRxMinJs.Subject();
+    this._disposable.add(this._refs.filter(Boolean).switchMap(node => new (_observableDom || _load_observableDom()).ResizeObservable((0, (_nullthrows || _load_nullthrows()).default)(node)).mapTo(node)).subscribe(node => {
+      const { offsetHeight, offsetWidth } = (0, (_nullthrows || _load_nullthrows()).default)(node);
+      this._handleResize(offsetHeight, offsetWidth);
+    }));
   }
-  // This is a <List> from react-virtualized (untyped library)
+
+  // The currently rendered range.
 
 
   componentDidUpdate(prevProps, prevState) {
@@ -181,28 +211,29 @@ class OutputTable extends _react.Component {
     }
   }
 
+  componentWillUnmount() {
+    this._disposable.dispose();
+  }
+
   render() {
-    return (
+    return _react.createElement(
+      'div',
+      {
+        className: 'console-table-wrapper native-key-bindings',
+        ref: this._handleRef,
+        tabIndex: '1' },
+      this._containerRendered() ? _react.createElement((_List || _load_List()).default
       // $FlowFixMe(>=0.53.0) Flow suppress
-      _react.createElement(
-        (_ResizeSensitiveContainer || _load_ResizeSensitiveContainer()).ResizeSensitiveContainer,
-        {
-          className: 'console-table-wrapper native-key-bindings',
-          onResize: this._handleResize,
-          tabIndex: '1' },
-        this._containerRendered() ? _react.createElement((_List || _load_List()).default
-        // $FlowFixMe(>=0.53.0) Flow suppress
-        , { ref: this._handleListRef,
-          height: this.state.height,
-          width: this.state.width,
-          rowCount: this.props.displayableRecords.length,
-          rowHeight: this._getRowHeight,
-          rowRenderer: this._renderRow,
-          overscanRowCount: OVERSCAN_COUNT,
-          onScroll: this._onScroll,
-          onRowsRendered: this._handleListRender
-        }) : null
-      )
+      , { ref: this._handleListRef,
+        height: this.state.height,
+        width: this.state.width,
+        rowCount: this.props.displayableRecords.length,
+        rowHeight: this._getRowHeight,
+        rowRenderer: this._renderRow,
+        overscanRowCount: OVERSCAN_COUNT,
+        onScroll: this._onScroll,
+        onRowsRendered: this._handleListRender
+      }) : null
     );
   }
 

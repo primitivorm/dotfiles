@@ -28,7 +28,7 @@ function _load_bindObservableAsProps() {
 var _analytics;
 
 function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons-atom/analytics'));
+  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
 }
 
 var _highlightOnUpdate;
@@ -308,7 +308,7 @@ class ValueComponent extends _react.Component {
       'div',
       { className: 'nuclide-ui-lazy-nested-value-container' },
       _react.createElement((_AtomInput || _load_AtomInput()).AtomInput, {
-        className: 'nuclide-debugger-watch-expression-input',
+        className: 'debugger-watch-expression-input',
         size: 'sm',
         autofocus: true,
         startSelected: true,
@@ -327,10 +327,10 @@ class ValueComponent extends _react.Component {
     const { isRoot, setVariable } = this.props;
     return isRoot && setVariable && !this.state.isBeingEdited ? _react.createElement(
       'div',
-      { className: 'nuclide-debugger-scopes-view-controls' },
+      { className: 'debugger-scopes-view-controls' },
       _react.createElement((_Icon || _load_Icon()).Icon, {
         icon: 'pencil',
-        className: 'nuclide-debugger-scopes-view-edit-control',
+        className: 'debugger-scopes-view-edit-control',
         onClick: _ => {
           track(EDIT_VALUE_FROM_ICON);
           this._showSetVariableDisplay();

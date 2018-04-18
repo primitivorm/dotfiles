@@ -104,8 +104,9 @@ class Checkbox extends _react.PureComponent {
       {
         className: (0, (_classnames || _load_classnames()).default)(className, 'nuclide-ui-checkbox-label', {
           'nuclide-ui-checkbox-disabled': disabled
-        }),
-        ref: ref,
+        })
+        // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+        , ref: ref,
         onClick: onClick && (0, (_ignoreTextSelectionEvents || _load_ignoreTextSelectionEvents()).default)(onClick),
         title: title },
       _react.createElement('input', {

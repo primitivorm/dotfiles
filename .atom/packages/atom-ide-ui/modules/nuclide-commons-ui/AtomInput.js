@@ -152,6 +152,9 @@ class AtomInput extends _react.Component {
       this.setState({ value: textEditor.getText() });
       this.props.onDidChange.call(null, textEditor.getText());
     }));
+    if (this.props.onDidChangeSelectionRange != null) {
+      disposables.add(textEditor.onDidChangeSelectionRange(this.props.onDidChangeSelectionRange));
+    }
 
     this._updateWidth();
   }

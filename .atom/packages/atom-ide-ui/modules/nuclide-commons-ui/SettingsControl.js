@@ -23,23 +23,17 @@ function _load_SettingsSelect() {
   return _SettingsSelect = _interopRequireDefault(require('./SettingsSelect'));
 }
 
+var _SettingsColorInput;
+
+function _load_SettingsColorInput() {
+  return _SettingsColorInput = _interopRequireDefault(require('./SettingsColorInput'));
+}
+
 var _react = _interopRequireWildcard(require('react'));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
 
 function SettingsControl(props) {
   const { keyPath, value, onChange, schema } = props;
@@ -58,10 +52,16 @@ function SettingsControl(props) {
         })
       );
     } else if (schema.type === 'color') {
-      if (!false) {
-        throw new Error('Invariant violation: "false"');
-      } // Not implemented.
-
+      return (
+        // $FlowFixMe(>=0.53.0) Flow suppress
+        _react.createElement((_SettingsColorInput || _load_SettingsColorInput()).default, {
+          description: description,
+          keyPath: keyPath,
+          onChange: onChange,
+          title: title,
+          value: value
+        })
+      );
     } else if (isBoolean(value) || schema.type === 'boolean') {
       return (
         // $FlowFixMe(>=0.53.0) Flow suppress
@@ -109,7 +109,17 @@ function SettingsControl(props) {
   }
 
   return null;
-}
+} /**
+   * Copyright (c) 2017-present, Facebook, Inc.
+   * All rights reserved.
+   *
+   * This source code is licensed under the BSD-style license found in the
+   * LICENSE file in the root directory of this source tree. An additional grant
+   * of patent rights can be found in the PATENTS file in the same directory.
+   *
+   * 
+   * @format
+   */
 
 function isBoolean(obj) {
   return obj === true || obj === false || toString.call(obj) === '[object Boolean]';

@@ -11,8 +11,16 @@ exports.getFileForPath = getFileForPath;
 exports.observeProjectPaths = observeProjectPaths;
 exports.onDidAddProjectPath = onDidAddProjectPath;
 exports.onDidRemoveProjectPath = onDidRemoveProjectPath;
+exports.observeRemovedHostnames = observeRemovedHostnames;
+exports.observeAddedHostnames = observeAddedHostnames;
 
 var _atom = require('atom');
+
+var _event;
+
+function _load_event() {
+  return _event = require('nuclide-commons/event');
+}
 
 var _nuclideUri;
 
@@ -20,7 +28,27 @@ function _load_nuclideUri() {
   return _nuclideUri = _interopRequireDefault(require('nuclide-commons/nuclideUri'));
 }
 
+var _observable;
+
+function _load_observable() {
+  return _observable = require('nuclide-commons/observable');
+}
+
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ * @format
+ */
 
 function getValidProjectPaths() {
   return atom.project.getDirectories().filter(directory => {
@@ -31,17 +59,7 @@ function getValidProjectPaths() {
     }
     return true;
   }).map(directory => directory.getPath());
-} /**
-   * Copyright (c) 2017-present, Facebook, Inc.
-   * All rights reserved.
-   *
-   * This source code is licensed under the BSD-style license found in the
-   * LICENSE file in the root directory of this source tree. An additional grant
-   * of patent rights can be found in the PATENTS file in the same directory.
-   *
-   * 
-   * @format
-   */
+}
 
 function getAtomProjectRelativePath(path) {
   const [projectPath, relativePath] = atom.project.relativizePath(path);
@@ -132,4 +150,16 @@ function onDidRemoveProjectPath(callback) {
     changing = false;
     projectPaths = newProjectPaths;
   });
+}
+
+function observeHostnames() {
+  return (atom.packages.initialPackagesActivated ? _rxjsBundlesRxMinJs.Observable.of(null) : (0, (_event || _load_event()).observableFromSubscribeFunction)(atom.packages.onDidActivateInitialPackages.bind(atom.packages))).switchMap(() => (0, (_event || _load_event()).observableFromSubscribeFunction)(atom.project.onDidChangePaths.bind(atom.project)).startWith(null).map(() => new Set(atom.project.getPaths().filter((_nuclideUri || _load_nuclideUri()).default.isRemote).map((_nuclideUri || _load_nuclideUri()).default.getHostname))).let((0, (_observable || _load_observable()).diffSets)()));
+}
+
+function observeRemovedHostnames() {
+  return observeHostnames().flatMap(diff => _rxjsBundlesRxMinJs.Observable.from(diff.removed));
+}
+
+function observeAddedHostnames() {
+  return observeHostnames().flatMap(diff => _rxjsBundlesRxMinJs.Observable.from(diff.added));
 }

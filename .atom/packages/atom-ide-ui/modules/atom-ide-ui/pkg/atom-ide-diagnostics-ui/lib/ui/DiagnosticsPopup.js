@@ -18,7 +18,7 @@ function _load_classnames() {
 var _analytics;
 
 function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons-atom/analytics'));
+  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
 }
 
 var _collection;
@@ -109,7 +109,10 @@ function getCodeActions(message, codeActionsForMessage) {
 // TODO move LESS styles to nuclide-ui
 class DiagnosticsPopup extends _react.Component {
   componentDidMount() {
-    (_analytics || _load_analytics()).default.track('diagnostics-show-popup');
+    (_analytics || _load_analytics()).default.track('diagnostics-show-popup', {
+      // Note: there could be multiple providers here (but it's less common).
+      providerName: this.props.messages[0].providerName
+    });
   }
 
   render() {

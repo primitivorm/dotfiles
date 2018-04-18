@@ -102,7 +102,7 @@ class InputArea extends _react.Component {
         }
 
         this._submit();
-      } else if (event.which === UP_KEY_CODE && editor.getLineCount() <= 1) {
+      } else if (event.which === UP_KEY_CODE && (editor.getLineCount() <= 1 || editor.getCursorBufferPosition().row === 0)) {
         if (this.props.history.length === 0 || isAutocompleteOpen) {
           return;
         }
@@ -115,7 +115,7 @@ class InputArea extends _react.Component {
           this.setState({ historyIndex });
         }
         editor.setText(this.props.history[this.props.history.length - historyIndex - 1]);
-      } else if (event.which === DOWN_KEY_CODE && editor.getLineCount() <= 1) {
+      } else if (event.which === DOWN_KEY_CODE && (editor.getLineCount() <= 1 || editor.getCursorBufferPosition().row === editor.getLineCount() - 1)) {
         if (this.props.history.length === 0 || isAutocompleteOpen) {
           return;
         }

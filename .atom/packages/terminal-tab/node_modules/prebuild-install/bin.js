@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 var path = require('path')
-var log = require('npmlog')
 var fs = require('fs')
 var whichPmRuns = require('which-pm-runs')
 
 var pkg = require(path.resolve('package.json'))
 var rc = require('./rc')(pkg)
+var log = require('./log')(rc, process.env)
 var download = require('./download')
 
 var prebuildClientVersion = require('./package.json').version
@@ -16,11 +16,6 @@ if (rc.version) {
 }
 
 if (rc.path) process.chdir(rc.path)
-
-log.heading = 'prebuild-install'
-if (rc.verbose) {
-  log.level = 'verbose'
-}
 
 if (!fs.existsSync('package.json')) {
   log.error('setup', 'No package.json found. Aborting...')

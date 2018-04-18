@@ -13,7 +13,7 @@ var _atom = require('atom');
 var _analytics;
 
 function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons-atom/analytics'));
+  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
 }
 
 var _createPackage;

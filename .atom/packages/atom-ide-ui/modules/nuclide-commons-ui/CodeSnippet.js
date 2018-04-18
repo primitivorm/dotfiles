@@ -82,8 +82,25 @@ class CodeSnippet extends _react.Component {
           this._editor = input;
         },
         initialValue: this.props.text,
-        disabled: true,
-        onClick: this.props.onClick
+        onMouseDown: e => {
+          this._ongoingSelection = null;
+        },
+        onDidChangeSelectionRange: e => {
+          this._ongoingSelection = e.selection;
+        },
+        onClick: e => {
+          // If the user selected a range, cancel the `onClick` behavior
+          // to enable copying the selection.
+          let shouldCancel = false;
+          if (this._ongoingSelection != null) {
+            const { start, end } = this._ongoingSelection.getBufferRange();
+            shouldCancel = start.compare(end) !== 0;
+          }
+          if (!shouldCancel) {
+            this.props.onClick(e);
+          }
+          this._ongoingSelection = null;
+        }
       })
     );
   }

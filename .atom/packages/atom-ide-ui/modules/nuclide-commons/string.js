@@ -18,6 +18,7 @@ exports.indent = indent;
 exports.pluralize = pluralize;
 exports.capitalize = capitalize;
 exports.getMatchRanges = getMatchRanges;
+exports.escapeMarkdown = escapeMarkdown;
 
 var _shellQuote;
 
@@ -206,6 +207,13 @@ function getMatchRanges(haystack, needle) {
     matchIndex += needle.length;
   }
   return ranges;
+}
+
+function escapeMarkdown(markdown) {
+  // _ * # () [] need to be slash escaped.
+  const slashEscaped = markdown.replace(/[_*#/()[\]]/g, '\\$&');
+  // And HTML tags need to be &lt; &gt; escaped.
+  return slashEscaped.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 // Originally copied from:

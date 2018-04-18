@@ -578,3 +578,22 @@ function distinct(array, keyFn) {
     return true;
   });
 }
+
+class DefaultMap extends Map {
+
+  constructor(factory, iterable) {
+    super(iterable);
+    this._factory = factory;
+  }
+
+  get(key) {
+    if (!this.has(key)) {
+      const value = this._factory();
+      this.set(key, value);
+      return value;
+    }
+    // If the key is present we must have a value of type V.
+    return super.get(key);
+  }
+}
+exports.DefaultMap = DefaultMap;

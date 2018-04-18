@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SingletonExecutor = exports.PromiseCanceledError = exports.nextAnimationFrame = exports.macrotask = exports.microtask = undefined;
+exports.SingletonExecutor = exports.nextAnimationFrame = exports.macrotask = exports.microtask = undefined;
 
 var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
@@ -20,7 +20,9 @@ exports.concatLatest = concatLatest;
 exports.throttle = throttle;
 exports.completingSwitchMap = completingSwitchMap;
 exports.fastDebounce = fastDebounce;
-exports.toCancelablePromise = toCancelablePromise;
+exports.fromAbortablePromise = fromAbortablePromise;
+exports.toAbortablePromise = toAbortablePromise;
+exports.takeUntilAbort = takeUntilAbort;
 exports.poll = poll;
 
 var _UniversalDisposable;
@@ -29,7 +31,19 @@ function _load_UniversalDisposable() {
   return _UniversalDisposable = _interopRequireDefault(require('./UniversalDisposable'));
 }
 
+var _domexception;
+
+function _load_domexception() {
+  return _domexception = _interopRequireDefault(require('domexception'));
+}
+
 var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
+
+var _AbortController;
+
+function _load_AbortController() {
+  return _AbortController = _interopRequireDefault(require('./AbortController'));
+}
 
 var _collection;
 
@@ -51,32 +65,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Sends any non-newline terminated data before closing.
  * Does not ensure a trailing newline.
  */
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
-
-/* global requestAnimationFrame, cancelAnimationFrame */
-
-// NOTE: Custom operators that require arguments should be written as higher-order functions. That
-// is, they should accept the arguments and return a function that accepts only an observable. This
-// allows a nice ergonomic way of using them with '.let()' (or a potential future pipe operator):
-//
-//     const makeExciting = (excitementLevel: number = 1) =>
-//       (source: Observable<string>) =>
-//         source.map(x => x + '!'.repeat(excitementLevel));
-//
-//     Observable.of('hey', 'everybody')
-//       .let(makeExciting())
-//       .subscribe(x => console.log(x));
-
 function splitStream(input, includeNewlines = true) {
   return _rxjsBundlesRxMinJs.Observable.create(observer => {
     let current = '';
@@ -116,6 +104,34 @@ function splitStream(input, includeNewlines = true) {
  *     (which includes the element). IMPORTANT: DO NOT MUTATE THE BUFFER. It returns a boolean
  *     specifying whether to complete the buffer (and begin a new one).
  */
+
+// Note: DOMException is usable in Chrome but not in Node.
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ * @format
+ */
+
+/* global requestAnimationFrame, cancelAnimationFrame */
+
+// NOTE: Custom operators that require arguments should be written as higher-order functions. That
+// is, they should accept the arguments and return a function that accepts only an observable. This
+// allows a nice ergonomic way of using them with '.let()' (or a potential future pipe operator):
+//
+//     const makeExciting = (excitementLevel: number = 1) =>
+//       (source: Observable<string>) =>
+//         source.map(x => x + '!'.repeat(excitementLevel));
+//
+//     Observable.of('hey', 'everybody')
+//       .let(makeExciting())
+//       .subscribe(x => console.log(x));
+
 function bufferUntil(condition) {
   return stream => _rxjsBundlesRxMinJs.Observable.create(observer => {
     let buffer = null;
@@ -378,48 +394,85 @@ const nextAnimationFrame = exports.nextAnimationFrame = _rxjsBundlesRxMinJs.Obse
 });
 
 /**
- * Thrown when a CancelablePromise is canceled().
+ * Creates an Observable around an abortable promise.
+ * Unsubscriptions are forwarded to the AbortController as an `abort()`.
+ * Example usage (with an abortable fetch):
+ *
+ *   fromPromise(signal => fetch(url, {...options, signal}))
+ *     .switchMap(....)
+ *
+ * Note that this can take a normal `() => Promise<T>` too
+ * (in which case this acts as just a plain `Observable.defer`).
  */
-class PromiseCanceledError extends Error {
-  constructor() {
-    super();
-    this.name = 'PromiseCanceledError';
-  }
-}
-
-exports.PromiseCanceledError = PromiseCanceledError; // Given an observable, convert to a Promise (thereby subscribing to the Observable)
-// and return back a cancellation function as well.
-// If the cancellation function is called before the returned promise resolves,
-// then unsubscribe from the underlying Promise and have the returned Promise throw.
-// If the cancellation function is called after the returned promise resolves,
-// then it does nothing.
-
-function toCancelablePromise(observable) {
-  // Assign a dummy value to keep flow happy
-  let cancel = () => {};
-
-  const promise = new Promise((resolve, reject) => {
-    // Stolen from Rx.js toPromise.js
-    let value;
-    const subscription = observable.subscribe(v => {
-      value = v;
-    }, reject, () => {
-      resolve(value);
+function fromAbortablePromise(func) {
+  return _rxjsBundlesRxMinJs.Observable.create(observer => {
+    let completed = false;
+    const abortController = new (_AbortController || _load_AbortController()).default();
+    func(abortController.signal).then(value => {
+      completed = true;
+      observer.next(value);
+      observer.complete();
+    }, error => {
+      completed = true;
+      observer.error(error);
     });
-
-    // Attempt cancellation of both the subscription and the promise.
-    // Do not let one failure prevent the other from succeeding.
-    cancel = () => {
-      try {
-        subscription.unsubscribe();
-      } catch (e) {}
-      try {
-        reject(new PromiseCanceledError());
-      } catch (e) {}
+    return () => {
+      if (!completed) {
+        abortController.abort();
+        // If the promise adheres to the spec, it should throw.
+        // The error will be captured above but go into the void.
+      }
     };
   });
+}
 
-  return { promise, cancel };
+/**
+ * Converts an observable + AbortSignal into a cancellable Promise,
+ * which rejects with an AbortError DOMException on abort.
+ * Useful when writing the internals of a cancellable promise.
+ *
+ * Usage:
+ *
+ *   function abortableFunction(arg1: blah, options?: {signal?: AbortSignal}): Promise {
+ *     return toPromise(
+ *       observableFunction(arg1, options),
+ *       options && options.signal,
+ *     );
+ *   }
+ *
+ * Could eventually be replaced by Observable.first if
+ * https://github.com/whatwg/dom/issues/544 goes through.
+ *
+ * It's currently unclear if this should be usable with let/pipe:
+ * https://github.com/ReactiveX/rxjs/issues/3445
+ */
+function toAbortablePromise(observable, signal) {
+  if (signal == null) {
+    return observable.toPromise();
+  }
+  if (signal.aborted) {
+    return Promise.reject((0, (_domexception || _load_domexception()).default)('Aborted', 'AbortError'));
+  }
+  return observable.race(_rxjsBundlesRxMinJs.Observable.fromEvent(signal, 'abort').map(() => {
+    throw new (_domexception || _load_domexception()).default('Aborted', 'AbortError');
+  })).toPromise();
+}
+
+/**
+ * When using Observables with AbortSignals, be sure to use this -
+ * it's really easy to miss the case when the signal is already aborted!
+ * Recommended to use this with let/pipe:
+ *
+ *   myObservable
+ *     .let(obs => takeUntilAbort(obs, signal))
+ */
+function takeUntilAbort(observable, signal) {
+  return _rxjsBundlesRxMinJs.Observable.defer(() => {
+    if (signal.aborted) {
+      return _rxjsBundlesRxMinJs.Observable.empty();
+    }
+    return observable.takeUntil(_rxjsBundlesRxMinJs.Observable.fromEvent(signal, 'abort'));
+  });
 }
 
 // Executes tasks. Ensures that at most one task is running at a time.
@@ -427,7 +480,7 @@ function toCancelablePromise(observable) {
 // you never want the result of a previous task after a new task has started.
 class SingletonExecutor {
   constructor() {
-    this._currentTask = null;
+    this._abortController = null;
   }
 
   // Executes(subscribes to) the task.
@@ -442,30 +495,30 @@ class SingletonExecutor {
       _this.cancel();
 
       // Start a new process
-      const task = toCancelablePromise(createTask);
-      _this._currentTask = task;
+      const controller = new (_AbortController || _load_AbortController()).default();
+      _this._abortController = controller;
 
       // Wait for the process to complete or be canceled ...
       try {
-        return yield task.promise;
+        return yield toAbortablePromise(createTask, controller.signal);
       } finally {
         // ... and always clean up if we haven't been canceled already.
-        if (task === _this._currentTask) {
-          _this._currentTask = null;
+        if (controller === _this._abortController) {
+          _this._abortController = null;
         }
       }
     })();
   }
 
   isExecuting() {
-    return this._currentTask != null;
+    return this._abortController != null;
   }
 
   // Cancels any currently executing tasks.
   cancel() {
-    if (this._currentTask != null) {
-      this._currentTask.cancel();
-      this._currentTask = null;
+    if (this._abortController != null) {
+      this._abortController.abort();
+      this._abortController = null;
     }
   }
 }

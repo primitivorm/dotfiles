@@ -305,7 +305,7 @@ class CodeFormatManager {
       return _rxjsBundlesRxMinJs.Observable.defer(() => this._reportBusy(editor, saveProvider.formatOnSave(editor), false)).map(edits => {
         (0, (_textEdit || _load_textEdit()).applyTextEditsToBuffer)(editor.getBuffer(), edits);
       });
-    } else if ((0, (_config || _load_config()).getFormatOnSave)()) {
+    } else if ((0, (_config || _load_config()).getFormatOnSave)(editor)) {
       return this._formatCodeInTextEditor(editor, editor.getBuffer().getRange()).ignoreElements();
     }
     return _rxjsBundlesRxMinJs.Observable.empty();

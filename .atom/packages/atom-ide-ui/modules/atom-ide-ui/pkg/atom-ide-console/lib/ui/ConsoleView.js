@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _observable;
+
+function _load_observable() {
+  return _observable = require('nuclide-commons/observable');
+}
+
 var _UniversalDisposable;
 
 function _load_UniversalDisposable() {
@@ -85,19 +91,17 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Maximum time (ms) for the console to try scrolling to the bottom.
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
-
-const MAXIMUM_SCROLLING_TIME = 3000;
+const MAXIMUM_SCROLLING_TIME = 3000; /**
+                                      * Copyright (c) 2017-present, Facebook, Inc.
+                                      * All rights reserved.
+                                      *
+                                      * This source code is licensed under the BSD-style license found in the
+                                      * LICENSE file in the root directory of this source tree. An additional grant
+                                      * of patent rights can be found in the PATENTS file in the same directory.
+                                      *
+                                      * 
+                                      * @format
+                                      */
 
 let count = 0;
 
@@ -139,11 +143,11 @@ class ConsoleView extends _react.Component {
     };
 
     this._startScrollToBottom = () => {
-      if (!this._isScrollingToBottom) {
-        this._isScrollingToBottom = true;
+      if (!this._continuouslyScrollToBottom) {
+        this._continuouslyScrollToBottom = true;
 
         this._scrollingThrottle = _rxjsBundlesRxMinJs.Observable.timer(MAXIMUM_SCROLLING_TIME).subscribe(() => {
-          this._isScrollingToBottom = false;
+          this._stopScrollToBottom();
         });
       }
 
@@ -151,12 +155,14 @@ class ConsoleView extends _react.Component {
     };
 
     this._stopScrollToBottom = () => {
-      this._isScrollingToBottom = false;
-      this._scrollingThrottle.unsubscribe();
+      this._continuouslyScrollToBottom = false;
+      if (this._scrollingThrottle != null) {
+        this._scrollingThrottle.unsubscribe();
+      }
     };
 
     this._shouldScrollToBottom = () => {
-      return this._isScrolledNearBottom || this._isScrollingToBottom;
+      return this._isScrolledNearBottom || this._continuouslyScrollToBottom;
     };
 
     this.state = {
@@ -165,7 +171,7 @@ class ConsoleView extends _react.Component {
     };
     this._disposables = new (_UniversalDisposable || _load_UniversalDisposable()).default();
     this._isScrolledNearBottom = true;
-    this._isScrollingToBottom = false;
+    this._continuouslyScrollToBottom = false;
     this._handleScrollEnd = (0, (_debounce || _load_debounce()).default)(this._handleScrollEnd, 100);
     this._id = count++;
   }
@@ -176,14 +182,16 @@ class ConsoleView extends _react.Component {
 
 
   componentDidMount() {
+    this._disposables.add(
     // Wait for `<OutputTable />` to render itself via react-virtualized before scrolling and
     // re-measuring; Otherwise, the scrolled location will be inaccurate, preventing the Console
     // from auto-scrolling.
-    const immediate = setImmediate(() => {
+    (_observable || _load_observable()).macrotask.subscribe(() => {
       this._startScrollToBottom();
-    });
-    this._disposables.add(() => {
-      clearImmediate(immediate);
+    }), () => {
+      if (this._scrollingThrottle != null) {
+        this._scrollingThrottle.unsubscribe();
+      }
     });
   }
 
@@ -348,7 +356,7 @@ class ConsoleView extends _react.Component {
   _handleScrollEnd(offsetHeight, scrollHeight, scrollTop) {
     const isScrolledToBottom = this._isScrolledToBottom(offsetHeight, scrollHeight, scrollTop);
 
-    if (this._isScrollingToBottom && !isScrolledToBottom) {
+    if (this._continuouslyScrollToBottom && !isScrolledToBottom) {
       this._scrollToBottom();
     } else {
       this._isScrolledNearBottom = isScrolledToBottom;

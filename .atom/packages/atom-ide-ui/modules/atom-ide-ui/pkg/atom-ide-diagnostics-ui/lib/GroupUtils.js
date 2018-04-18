@@ -83,7 +83,7 @@ function getIcon(group) {
     case 'review':
       return 'nuclicon-comment-discussion';
     case 'action':
-      return 'light-bulb';
+      return 'nuclicon-lightbulb-filled';
     default:
       group;
       throw new Error(`Invalid filter type: ${group}`);

@@ -31,6 +31,18 @@ var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
  * following comment above its use:
  * // eslint-disable-next-line rulesdir/atom-apis
  */
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ * @format
+ */
+
 let goToLocation = exports.goToLocation = (() => {
   var _ref8 = (0, _asyncToGenerator.default)(function* (file, options) {
     var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
@@ -82,6 +94,14 @@ let goToLocation = exports.goToLocation = (() => {
         activateItem,
         pending
       });
+      // TODO(T28305560) Investigate offenders for this error
+      if (editor == null) {
+        const tmp = {};
+        Error.captureStackTrace(tmp);
+        const error = Error(`atom.workspace.open returned null on ${file}`);
+        (0, (_log4js || _load_log4js()).getLogger)('goToLocation').error(error);
+        throw error;
+      }
 
       if (center && line != null) {
         editor.scrollToBufferPosition([line, column], { center: true });
@@ -93,20 +113,16 @@ let goToLocation = exports.goToLocation = (() => {
   return function goToLocation(_x, _x2) {
     return _ref8.apply(this, arguments);
   };
-})(); /**
-       * Copyright (c) 2017-present, Facebook, Inc.
-       * All rights reserved.
-       *
-       * This source code is licensed under the BSD-style license found in the
-       * LICENSE file in the root directory of this source tree. An additional grant
-       * of patent rights can be found in the PATENTS file in the same directory.
-       *
-       * 
-       * @format
-       */
+})();
 
 exports.goToLocationInEditor = goToLocationInEditor;
 exports.observeNavigatingEditors = observeNavigatingEditors;
+
+var _log4js;
+
+function _load_log4js() {
+  return _log4js = require('log4js');
+}
 
 var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
 

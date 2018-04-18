@@ -118,7 +118,7 @@ class Activation {
       atom.clipboard.write(el.innerText);
     }), atom.commands.add('atom-workspace', 'console:clear', () => this._getStore().dispatch((_Actions || _load_Actions()).clearRecords())), (_featureConfig || _load_featureConfig()).default.observe('atom-ide-console.maximumMessageCount', maxMessageCount => {
       this._getStore().dispatch((_Actions || _load_Actions()).setMaxMessageCount(maxMessageCount));
-    }), _rxjsBundlesRxMinJs.Observable.combineLatest((0, (_event || _load_event()).observableFromSubscribeFunction)(cb => atom.config.observe('editor.fontSize', cb)), (_featureConfig || _load_featureConfig()).default.observeAsStream('atom-ide-console.consoleFontScale'), (fontSize, consoleFontScale) => fontSize * parseFloat(consoleFontScale)).map((_Actions || _load_Actions()).setFontSize).subscribe(this._store.dispatch), this._registerCommandAndOpener());
+    }), _rxjsBundlesRxMinJs.Observable.combineLatest((0, (_event || _load_event()).observableFromSubscribeFunction)(cb => atom.config.observe('editor.fontSize', cb)), (_featureConfig || _load_featureConfig()).default.observeAsStream('atom-ide-console.fontScale'), (fontSize, fontScale) => fontSize * parseFloat(fontScale)).map((_Actions || _load_Actions()).setFontSize).subscribe(this._store.dispatch), this._registerCommandAndOpener());
   }
 
   _getStore() {

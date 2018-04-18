@@ -79,7 +79,11 @@ class LoadingSpinner extends _react.Component {
     const safeSize = size != null && LoadingSpinnerSizes.hasOwnProperty(size) ? size : LoadingSpinnerSizes.MEDIUM;
     const sizeClassname = LoadingSpinnerClassnames[safeSize];
     const newClassName = (0, (_classnames || _load_classnames()).default)(className, 'loading', sizeClassname);
-    return _react.createElement('div', { className: newClassName, ref: ref });
+    return _react.createElement('div', {
+      className: newClassName
+      // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+      , ref: ref
+    });
   }
 }
 exports.LoadingSpinner = LoadingSpinner;

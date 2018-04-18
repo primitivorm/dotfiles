@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+        "spec": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-118316-3614-5h8rjj.1s3o3l3di"
+    ]
+  ],
+  "_from": "../d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+  "_id": "language-vb@0.1.0-pre1",
+  "_inCache": true,
+  "_location": "/language-vb",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+    "spec": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+  "_shasum": "698f919c6e00cb2e6dc18fdc0bc66b81b5e3e5c6",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-118316-3614-1izu72d.px678sq0k9/package.tgz",
+  "_where": "/tmp/apm-install-dir-118316-3614-5h8rjj.1s3o3l3di",
+  "author": {
+    "name": "Gorea235"
+  },
+  "bugs": {
+    "url": "https://github.com/Gorea235/language-vb/issues"
+  },
+  "dependencies": {},
+  "description": "Syntax highlighting for VB.net",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Gorea235/language-vb",
+  "keywords": [
+    "language",
+    "visual basic",
+    "vb",
+    "visualbasic",
+    "vb.net"
+  ],
+  "license": "GNU GPL v3",
+  "main": "./lib/language-vb",
+  "name": "language-vb",
+  "optionalDependencies": {},
+  "readme": "Visual Basic highlighting for Atom",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gorea235/language-vb.git"
+  },
+  "version": "0.1.0-pre1"
+}
