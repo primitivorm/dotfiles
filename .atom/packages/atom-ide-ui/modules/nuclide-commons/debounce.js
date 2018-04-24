@@ -1,10 +1,30 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.default =
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = debounce;
-function debounce(func, wait, immediate = false) {
+
+
+
+
+
+
+
+
+
+
+
+
+debounce;function debounce(
+
+
+
+
+
+func,
+wait,
+immediate = false)
+
+
+
+{
   // Taken from: https://github.com/jashkenas/underscore/blob/b10b2e6d72/underscore.js#L815.
   let timeout;
   let args;
@@ -19,11 +39,8 @@ function debounce(func, wait, immediate = false) {
       timeout = setTimeout(later, wait - last);
     } else {
       timeout = null;
-      if (!immediate) {
-        if (!(args != null)) {
-          throw new Error('Invariant violation: "args != null"');
-        }
-
+      if (!immediate) {if (!(
+        args != null)) {throw new Error('Invariant violation: "args != null"');}
         result = func.apply(context, args);
         if (!timeout) {
           context = args = null;

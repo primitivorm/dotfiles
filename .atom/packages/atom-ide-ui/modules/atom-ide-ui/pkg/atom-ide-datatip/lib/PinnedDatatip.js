@@ -1,45 +1,31 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.PinnedDatatip = undefined;var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.PinnedDatatip = undefined;
 
-var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var _react = _interopRequireWildcard(require('react'));
-
 var _reactDom = _interopRequireDefault(require('react-dom'));
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');var _classnames;
 
-var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
+function _load_classnames() {return _classnames = _interopRequireDefault(require('classnames'));}var _UniversalDisposable;
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}var _DatatipComponent;
 
-var _classnames;
-
-function _load_classnames() {
-  return _classnames = _interopRequireDefault(require('classnames'));
-}
-
-var _UniversalDisposable;
-
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
-
-var _DatatipComponent;
-
-function _load_DatatipComponent() {
-  return _DatatipComponent = require('./DatatipComponent');
-}
-
-var _isScrollable;
-
-function _load_isScrollable() {
-  return _isScrollable = _interopRequireDefault(require('./isScrollable'));
-}
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _load_DatatipComponent() {return _DatatipComponent = require('./DatatipComponent');}var _isScrollable;
+function _load_isScrollable() {return _isScrollable = _interopRequireDefault(require('./isScrollable'));}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 const LINE_END_MARGIN = 20; /**
                              * Copyright (c) 2017-present, Facebook, Inc.
@@ -51,17 +37,7 @@ const LINE_END_MARGIN = 20; /**
                              *
                              * 
                              * @format
-                             */
-
-let _mouseMove$;
-function documentMouseMove$() {
-  if (_mouseMove$ == null) {
-    _mouseMove$ = _rxjsBundlesRxMinJs.Observable.fromEvent(document, 'mousemove');
-  }
-  return _mouseMove$;
-}
-
-let _mouseUp$;
+                             */let _mouseMove$;function documentMouseMove$() {if (_mouseMove$ == null) {_mouseMove$ = _rxjsBundlesRxMinJs.Observable.fromEvent(document, 'mousemove');}return _mouseMove$;}let _mouseUp$;
 function documentMouseUp$() {
   if (_mouseUp$ == null) {
     _mouseUp$ = _rxjsBundlesRxMinJs.Observable.fromEvent(document, 'mouseup');
@@ -69,11 +45,50 @@ function documentMouseUp$() {
   return _mouseUp$;
 }
 
+
+
+
+
+
+
+
+
+
 class PinnedDatatip {
 
-  constructor(datatip, editor, params) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  constructor(
+  datatip,
+  editor,
+  params)
+  {
     this._subscriptions = new (_UniversalDisposable || _load_UniversalDisposable()).default();
-    this._subscriptions.add(new (_UniversalDisposable || _load_UniversalDisposable()).default(() => params.onDispose(this)));
+    this._subscriptions.add(
+    new (_UniversalDisposable || _load_UniversalDisposable()).default(() => params.onDispose(this)));
+
     this._datatip = datatip;
     this._editor = editor;
     this._marker = null;
@@ -88,7 +103,8 @@ class PinnedDatatip {
     this._checkedScrollable = false;
     this._isScrollable = false;
 
-    this._subscriptions.add(_rxjsBundlesRxMinJs.Observable.fromEvent(this._hostElement, 'wheel').subscribe(e => {
+    this._subscriptions.add(
+    _rxjsBundlesRxMinJs.Observable.fromEvent(this._hostElement, 'wheel').subscribe(e => {
       if (!this._checkedScrollable) {
         this._isScrollable = (0, (_isScrollable || _load_isScrollable()).default)(this._hostElement, e);
         this._checkedScrollable = true;
@@ -97,12 +113,27 @@ class PinnedDatatip {
         e.stopPropagation();
       }
     }));
-    this._hostElement.addEventListener('mouseenter', this._boundHandleMouseEnter);
-    this._hostElement.addEventListener('mouseleave', this._boundHandleMouseLeave);
-    this._subscriptions.add(new (_UniversalDisposable || _load_UniversalDisposable()).default(() => {
-      this._hostElement.removeEventListener('mouseenter', this._boundHandleMouseEnter);
-      this._hostElement.removeEventListener('mouseleave', this._boundHandleMouseLeave);
+
+    this._hostElement.addEventListener(
+    'mouseenter',
+    this._boundHandleMouseEnter);
+
+    this._hostElement.addEventListener(
+    'mouseleave',
+    this._boundHandleMouseLeave);
+
+    this._subscriptions.add(
+    new (_UniversalDisposable || _load_UniversalDisposable()).default(() => {
+      this._hostElement.removeEventListener(
+      'mouseenter',
+      this._boundHandleMouseEnter);
+
+      this._hostElement.removeEventListener(
+      'mouseleave',
+      this._boundHandleMouseLeave);
+
     }));
+
     this._mouseUpTimeout = null;
     this._offset = { x: 0, y: 0 };
     this._isDragging = false;
@@ -110,7 +141,8 @@ class PinnedDatatip {
     this._isHovering = false;
     this._hideDataTips = params.hideDataTips;
     this._position = params.position == null ? 'end-of-line' : params.position;
-    this._showRangeHighlight = params.showRangeHighlight == null ? true : params.showRangeHighlight;
+    this._showRangeHighlight =
+    params.showRangeHighlight == null ? true : params.showRangeHighlight;
     this.render();
   }
 
@@ -129,17 +161,13 @@ class PinnedDatatip {
 
   handleGlobalMouseMove(event) {
     const evt = event;
-    const { _dragOrigin } = this;
-
-    if (!_dragOrigin) {
-      throw new Error('Invariant violation: "_dragOrigin"');
-    }
-
+    const { _dragOrigin } = this;if (!
+    _dragOrigin) {throw new Error('Invariant violation: "_dragOrigin"');}
     this._isDragging = true;
     this._offset = {
       x: evt.clientX - _dragOrigin.x,
-      y: evt.clientY - _dragOrigin.y
-    };
+      y: evt.clientY - _dragOrigin.y };
+
     this.render();
   }
 
@@ -166,14 +194,20 @@ class PinnedDatatip {
     const evt = event;
     this._dragOrigin = {
       x: evt.clientX - this._offset.x,
-      y: evt.clientY - this._offset.y
-    };
+      y: evt.clientY - this._offset.y };
+
     this._ensureMouseSubscriptionDisposed();
-    this._mouseSubscription = documentMouseMove$().takeUntil(documentMouseUp$()).subscribe(e => {
+    this._mouseSubscription = documentMouseMove$().
+    takeUntil(documentMouseUp$()).
+    subscribe(
+    e => {
       this.handleGlobalMouseMove(e);
-    }, error => {}, () => {
+    },
+    error => {},
+    () => {
       this.handleGlobalMouseUp();
     });
+
   }
 
   handleCapturedClick(event) {
@@ -193,24 +227,31 @@ class PinnedDatatip {
     switch (_position) {
       case 'end-of-line':
         const charWidth = _editor.getDefaultCharWidth();
-        const lineLength = _editor.getBuffer().getLines()[range.start.row].length;
-        _hostElement.style.top = -_editor.getLineHeightInPixels() + _offset.y + 'px';
-        _hostElement.style.left = (lineLength - range.end.column) * charWidth + LINE_END_MARGIN + _offset.x + 'px';
+        const lineLength = _editor.getBuffer().getLines()[range.start.row].
+        length;
+        _hostElement.style.top =
+        -_editor.getLineHeightInPixels() + _offset.y + 'px';
+        _hostElement.style.left =
+        (lineLength - range.end.column) * charWidth +
+        LINE_END_MARGIN +
+        _offset.x +
+        'px';
         break;
       case 'above-range':
-        _hostElement.style.bottom = _editor.getLineHeightInPixels() + _hostElement.clientHeight - _offset.y + 'px';
+        _hostElement.style.bottom =
+        _editor.getLineHeightInPixels() +
+        _hostElement.clientHeight -
+        _offset.y +
+        'px';
         _hostElement.style.left = _offset.x + 'px';
         break;
       default:
         _position;
-        throw Error(`Unexpected PinnedDatatip position: ${this._position}`);
-    }
+        throw Error(`Unexpected PinnedDatatip position: ${this._position}`);}
+
   }
 
-  render() {
-    var _this = this;
-
-    return (0, _asyncToGenerator.default)(function* () {
+  render() {var _this = this;return (0, _asyncToGenerator.default)(function* () {
       const { _editor, _datatip, _hostElement, _isDragging, _isHovering } = _this;
 
       let rangeClassname = 'datatip-highlight-region';
@@ -220,21 +261,21 @@ class PinnedDatatip {
 
       if (_this._marker == null) {
         const marker = _editor.markBufferRange(_datatip.range, {
-          invalidate: 'never'
-        });
+          invalidate: 'never' });
+
         _this._marker = marker;
         _editor.decorateMarker(marker, {
           type: 'overlay',
           position: 'head',
           item: _this._hostElement,
           // above-range datatips currently assume that the overlay is below.
-          avoidOverflow: _this._position !== 'above-range'
-        });
+          avoidOverflow: _this._position !== 'above-range' });
+
         if (_this._showRangeHighlight) {
           _this._rangeDecoration = _editor.decorateMarker(marker, {
             type: 'highlight',
-            class: rangeClassname
-          });
+            class: rangeClassname });
+
         }
         yield _editor.getElement().getNextUpdatePromise();
         // Guard against disposals during the await.
@@ -244,21 +285,26 @@ class PinnedDatatip {
       } else if (_this._rangeDecoration != null) {
         _this._rangeDecoration.setProperties({
           type: 'highlight',
-          class: rangeClassname
-        });
+          class: rangeClassname });
+
       }
 
-      _reactDom.default.render(_react.createElement((_DatatipComponent || _load_DatatipComponent()).DatatipComponent, {
+      _reactDom.default.render(
+      _react.createElement((_DatatipComponent || _load_DatatipComponent()).DatatipComponent, {
         action: (_DatatipComponent || _load_DatatipComponent()).DATATIP_ACTIONS.CLOSE,
         actionTitle: 'Close this datatip',
-        className: (0, (_classnames || _load_classnames()).default)(_isDragging ? 'datatip-dragging' : '', 'datatip-pinned'),
+        className: (0, (_classnames || _load_classnames()).default)(
+        _isDragging ? 'datatip-dragging' : '',
+        'datatip-pinned'),
+
         datatip: _datatip,
         onActionClick: _this._boundDispose,
         onMouseDown: _this._boundHandleMouseDown,
-        onClickCapture: _this._boundHandleCapturedClick
-      }), _hostElement);
-      _this._updateHostElementPosition();
-    })();
+        onClickCapture: _this._boundHandleCapturedClick }),
+
+      _hostElement);
+
+      _this._updateHostElementPosition();})();
   }
 
   dispose() {
@@ -274,6 +320,4 @@ class PinnedDatatip {
     _reactDom.default.unmountComponentAtNode(this._hostElement);
     this._hostElement.remove();
     this._subscriptions.dispose();
-  }
-}
-exports.PinnedDatatip = PinnedDatatip;
+  }}exports.PinnedDatatip = PinnedDatatip;

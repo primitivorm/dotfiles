@@ -1,13 +1,24 @@
-"use strict";
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+
+
+
+
+
+
+
+
+
+
 
 
 // A Queue which will process elements at intervals, only if the
 // queue contains any elements.
 class BatchProcessedQueue {
+
+
+
+
 
   constructor(batchPeriod, handler) {
     this._batchPeriod = batchPeriod;
@@ -39,16 +50,14 @@ class BatchProcessedQueue {
       clearTimeout(this._timeoutId);
       this._handleBatch();
     }
-  }
-}
-exports.default = BatchProcessedQueue; /**
-                                        * Copyright (c) 2017-present, Facebook, Inc.
-                                        * All rights reserved.
-                                        *
-                                        * This source code is licensed under the BSD-style license found in the
-                                        * LICENSE file in the root directory of this source tree. An additional grant
-                                        * of patent rights can be found in the PATENTS file in the same directory.
-                                        *
-                                        * 
-                                        * @format
-                                        */
+  }}exports.default = BatchProcessedQueue; /**
+                                            * Copyright (c) 2017-present, Facebook, Inc.
+                                            * All rights reserved.
+                                            *
+                                            * This source code is licensed under the BSD-style license found in the
+                                            * LICENSE file in the root directory of this source tree. An additional grant
+                                            * of patent rights can be found in the PATENTS file in the same directory.
+                                            *
+                                            * 
+                                            * @format
+                                            */

@@ -1,43 +1,61 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+
+
+
+
+
+
+
+
+
 
 var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
 
+
+
+
+
+
+
+
+
+
 /**
- * ObservablePool allows you to execute Observables or functions that return
- * Observable inputs (i.e. Observables, Promises, or Iterables)
- * with a concurrency limit.
- *
- * Execution requests are queued and unsubscriptions are forwarded through
- * (if a request is still on the queue, its execution will be cancelled.)
- *
- * For requests that return a Promise, the ObservablePool is pessimistic
- * and assumes that the operation is uncancellable - it will not remove
- * the execution from the pool until it resolves or rejects. However
- * `schedule()` will still return an Observable to enable the use case
- * of cancelling requests while they're in the queue.
- *
- * Example:
- *
- *   const pool = new ObservablePool(2);
- *   pool
- *     .schedule(Observable.timer(1000).mapTo(1))
- *     .subscribe(console.log);
- *   Observable.timer(1000)
- *     .mapTo(2)
- *     .let(pool.schedule.bind(pool))
- *     .subscribe(console.log);
- *   pool
- *     .schedule(Observable.timer(100).mapTo(3))
- *     .subscribe(console.log);
- *
- * The output here is 1, 2, then 3. Despite the fact that the third observable
- * finishes more quickly, its execution is postponed until the first two finish.
- */
+                                                              * ObservablePool allows you to execute Observables or functions that return
+                                                              * Observable inputs (i.e. Observables, Promises, or Iterables)
+                                                              * with a concurrency limit.
+                                                              *
+                                                              * Execution requests are queued and unsubscriptions are forwarded through
+                                                              * (if a request is still on the queue, its execution will be cancelled.)
+                                                              *
+                                                              * For requests that return a Promise, the ObservablePool is pessimistic
+                                                              * and assumes that the operation is uncancellable - it will not remove
+                                                              * the execution from the pool until it resolves or rejects. However
+                                                              * `schedule()` will still return an Observable to enable the use case
+                                                              * of cancelling requests while they're in the queue.
+                                                              *
+                                                              * Example:
+                                                              *
+                                                              *   const pool = new ObservablePool(2);
+                                                              *   pool
+                                                              *     .schedule(Observable.timer(1000).mapTo(1))
+                                                              *     .subscribe(console.log);
+                                                              *   Observable.timer(1000)
+                                                              *     .mapTo(2)
+                                                              *     .let(pool.schedule.bind(pool))
+                                                              *     .subscribe(console.log);
+                                                              *   pool
+                                                              *     .schedule(Observable.timer(100).mapTo(3))
+                                                              *     .subscribe(console.log);
+                                                              *
+                                                              * The output here is 1, 2, then 3. Despite the fact that the third observable
+                                                              * finishes more quickly, its execution is postponed until the first two finish.
+                                                              */
 class ObservablePool {
+
+
+
 
   constructor(concurrency) {
     this._requests = new _rxjsBundlesRxMinJs.Subject();
@@ -59,8 +77,8 @@ class ObservablePool {
   }
 
   /**
-   * Warning: calling dispose() will error all executing requests.
-   */
+     * Warning: calling dispose() will error all executing requests.
+     */
   dispose() {
     this._responseListeners.forEach(({ observer }) => {
       observer.error(Error('ObservablePool was disposed'));
@@ -69,7 +87,8 @@ class ObservablePool {
   }
 
   _handleEvents(concurrency) {
-    return this._requests.mergeMap(event => {
+    return this._requests.
+    mergeMap(event => {
       const { executor, tag } = event;
       const listener = this._responseListeners.get(tag);
       // unsubscribed before we could even get to it!
@@ -91,26 +110,32 @@ class ObservablePool {
       }
       if (result instanceof _rxjsBundlesRxMinJs.Observable) {
         // We can safely forward unsubscriptions!
-        return result.takeUntil(unsubscribed)
-        // $FlowFixMe: Flow doesn't like this.
-        .do(observer).catch(() => _rxjsBundlesRxMinJs.Observable.empty());
+        return (
+          result.
+          takeUntil(unsubscribed)
+          // $FlowFixMe: Flow doesn't like this.
+          .do(observer).
+          catch(() => _rxjsBundlesRxMinJs.Observable.empty()));
+
       } else {
         // In the absence of cancellation, assume the worst.
-        return _rxjsBundlesRxMinJs.Observable.from(result)
-        // $FlowFixMe: Flow doesn't like this.
-        .do(observer).catch(() => _rxjsBundlesRxMinJs.Observable.empty());
+        return (
+          _rxjsBundlesRxMinJs.Observable.from(result)
+          // $FlowFixMe: Flow doesn't like this.
+          .do(observer).
+          catch(() => _rxjsBundlesRxMinJs.Observable.empty()));
+
       }
-    }, concurrency).subscribe();
-  }
-}
-exports.default = ObservablePool; /**
-                                   * Copyright (c) 2017-present, Facebook, Inc.
-                                   * All rights reserved.
-                                   *
-                                   * This source code is licensed under the BSD-style license found in the
-                                   * LICENSE file in the root directory of this source tree. An additional grant
-                                   * of patent rights can be found in the PATENTS file in the same directory.
-                                   *
-                                   * 
-                                   * @format
-                                   */
+    }, concurrency).
+    subscribe();
+  }}exports.default = ObservablePool; /**
+                                       * Copyright (c) 2017-present, Facebook, Inc.
+                                       * All rights reserved.
+                                       *
+                                       * This source code is licensed under the BSD-style license found in the
+                                       * LICENSE file in the root directory of this source tree. An additional grant
+                                       * of patent rights can be found in the PATENTS file in the same directory.
+                                       *
+                                       * 
+                                       * @format
+                                       */

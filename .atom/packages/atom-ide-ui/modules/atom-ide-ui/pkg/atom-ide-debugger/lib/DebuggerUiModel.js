@@ -1,25 +1,24 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.WORKSPACE_VIEW_URI = undefined;var _UniversalDisposable;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.WORKSPACE_VIEW_URI = undefined;
 
-var _UniversalDisposable;
 
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
 
-var _atom = require('atom');
 
-var _nuclideUri;
 
-function _load_nuclideUri() {
-  return _nuclideUri = _interopRequireDefault(require('nuclide-commons/nuclideUri'));
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
+
+
+
+
+
+
+
+
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}
+var _atom = require('atom');var _nuclideUri;
+function _load_nuclideUri() {return _nuclideUri = _interopRequireDefault(require('nuclide-commons/nuclideUri'));}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 const WORKSPACE_VIEW_URI = exports.WORKSPACE_VIEW_URI = 'atom://nuclide/debugger'; /**
                                                                                     * Copyright (c) 2017-present, Facebook, Inc.
@@ -31,17 +30,13 @@ const WORKSPACE_VIEW_URI = exports.WORKSPACE_VIEW_URI = 'atom://nuclide/debugger
                                                                                     *
                                                                                     * 
                                                                                     * @format
-                                                                                    */
-
-const CONNECTIONS_UPDATED_EVENT = 'CONNECTIONS_UPDATED_EVENT';
-const PROVIDERS_UPDATED_EVENT = 'PROVIDERS_UPDATED_EVENT';
-
-/**
- * Atom ViewProvider compatible model object.
- */
-class DebuggerModel {
-
+                                                                                    */const CONNECTIONS_UPDATED_EVENT = 'CONNECTIONS_UPDATED_EVENT';const PROVIDERS_UPDATED_EVENT = 'PROVIDERS_UPDATED_EVENT'; /**
+                                                                                                                                                                                                                * Atom ViewProvider compatible model object.
+                                                                                                                                                                                                                */class DebuggerModel {
   // Debugger providers
+
+
+
   constructor(service) {
     this._service = service;
 
@@ -60,9 +55,9 @@ class DebuggerModel {
   }
 
   /**
-   * Utility for getting refreshed connections.
-   * TODO: refresh connections when new directories are removed/added in file-tree.
-   */
+     * Utility for getting refreshed connections.
+     * TODO: refresh connections when new directories are removed/added in file-tree.
+     */
   _updateConnections() {
     const connections = this._getRemoteConnections();
     // Always have one single local connection.
@@ -72,16 +67,20 @@ class DebuggerModel {
   }
 
   /**
-   * Get remote connections without duplication.
-   */
+     * Get remote connections without duplication.
+     */
   _getRemoteConnections() {
     // TODO: move this logic into RemoteConnection package.
-    return atom.project.getPaths().filter(path => {
+    return atom.project.
+    getPaths().
+    filter(path => {
       return (_nuclideUri || _load_nuclideUri()).default.isRemote(path);
-    }).map(remotePath => {
+    }).
+    map(remotePath => {
       const { hostname } = (_nuclideUri || _load_nuclideUri()).default.parseRemoteUri(remotePath);
       return (_nuclideUri || _load_nuclideUri()).default.createRemoteUri(hostname, '/');
-    }).filter((path, index, inputArray) => {
+    }).
+    filter((path, index, inputArray) => {
       return inputArray.indexOf(path) === index;
     });
   }
@@ -100,8 +99,8 @@ class DebuggerModel {
   }
 
   /**
-   * Subscribe to new connection updates from DebuggerActions.
-   */
+     * Subscribe to new connection updates from DebuggerActions.
+     */
   onConnectionsUpdated(callback) {
     return this._emitter.on(CONNECTIONS_UPDATED_EVENT, callback);
   }
@@ -115,10 +114,12 @@ class DebuggerModel {
   }
 
   /**
-   * Return available launch/attach provider for input connection.
-   * Caller is responsible for disposing the results.
-   */
-  getLaunchAttachProvidersForConnection(connection) {
+     * Return available launch/attach provider for input connection.
+     * Caller is responsible for disposing the results.
+     */
+  getLaunchAttachProvidersForConnection(
+  connection)
+  {
     const availableLaunchAttachProviders = [];
     for (const provider of this._debuggerProviders) {
       const launchAttachProvider = provider.getLaunchAttachProvider(connection);
@@ -127,6 +128,4 @@ class DebuggerModel {
       }
     }
     return availableLaunchAttachProviders;
-  }
-}
-exports.default = DebuggerModel;
+  }}exports.default = DebuggerModel;

@@ -1,15 +1,24 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+
+
+
+
+
+
+
+
+
+
 
 
 /**
- * Like a CompositeDisposable, but in addition to Disposable instances it can
- * also accept plain functions and Rx subscriptions.
- */
+                                                                             * Like a CompositeDisposable, but in addition to Disposable instances it can
+                                                                             * also accept plain functions and Rx subscriptions.
+                                                                             */
 class UniversalDisposable {
+
+
 
   constructor(...teardowns) {
     this.teardowns = new Set();
@@ -59,24 +68,18 @@ class UniversalDisposable {
     if (!this.disposed) {
       this.teardowns.clear();
     }
-  }
-}
+  }}exports.default = UniversalDisposable; /**
+                                            * Copyright (c) 2017-present, Facebook, Inc.
+                                            * All rights reserved.
+                                            *
+                                            * This source code is licensed under the BSD-style license found in the
+                                            * LICENSE file in the root directory of this source tree. An additional grant
+                                            * of patent rights can be found in the PATENTS file in the same directory.
+                                            *
+                                            * 
+                                            * @format
+                                            */function assertTeardown(teardown) {if (typeof teardown.dispose === 'function' || typeof teardown.unsubscribe === 'function' || typeof teardown === 'function') {return;}
+  throw new TypeError(
+  'Arguments to UniversalDisposable.add must be disposable');
 
-exports.default = UniversalDisposable; /**
-                                        * Copyright (c) 2017-present, Facebook, Inc.
-                                        * All rights reserved.
-                                        *
-                                        * This source code is licensed under the BSD-style license found in the
-                                        * LICENSE file in the root directory of this source tree. An additional grant
-                                        * of patent rights can be found in the PATENTS file in the same directory.
-                                        *
-                                        * 
-                                        * @format
-                                        */
-
-function assertTeardown(teardown) {
-  if (typeof teardown.dispose === 'function' || typeof teardown.unsubscribe === 'function' || typeof teardown === 'function') {
-    return;
-  }
-  throw new TypeError('Arguments to UniversalDisposable.add must be disposable');
 }

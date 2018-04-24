@@ -1,81 +1,79 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.ResizeObservable = exports.PerformanceObservable = exports.MutationObservable = exports.IntersectionObservable = exports._DOMObserverObservable = undefined;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ResizeObservable = exports.PerformanceObservable = exports.MutationObservable = exports.IntersectionObservable = exports._DOMObserverObservable = undefined;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var _os = _interopRequireDefault(require('os'));
-
-var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
-
-var _shallowequal;
-
-function _load_shallowequal() {
-  return _shallowequal = _interopRequireDefault(require('shallowequal'));
-}
-
-var _collection;
-
-function _load_collection() {
-  return _collection = require('nuclide-commons/collection');
-}
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');var _shallowequal;
+function _load_shallowequal() {return _shallowequal = _interopRequireDefault(require('shallowequal'));}var _collection;
+function _load_collection() {return _collection = require('nuclide-commons/collection');}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 /**
- * Creates an observable sequence from a DOM-style Observer.
- *
- * **Use this sparingly: prefer to use the extended, specialized classes below
- *   or add a new one below when a new DOM-style Observer comes along*
- *
- * Emits the same array or EntryList (as with PerformanceObservers) as the
- * original DOM Observable.
- *
- * Known to work with DOM `MutationObserver`, `IntersectionObserver`,
- * `ResizeObserver`, and `PerformanceObserver`
- *
- * A DOM-style Observer is defined as implementing the `DOMObserver` interface
- * below. Here's an example with `MutationObserver`:
- *
- *   const mutations = DOMObserverObservable.create(
- *    MutationObserver,
- *    document.getElementById('bar'),
- *    { attributes: true, childList: true, characterData: true }
- *   );
- *
- *   mutations.subscribe(record => console.log(record));
- *
- * This emits and logs each batch of MutationRecords unmodified as an array. To
- * emit and log each record individually on the observable, call
- * `.flattenEntries()` before subscribing:
- *
- *   const mutations = DOMObserverObservable.create(
- *    MutationObserver,
- *    document.getElementById('bar'),
- *    { attributes: true, childList: true, characterData: true }
- *   ).flattenEntries();
- *
- *   mutations.subscribe(record => console.log(record));
- *
- * This results in MutationRecord objects emitted *individually* and
- * synchonrously every time a mutation occurs.
- *
- * To add additional observations to the observable, use `observe`:
- *
- *   const mutations = DOMObserverObservable.create(MutationObserver)
- *      .observe(
- *        document.getElementById('bar'),
- *        {attributes: true, childList: true, characterData: true}
- *      )
- *      .observe(
- *        document.getElementById('bar'),
- *        {attributes: true}
- *      )
- *      .flattenEntries();
- *
- *   mutations.subscribe(record => console.log(record));
- */
+                                                                                                                                                                                        * Creates an observable sequence from a DOM-style Observer.
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * **Use this sparingly: prefer to use the extended, specialized classes below
+                                                                                                                                                                                        *   or add a new one below when a new DOM-style Observer comes along*
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * Emits the same array or EntryList (as with PerformanceObservers) as the
+                                                                                                                                                                                        * original DOM Observable.
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * Known to work with DOM `MutationObserver`, `IntersectionObserver`,
+                                                                                                                                                                                        * `ResizeObserver`, and `PerformanceObserver`
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * A DOM-style Observer is defined as implementing the `DOMObserver` interface
+                                                                                                                                                                                        * below. Here's an example with `MutationObserver`:
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   const mutations = DOMObserverObservable.create(
+                                                                                                                                                                                        *    MutationObserver,
+                                                                                                                                                                                        *    document.getElementById('bar'),
+                                                                                                                                                                                        *    { attributes: true, childList: true, characterData: true }
+                                                                                                                                                                                        *   );
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   mutations.subscribe(record => console.log(record));
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * This emits and logs each batch of MutationRecords unmodified as an array. To
+                                                                                                                                                                                        * emit and log each record individually on the observable, call
+                                                                                                                                                                                        * `.flattenEntries()` before subscribing:
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   const mutations = DOMObserverObservable.create(
+                                                                                                                                                                                        *    MutationObserver,
+                                                                                                                                                                                        *    document.getElementById('bar'),
+                                                                                                                                                                                        *    { attributes: true, childList: true, characterData: true }
+                                                                                                                                                                                        *   ).flattenEntries();
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   mutations.subscribe(record => console.log(record));
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * This results in MutationRecord objects emitted *individually* and
+                                                                                                                                                                                        * synchonrously every time a mutation occurs.
+                                                                                                                                                                                        *
+                                                                                                                                                                                        * To add additional observations to the observable, use `observe`:
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   const mutations = DOMObserverObservable.create(MutationObserver)
+                                                                                                                                                                                        *      .observe(
+                                                                                                                                                                                        *        document.getElementById('bar'),
+                                                                                                                                                                                        *        {attributes: true, childList: true, characterData: true}
+                                                                                                                                                                                        *      )
+                                                                                                                                                                                        *      .observe(
+                                                                                                                                                                                        *        document.getElementById('bar'),
+                                                                                                                                                                                        *        {attributes: true}
+                                                                                                                                                                                        *      )
+                                                                                                                                                                                        *      .flattenEntries();
+                                                                                                                                                                                        *
+                                                                                                                                                                                        *   mutations.subscribe(record => console.log(record));
+                                                                                                                                                                                        */
 
 // $FlowFixMe(>=0.55.0) Flow suppress
 /**
@@ -88,17 +86,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *
  * 
  * @format
- */
+ */ /* eslint-env browser */ /* global IntersectionObserver, PerformanceObserver, ResizeObserver, DOMRect */class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable
 
-/* eslint-env browser */
-/* global IntersectionObserver, PerformanceObserver, ResizeObserver, DOMRect */
+{
 
-class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable {
 
-  constructor(DOMObserverCtor, ...observeArgs) {
-    super();
-    this._observations = [];
-    this._refs = 0;
+
+
+
+  constructor(
+  DOMObserverCtor,
+  ...observeArgs)
+  {
+    super();this._observations = [];this._refs = 0;
     this._DOMObserverCtor = DOMObserverCtor;
     if (observeArgs.length > 0) {
       this.observe(...observeArgs);
@@ -127,7 +127,11 @@ class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable {
 
   unobserve(...unobserveArgs) {
     if (this._domObserver != null && this._domObserver.unobserve == null) {
-      throw new Error(`Cannot unobserve: This observable has an active ${this._DOMObserverCtor.name} and it does not support unobserve`);
+      throw new Error(
+      `Cannot unobserve: This observable has an active ${
+      this._DOMObserverCtor.name
+      } and it does not support unobserve`);
+
     }
 
     for (let i = 0; i < this._observations.length; i++) {
@@ -152,16 +156,17 @@ class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable {
         return _rxjsBundlesRxMinJs.Observable.from(records.getEntries());
       }
 
-      return _rxjsBundlesRxMinJs.Observable.throw(new Error('Tried to merge DOM Observer entries, but they were not iterable nor were they an EntryList.'));
+      return _rxjsBundlesRxMinJs.Observable.throw(
+      new Error(
+      'Tried to merge DOM Observer entries, but they were not iterable nor were they an EntryList.'));
+
+
     });
   }
 
   _subscribe(subscriber) {
-    if (this._refs === 0) {
-      if (!(this._domObserver == null)) {
-        throw new Error('Invariant violation: "this._domObserver == null"');
-      }
-
+    if (this._refs === 0) {if (!(
+      this._domObserver == null)) {throw new Error('Invariant violation: "this._domObserver == null"');}
       this._domObserver = new this._DOMObserverCtor(records => {
         subscriber.next(records);
       });
@@ -178,86 +183,91 @@ class DOMObserverObservable extends _rxjsBundlesRxMinJs.Observable {
 
       // the underlying observer should only disconnect when all subscribers have
       // unsubscribed
-      if (this._refs === 0) {
-        if (!(this._domObserver != null)) {
-          throw new Error('Invariant violation: "this._domObserver != null"');
-        }
-
+      if (this._refs === 0) {if (!(
+        this._domObserver != null)) {throw new Error('Invariant violation: "this._domObserver != null"');}
         this._domObserver.disconnect();
         this._domObserver = null;
       }
     });
 
     return subscription;
-  }
-}
+  }}
+
 
 const _DOMObserverObservable = exports._DOMObserverObservable = DOMObserverObservable;
 
 /**
- * Returns an RxJS Observable that wraps an IntersectionObserver
- */
-class IntersectionObservable extends DOMObserverObservable {
-  constructor(target) {
-    if (!(
+                                                                                        * Returns an RxJS Observable that wraps an IntersectionObserver
+                                                                                        */
+class IntersectionObservable extends DOMObserverObservable
+
+
+
+{
+  constructor(target) {if (!(
+
     // eslint-disable-next-line eqeqeq
-    global.IntersectionObserver !== null)) {
-      throw new Error('environment must contain IntersectionObserver');
-    }
+    global.IntersectionObserver !== null)) {throw new Error(
+      'environment must contain IntersectionObserver');}
+
     // $FlowFixMe(>=0.55.0) Flow suppress
-
-
     super(IntersectionObserver, target);
-  }
-}
+  }}exports.IntersectionObservable = IntersectionObservable;
 
-exports.IntersectionObservable = IntersectionObservable; /**
-                                                          * Returns an RxJS Observable that wraps a MutationObserver
-                                                          */
 
-class MutationObservable extends DOMObserverObservable {
-  constructor(target, options) {
-    if (!(
+/**
+                                                              * Returns an RxJS Observable that wraps a MutationObserver
+                                                              */
+class MutationObservable extends DOMObserverObservable
+
+
+
+
+{
+  constructor(target, options) {if (!(
+
     // eslint-disable-next-line eqeqeq
-    global.MutationObserver !== null)) {
-      throw new Error('environment must contain MutationObserver');
-    }
+    global.MutationObserver !== null)) {throw new Error(
+      'environment must contain MutationObserver');}
+
     // $FlowFixMe(>=0.55.0) Flow suppress
-
-
     super(MutationObserver, target);
-  }
-}
+  }}exports.MutationObservable = MutationObservable;
 
-exports.MutationObservable = MutationObservable; /**
-                                                  * Returns an RxJS Observable that wraps a PerformanceObserver
-                                                  */
 
-class PerformanceObservable extends DOMObserverObservable {
-  constructor(options) {
-    if (!(
+/**
+                                                      * Returns an RxJS Observable that wraps a PerformanceObserver
+                                                      */
+class PerformanceObservable extends DOMObserverObservable
+
+
+
+{
+  constructor(options) {if (!(
+
     // eslint-disable-next-line eqeqeq
-    global.PerformanceObserver !== null)) {
-      throw new Error('environment must contain PerformanceObserver');
-    }
+    global.PerformanceObserver !== null)) {throw new Error(
+      'environment must contain PerformanceObserver');}
+
     // $FlowFixMe(>=0.55.0) Flow suppress
-
-
     super(PerformanceObserver, options);
-  }
-}
+  }}exports.PerformanceObservable = PerformanceObservable;
 
-exports.PerformanceObservable = PerformanceObservable; /**
-                                                        * Returns an RxJS Observable that wraps a ResizeObserver
-                                                        */
 
-class ResizeObservable extends DOMObserverObservable {
-  constructor(target) {
-    if (!(
+/**
+                                                            * Returns an RxJS Observable that wraps a ResizeObserver
+                                                            */
+class ResizeObservable extends DOMObserverObservable
+
+
+
+{
+  constructor(target) {if (!(
+
     // eslint-disable-next-line eqeqeq
-    global.ResizeObserver !== null)) {
-      throw new Error('environment must contain ResizeObserver');
-    }
+    global.ResizeObserver !== null)) {throw new Error(
+      'environment must contain ResizeObserver');}
+
 
     if (_os.default.platform() === 'win32') {
       super(WindowsResizeMeasurementPatchingObserver, target);
@@ -265,17 +275,21 @@ class ResizeObservable extends DOMObserverObservable {
       // $FlowFixMe(>=0.55.0) Flow suppress
       super(ResizeObserver, target);
     }
-  }
-}
+  }}exports.ResizeObservable = ResizeObservable;
 
-exports.ResizeObservable = ResizeObservable;
-function lastRectPerTarget(entries) {
+
+function lastRectPerTarget(
+entries)
+{
   const rectMap = new Map();
   entries.forEach(entry => rectMap.set(entry.target, entry.contentRect));
   return rectMap;
 }
 
-function remeasureContentRect(element, contentRect) {
+function remeasureContentRect(
+element,
+contentRect)
+{
   const { clientHeight, clientWidth } = element;
 
   // Client height/width include padding
@@ -284,19 +298,22 @@ function remeasureContentRect(element, contentRect) {
   const computedStyle = window.getComputedStyle(element);
   const { paddingLeft, paddingRight, paddingTop, paddingBottom } = computedStyle;
 
-  const height = clientHeight - parseFloat(paddingTop) - parseFloat(paddingBottom);
-  const width = clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight);
+  const height =
+  clientHeight - parseFloat(paddingTop) - parseFloat(paddingBottom);
+  const width =
+  clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight);
 
   return new DOMRect(contentRect.x, contentRect.y, width, height);
 }
 
 /*
- * The values provided by the ResizeOverver on Windows do not seem to reflect the actual size
- * of the element (!!!), so we need to "fix" them before passing on to the downstream subscriber
- * We're wrapping the ResizeObserver instance and are patching the last result of the array with
- * a set of custom measured values
- */
+   * The values provided by the ResizeOverver on Windows do not seem to reflect the actual size
+   * of the element (!!!), so we need to "fix" them before passing on to the downstream subscriber
+   * We're wrapping the ResizeObserver instance and are patching the last result of the array with
+   * a set of custom measured values
+   */
 class WindowsResizeMeasurementPatchingObserver {
+
 
   constructor(callback, ...rest) {
     const remeasuringCallback = entries => {
@@ -327,5 +344,4 @@ class WindowsResizeMeasurementPatchingObserver {
     if (typeof this._resizeObserver.unobserve === 'function') {
       this._resizeObserver.unobserve(...unobserveArgs);
     }
-  }
-}
+  }}

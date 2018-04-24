@@ -1,25 +1,46 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
+"use strict";Object.defineProperty(exports, "__esModule", { value: true }); /**
+                                                                             * Copyright (c) 2017-present, Facebook, Inc.
+                                                                             * All rights reserved.
+                                                                             *
+                                                                             * This source code is licensed under the BSD-style license found in the
+                                                                             * LICENSE file in the root directory of this source tree. An additional grant
+                                                                             * of patent rights can be found in the PATENTS file in the same directory.
+                                                                             *
+                                                                             * 
+                                                                             * @format
+                                                                             */
 
 /**
- * Expected<T> tries to mimic llvm's Expected class.
- * This is specially useful for Observables that can return a stream of errors instead of closing
- * the subscription.
- */
+                                                                                 * Expected<T> tries to mimic llvm's Expected class.
+                                                                                 * This is specially useful for Observables that can return a stream of errors instead of closing
+                                                                                 * the subscription.
+                                                                                 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Expect {
   static error(error) {
@@ -29,8 +50,8 @@ class Expect {
       error,
       getOrDefault(def) {
         return def;
-      }
-    };
+      } };
+
   }
 
   static value(value) {
@@ -40,8 +61,8 @@ class Expect {
       value,
       getOrDefault(def) {
         return this.value;
-      }
-    };
+      } };
+
   }
 
   static pendingValue(value) {
@@ -51,8 +72,6 @@ class Expect {
       value,
       getOrDefault(def) {
         return this.value;
-      }
-    };
-  }
-}
-exports.Expect = Expect;
+      } };
+
+  }}exports.Expect = Expect;

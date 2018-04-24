@@ -1,64 +1,36 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _addTooltip;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _addTooltip;
 
-function _load_addTooltip() {
-  return _addTooltip = _interopRequireDefault(require('nuclide-commons-ui/addTooltip'));
-}
 
-var _Icon;
 
-function _load_Icon() {
-  return _Icon = require('nuclide-commons-ui/Icon');
-}
 
-var _classnames;
 
-function _load_classnames() {
-  return _classnames = _interopRequireDefault(require('classnames'));
-}
 
-var _observable;
 
-function _load_observable() {
-  return _observable = require('nuclide-commons/observable');
-}
 
+
+
+
+
+
+
+function _load_addTooltip() {return _addTooltip = _interopRequireDefault(require('nuclide-commons-ui/addTooltip'));}var _Icon;
+function _load_Icon() {return _Icon = require('nuclide-commons-ui/Icon');}var _classnames;
+function _load_classnames() {return _classnames = _interopRequireDefault(require('classnames'));}var _observable;
+function _load_observable() {return _observable = require('nuclide-commons/observable');}
 var _react = _interopRequireWildcard(require('react'));
+var _reactDom = _interopRequireDefault(require('react-dom'));var _UniversalDisposable;
 
-var _reactDom = _interopRequireDefault(require('react-dom'));
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}var _analytics;
+function _load_analytics() {return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));}var _event;
+function _load_event() {return _event = require('nuclide-commons/event');}var _featureConfig;
+function _load_featureConfig() {return _featureConfig = _interopRequireDefault(require('nuclide-commons-atom/feature-config'));}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-var _UniversalDisposable;
 
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
 
-var _analytics;
 
-function _load_analytics() {
-  return _analytics = _interopRequireDefault(require('nuclide-commons/analytics'));
-}
 
-var _event;
-
-function _load_event() {
-  return _event = require('nuclide-commons/event');
-}
-
-var _featureConfig;
-
-function _load_featureConfig() {
-  return _featureConfig = _interopRequireDefault(require('nuclide-commons-atom/feature-config'));
-}
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Stick this to the left of remote-projects (-99)
 const STATUS_BAR_PRIORITY = -99.5; /**
@@ -71,18 +43,13 @@ const STATUS_BAR_PRIORITY = -99.5; /**
                                     *
                                     * 
                                     * @format
-                                    */
-
-const RENDER_DEBOUNCE_TIME = 100;
-
-class StatusBarTile {
-
+                                    */const RENDER_DEBOUNCE_TIME = 100;class StatusBarTile {
   constructor() {
     this._diagnosticUpdaters = new Map();
     this._totalDiagnosticCount = {
       errorCount: 0,
-      warningCount: 0
-    };
+      warningCount: 0 };
+
     this._subscriptions = new (_UniversalDisposable || _load_UniversalDisposable()).default();
   }
 
@@ -93,10 +60,18 @@ class StatusBarTile {
 
     const diagnosticCount = {
       errorCount: 0,
-      warningCount: 0
-    };
+      warningCount: 0 };
+
     this._diagnosticUpdaters.set(diagnosticUpdater, diagnosticCount);
-    this._subscriptions.add((0, (_event || _load_event()).observableFromSubscribeFunction)(diagnosticUpdater.observeMessages).let((0, (_observable || _load_observable()).fastDebounce)(RENDER_DEBOUNCE_TIME)).subscribe(this._onAllMessagesDidUpdate.bind(this, diagnosticUpdater), null, this._onAllMessagesDidUpdate.bind(this, diagnosticUpdater, [])));
+    this._subscriptions.add(
+    (0, (_event || _load_event()).observableFromSubscribeFunction)(diagnosticUpdater.observeMessages).
+    let((0, (_observable || _load_observable()).fastDebounce)(RENDER_DEBOUNCE_TIME)).
+    subscribe(
+    this._onAllMessagesDidUpdate.bind(this, diagnosticUpdater),
+    null,
+    this._onAllMessagesDidUpdate.bind(this, diagnosticUpdater, [])));
+
+
   }
 
   consumeStatusBar(statusBar) {
@@ -110,17 +85,26 @@ class StatusBarTile {
     item.className = 'inline-block';
     this._render();
 
-    const statusBarPosition = (_featureConfig || _load_featureConfig()).default.get('atom-ide-diagnostics-ui.statusBarPosition');
-    const statusBarPositionMethod = statusBarPosition === 'left' ? statusBar.addLeftTile : statusBar.addRightTile;
+    const statusBarPosition = (_featureConfig || _load_featureConfig()).default.get(
+    'atom-ide-diagnostics-ui.statusBarPosition');
+
+    const statusBarPositionMethod =
+    statusBarPosition === 'left' ?
+    statusBar.addLeftTile :
+    statusBar.addRightTile;
     // negate the priority for better visibility on the right side
-    const statusBarPriority = statusBarPosition === 'left' ? STATUS_BAR_PRIORITY : -STATUS_BAR_PRIORITY;
+    const statusBarPriority =
+    statusBarPosition === 'left' ? STATUS_BAR_PRIORITY : -STATUS_BAR_PRIORITY;
     this._tile = statusBarPositionMethod({
       item,
-      priority: statusBarPriority
-    });
+      priority: statusBarPriority });
+
   }
 
-  _onAllMessagesDidUpdate(diagnosticUpdater, messages) {
+  _onAllMessagesDidUpdate(
+  diagnosticUpdater,
+  messages)
+  {
     // Update the DiagnosticCount for the updater.
     let errorCount = 0;
     let warningCount = 0;
@@ -134,8 +118,8 @@ class StatusBarTile {
     }
     this._diagnosticUpdaters.set(diagnosticUpdater, {
       errorCount,
-      warningCount
-    });
+      warningCount });
+
 
     // Recalculate the total diagnostic count.
     let totalErrorCount = 0;
@@ -146,15 +130,18 @@ class StatusBarTile {
     }
     this._totalDiagnosticCount = {
       errorCount: totalErrorCount,
-      warningCount: totalWarningCount
-    };
+      warningCount: totalWarningCount };
+
 
     this._render();
   }
 
   _render() {
     if (this._item) {
-      _reactDom.default.render(_react.createElement(StatusBarTileComponent, this._totalDiagnosticCount), this._item);
+      _reactDom.default.render(
+      _react.createElement(StatusBarTileComponent, this._totalDiagnosticCount),
+      this._item);
+
     }
   }
 
@@ -169,10 +156,12 @@ class StatusBarTile {
       this._tile.destroy();
       this._tile = null;
     }
-  }
-}
+  }}exports.default = StatusBarTile;
 
-exports.default = StatusBarTile;
+
+
+
+
 
 
 class StatusBarTileComponent extends _react.Component {
@@ -187,51 +176,46 @@ class StatusBarTileComponent extends _react.Component {
     const hasErrors = errorCount > 0;
     const hasWarnings = warningCount > 0;
     const errorClassName = (0, (_classnames || _load_classnames()).default)('diagnostics-status-bar-highlight', {
-      'text-error': hasErrors
-    });
+      'text-error': hasErrors });
+
     const warningClassName = (0, (_classnames || _load_classnames()).default)('diagnostics-status-bar-highlight', {
-      'text-warning': hasWarnings
-    });
+      'text-warning': hasWarnings });
+
     const errorLabel = hasErrors ? errorCount : 'No';
     const errorSuffix = errorCount !== 1 ? 's' : '';
     const warningLabel = hasWarnings ? warningCount : 'No';
     const warningSuffix = warningCount !== 1 ? 's' : '';
 
-    return _react.createElement(
-      'span',
-      null,
-      _react.createElement(
-        'a',
-        {
-          className: errorClassName,
-          onClick: this._onClick
-          // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
-          , ref: (0, (_addTooltip || _load_addTooltip()).default)({
-            title: `${errorLabel} error${errorSuffix}`,
-            placement: 'top'
-          }) },
-        _react.createElement((_Icon || _load_Icon()).Icon, { icon: 'nuclicon-error' }),
-        errorCount
-      ),
-      _react.createElement(
-        'a',
-        {
-          className: warningClassName,
-          onClick: this._onClick
-          // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
-          , ref: (0, (_addTooltip || _load_addTooltip()).default)({
-            title: `${warningLabel} warning${warningSuffix}`,
-            placement: 'top'
-          }) },
-        _react.createElement((_Icon || _load_Icon()).Icon, { icon: 'nuclicon-warning' }),
-        warningCount
-      )
-    );
+    return (
+      _react.createElement('span', null,
+        _react.createElement('a', {
+            className: errorClassName,
+            onClick: this._onClick
+            // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+            , ref: (0, (_addTooltip || _load_addTooltip()).default)({
+              title: `${errorLabel} error${errorSuffix}`,
+              placement: 'top' }) },
+
+          _react.createElement((_Icon || _load_Icon()).Icon, { icon: 'nuclicon-error' }),
+          errorCount),
+
+        _react.createElement('a', {
+            className: warningClassName,
+            onClick: this._onClick
+            // eslint-disable-next-line rulesdir/jsx-simple-callback-refs
+            , ref: (0, (_addTooltip || _load_addTooltip()).default)({
+              title: `${warningLabel} warning${warningSuffix}`,
+              placement: 'top' }) },
+
+          _react.createElement((_Icon || _load_Icon()).Icon, { icon: 'nuclicon-warning' }),
+          warningCount)));
+
+
+
   }
 
   _onClick() {
     const target = atom.views.getView(atom.workspace);
     atom.commands.dispatch(target, 'diagnostics:toggle-table');
     (_analytics || _load_analytics()).default.track('diagnostics-show-table-from-status-bar');
-  }
-}
+  }}

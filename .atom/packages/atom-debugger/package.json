@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+        "spec": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-118324-27059-1k1mws6.cdddeu3di"
+    ]
+  ],
+  "_from": "../d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+  "_id": "atom-debugger@0.1.6",
+  "_inCache": true,
+  "_location": "/atom-debugger",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+    "spec": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+  "_shasum": "5fa447f6bd9daf5db6ff71e05ddc4562bc2b15ef",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-118324-27059-upqj8w.1lyb40lik9/package.tgz",
+  "_where": "/tmp/apm-install-dir-118324-27059-1k1mws6.cdddeu3di",
+  "activationCommands": {
+    "atom-workspace": "debugger:toggle"
+  },
+  "bugs": {
+    "url": "https://github.com/xndcn/atom-debugger/issues"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0"
+  },
+  "description": "GDB debbuger for Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/xndcn/atom-debugger#readme",
+  "keywords": [
+    "debugger",
+    "gdb",
+    "debug"
+  ],
+  "license": "MIT",
+  "main": "./lib/debugger",
+  "name": "atom-debugger",
+  "optionalDependencies": {},
+  "readme": "# atom-debugger package\n\nThis is a debugger for atom.io, which now only support `gdb`.\n\nThis package is still in very early stage. In fact, I'm not sure whether there are people using atom.io to debug.\n\nPlease feel free to create issues if you have any problem or good ideas, thank you!\n\nBefore debugging, please add your source root directory into the tree-view.\n\n![screenshot](https://raw.githubusercontent.com/xndcn/atom-debugger/master/screenshot.png?raw=true)\n\n\n## TO DO\n\n* Add `watch` view to display variable value.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xndcn/atom-debugger.git"
+  },
+  "version": "0.1.6"
+}

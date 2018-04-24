@@ -1,12 +1,16 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _react = _interopRequireWildcard(require('react'));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+
+
+
+
+
+
+
+var _react = _interopRequireWildcard(require('react'));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}
 
 // Globally unique ID used as the "name" attribute to group radio inputs.
 let uid = 0; /**
@@ -21,16 +25,22 @@ let uid = 0; /**
               * @format
               */
 
+
 /**
- * A managed radio group component. Accepts arbitrary React elements as labels.
- */
+                  * A managed radio group component. Accepts arbitrary React elements as labels.
+                  */
 class RadioGroup extends _react.Component {
+
+
+
+
+
 
   constructor(props) {
     super(props);
     this.state = {
-      uid: uid++
-    };
+      uid: uid++ };
+
   }
 
   render() {
@@ -38,42 +48,29 @@ class RadioGroup extends _react.Component {
       className,
       onSelectedChange,
       optionLabels,
-      selectedIndex
-    } = this.props;
+      selectedIndex } =
+    this.props;
     const checkboxes = optionLabels.map((labelContent, i) => {
       const id = 'nuclide-radiogroup-' + uid + '-' + i;
-      return _react.createElement(
-        'div',
-        { key: i, className: 'nuclide-ui-radiogroup-div' },
-        _react.createElement('input', {
-          className: 'input-radio',
-          type: 'radio',
-          checked: i === selectedIndex,
-          name: 'radiogroup-' + this.state.uid,
-          id: id,
-          onChange: () => {
-            onSelectedChange(i);
-          }
-        }),
-        _react.createElement(
-          'label',
-          {
-            className: 'input-label nuclide-ui-radiogroup-label',
-            htmlFor: id },
-          labelContent
-        )
-      );
+      return (
+        _react.createElement('div', { key: i, className: 'nuclide-ui-radiogroup-div' },
+          _react.createElement('input', {
+            className: 'input-radio',
+            type: 'radio',
+            checked: i === selectedIndex,
+            name: 'radiogroup-' + this.state.uid,
+            id: id,
+            onChange: () => {
+              onSelectedChange(i);
+            } }),
+
+          _react.createElement('label', {
+              className: 'input-label nuclide-ui-radiogroup-label',
+              htmlFor: id },
+            labelContent)));
+
+
+
     });
-    return _react.createElement(
-      'div',
-      { className: className },
-      checkboxes
-    );
-  }
-}
-exports.default = RadioGroup;
-RadioGroup.defaultProps = {
-  optionLabels: [],
-  onSelectedChange: selectedIndex => {},
-  selectedIndex: 0
-};
+    return _react.createElement('div', { className: className }, checkboxes);
+  }}exports.default = RadioGroup;RadioGroup.defaultProps = { optionLabels: [], onSelectedChange: selectedIndex => {}, selectedIndex: 0 };

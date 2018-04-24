@@ -1,34 +1,42 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _react = _interopRequireWildcard(require('react'));
 
-var _collection;
 
-function _load_collection() {
-  return _collection = require('nuclide-commons/collection');
-}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
+
+
+
+
+
+var _react = _interopRequireWildcard(require('react'));var _collection;
+
+function _load_collection() {return _collection = require('nuclide-commons/collection');}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}} /**
+                                                                                                                                                                                                                                                                                                                                                           * Copyright (c) 2017-present, Facebook, Inc.
+                                                                                                                                                                                                                                                                                                                                                           * All rights reserved.
+                                                                                                                                                                                                                                                                                                                                                           *
+                                                                                                                                                                                                                                                                                                                                                           * This source code is licensed under the BSD-style license found in the
+                                                                                                                                                                                                                                                                                                                                                           * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                                                                                                                                                                                                                                                           * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                                                                                                                                                                                                                                                           *
+                                                                                                                                                                                                                                                                                                                                                           * 
+                                                                                                                                                                                                                                                                                                                                                           * @format
+                                                                                                                                                                                                                                                                                                                                                           */
+
+
+
 
 class HighlightedText extends _react.Component {
   shouldComponentUpdate(nextProps) {
-    return this.props.text !== nextProps.text || !(0, (_collection || _load_collection()).arrayEqual)(this.props.highlightedRanges, nextProps.highlightedRanges, rangeEqual);
+    return (
+      this.props.text !== nextProps.text ||
+      !(0, (_collection || _load_collection()).arrayEqual)(
+      this.props.highlightedRanges,
+      nextProps.highlightedRanges,
+      rangeEqual));
+
+
   }
 
   render() {
@@ -54,7 +62,8 @@ class HighlightedText extends _react.Component {
       // if the last matched range
       i === highlightedRanges.length - 1 &&
       // doesn't end perfectly at the end of the text,
-      currentHighlighted[1] !== text.length) {
+      currentHighlighted[1] !== text.length)
+      {
         // add an additional unmatched range to cover the rest of the text
         unhighlightedRanges.push([currentHighlighted[1], text.length]);
       }
@@ -62,51 +71,62 @@ class HighlightedText extends _react.Component {
 
     if (unhighlightedRanges.length === 0) {
       unhighlightedRanges.push([0, text.length]);
-    }
+    }if (!(
 
-    if (!(unhighlightedRanges.length === highlightedRanges.length || unhighlightedRanges.length === highlightedRanges.length + 1)) {
-      throw new Error('Invariant violation: "unhighlightedRanges.length === highlightedRanges.length ||\\n        unhighlightedRanges.length === highlightedRanges.length + 1"');
-    }
+
+    unhighlightedRanges.length === highlightedRanges.length ||
+    unhighlightedRanges.length === highlightedRanges.length + 1)) {throw new Error('Invariant violation: "unhighlightedRanges.length === highlightedRanges.length ||\\n        unhighlightedRanges.length === highlightedRanges.length + 1"');}
 
     const renderedSequences = [];
     for (let i = 0; i < unhighlightedRanges.length; i++) {
       const unhighlightedRange = unhighlightedRanges[i];
       const highlightedRange = highlightedRanges[i];
       if (!rangeEmpty(unhighlightedRange)) {
-        renderedSequences.push(renderUnmatchedSubsequence(text.slice(unhighlightedRange[0], unhighlightedRange[1]), unhighlightedRange.join(',')));
+        renderedSequences.push(
+        renderUnmatchedSubsequence(
+        text.slice(unhighlightedRange[0], unhighlightedRange[1]),
+        unhighlightedRange.join(',')));
+
+
       }
 
       if (highlightedRange != null && !rangeEmpty(highlightedRange)) {
-        renderedSequences.push(renderMatchedSubsequence(text.slice(highlightedRange[0], highlightedRange[1]), highlightedRange.join(',')));
+        renderedSequences.push(
+        renderMatchedSubsequence(
+        text.slice(highlightedRange[0], highlightedRange[1]),
+        highlightedRange.join(',')));
+
+
       }
     }
 
-    return _react.createElement(
-      'span',
-      { className: className, style: style },
-      renderedSequences
-    );
-  }
-}
+    return (
+      _react.createElement('span', { className: className, style: style },
+        renderedSequences));
 
-exports.default = HighlightedText;
+
+  }}exports.default = HighlightedText;
+
+
 function renderSubsequence(seq, props) {
-  return _react.createElement(
-    'span',
-    props,
-    seq
-  );
+  return _react.createElement('span', props, seq);
 }
 
-function renderUnmatchedSubsequence(seq, key) {
+function renderUnmatchedSubsequence(
+seq,
+key)
+{
   return renderSubsequence(seq, { key });
 }
 
-function renderMatchedSubsequence(seq, key) {
+function renderMatchedSubsequence(
+seq,
+key)
+{
   return renderSubsequence(seq, {
     key,
-    className: 'nuclide-match-highlighted-text-match'
-  });
+    className: 'nuclide-match-highlighted-text-match' });
+
 }
 
 function rangeEqual(a, b) {

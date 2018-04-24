@@ -1,41 +1,30 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.default =
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = SettingsControl;
 
-var _SettingsCheckbox;
 
-function _load_SettingsCheckbox() {
-  return _SettingsCheckbox = _interopRequireDefault(require('./SettingsCheckbox'));
-}
 
-var _SettingsInput;
 
-function _load_SettingsInput() {
-  return _SettingsInput = _interopRequireDefault(require('./SettingsInput'));
-}
 
-var _SettingsSelect;
 
-function _load_SettingsSelect() {
-  return _SettingsSelect = _interopRequireDefault(require('./SettingsSelect'));
-}
 
-var _SettingsColorInput;
 
-function _load_SettingsColorInput() {
-  return _SettingsColorInput = _interopRequireDefault(require('./SettingsColorInput'));
-}
 
-var _react = _interopRequireWildcard(require('react'));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function SettingsControl(props) {
+
+
+
+
+
+
+
+
+
+
+
+
+SettingsControl;var _SettingsCheckbox;function _load_SettingsCheckbox() {return _SettingsCheckbox = _interopRequireDefault(require('./SettingsCheckbox'));}var _SettingsInput;function _load_SettingsInput() {return _SettingsInput = _interopRequireDefault(require('./SettingsInput'));}var _SettingsSelect;function _load_SettingsSelect() {return _SettingsSelect = _interopRequireDefault(require('./SettingsSelect'));}var _SettingsColorInput;function _load_SettingsColorInput() {return _SettingsColorInput = _interopRequireDefault(require('./SettingsColorInput'));}var _react = _interopRequireWildcard(require('react'));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function SettingsControl(props) {
   const { keyPath, value, onChange, schema } = props;
   const { description, title } = schema;
 
@@ -48,9 +37,9 @@ function SettingsControl(props) {
           keyPath: keyPath,
           onChange: onChange,
           title: title,
-          value: value
-        })
-      );
+          value: value }));
+
+
     } else if (schema.type === 'color') {
       return (
         // $FlowFixMe(>=0.53.0) Flow suppress
@@ -59,9 +48,9 @@ function SettingsControl(props) {
           keyPath: keyPath,
           onChange: onChange,
           title: title,
-          value: value
-        })
-      );
+          value: value }));
+
+
     } else if (isBoolean(value) || schema.type === 'boolean') {
       return (
         // $FlowFixMe(>=0.53.0) Flow suppress
@@ -70,9 +59,9 @@ function SettingsControl(props) {
           keyPath: keyPath,
           onChange: onChange,
           title: title,
-          value: value
-        })
-      );
+          value: value }));
+
+
     } else if (Array.isArray(value) || schema.type === 'array') {
       if (isEditableArray(value)) {
         return (
@@ -83,15 +72,12 @@ function SettingsControl(props) {
             onChange: onChange,
             title: title,
             value: value,
-            type: 'array'
-          })
-        );
-      }
-    } else if (isObject(value) || schema.type === 'object') {
-      if (!false) {
-        throw new Error('Invariant violation: "false"');
-      } // Not implemented.
+            type: 'array' }));
 
+
+      }
+    } else if (isObject(value) || schema.type === 'object') {if (!
+      false) {throw new Error('Invariant violation: "false"');} // Not implemented.
     } else {
       const type = isNumber(value) ? 'number' : 'string';
       return (
@@ -102,9 +88,9 @@ function SettingsControl(props) {
           onChange: onChange,
           title: title,
           value: value,
-          type: type
-        })
-      );
+          type: type }));
+
+
     }
   }
 
@@ -119,15 +105,7 @@ function SettingsControl(props) {
    *
    * 
    * @format
-   */
-
-function isBoolean(obj) {
-  return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
-}
-
-function isNumber(obj) {
-  return toString.call(obj) === '[object Number]';
-}
+   */function isBoolean(obj) {return obj === true || obj === false || toString.call(obj) === '[object Boolean]';}function isNumber(obj) {return toString.call(obj) === '[object Number]';}
 
 function isObject(obj) {
   const type = typeof obj;

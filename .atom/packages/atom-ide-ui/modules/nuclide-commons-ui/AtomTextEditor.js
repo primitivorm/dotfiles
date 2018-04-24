@@ -1,41 +1,25 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.AtomTextEditor = undefined;var _classnames;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.AtomTextEditor = undefined;
 
-var _classnames;
 
-function _load_classnames() {
-  return _classnames = _interopRequireDefault(require('classnames'));
-}
 
-var _react = _interopRequireWildcard(require('react'));
 
-var _semver;
 
-function _load_semver() {
-  return _semver = _interopRequireDefault(require('semver'));
-}
 
-var _atom = require('atom');
 
-var _textEditor;
 
-function _load_textEditor() {
-  return _textEditor = require('nuclide-commons-atom/text-editor');
-}
 
-var _UniversalDisposable;
 
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _load_classnames() {return _classnames = _interopRequireDefault(require('classnames'));}
+var _react = _interopRequireWildcard(require('react'));var _semver;
+function _load_semver() {return _semver = _interopRequireDefault(require('semver'));}
+var _atom = require('atom');var _textEditor;
+function _load_textEditor() {return _textEditor = require('nuclide-commons-atom/text-editor');}var _UniversalDisposable;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 const doNothing = () => {}; /**
                              * Copyright (c) 2017-present, Facebook, Inc.
@@ -47,13 +31,7 @@ const doNothing = () => {}; /**
                              *
                              * 
                              * @format
-                             */
-
-const ATOM_VERSION_CHECK_FOR_SET_GRAMMAR = '1.24.0-beta0';
-
-function setupTextEditor(props) {
-  const textBuffer = props.textBuffer || new _atom.TextBuffer();
-  // flowlint-next-line sketchy-null-string:off
+                             */const ATOM_VERSION_CHECK_FOR_SET_GRAMMAR = '1.24.0-beta0';function setupTextEditor(props) {const textBuffer = props.textBuffer || new _atom.TextBuffer(); // flowlint-next-line sketchy-null-string:off
   if (props.path) {
     // $FlowIgnore
     textBuffer.setPath(props.path);
@@ -67,13 +45,17 @@ function setupTextEditor(props) {
   const textEditorParams = {
     buffer: textBuffer,
     lineNumberGutterVisible: !props.gutterHidden,
-    autoHeight: props.autoGrow
-  };
-  const textEditor = atom.workspace.buildTextEditor(textEditorParams);
+    autoHeight: props.autoGrow };
+
+  const textEditor = atom.workspace.buildTextEditor(
+  textEditorParams);
+
   disposables.add(() => textEditor.destroy());
   if (props.grammar != null) {
     textEditor.setGrammar(props.grammar);
-  } else if ((_semver || _load_semver()).default.gte(atom.getVersion(), ATOM_VERSION_CHECK_FOR_SET_GRAMMAR)) {
+  } else if (
+  (_semver || _load_semver()).default.gte(atom.getVersion(), ATOM_VERSION_CHECK_FOR_SET_GRAMMAR))
+  {
     atom.grammars.autoAssignLanguageMode(textBuffer);
   }
   disposables.add((0, (_textEditor || _load_textEditor()).enforceSoftWrap)(textEditor, props.softWrapped));
@@ -93,11 +75,61 @@ function setupTextEditor(props) {
   }
   return {
     disposables,
-    textEditor
-  };
+    textEditor };
+
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class AtomTextEditor extends _react.Component {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   componentDidMount() {
     this._editorDisposables = new (_UniversalDisposable || _load_UniversalDisposable()).default();
@@ -119,7 +151,9 @@ class AtomTextEditor extends _react.Component {
 
     this._editorDisposables = new (_UniversalDisposable || _load_UniversalDisposable()).default(disposables);
 
-    const textEditorElement = this._textEditorElement = document.createElement('atom-text-editor');
+    const textEditorElement = this._textEditorElement = document.createElement(
+    'atom-text-editor');
+
     textEditorElement.setModel(textEditor);
     textEditorElement.setAttribute('tabindex', this.props.tabIndex);
     // HACK! This is a workaround for the ViewRegistry where Atom has a default view provider for
@@ -131,13 +165,17 @@ class AtomTextEditor extends _react.Component {
     atom.views.views.set(textEditor, textEditorElement);
 
     if (this.props.correctContainerWidth) {
-      this._editorDisposables.add(textEditorElement.onDidAttach(() => {
-        const correctlySizedElement = textEditorElement.querySelector('.lines > :first-child');
+      this._editorDisposables.add(
+      textEditorElement.onDidAttach(() => {
+        const correctlySizedElement = textEditorElement.querySelector(
+        '.lines > :first-child');
+
         if (correctlySizedElement == null) {
           return;
         }
         container.style.width = correctlySizedElement.style.width;
       }));
+
     }
 
     // Attach to DOM.
@@ -145,15 +183,14 @@ class AtomTextEditor extends _react.Component {
     container.appendChild(textEditorElement);
 
     if (this.props.onConfirm != null) {
-      this._editorDisposables.add(atom.commands.add(textEditorElement, {
-        'core:confirm': () => {
-          if (!(this.props.onConfirm != null)) {
-            throw new Error('Invariant violation: "this.props.onConfirm != null"');
-          }
-
+      this._editorDisposables.add(
+      atom.commands.add(textEditorElement, {
+        'core:confirm': () => {if (!(
+          this.props.onConfirm != null)) {throw new Error('Invariant violation: "this.props.onConfirm != null"');}
           this.props.onConfirm();
-        }
-      }));
+        } }));
+
+
     }
 
     if (this.props.onInitialized != null) {
@@ -162,9 +199,15 @@ class AtomTextEditor extends _react.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.textBuffer !== this.props.textBuffer || nextProps.readOnly !== this.props.readOnly) {
+    if (
+    nextProps.textBuffer !== this.props.textBuffer ||
+    nextProps.readOnly !== this.props.readOnly)
+    {
       const previousTextContents = this.getTextBuffer().getText();
-      const nextTextContents = nextProps.textBuffer == null ? nextProps.textBuffer : nextProps.textBuffer.getText();
+      const nextTextContents =
+      nextProps.textBuffer == null ?
+      nextProps.textBuffer :
+      nextProps.textBuffer.getText();
       if (nextTextContents !== previousTextContents) {
         const textEditorSetup = setupTextEditor(nextProps);
 
@@ -236,22 +279,25 @@ class AtomTextEditor extends _react.Component {
     return this.getElement().getModel();
   }
 
-  getElement() {
-    if (!this._textEditorElement) {
-      throw new Error('Invariant violation: "this._textEditorElement"');
-    }
-
+  getElement() {if (!
+    this._textEditorElement) {throw new Error('Invariant violation: "this._textEditorElement"');}
     return this._textEditorElement;
   }
 
   render() {
-    const className = (0, (_classnames || _load_classnames()).default)(this.props.className, 'nuclide-text-editor-container', {
-      'no-auto-grow': !this.props.autoGrow
-    });
-    return _react.createElement('div', {
-      className: className,
-      ref: rootElement => this._rootElement = rootElement
-    });
+    const className = (0, (_classnames || _load_classnames()).default)(
+    this.props.className,
+    'nuclide-text-editor-container',
+    {
+      'no-auto-grow': !this.props.autoGrow });
+
+
+    return (
+      _react.createElement('div', {
+        className: className,
+        ref: rootElement => this._rootElement = rootElement }));
+
+
   }
 
   // This component wraps the imperative API of `<atom-text-editor>`, and so React's rendering
@@ -262,17 +308,5 @@ class AtomTextEditor extends _react.Component {
 
   componentWillUnmount() {
     process.nextTick(() => this._editorDisposables.dispose());
-  }
-}
-exports.AtomTextEditor = AtomTextEditor;
-AtomTextEditor.defaultProps = {
-  correctContainerWidth: true,
-  disabled: false,
-  gutterHidden: false,
-  lineNumberGutterVisible: true,
-  readOnly: false,
-  autoGrow: false,
-  syncTextContents: true,
-  tabIndex: '0', // Keep in line with other input elements.
-  softWrapped: false
-};
+  }}exports.AtomTextEditor = AtomTextEditor;AtomTextEditor.defaultProps = { correctContainerWidth: true, disabled: false, gutterHidden: false, lineNumberGutterVisible: true, readOnly: false, autoGrow: false, syncTextContents: true, tabIndex: '0', // Keep in line with other input elements.
+  softWrapped: false };

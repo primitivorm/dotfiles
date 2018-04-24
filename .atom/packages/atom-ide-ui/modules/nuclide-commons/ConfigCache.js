@@ -1,41 +1,32 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.ConfigCache = undefined;var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));var _lruCache;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ConfigCache = undefined;
 
-var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
-var _lruCache;
 
-function _load_lruCache() {
-  return _lruCache = _interopRequireDefault(require('lru-cache'));
-}
 
-var _fsPromise;
 
-function _load_fsPromise() {
-  return _fsPromise = _interopRequireDefault(require('./fsPromise'));
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
 
-class ConfigCache {
 
-  constructor(configFileNames, searchStrategy = 'nearest') {
+
+
+
+
+function _load_lruCache() {return _lruCache = _interopRequireDefault(require('lru-cache'));}var _fsPromise;
+function _load_fsPromise() {return _fsPromise = _interopRequireDefault(require('./fsPromise'));}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+                                                                                                                                                                                               * Copyright (c) 2017-present, Facebook, Inc.
+                                                                                                                                                                                               * All rights reserved.
+                                                                                                                                                                                               *
+                                                                                                                                                                                               * This source code is licensed under the BSD-style license found in the
+                                                                                                                                                                                               * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                                                                                               * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                                                                                               *
+                                                                                                                                                                                               * 
+                                                                                                                                                                                               * @format
+                                                                                                                                                                                               */class ConfigCache {constructor(configFileNames,
+  searchStrategy = 'nearest')
+  {
     this._configFileNames = configFileNames;
     this._searchStrategy = searchStrategy;
     this._configCache = (0, (_lruCache || _load_lruCache()).default)({
@@ -53,17 +44,16 @@ class ConfigCache {
     return result;
   }
 
-  _findConfigDir(path) {
-    var _this = this;
-
-    return (0, _asyncToGenerator.default)(function* () {
-      const configDirs = yield Promise.all(_this._configFileNames.map(function (configFile) {
+  _findConfigDir(path) {var _this = this;return (0, _asyncToGenerator.default)(function* () {
+      const configDirs = yield Promise.all(
+      _this._configFileNames.map(function (configFile) {
         if (_this._searchStrategy === 'furthest') {
           return (_fsPromise || _load_fsPromise()).default.findFurthestFile(configFile, path);
         } else {
           return (_fsPromise || _load_fsPromise()).default.findNearestFile(configFile, path);
         }
       }));
+
 
       if (_this._searchStrategy === 'nearest') {
         // Find the result with the greatest length (the closest match).
@@ -83,12 +73,9 @@ class ConfigCache {
       } else {
         // Find the first match.
         return configDirs.find(Boolean);
-      }
-    })();
+      }})();
   }
 
   dispose() {
     this._configCache.reset();
-  }
-}
-exports.ConfigCache = ConfigCache;
+  }}exports.ConfigCache = ConfigCache;

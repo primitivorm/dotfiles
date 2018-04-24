@@ -1,25 +1,26 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.makeToolbarButtonSpec = makeToolbarButtonSpec;
 
-var _humanizeKeystroke;
 
-function _load_humanizeKeystroke() {
-  return _humanizeKeystroke = _interopRequireDefault(require('nuclide-commons/humanizeKeystroke'));
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function makeToolbarButtonSpec(options) {
+
+
+
+
+
+
+
+
+makeToolbarButtonSpec = makeToolbarButtonSpec;var _humanizeKeystroke;function _load_humanizeKeystroke() {return _humanizeKeystroke = _interopRequireDefault(require('nuclide-commons/humanizeKeystroke'));}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function makeToolbarButtonSpec(
+options)
+{
   const command = options.callback;
   if (typeof command === 'string') {
     const [keyBinding] = atom.keymaps.findKeyBindings({
       command,
-      target: atom.views.getView(atom.workspace)
-    });
+      target: atom.views.getView(atom.workspace) });
+
     const tooltipStr = options.tooltip;
     if (keyBinding != null && tooltipStr != null) {
       const keyString = (0, (_humanizeKeystroke || _load_humanizeKeystroke()).default)(keyBinding.keystrokes, null);

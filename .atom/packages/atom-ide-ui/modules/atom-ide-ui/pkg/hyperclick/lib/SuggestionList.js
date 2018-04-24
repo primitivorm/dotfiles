@@ -1,18 +1,26 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _SuggestionListElement;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _SuggestionListElement;
 
-function _load_SuggestionListElement() {
-  return _SuggestionListElement = _interopRequireDefault(require('./SuggestionListElement'));
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
+
+
+
+
+
+
+
+
+function _load_SuggestionListElement() {return _SuggestionListElement = _interopRequireDefault(require('./SuggestionListElement'));}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 class SuggestionList {
+
+
+
+
+
 
   getElement() {
     if (this._element == null) {
@@ -31,19 +39,18 @@ class SuggestionList {
 
     this.hide();
 
-    const { range } = suggestion;
-
-    if (!range) {
-      throw new Error('Invariant violation: "range"');
-    }
-
+    const { range } = suggestion;if (!
+    range) {throw new Error('Invariant violation: "range"');}
     const { start: position } = Array.isArray(range) ? range[0] : range;
     this._suggestionMarker = textEditor.markBufferPosition(position);
     if (this._suggestionMarker) {
-      this._overlayDecoration = textEditor.decorateMarker(this._suggestionMarker, {
+      this._overlayDecoration = textEditor.decorateMarker(
+      this._suggestionMarker,
+      {
         type: 'overlay',
-        item: this
-      });
+        item: this });
+
+
     }
   }
 
@@ -65,16 +72,14 @@ class SuggestionList {
 
   getSuggestion() {
     return this._suggestion;
-  }
-}
-exports.default = SuggestionList; /**
-                                   * Copyright (c) 2017-present, Facebook, Inc.
-                                   * All rights reserved.
-                                   *
-                                   * This source code is licensed under the BSD-style license found in the
-                                   * LICENSE file in the root directory of this source tree. An additional grant
-                                   * of patent rights can be found in the PATENTS file in the same directory.
-                                   *
-                                   * 
-                                   * @format
-                                   */
+  }}exports.default = SuggestionList; /**
+                                       * Copyright (c) 2017-present, Facebook, Inc.
+                                       * All rights reserved.
+                                       *
+                                       * This source code is licensed under the BSD-style license found in the
+                                       * LICENSE file in the root directory of this source tree. An additional grant
+                                       * of patent rights can be found in the PATENTS file in the same directory.
+                                       *
+                                       * 
+                                       * @format
+                                       */

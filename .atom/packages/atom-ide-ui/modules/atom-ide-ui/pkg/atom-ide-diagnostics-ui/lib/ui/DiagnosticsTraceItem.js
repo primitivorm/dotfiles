@@ -1,19 +1,24 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.DiagnosticsTraceItem = undefined;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.DiagnosticsTraceItem = undefined;
 
-var _react = _interopRequireWildcard(require('react'));
 
-var _DiagnosticsMessageText;
 
-function _load_DiagnosticsMessageText() {
-  return _DiagnosticsMessageText = require('./DiagnosticsMessageText');
-}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+
+
+
+
+
+
+
+var _react = _interopRequireWildcard(require('react'));var _DiagnosticsMessageText;
+function _load_DiagnosticsMessageText() {return _DiagnosticsMessageText = require('./DiagnosticsMessageText');}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}
+
+
+
+
+
 
 // TODO move LESS styles to nuclide-ui
 const DiagnosticsTraceItem = exports.DiagnosticsTraceItem = props => {
@@ -32,24 +37,21 @@ const DiagnosticsTraceItem = exports.DiagnosticsTraceItem = props => {
       event.stopPropagation();
       goToLocation(path, Math.max(trace.range ? trace.range.start.row : 0, 0));
     };
-    locSpan = _react.createElement(
-      'span',
-      null,
-      ':',
+    locSpan =
+    _react.createElement('span', null, ':',
       ' ',
-      _react.createElement(
-        'a',
-        { href: '#', onClick: onClick },
-        locString
-      )
-    );
+      _react.createElement('a', { href: '#', onClick: onClick },
+        locString));
+
+
+
   }
-  return _react.createElement(
-    'div',
-    null,
-    _react.createElement((_DiagnosticsMessageText || _load_DiagnosticsMessageText()).DiagnosticsMessageText, { message: trace }),
-    locSpan
-  );
+  return (
+    _react.createElement('div', null,
+      _react.createElement((_DiagnosticsMessageText || _load_DiagnosticsMessageText()).DiagnosticsMessageText, { message: trace }),
+      locSpan));
+
+
 }; /**
     * Copyright (c) 2017-present, Facebook, Inc.
     * All rights reserved.

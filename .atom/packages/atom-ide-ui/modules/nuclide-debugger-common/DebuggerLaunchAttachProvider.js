@@ -1,12 +1,18 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _react = _interopRequireWildcard(require('react'));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+
+
+
+
+
+
+
+
+
+var _react = _interopRequireWildcard(require('react'));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}
 
 let uniqueKeySeed = 0; /**
                         * Copyright (c) 2017-present, Facebook, Inc.
@@ -19,12 +25,14 @@ let uniqueKeySeed = 0; /**
                         * 
                         * @format
                         */
-
 /**
- * Base class of all launch/attach providers.
- * It allows each concrete provider to provide customized debugging types, actions and UI.
- */
+                            * Base class of all launch/attach providers.
+                            * It allows each concrete provider to provide customized debugging types, actions and UI.
+                            */
 class DebuggerLaunchAttachProvider {
+
+
+
 
   constructor(debuggingTypeName, targetUri) {
     this._debuggingTypeName = debuggingTypeName;
@@ -35,47 +43,48 @@ class DebuggerLaunchAttachProvider {
   getCallbacksForAction(action) {
     return {
       /**
-       * Whether this provider is enabled or not.
-       */
+              * Whether this provider is enabled or not.
+              */
       isEnabled: () => {
         return Promise.resolve(true);
       },
 
       /**
-       * Returns a list of supported debugger types + environments for the specified action.
-       */
+          * Returns a list of supported debugger types + environments for the specified action.
+          */
       getDebuggerTypeNames: () => {
         return [this._debuggingTypeName];
       },
 
       /**
-       * Returns the UI component for configuring the specified debugger type and action.
-       */
-      getComponent: (debuggerTypeName, configIsValidChanged) => {
+          * Returns the UI component for configuring the specified debugger type and action.
+          */
+      getComponent: (
+      debuggerTypeName,
+      configIsValidChanged) =>
+      {
         throw new Error('abstract method');
-      }
-    };
+      } };
+
   }
 
   /**
-   * Returns a unique key which can be associated with the component.
-   */
+     * Returns a unique key which can be associated with the component.
+     */
   getUniqueKey() {
     return this._uniqueKey;
   }
 
   /**
-   * Returns target uri for this provider.
-   */
+     * Returns target uri for this provider.
+     */
   getTargetUri() {
     return this._targetUri;
   }
 
   /**
-   * Dispose any resource held by this provider.
-   */
+     * Dispose any resource held by this provider.
+     */
   dispose() {
     throw new Error('abstract method');
-  }
-}
-exports.default = DebuggerLaunchAttachProvider;
+  }}exports.default = DebuggerLaunchAttachProvider;

@@ -1,10 +1,18 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.default =
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getCurrentExecutorId;
-function getCurrentExecutorId(state) {
+
+
+
+
+
+
+
+
+
+
+
+
+getCurrentExecutorId;function getCurrentExecutorId(state) {
   let { currentExecutorId } = state;
   if (currentExecutorId == null) {
     const firstExecutor = Array.from(state.executors.values())[0];

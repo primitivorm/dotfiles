@@ -1,44 +1,31 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.ListView = exports.ListViewItem = undefined;var _classnames;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ListView = exports.ListViewItem = undefined;
 
-var _classnames;
 
-function _load_classnames() {
-  return _classnames = _interopRequireDefault(require('classnames'));
-}
 
-var _react = _interopRequireWildcard(require('react'));
 
-var _ignoreTextSelectionEvents;
 
-function _load_ignoreTextSelectionEvents() {
-  return _ignoreTextSelectionEvents = _interopRequireDefault(require('./ignoreTextSelectionEvents'));
-}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; } /**
-                                                                                                                                                                                                                              * Copyright (c) 2017-present, Facebook, Inc.
-                                                                                                                                                                                                                              * All rights reserved.
-                                                                                                                                                                                                                              *
-                                                                                                                                                                                                                              * This source code is licensed under the BSD-style license found in the
-                                                                                                                                                                                                                              * LICENSE file in the root directory of this source tree. An additional grant
-                                                                                                                                                                                                                              * of patent rights can be found in the PATENTS file in the same directory.
-                                                                                                                                                                                                                              *
-                                                                                                                                                                                                                              * 
-                                                                                                                                                                                                                              * @format
-                                                                                                                                                                                                                              */
 
-/**
- * Use ListViewItem in conjunction with ListView.
- */
-class ListViewItem extends _react.Component {
+
+function _load_classnames() {return _classnames = _interopRequireDefault(require('classnames'));}
+var _react = _interopRequireWildcard(require('react'));var _ignoreTextSelectionEvents;
+
+function _load_ignoreTextSelectionEvents() {return _ignoreTextSelectionEvents = _interopRequireDefault(require('./ignoreTextSelectionEvents'));}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectWithoutProperties(obj, keys) {var target = {};for (var i in obj) {if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];}return target;} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Copyright (c) 2017-present, Facebook, Inc.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * All rights reserved.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * This source code is licensed under the BSD-style license found in the
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * @format
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   */ /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * Use ListViewItem in conjunction with ListView.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */class ListViewItem extends _react.Component {
   _select(value, index, event) {
     if (this.props.onSelect != null) {
       this.props.onSelect(value, index);
@@ -46,49 +33,67 @@ class ListViewItem extends _react.Component {
   }
 
   render() {
-    const _props = this.props,
-          { children, index, value } = _props,
-          remainingProps = _objectWithoutProperties(_props, ['children', 'index', 'value']);
-    return _react.createElement(
-      'div',
-      Object.assign({
-        className: 'nuclide-ui-listview-item'
-      }, remainingProps, {
-        onClick: (0, (_ignoreTextSelectionEvents || _load_ignoreTextSelectionEvents()).default)(this._select.bind(this, value, index)) }),
-      children
-    );
-  }
-}
+    const _props = this.props,{ children, index, value } = _props,remainingProps = _objectWithoutProperties(_props, ['children', 'index', 'value']);
+    return (
+      _react.createElement('div', Object.assign({
+          className: 'nuclide-ui-listview-item' },
+        remainingProps, {
+          onClick: (0, (_ignoreTextSelectionEvents || _load_ignoreTextSelectionEvents()).default)(
+          this._select.bind(this, value, index)) }),
 
-exports.ListViewItem = ListViewItem;
-class ListView extends _react.Component {
-  constructor(...args) {
-    var _temp;
+        children));
 
-    return _temp = super(...args), this._handleSelect = (value, index, event) => {
+
+  }}exports.ListViewItem = ListViewItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ListView extends _react.Component {constructor(...args) {var _temp;return _temp = super(...args), this.
+    _handleSelect = (
+    value,
+    index,
+    event) =>
+    {
       if (this.props.selectable && this.props.onSelect != null) {
         this.props.onSelect(index, value);
       }
-    }, _temp;
-  }
+    }, _temp;}
 
   render() {
     const { children, alternateBackground, selectable } = this.props;
-    const renderedItems = _react.Children.map(children, (child, index) => _react.cloneElement(child, {
+    const renderedItems = _react.Children.map(
+    children,
+    (child, index) =>
+    _react.cloneElement(child, {
       index,
-      onSelect: this._handleSelect
-    }));
+      onSelect: this._handleSelect }));
+
+
     const className = (0, (_classnames || _load_classnames()).default)({
       'native-key-bindings': true,
       'nuclide-ui-listview': true,
       'nuclide-ui-listview-highlight-odd': alternateBackground,
-      'nuclide-ui-listview-selectable': selectable
-    });
-    return _react.createElement(
-      'div',
-      { className: className, tabIndex: -1 },
-      renderedItems
-    );
-  }
-}
-exports.ListView = ListView;
+      'nuclide-ui-listview-selectable': selectable });
+
+    return (
+      _react.createElement('div', { className: className, tabIndex: -1 },
+        renderedItems));
+
+
+  }}exports.ListView = ListView;

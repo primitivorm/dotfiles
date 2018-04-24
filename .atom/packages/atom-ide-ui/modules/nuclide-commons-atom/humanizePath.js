@@ -1,37 +1,39 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.default =
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = humanizePath;
 
-var _idx;
 
-function _load_idx() {
-  return _idx = _interopRequireDefault(require('idx'));
-}
 
-var _nuclideUri;
 
-function _load_nuclideUri() {
-  return _nuclideUri = _interopRequireDefault(require('nuclide-commons/nuclideUri'));
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Format a path for display. After the path is humanized, it should no longer be treated like a
- * parsable, navigable path; it's just for display.
- *
- * Note that this (intentionally) provides different results based on the projects currently open in
- * Atom. If you have multiple directories open, the result will be prefixed with one of their names.
- * If you only have one, it won't.
- */
-function humanizePath(path, options) {
-  var _ref, _ref2;
 
-  const isDirectory = (_ref = options) != null ? _ref.isDirectory : _ref;
-  const rootPaths = ((_ref2 = options) != null ? _ref2.rootPaths : _ref2) || atom.project.getDirectories().map(dir => dir.getPath());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+humanizePath;var _idx;function _load_idx() {return _idx = _interopRequireDefault(require('idx'));}var _nuclideUri;function _load_nuclideUri() {return _nuclideUri = _interopRequireDefault(require('nuclide-commons/nuclideUri'));}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+                                                                                                                                                                                                                                                                                                                                  * Format a path for display. After the path is humanized, it should no longer be treated like a
+                                                                                                                                                                                                                                                                                                                                  * parsable, navigable path; it's just for display.
+                                                                                                                                                                                                                                                                                                                                  *
+                                                                                                                                                                                                                                                                                                                                  * Note that this (intentionally) provides different results based on the projects currently open in
+                                                                                                                                                                                                                                                                                                                                  * Atom. If you have multiple directories open, the result will be prefixed with one of their names.
+                                                                                                                                                                                                                                                                                                                                  * If you only have one, it won't.
+                                                                                                                                                                                                                                                                                                                                  */function humanizePath(path, options) {var _ref, _ref2;const isDirectory = (_ref = options) != null ? _ref.isDirectory : _ref;
+  const rootPaths =
+  ((_ref2 = options) != null ? _ref2.rootPaths : _ref2) ||
+  atom.project.getDirectories().map(dir => dir.getPath());
   const normalized = normalizePath(path, isDirectory);
   let resolved;
   for (const rootPath of rootPaths) {
@@ -63,9 +65,4 @@ function humanizePath(path, options) {
    *
    * 
    * @format
-   */
-
-function normalizePath(path, isDirectory_) {
-  const isDirectory = isDirectory_ == null ? (_nuclideUri || _load_nuclideUri()).default.endsWithSeparator(path) : isDirectory_;
-  return isDirectory ? (_nuclideUri || _load_nuclideUri()).default.normalizeDir(path) : (_nuclideUri || _load_nuclideUri()).default.normalize(path);
-}
+   */function normalizePath(path, isDirectory_) {const isDirectory = isDirectory_ == null ? (_nuclideUri || _load_nuclideUri()).default.endsWithSeparator(path) : isDirectory_;return isDirectory ? (_nuclideUri || _load_nuclideUri()).default.normalizeDir(path) : (_nuclideUri || _load_nuclideUri()).default.normalize(path);}

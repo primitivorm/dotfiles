@@ -1,42 +1,56 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.niceSafeSpawn = undefined;var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));let niceSafeSpawn = exports.niceSafeSpawn = (() => {var _ref = (0, _asyncToGenerator.default)(
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.niceSafeSpawn = undefined;
 
-var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
-let niceSafeSpawn = exports.niceSafeSpawn = (() => {
-  var _ref = (0, _asyncToGenerator.default)(function* (command, args, execOptions) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function* (
+  command,
+  args,
+  execOptions)
+  {
     const nicified = yield nicifyCommand(command, args, execOptions);
     const processStream = (0, (_process || _load_process()).spawn)(...nicified).publish();
     const processPromise = processStream.take(1).toPromise();
     processStream.connect();
     return processPromise;
-  });
-
-  return function niceSafeSpawn(_x, _x2, _x3) {
-    return _ref.apply(this, arguments);
-  };
-})();
+  });return function niceSafeSpawn(_x, _x2, _x3) {return _ref.apply(this, arguments);};})();
 
 /**
- * Takes the arguments that you would normally pass to `spawn()` and returns an array of new
- * arguments to use to run the command under `nice`.
- *
- * Example:
- *
- * ```js
- * observeProcess(...(await nicifyCommand('hg', ['diff']))).subscribe(...);
- * ```
- *
- * See also `scriptifyCommand()` which does a similar thing but for `script`.
- */
-
-
-let nicifyCommand = (() => {
-  var _ref2 = (0, _asyncToGenerator.default)(function* (command, args, options) {
+                                                                                              * Takes the arguments that you would normally pass to `spawn()` and returns an array of new
+                                                                                              * arguments to use to run the command under `nice`.
+                                                                                              *
+                                                                                              * Example:
+                                                                                              *
+                                                                                              * ```js
+                                                                                              * observeProcess(...(await nicifyCommand('hg', ['diff']))).subscribe(...);
+                                                                                              * ```
+                                                                                              *
+                                                                                              * See also `scriptifyCommand()` which does a similar thing but for `script`.
+                                                                                              */let nicifyCommand = (() => {var _ref2 = (0, _asyncToGenerator.default)(
+  function* (
+  command,
+  args,
+  options)
+  {
     const fullArgs = [command, ...(args || [])];
     if (yield hasNiceCommand()) {
       fullArgs.unshift(NICE_COMMAND);
@@ -55,77 +69,45 @@ let nicifyCommand = (() => {
       fullArgs.unshift(IONICE_COMMAND, '-n', '7');
     }
     return [fullArgs[0], fullArgs.slice(1), options];
-  });
+  });return function nicifyCommand(_x4, _x5, _x6) {return _ref2.apply(this, arguments);};})();exports.
 
-  return function nicifyCommand(_x4, _x5, _x6) {
-    return _ref2.apply(this, arguments);
-  };
-})();
 
-exports.niceObserveProcess = niceObserveProcess;
 
-var _lruCache;
 
-function _load_lruCache() {
-  return _lruCache = _interopRequireDefault(require('lru-cache'));
-}
 
-var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
 
-var _which;
 
-function _load_which() {
-  return _which = _interopRequireDefault(require('./which'));
-}
 
-var _process;
 
-function _load_process() {
-  return _process = require('./process');
-}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
 
-const NICE_COMMAND = 'nice';
-const IONICE_COMMAND = 'ionice';
 
-const commandAvailabilityCache = (0, (_lruCache || _load_lruCache()).default)({
-  max: 10,
-  // Realistically this will not change very often so we can cache for long periods of time. We
+
+
+
+
+
+
+
+
+
+
+
+
+
+niceObserveProcess = niceObserveProcess;var _lruCache;function _load_lruCache() {return _lruCache = _interopRequireDefault(require('lru-cache'));}var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');var _which;function _load_which() {return _which = _interopRequireDefault(require('./which'));}var _process;function _load_process() {return _process = require('./process');}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * Copyright (c) 2017-present, Facebook, Inc.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * All rights reserved.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * This source code is licensed under the BSD-style license found in the
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @format
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */const NICE_COMMAND = 'nice';const IONICE_COMMAND = 'ionice';const commandAvailabilityCache = (0, (_lruCache || _load_lruCache()).default)({ max: 10, // Realistically this will not change very often so we can cache for long periods of time. We
   // probably could just check at startup and get away with it, but maybe someone will install
   // `ionice` and it would be nice to pick that up.
   maxAge: 1000 * 60 * 5 // 5 minutes
-});
-
-function hasNiceCommand() {
-  return hasCommand(NICE_COMMAND);
-}
-
-function hasIoniceCommand() {
-  return hasCommand(IONICE_COMMAND);
-}
-
-function hasCommand(command) {
-  let result = commandAvailabilityCache.get(command);
-  if (result == null) {
-    result = (0, (_which || _load_which()).default)(command).then(x => x != null);
-    commandAvailabilityCache.set(command, result);
-  }
-  return result;
-}
-
-function niceObserveProcess(command, args, options) {
-  return _rxjsBundlesRxMinJs.Observable.defer(() => nicifyCommand(command, args, options)).switchMap(spawnArgs => (0, (_process || _load_process()).observeProcess)(...spawnArgs));
-}
+});function hasNiceCommand() {return hasCommand(NICE_COMMAND);}function hasIoniceCommand() {return hasCommand(IONICE_COMMAND);}function hasCommand(command) {let result = commandAvailabilityCache.get(command);if (result == null) {result = (0, (_which || _load_which()).default)(command).then(x => x != null);commandAvailabilityCache.set(command, result);}return result;}function niceObserveProcess(command, args, options) {return _rxjsBundlesRxMinJs.Observable.defer(() => nicifyCommand(command, args, options)).switchMap(spawnArgs => (0, (_process || _load_process()).observeProcess)(...spawnArgs));}

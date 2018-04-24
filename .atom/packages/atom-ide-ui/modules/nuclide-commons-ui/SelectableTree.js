@@ -1,89 +1,132 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.Tree = undefined;var _collection;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Tree = undefined;
 
-var _collection;
 
-function _load_collection() {
-  return _collection = require('nuclide-commons/collection');
-}
 
-var _UniversalDisposable;
 
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
 
-var _react = _interopRequireWildcard(require('react'));
 
-var _classnames;
 
-function _load_classnames() {
-  return _classnames = _interopRequireDefault(require('classnames'));
-}
 
-var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
 
-var _shallowequal;
 
-function _load_shallowequal() {
-  return _shallowequal = _interopRequireDefault(require('shallowequal'));
-}
 
-var _nullthrows;
 
-function _load_nullthrows() {
-  return _nullthrows = _interopRequireDefault(require('nullthrows'));
-}
+function _load_collection() {return _collection = require('nuclide-commons/collection');}var _UniversalDisposable;
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}
+var _react = _interopRequireWildcard(require('react'));var _classnames;
+function _load_classnames() {return _classnames = _interopRequireDefault(require('classnames'));}
 
-var _scrollIntoView;
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');var _shallowequal;
+function _load_shallowequal() {return _shallowequal = _interopRequireDefault(require('shallowequal'));}var _nullthrows;
+function _load_nullthrows() {return _nullthrows = _interopRequireDefault(require('nullthrows'));}var _scrollIntoView;
+function _load_scrollIntoView() {return _scrollIntoView = require('./scrollIntoView');}var _Tree;
+function _load_Tree() {return _Tree = require('./Tree');}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-function _load_scrollIntoView() {
-  return _scrollIntoView = require('./scrollIntoView');
-}
 
-var _Tree;
 
-function _load_Tree() {
-  return _Tree = require('./Tree');
-}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class Tree extends _react.Component {
-  constructor(...args) {
-    var _temp;
 
-    return _temp = super(...args), this.state = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Tree extends _react.Component {constructor(...args) {var _temp;return _temp = super(...args), this.
+
+
+    state = {
       isFocused: false,
-      focusedPath: null
-    }, this._selectNext = () => {
+      focusedPath: null }, this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _selectNext = () => {
       let nextNodePath;
       if (this.state.focusedPath == null) {
         nextNodePath = [0];
       } else {
-        nextNodePath = getNextNodePath(this.props.items, this.state.focusedPath, this.props.collapsedPaths);
+        nextNodePath = getNextNodePath(
+        this.props.items,
+        this.state.focusedPath,
+        this.props.collapsedPaths);
+
       }
       if (nextNodePath != null) {
         this.props.onSelect(nextNodePath);
         this.setState({ focusedPath: nextNodePath });
       }
-    }, this._selectPrev = () => {
+    }, this.
+
+    _selectPrev = () => {
       let prevNodePath;
       if (this.state.focusedPath == null) {
         prevNodePath = [0];
       } else {
-        prevNodePath = getPrevNodePath(this.props.items, this.state.focusedPath, this.props.collapsedPaths);
+        prevNodePath = getPrevNodePath(
+        this.props.items,
+        this.state.focusedPath,
+        this.props.collapsedPaths);
+
       }
       if (prevNodePath != null) {
         this.props.onSelect(prevNodePath);
       }
-    }, this._collapseNodeViaKeyboard = e => {
+    }, this.
+
+    _collapseNodeViaKeyboard = e => {
       if (this.state.focusedPath == null) {
         return;
       }
@@ -104,7 +147,9 @@ class Tree extends _react.Component {
       // moving selection to this node seems like intuitive behavior (see Chrome's
       // Elements tree)
       this.props.onSelect(collapsablePath);
-    }, this._expandNodeViaKeyboard = e => {
+    }, this.
+
+    _expandNodeViaKeyboard = e => {
       const { focusedPath } = this.state;
       if (focusedPath == null) {
         return;
@@ -114,33 +159,15 @@ class Tree extends _react.Component {
       if (focusedNode != null && focusedNode.type === 'NESTED') {
         this.props.onExpand(focusedPath);
       }
-    }, this._handleSelect = path => {
+    }, this.
+
+    _handleSelect = path => {
       this.props.onSelect(path);
-    }, this._handleConfirm = path => {
+    }, this.
+
+    _handleConfirm = path => {
       this.props.onConfirm(path);
-    }, _temp;
-  }
-
-  componentDidMount() {
-    const rootNode = (0, (_nullthrows || _load_nullthrows()).default)(this._rootNode);
-    this._subscriptions = new (_UniversalDisposable || _load_UniversalDisposable()).default(atom.commands.add(rootNode, {
-      'core:move-up': this._selectPrev,
-      'core:move-down': this._selectNext,
-      'core:move-left': this._collapseNodeViaKeyboard,
-      'core:move-right': this._expandNodeViaKeyboard,
-      'core:confirm': () => this.state.focusedPath && this._handleConfirm(this.state.focusedPath)
-    }), _rxjsBundlesRxMinJs.Observable.merge(_rxjsBundlesRxMinJs.Observable.fromEvent(rootNode, 'focusin').mapTo(true), _rxjsBundlesRxMinJs.Observable.fromEvent(rootNode, 'focusout').mapTo(false)).subscribe(isFocused => this.setState({ isFocused })));
-  }
-
-  componentWillUnmount() {
-    this._subscriptions.dispose();
-  }
-
-  componentWillReceiveProps() {
-    this.setState((state, props) => ({
-      focusedPath: props.selectedPaths[props.selectedPaths.length - 1]
-    }));
-  }
+    }, _temp;}componentDidMount() {const rootNode = (0, (_nullthrows || _load_nullthrows()).default)(this._rootNode);this._subscriptions = new (_UniversalDisposable || _load_UniversalDisposable()).default(atom.commands.add(rootNode, { 'core:move-up': this._selectPrev, 'core:move-down': this._selectNext, 'core:move-left': this._collapseNodeViaKeyboard, 'core:move-right': this._expandNodeViaKeyboard, 'core:confirm': () => this.state.focusedPath && this._handleConfirm(this.state.focusedPath) }), _rxjsBundlesRxMinJs.Observable.merge(_rxjsBundlesRxMinJs.Observable.fromEvent(rootNode, 'focusin').mapTo(true), _rxjsBundlesRxMinJs.Observable.fromEvent(rootNode, 'focusout').mapTo(false)).subscribe(isFocused => this.setState({ isFocused })));}componentWillUnmount() {this._subscriptions.dispose();}componentWillReceiveProps() {this.setState((state, props) => ({ focusedPath: props.selectedPaths[props.selectedPaths.length - 1] }));}
 
   render() {
     const {
@@ -148,63 +175,69 @@ class Tree extends _react.Component {
       collapsedPaths,
       itemClassName,
       items: nodes,
-      selectedPaths
-    } = this.props;
+      selectedPaths } =
+    this.props;
     const { focusedPath, isFocused } = this.state;
 
-    return _react.createElement(
-      'ol',
-      {
-        className: (0, (_classnames || _load_classnames()).default)('list-tree', 'nuclide-selectable-tree', 'has-collapsable-children', className, { focused: isFocused }),
-        ref: node => this._rootNode = node,
-        role: 'tree',
-        style: { position: 'relative' },
-        tabIndex: '0' },
-      nodes.map((node, i) => _react.createElement(AbstractTreeItem, {
-        key: i,
-        node: node,
-        path: [i],
-        focusedPath: focusedPath,
-        collapsedPaths: collapsedPaths,
-        selectedPaths: selectedPaths,
-        className: itemClassName,
-        onSelect: this._handleSelect,
-        onConfirm: this._handleConfirm,
-        onTripleClick: this.props.onTripleClick,
-        onCollapse: this.props.onCollapse,
-        onExpand: this.props.onExpand
-      }))
-    );
-  }
-}
+    return (
+      _react.createElement('ol', {
+          className: (0, (_classnames || _load_classnames()).default)(
+          'list-tree',
+          'nuclide-selectable-tree',
+          'has-collapsable-children',
+          className,
+          { focused: isFocused }),
 
-exports.Tree = Tree; /**
-                      * Copyright (c) 2017-present, Facebook, Inc.
-                      * All rights reserved.
-                      *
-                      * This source code is licensed under the BSD-style license found in the
-                      * LICENSE file in the root directory of this source tree. An additional grant
-                      * of patent rights can be found in the PATENTS file in the same directory.
-                      *
-                      * 
-                      * @format
-                      */
+          ref: node => this._rootNode = node,
+          role: 'tree',
+          style: { position: 'relative' },
+          tabIndex: '0' },
+        nodes.map((node, i) =>
+        _react.createElement(AbstractTreeItem, {
+          key: i,
+          node: node,
+          path: [i],
+          focusedPath: focusedPath,
+          collapsedPaths: collapsedPaths,
+          selectedPaths: selectedPaths,
+          className: itemClassName,
+          onSelect: this._handleSelect,
+          onConfirm: this._handleConfirm,
+          onTripleClick: this.props.onTripleClick,
+          onCollapse: this.props.onCollapse,
+          onExpand: this.props.onExpand }))));
 
-/* eslint-env browser */
 
-function AbstractTreeItem({
-  className,
-  collapsedPaths,
-  focusedPath,
-  onConfirm,
-  onSelect,
-  onTripleClick,
-  onCollapse,
+
+
+  }}exports.Tree = Tree; /**
+                          * Copyright (c) 2017-present, Facebook, Inc.
+                          * All rights reserved.
+                          *
+                          * This source code is licensed under the BSD-style license found in the
+                          * LICENSE file in the root directory of this source tree. An additional grant
+                          * of patent rights can be found in the PATENTS file in the same directory.
+                          *
+                          * 
+                          * @format
+                          */ /* eslint-env browser */function AbstractTreeItem({ className, collapsedPaths, focusedPath, onConfirm, onSelect, onTripleClick, onCollapse,
   onExpand,
   node,
   path,
-  selectedPaths
-}) {
+  selectedPaths })
+
+
+
+
+
+
+
+
+
+
+
+
+{
   if (node.hidden) {
     return null;
   }
@@ -212,9 +245,7 @@ function AbstractTreeItem({
   if (node.type === 'LEAF') {
     return (
       // $FlowIgnore
-      _react.createElement(
-        TreeItem,
-        {
+      _react.createElement(TreeItem, {
           className: className,
           isFocused: focusedPath && (0, (_collection || _load_collection()).arrayEqual)(focusedPath, path),
           onConfirm: onConfirm,
@@ -222,17 +253,15 @@ function AbstractTreeItem({
           onTripleClick: onTripleClick,
           path: path,
           selectedPaths: selectedPaths },
-        node.label
-      )
-    );
+        node.label));
+
+
   }
 
   const hasFlatChildren = node.children.every(child => child.type === 'LEAF');
   return (
     // $FlowIgnore
-    _react.createElement(
-      NestedTreeItem,
-      {
+    _react.createElement(NestedTreeItem, {
         className: className,
         collapsed: false,
         hasFlatChildren: hasFlatChildren,
@@ -248,30 +277,41 @@ function AbstractTreeItem({
         label: node.label },
       node.children.map((child, i) => {
         const childPath = path.concat([i]);
-        return _react.createElement(AbstractTreeItem, {
-          className: className,
-          collapsedPaths: collapsedPaths,
-          focusedPath: focusedPath,
-          key: childPath.join('.'),
-          node: child,
-          onConfirm: onConfirm,
-          onSelect: onSelect,
-          onTripleClick: onTripleClick,
-          onCollapse: onCollapse,
-          onExpand: onExpand,
-          path: childPath,
-          selectedPaths: selectedPaths
-        });
-      })
-    )
-  );
+        return (
+          _react.createElement(AbstractTreeItem, {
+            className: className,
+            collapsedPaths: collapsedPaths,
+            focusedPath: focusedPath,
+            key: childPath.join('.'),
+            node: child,
+            onConfirm: onConfirm,
+            onSelect: onSelect,
+            onTripleClick: onTripleClick,
+            onCollapse: onCollapse,
+            onExpand: onExpand,
+            path: childPath,
+            selectedPaths: selectedPaths }));
+
+
+      })));
+
+
 }
 
-class TreeItem extends _react.Component {
-  constructor(...args) {
-    var _temp2;
 
-    return _temp2 = super(...args), this._handleClick = e => {
+
+
+
+
+
+
+
+
+
+
+class TreeItem extends _react.Component {constructor(...args) {var _temp2;return _temp2 = super(...args), this.
+
+    _handleClick = e => {
       const { onSelect, onConfirm, onTripleClick } = this.props;
 
       const numberOfClicks = e.detail;
@@ -286,10 +326,9 @@ class TreeItem extends _react.Component {
           onTripleClick && onTripleClick(this.props.path);
           break;
         default:
-          break;
-      }
-    }, _temp2;
-  }
+          break;}
+
+    }, _temp2;}
 
   scrollIntoView() {
     if (this._liNode != null) {
@@ -299,44 +338,58 @@ class TreeItem extends _react.Component {
 
   render() {
     const { className, isFocused, path, selectedPaths, children } = this.props;
-    const isSelected = selectedPaths.some(selectedPath => (0, (_shallowequal || _load_shallowequal()).default)(path, selectedPath));
+    const isSelected = selectedPaths.some(selectedPath =>
+    (0, (_shallowequal || _load_shallowequal()).default)(path, selectedPath));
 
-    return _react.createElement(
-      'li',
-      {
-        'aria-activedescendant': isFocused,
-        'aria-selected': isSelected,
-        className: (0, (_classnames || _load_classnames()).default)('list-item', className, {
-          selected: isSelected
-        }),
-        onClick: this._handleClick,
-        ref: liNode => this._liNode = liNode,
-        role: 'treeitem' },
-      isSelected && typeof children === 'string' ?
-      // String children must be wrapped to receive correct styles when selected.
-      _react.createElement(
-        'span',
-        null,
-        children
-      ) : children
-    );
-  }
-}
 
-class NestedTreeItem extends _react.Component {
-  constructor(...args) {
-    var _temp3;
+    return (
+      _react.createElement('li', {
+          'aria-activedescendant': isFocused,
+          'aria-selected': isSelected,
+          className: (0, (_classnames || _load_classnames()).default)('list-item', className, {
+            selected: isSelected }),
 
-    return _temp3 = super(...args), this._handleClick = e => {
+          onClick: this._handleClick,
+          ref: liNode => this._liNode = liNode,
+          role: 'treeitem' },
+        isSelected && typeof children === 'string' ?
+        // String children must be wrapped to receive correct styles when selected.
+        _react.createElement('span', null, children) :
+
+        children));
+
+
+
+  }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class NestedTreeItem extends _react.Component {constructor(...args) {var _temp3;return _temp3 = super(...args), this.
+
+
+
+    _handleClick = e => {
       const itemNode = this._itemNode;
       if (itemNode == null) {
         return;
-      }
+      }if (!(
 
-      if (!(e.target instanceof Element)) {
-        throw new Error('Invariant violation: "e.target instanceof Element"');
-      }
-
+      e.target instanceof Element)) {throw new Error('Invariant violation: "e.target instanceof Element"');}
       if (e.target.closest('.list-item') !== itemNode) {
         // this was a click on a descendant node in the inner list
         return;
@@ -350,16 +403,21 @@ class NestedTreeItem extends _react.Component {
       // not worth the hassle.
       const beforeStyle = window.getComputedStyle(this._itemNode, ':before');
       const itemStyle = window.getComputedStyle(this._itemNode);
-      const chevronWidth = parsePx(itemStyle.paddingLeft) + parsePx(beforeStyle.paddingLeft) + parsePx(beforeStyle.paddingRight) + parsePx(beforeStyle.marginLeft) + parsePx(beforeStyle.marginRight) + parsePx(beforeStyle.width) + parsePx(beforeStyle.left);
+      const chevronWidth =
+      parsePx(itemStyle.paddingLeft) +
+      parsePx(beforeStyle.paddingLeft) +
+      parsePx(beforeStyle.paddingRight) +
+      parsePx(beforeStyle.marginLeft) +
+      parsePx(beforeStyle.marginRight) +
+      parsePx(beforeStyle.width) +
+      parsePx(beforeStyle.left);
 
-      const { path, collapsedPaths } = this.props;
-
-      if (!(e.nativeEvent instanceof MouseEvent)) {
-        throw new Error('Invariant violation: "e.nativeEvent instanceof MouseEvent"');
-      }
-
+      const { path, collapsedPaths } = this.props;if (!(
+      e.nativeEvent instanceof MouseEvent)) {throw new Error('Invariant violation: "e.nativeEvent instanceof MouseEvent"');}
       if (e.nativeEvent.offsetX <= chevronWidth) {
-        if (collapsedPaths.some(collapsedPath => (0, (_collection || _load_collection()).arrayEqual)(path, collapsedPath))) {
+        if (
+        collapsedPaths.some(collapsedPath => (0, (_collection || _load_collection()).arrayEqual)(path, collapsedPath)))
+        {
           this.props.onExpand(path);
         } else {
           this.props.onCollapse(path);
@@ -376,8 +434,7 @@ class NestedTreeItem extends _react.Component {
       } else if (numberOfClicks === 3 && onTripleClick != null) {
         onTripleClick(path);
       }
-    }, _temp3;
-  }
+    }, _temp3;}
 
   render() {
     const {
@@ -388,37 +445,37 @@ class NestedTreeItem extends _react.Component {
       collapsedPaths,
       path,
       label,
-      children
-    } = this.props;
+      children } =
+    this.props;
     const isFocused = focusedPath && (0, (_collection || _load_collection()).arrayEqual)(path, focusedPath);
-    const isSelected = selectedPaths.some(selectedPath => (0, (_shallowequal || _load_shallowequal()).default)(path, selectedPath));
-    const isCollapsed = collapsedPaths.some(collapsedPath => (0, (_shallowequal || _load_shallowequal()).default)(path, collapsedPath));
+    const isSelected = selectedPaths.some(selectedPath =>
+    (0, (_shallowequal || _load_shallowequal()).default)(path, selectedPath));
 
-    return _react.createElement(
-      'li',
-      {
-        'aria-activedescendant': isFocused,
-        'aria-selected': isSelected,
-        'aria-expanded': !isCollapsed,
-        className: (0, (_classnames || _load_classnames()).default)('list-nested-item', className, {
-          collapsed: isCollapsed,
-          selected: isSelected
-        }),
-        onClick: this._handleClick,
-        role: 'treeitem' },
-      label == null ? null : _react.createElement(
-        'div',
-        { className: 'list-item', ref: node => this._itemNode = node },
-        label
-      ),
-      _react.createElement(
-        (_Tree || _load_Tree()).TreeList,
-        { hasFlatChildren: hasFlatChildren },
-        children
-      )
-    );
-  }
-}
+    const isCollapsed = collapsedPaths.some(collapsedPath =>
+    (0, (_shallowequal || _load_shallowequal()).default)(path, collapsedPath));
+
+
+    return (
+      _react.createElement('li', {
+          'aria-activedescendant': isFocused,
+          'aria-selected': isSelected,
+          'aria-expanded': !isCollapsed,
+          className: (0, (_classnames || _load_classnames()).default)('list-nested-item', className, {
+            collapsed: isCollapsed,
+            selected: isSelected }),
+
+          onClick: this._handleClick,
+          role: 'treeitem' },
+        label == null ? null :
+        _react.createElement('div', { className: 'list-item', ref: node => this._itemNode = node },
+          label),
+
+
+        _react.createElement((_Tree || _load_Tree()).TreeList, { hasFlatChildren: hasFlatChildren }, children)));
+
+
+  }}
+
 
 function selectNodeAtPath(roots, path) {
   if (path.length === 0) {
@@ -426,17 +483,18 @@ function selectNodeAtPath(roots, path) {
   }
 
   let node = roots[path[0]];
-  for (let i = 1; i < path.length; i++) {
-    if (!(node.type === 'NESTED')) {
-      throw new Error('Invariant violation: "node.type === \'NESTED\'"');
-    }
-
+  for (let i = 1; i < path.length; i++) {if (!(
+    node.type === 'NESTED')) {throw new Error('Invariant violation: "node.type === \'NESTED\'"');}
     node = node.children[path[i]];
   }
   return node;
 }
 
-function getNextNodePath(roots, path, collapsedPaths) {
+function getNextNodePath(
+roots,
+path,
+collapsedPaths)
+{
   if (path.length === 0) {
     return null;
   }
@@ -446,13 +504,18 @@ function getNextNodePath(roots, path, collapsedPaths) {
     return;
   }
 
-  if (currentNode.type === 'NESTED' && currentNode.children.length > 0 &&
+  if (
+  currentNode.type === 'NESTED' &&
+  currentNode.children.length > 0 &&
   // don't traverse children of collapsed nodes
-  !collapsedPaths.find(collapsedPath => (0, (_collection || _load_collection()).arrayEqual)(collapsedPath, path))) {
+  !collapsedPaths.find(collapsedPath => (0, (_collection || _load_collection()).arrayEqual)(collapsedPath, path)))
+  {
     // 'down' was pressed on a nested item. most of the time we want go to its
     // first child, but we need to make sure it's not hidden (eg filtered by
     // a search) first
-    const firstVisibleChildIndex = currentNode.children.findIndex(n => !n.hidden);
+    const firstVisibleChildIndex = currentNode.children.findIndex(
+    n => !n.hidden);
+
     if (firstVisibleChildIndex >= 0) {
       return path.concat([firstVisibleChildIndex]);
     }
@@ -461,7 +524,11 @@ function getNextNodePath(roots, path, collapsedPaths) {
   return findNextSibling(roots, path, collapsedPaths);
 }
 
-function findNextSibling(roots, path, collapsedPaths) {
+function findNextSibling(
+roots,
+path,
+collapsedPaths)
+{
   if (path.length === 0) {
     return null;
   }
@@ -482,7 +549,11 @@ function findNextSibling(roots, path, collapsedPaths) {
   return findNextSibling(roots, leadingIndexes, collapsedPaths);
 }
 
-function getPrevNodePath(roots, path, collapsedPaths) {
+function getPrevNodePath(
+roots,
+path,
+collapsedPaths)
+{
   if (path.length === 0) {
     return null;
   }
@@ -496,13 +567,21 @@ function getPrevNodePath(roots, path, collapsedPaths) {
       return getPrevNodePath(roots, prevSiblingPath, collapsedPaths);
     }
 
-    if (prevSibling.type === 'NESTED' && prevSibling.children.length > 0 &&
+    if (
+    prevSibling.type === 'NESTED' &&
+    prevSibling.children.length > 0 &&
     // don't traverse children of collapsed nodes
-    !collapsedPaths.find(collapsedPath => (0, (_collection || _load_collection()).arrayEqual)(collapsedPath, prevSiblingPath))) {
+    !collapsedPaths.find(collapsedPath =>
+    (0, (_collection || _load_collection()).arrayEqual)(collapsedPath, prevSiblingPath)))
+
+    {
       // pressed 'up' on a node just after an expanded nested item. Normally this
       // should take us to the last item inside the expanded node, but some may
       // be hidden. Find the last in the list that's visible.
-      const lastVisibleChildIndex = (0, (_collection || _load_collection()).arrayFindLastIndex)(prevSibling.children, n => !n.hidden);
+      const lastVisibleChildIndex = (0, (_collection || _load_collection()).arrayFindLastIndex)(
+      prevSibling.children,
+      n => !n.hidden);
+
       if (lastVisibleChildIndex >= 0) {
         return prevSiblingPath.concat([lastVisibleChildIndex]);
       }

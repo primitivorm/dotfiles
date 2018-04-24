@@ -1,13 +1,52 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getDefaultEvaluationExpression = getDefaultEvaluationExpression;
 
-var _atom = require('atom');
 
-function getDefaultEvaluationExpression(editor, position) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+getDefaultEvaluationExpression = getDefaultEvaluationExpression;var _atom = require('atom');function getDefaultEvaluationExpression(
+editor,
+position)
+
+
+
+{
   const lineContent = editor.lineTextForBufferRow(position.row);
   let matchingExpression;
   let startOffset = 0;
@@ -35,14 +74,21 @@ function getDefaultEvaluationExpression(editor, position) {
     const subExpression = /\w+/g;
     let subExpressionResult;
     while (subExpressionResult = subExpression.exec(matchingExpression)) {
-      const subEnd = subExpressionResult.index + 1 + startOffset + subExpressionResult[0].length;
+      const subEnd =
+      subExpressionResult.index +
+      1 +
+      startOffset +
+      subExpressionResult[0].length;
       if (subEnd >= position.column + 1) {
         break;
       }
     }
 
     if (subExpressionResult) {
-      matchingExpression = matchingExpression.substring(0, subExpression.lastIndex);
+      matchingExpression = matchingExpression.substring(
+      0,
+      subExpression.lastIndex);
+
     }
   }
 
@@ -52,8 +98,11 @@ function getDefaultEvaluationExpression(editor, position) {
 
   return {
     expression: matchingExpression,
-    range: new _atom.Range([position.row, startOffset - 1], [position.row, startOffset + matchingExpression.length - 1])
-  };
+    range: new _atom.Range(
+    [position.row, startOffset - 1],
+    [position.row, startOffset + matchingExpression.length - 1]) };
+
+
 } /**
    * Copyright (c) 2017-present, Facebook, Inc.
    * All rights reserved.
@@ -64,32 +113,30 @@ function getDefaultEvaluationExpression(editor, position) {
    *
    * 
    * @format
-   */
-
-/**
-Originally copied from https://github.com/Microsoft/vscode/blob/b34f17350f2d20dbbbfdb26df91dd50bb9160900/src/vs/workbench/parts/debug/electron-browser/debugHover.ts#L125-L166
-
-MIT License
-
-Copyright (c) 2015 - present Microsoft Corporation
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
+   */ /**
+      Originally copied from https://github.com/Microsoft/vscode/blob/b34f17350f2d20dbbbfdb26df91dd50bb9160900/src/vs/workbench/parts/debug/electron-browser/debugHover.ts#L125-L166
+      
+      MIT License
+      
+      Copyright (c) 2015 - present Microsoft Corporation
+      
+      All rights reserved.
+      
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+      
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+      
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+      */

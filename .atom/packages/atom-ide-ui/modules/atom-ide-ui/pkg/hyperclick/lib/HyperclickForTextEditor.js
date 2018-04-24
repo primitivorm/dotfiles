@@ -1,78 +1,61 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _asyncToGenerator = _interopRequireDefault(require('async-to-generator'));
 
-var _atom = require('atom');
 
-var _featureConfig;
 
-function _load_featureConfig() {
-  return _featureConfig = _interopRequireDefault(require('nuclide-commons-atom/feature-config'));
-}
 
-var _range;
 
-function _load_range() {
-  return _range = require('nuclide-commons-atom/range');
-}
 
-var _range2;
 
-function _load_range2() {
-  return _range2 = require('nuclide-commons/range');
-}
 
-var _UniversalDisposable;
 
-function _load_UniversalDisposable() {
-  return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));
-}
 
-var _showTriggerConflictWarning;
 
-function _load_showTriggerConflictWarning() {
-  return _showTriggerConflictWarning = _interopRequireDefault(require('./showTriggerConflictWarning'));
-}
 
-var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');
 
-var _log4js;
 
-function _load_log4js() {
-  return _log4js = require('log4js');
-}
+var _atom = require('atom');var _featureConfig;
+function _load_featureConfig() {return _featureConfig = _interopRequireDefault(require('nuclide-commons-atom/feature-config'));}var _range;
+function _load_range() {return _range = require('nuclide-commons-atom/range');}var _range2;
+function _load_range2() {return _range2 = require('nuclide-commons/range');}var _UniversalDisposable;
+function _load_UniversalDisposable() {return _UniversalDisposable = _interopRequireDefault(require('nuclide-commons/UniversalDisposable'));}var _showTriggerConflictWarning;
+function _load_showTriggerConflictWarning() {return _showTriggerConflictWarning = _interopRequireDefault(require('./showTriggerConflictWarning'));}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _rxjsBundlesRxMinJs = require('rxjs/bundles/Rx.min.js');var _log4js;
 
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- * @format
- */
+function _load_log4js() {return _log4js = require('log4js');}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+                                                                                                                                                            * Copyright (c) 2017-present, Facebook, Inc.
+                                                                                                                                                            * All rights reserved.
+                                                                                                                                                            *
+                                                                                                                                                            * This source code is licensed under the BSD-style license found in the
+                                                                                                                                                            * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                                                            * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                                                            *
+                                                                                                                                                            * 
+                                                                                                                                                            * @format
+                                                                                                                                                            */ /* global localStorage */const WARN_ABOUT_TRIGGER_CONFLICT_KEY = 'hyperclick.warnAboutTriggerConflict';const LOADING_DELAY = 250; /**
+                                                                                                                                                                                                                                                                                                  * Construct this object to enable Hyperclick in a text editor.
+                                                                                                                                                                                                                                                                                                  * Call `dispose` to disable the feature.
+                                                                                                                                                                                                                                                                                                  */class HyperclickForTextEditor {
 
-/* global localStorage */
 
-const WARN_ABOUT_TRIGGER_CONFLICT_KEY = 'hyperclick.warnAboutTriggerConflict';
-const LOADING_DELAY = 250;
 
-/**
- * Construct this object to enable Hyperclick in a text editor.
- * Call `dispose` to disable the feature.
- */
-class HyperclickForTextEditor {
+
+
+
+
+
+
+
+
 
   // A central "event bus" for all fetch events.
   // TODO: Rx-ify all incoming events to avoid using a subject.
+
+
+
+
   constructor(textEditor, hyperclick) {
     this._textEditor = textEditor;
     this._textEditorView = atom.views.getView(textEditor);
@@ -98,31 +81,39 @@ class HyperclickForTextEditor {
     this._onContextMenu = this._onContextMenu.bind(this);
     this._textEditorView.addEventListener('contextmenu', this._onContextMenu);
 
-    this._subscriptions.add(atom.commands.add(this._textEditorView, {
-      'hyperclick:confirm-cursor': () => this._confirmSuggestionAtCursor()
-    }));
+    this._subscriptions.add(
+    atom.commands.add(this._textEditorView, {
+      'hyperclick:confirm-cursor': () => this._confirmSuggestionAtCursor() }));
+
+
 
     this._isDestroyed = false;
     this._fetchStream = new _rxjsBundlesRxMinJs.Subject();
     this._suggestionStream = this._observeSuggestions().share();
 
-    this._subscriptions.add((_featureConfig || _load_featureConfig()).default.observe(process.platform === 'darwin' ? 'hyperclick.darwinTriggerKeys' : process.platform === 'win32' ? 'hyperclick.win32TriggerKeys' : 'hyperclick.linuxTriggerKeys', newValue_ => {
+    this._subscriptions.add(
+    (_featureConfig || _load_featureConfig()).default.observe(
+    process.platform === 'darwin' ?
+    'hyperclick.darwinTriggerKeys' :
+    process.platform === 'win32' ?
+    'hyperclick.win32TriggerKeys' :
+    'hyperclick.linuxTriggerKeys',
+    newValue_ => {
       const newValue = newValue_;
       // For all Flow knows, newValue.split could return any old strings
       this._triggerKeys = new Set(newValue.split(','));
-    }), this._suggestionStream.subscribe(suggestion => this._updateSuggestion(suggestion)));
-  }
-  // Stored for testing.
+    }),
 
+    this._suggestionStream.subscribe(suggestion =>
+    this._updateSuggestion(suggestion)));
+
+
+  } // Stored for testing.
 
   _setupMouseListeners() {
     const addMouseListeners = () => {
-      const { component } = this._textEditorView;
-
-      if (!component) {
-        throw new Error('Invariant violation: "component"');
-      }
-
+      const { component } = this._textEditorView;if (!
+      component) {throw new Error('Invariant violation: "component"');}
       const linesDomNode = component.refs.lineTiles;
       if (linesDomNode == null) {
         return;
@@ -134,23 +125,27 @@ class HyperclickForTextEditor {
         linesDomNode.removeEventListener('mousemove', this._onMouseMove);
       });
       this._subscriptions.add(removalDisposable);
-      this._subscriptions.add(this._textEditorView.onDidDetach(() => removalDisposable.dispose()));
+      this._subscriptions.add(
+      this._textEditorView.onDidDetach(() => removalDisposable.dispose()));
+
     };
-    if (this._textEditorView.component && this._textEditorView.parentNode != null) {
+    if (
+    this._textEditorView.component &&
+    this._textEditorView.parentNode != null)
+    {
       addMouseListeners();
     } else {
-      this._subscriptions.add(this._textEditorView.onDidAttach(addMouseListeners));
+      this._subscriptions.add(
+      this._textEditorView.onDidAttach(addMouseListeners));
+
     }
   }
 
   _confirmSuggestion(suggestion) {
     if (Array.isArray(suggestion.callback) && suggestion.callback.length > 0) {
       this._hyperclick.showSuggestionList(this._textEditor, suggestion);
-    } else {
-      if (!(typeof suggestion.callback === 'function')) {
-        throw new Error('Invariant violation: "typeof suggestion.callback === \'function\'"');
-      }
-
+    } else {if (!(
+      typeof suggestion.callback === 'function')) {throw new Error('Invariant violation: "typeof suggestion.callback === \'function\'"');}
       suggestion.callback();
     }
   }
@@ -174,8 +169,8 @@ class HyperclickForTextEditor {
     // relevant properties to prevent retaining a reference to the event.
     this._lastMouseEvent = {
       clientX: mouseEvent.clientX,
-      clientY: mouseEvent.clientY
-    };
+      clientY: mouseEvent.clientY };
+
 
     if (this._isHyperclickEvent(mouseEvent)) {
       this._fetchSuggestion(mouseEvent);
@@ -202,7 +197,9 @@ class HyperclickForTextEditor {
     if (this._lastMouseEvent == null) {
       return;
     }
-    const lastPosition = this._getMousePositionAsBufferPosition(this._lastMouseEvent);
+    const lastPosition = this._getMousePositionAsBufferPosition(
+    this._lastMouseEvent);
+
     if (lastPosition == null || !this._isInLastSuggestion(lastPosition)) {
       return;
     }
@@ -236,9 +233,9 @@ class HyperclickForTextEditor {
   }
 
   /**
-   * Returns a `Promise` that's resolved when the latest suggestion's available.
-   * (Exposed for testing.)
-   */
+     * Returns a `Promise` that's resolved when the latest suggestion's available.
+     * (Exposed for testing.)
+     */
   getSuggestionAtMouse() {
     return this._suggestionStream.take(1).toPromise();
   }
@@ -248,17 +245,20 @@ class HyperclickForTextEditor {
   }
 
   _observeSuggestions() {
-    return this._fetchStream.map(mouseEvent => {
+    return this._fetchStream.
+    map(mouseEvent => {
       if (mouseEvent == null) {
         return null;
       }
       return this._getMousePositionAsBufferPosition(mouseEvent);
-    }).distinctUntilChanged((x, y) => {
+    }).
+    distinctUntilChanged((x, y) => {
       if (x == null || y == null) {
         return x == null === (y == null);
       }
       return x.compare(y) === 0;
-    }).filter(position => {
+    }).
+    filter(position => {
       if (position == null) {
         return true;
       }
@@ -270,7 +270,11 @@ class HyperclickForTextEditor {
       // fetch suggestions because the new word might be between those ranges.
       // This should be ok because it will reuse that last suggestion until the
       // mouse moves off of it.
-      if ((this._lastSuggestionAtMouse == null || !Array.isArray(this._lastSuggestionAtMouse.range)) && this._isInLastWordRange(position)) {
+      if (
+      (this._lastSuggestionAtMouse == null ||
+      !Array.isArray(this._lastSuggestionAtMouse.range)) &&
+      this._isInLastWordRange(position))
+      {
         return false;
       }
 
@@ -280,24 +284,37 @@ class HyperclickForTextEditor {
       }
 
       return true;
-    }).do(position => {
+    }).
+    do(position => {
       if (position == null) {
         this._lastWordRange = null;
       } else {
         const match = (0, (_range || _load_range()).wordAtPosition)(this._textEditor, position);
         this._lastWordRange = match != null ? match.range : null;
       }
-    }).switchMap(position => {
+    }).
+    switchMap(position => {
       if (position == null) {
         return _rxjsBundlesRxMinJs.Observable.of(null);
       }
 
-      return _rxjsBundlesRxMinJs.Observable.using(() => this._showLoading(), () => _rxjsBundlesRxMinJs.Observable.defer(() => this._hyperclick.getSuggestion(this._textEditor, position)).startWith(null) // Clear the previous suggestion immediately.
+      return _rxjsBundlesRxMinJs.Observable.using(
+      () => this._showLoading(),
+      () =>
+      _rxjsBundlesRxMinJs.Observable.defer(() =>
+      this._hyperclick.getSuggestion(this._textEditor, position)).
+
+      startWith(null) // Clear the previous suggestion immediately.
       .catch(e => {
-        (0, (_log4js || _load_log4js()).getLogger)('hyperclick').error('Error getting Hyperclick suggestion:', e);
+        (0, (_log4js || _load_log4js()).getLogger)('hyperclick').error(
+        'Error getting Hyperclick suggestion:',
+        e);
+
         return _rxjsBundlesRxMinJs.Observable.of(null);
       }));
-    }).distinctUntilChanged();
+
+    }).
+    distinctUntilChanged();
   }
 
   _updateSuggestion(suggestion) {
@@ -312,14 +329,12 @@ class HyperclickForTextEditor {
   }
 
   _getMousePositionAsBufferPosition(mouseEvent) {
-    const { component } = this._textEditorView;
-
-    if (!component) {
-      throw new Error('Invariant violation: "component"');
-    }
-
+    const { component } = this._textEditorView;if (!
+    component) {throw new Error('Invariant violation: "component"');}
     const screenPosition = component.screenPositionForMouseEvent(mouseEvent);
-    const screenLine = this._textEditor.lineTextForScreenRow(screenPosition.row);
+    const screenLine = this._textEditor.lineTextForScreenRow(
+    screenPosition.row);
+
     if (screenPosition.column >= screenLine.length) {
       // We shouldn't try to fetch suggestions for trailing whitespace.
       return null;
@@ -331,7 +346,10 @@ class HyperclickForTextEditor {
       // When navigating Atom workspace with `CMD/CTRL` down,
       // it triggers TextEditorElement's `mousemove` with invalid screen position.
       // This falls back to returning the start of the editor.
-      (0, (_log4js || _load_log4js()).getLogger)('hyperclick').error('Hyperclick: Error getting buffer position for screen position:', error);
+      (0, (_log4js || _load_log4js()).getLogger)('hyperclick').error(
+      'Hyperclick: Error getting buffer position for screen position:',
+      error);
+
       return new _atom.Point(0, 0);
     }
   }
@@ -356,20 +374,19 @@ class HyperclickForTextEditor {
     this._fetchStream.next(null);
   }
 
-  _confirmSuggestionAtCursor() {
-    var _this = this;
+  _confirmSuggestionAtCursor() {var _this = this;return (0, _asyncToGenerator.default)(function* () {
+      const suggestion = yield _this._hyperclick.getSuggestion(
+      _this._textEditor,
+      _this._textEditor.getCursorBufferPosition());
 
-    return (0, _asyncToGenerator.default)(function* () {
-      const suggestion = yield _this._hyperclick.getSuggestion(_this._textEditor, _this._textEditor.getCursorBufferPosition());
       if (suggestion) {
         _this._confirmSuggestion(suggestion);
-      }
-    })();
+      }})();
   }
 
   /**
-   * Add markers for the given range(s), or clears them if `ranges` is null.
-   */
+     * Add markers for the given range(s), or clears them if `ranges` is null.
+     */
   _updateNavigationMarkers(range) {
     if (this._navigationMarkers) {
       this._navigationMarkers.forEach(marker => marker.destroy());
@@ -386,32 +403,41 @@ class HyperclickForTextEditor {
     const ranges = Array.isArray(range) ? range : [range];
     this._navigationMarkers = ranges.map(markerRange => {
       const marker = this._textEditor.markBufferRange(markerRange, {
-        invalidate: 'never'
-      });
+        invalidate: 'never' });
+
       this._textEditor.decorateMarker(marker, {
         type: 'highlight',
-        class: 'hyperclick'
-      });
+        class: 'hyperclick' });
+
       return marker;
     });
   }
 
   /**
-   * Returns whether an event should be handled by hyperclick or not.
-   */
+     * Returns whether an event should be handled by hyperclick or not.
+     */
   _isHyperclickEvent(event) {
-    return event.shiftKey === this._triggerKeys.has('shiftKey') && event.ctrlKey === this._triggerKeys.has('ctrlKey') && event.altKey === this._triggerKeys.has('altKey') && event.metaKey === this._triggerKeys.has('metaKey');
+    return (
+      event.shiftKey === this._triggerKeys.has('shiftKey') &&
+      event.ctrlKey === this._triggerKeys.has('ctrlKey') &&
+      event.altKey === this._triggerKeys.has('altKey') &&
+      event.metaKey === this._triggerKeys.has('metaKey'));
+
   }
 
   // A subscription that encapsulates the cursor loading spinner.
   // There should only be one subscription active at a given time!
   _showLoading() {
-    return _rxjsBundlesRxMinJs.Observable.timer(LOADING_DELAY).switchMap(() => _rxjsBundlesRxMinJs.Observable.create(() => {
+    return _rxjsBundlesRxMinJs.Observable.timer(LOADING_DELAY).
+    switchMap(() =>
+    _rxjsBundlesRxMinJs.Observable.create(() => {
       this._textEditorView.classList.add('hyperclick-loading');
       return () => {
         this._textEditorView.classList.remove('hyperclick-loading');
       };
-    })).subscribe();
+    })).
+
+    subscribe();
   }
 
   dispose() {
@@ -419,20 +445,23 @@ class HyperclickForTextEditor {
     this._clearSuggestion();
     this._textEditorView.removeEventListener('keydown', this._onKeyDown);
     this._textEditorView.removeEventListener('keyup', this._onKeyUp);
-    this._textEditorView.removeEventListener('contextmenu', this._onContextMenu);
+    this._textEditorView.removeEventListener(
+    'contextmenu',
+    this._onContextMenu);
+
     this._subscriptions.dispose();
-  }
-}
+  }}exports.default = HyperclickForTextEditor;
 
-exports.default = HyperclickForTextEditor; /**
-                                            * Determine whether the specified event will trigger Atom's multiple cursors. This is based on (and
-                                            * must be the same as!) [Atom's
-                                            * logic](https://github.com/atom/atom/blob/v1.14.2/src/text-editor-component.coffee#L527).
-                                            */
 
+/**
+                                                * Determine whether the specified event will trigger Atom's multiple cursors. This is based on (and
+                                                * must be the same as!) [Atom's
+                                                * logic](https://github.com/atom/atom/blob/v1.14.2/src/text-editor-component.coffee#L527).
+                                                */
 function isMulticursorEvent(event) {
   const { platform } = process;
-  const isLeftButton = event.button === 0 || event.button === 1 && platform === 'linux';
+  const isLeftButton =
+  event.button === 0 || event.button === 1 && platform === 'linux';
   const { metaKey, ctrlKey } = event;
 
   if (!isLeftButton) {

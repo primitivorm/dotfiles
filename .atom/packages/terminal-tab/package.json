@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+        "raw": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
-        "spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+        "rawSpec": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
+        "spec": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118318-11261-rf7nrg.ps0ki96bt9"
+      "/tmp/apm-install-dir-118324-27329-16wqbtl.fell2nvcxr"
     ]
   ],
-  "_from": "../d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
-  "_id": "terminal-tab@0.5.5",
+  "_from": "../d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
+  "_id": "terminal-tab@0.5.6",
   "_inCache": true,
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+    "raw": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
-    "spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
+    "rawSpec": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
+    "spec": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
-  "_shasum": "e82cd7de55e994419dcad8779973eab9c40aacd4",
+  "_resolved": "file:../d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
+  "_shasum": "63bc8047a4f0c0c7fcd7f273810ebd9f4341a860",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118318-11261-64l3rj.3pk1mgf1or/package.tgz",
-  "_where": "/tmp/apm-install-dir-118318-11261-rf7nrg.ps0ki96bt9",
+  "_spec": "/tmp/d-118324-27329-o8df3l.v9pfvl5wmi/package.tgz",
+  "_where": "/tmp/apm-install-dir-118324-27329-16wqbtl.fell2nvcxr",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",
@@ -46,7 +46,6 @@
   "dependencies": {
     "etch": "^0.12.7",
     "node-pty-prebuilt": "^0.7.3",
-    "resize-observer-polyfill": "^1.5.0",
     "rgb-hex": "^2.1.0",
     "xterm": "^3.1.0"
   },
@@ -56,7 +55,7 @@
   },
   "devDependencies": {},
   "engines": {
-    "atom": ">=1.16.0 <2.0.0"
+    "atom": ">=1.19.0 <2.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -119,5 +118,5 @@
   "scripts": {
     "test": "apm test"
   },
-  "version": "0.5.5"
+  "version": "0.5.6"
 }

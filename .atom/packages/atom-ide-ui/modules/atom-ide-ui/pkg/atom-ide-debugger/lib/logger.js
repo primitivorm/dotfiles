@@ -1,14 +1,16 @@
-'use strict';
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _log4js;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _log4js;
 
-function _load_log4js() {
-  return _log4js = require('log4js');
-}
+
+
+
+
+
+
+
+
+function _load_log4js() {return _log4js = require('log4js');}
 
 const DEBUGGER_LOGGER_CATEGORY = 'atom-debugger'; /**
                                                    * Copyright (c) 2017-present, Facebook, Inc.
@@ -20,6 +22,4 @@ const DEBUGGER_LOGGER_CATEGORY = 'atom-debugger'; /**
                                                    *
                                                    * 
                                                    * @format
-                                                   */
-
-exports.default = (0, (_log4js || _load_log4js()).getLogger)(DEBUGGER_LOGGER_CATEGORY);
+                                                   */exports.default = (0, (_log4js || _load_log4js()).getLogger)(DEBUGGER_LOGGER_CATEGORY);
