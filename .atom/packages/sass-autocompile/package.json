@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
+        "raw": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
-        "spec": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
+        "rawSpec": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
+        "spec": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11794-2428-12v4iwr.gmj8ht1emi"
+      "/tmp/apm-install-dir-118412-27424-igr3zj.ifdgvf5hfr"
     ]
   ],
-  "_from": "../d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
-  "_id": "sass-autocompile@0.13.3",
+  "_from": "../d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
+  "_id": "sass-autocompile@0.13.5",
   "_inCache": true,
   "_location": "/sass-autocompile",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
+    "raw": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
-    "spec": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
+    "rawSpec": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
+    "spec": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
-  "_shasum": "afc9537f1c9147cfdf597e2d7d6322e4486b7814",
+  "_resolved": "file:../d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
+  "_shasum": "fcb3c7a0232a17f642526f5057ccd76fdbda5054",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11794-2428-72j81j.v8h4h7iudi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11794-2428-12v4iwr.gmj8ht1emi",
+  "_spec": "/tmp/d-118412-27424-17y3rs8.k6kp96yldi/package.tgz",
+  "_where": "/tmp/apm-install-dir-118412-27424-igr3zj.ifdgvf5hfr",
   "bugs": {
     "url": "https://github.com/armin-pfaeffle/sass-autocompile/issues"
   },
@@ -59,7 +59,7 @@
     "type": "git",
     "url": "git+https://github.com/armin-pfaeffle/sass-autocompile.git"
   },
-  "version": "0.13.3",
+  "version": "0.13.5",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -80,7 +80,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.30",
+        "version": "0.10.42",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -90,7 +90,7 @@
       },
       {
         "name": "es6-iterator",
-        "version": "2.0.1",
+        "version": "2.0.3",
         "path": "node_modules/es5-ext/node_modules/es6-iterator/index.js"
       },
       {
@@ -137,6 +137,11 @@
         "name": "mixto",
         "version": "1.0.0",
         "path": "node_modules/mixto/lib/mixin.js"
+      },
+      {
+        "name": "next-tick",
+        "version": "1.0.0",
+        "path": "node_modules/next-tick/index.js"
       },
       {
         "name": "node-uuid",
@@ -292,8 +297,10 @@
         "node_modules/es5-ext/date/#/floor-year.js",
         "node_modules/es5-ext/date/#/format.js",
         "node_modules/es5-ext/date/#/index.js",
+        "node_modules/es5-ext/date/ensure-time-value.js",
         "node_modules/es5-ext/date/index.js",
         "node_modules/es5-ext/date/is-date.js",
+        "node_modules/es5-ext/date/is-time-value.js",
         "node_modules/es5-ext/date/valid-date.js",
         "node_modules/es5-ext/error/#/index.js",
         "node_modules/es5-ext/error/#/throw.js",
@@ -306,6 +313,7 @@
         "node_modules/es5-ext/function/#/curry.js",
         "node_modules/es5-ext/function/#/index.js",
         "node_modules/es5-ext/function/#/lock.js",
+        "node_modules/es5-ext/function/#/microtask-delay.js",
         "node_modules/es5-ext/function/#/not.js",
         "node_modules/es5-ext/function/#/partial.js",
         "node_modules/es5-ext/function/#/spread.js",
@@ -329,6 +337,7 @@
         "node_modules/es5-ext/iterable/validate.js",
         "node_modules/es5-ext/json/index.js",
         "node_modules/es5-ext/json/safe-stringify.js",
+        "node_modules/es5-ext/math/_decimal-adjust.js",
         "node_modules/es5-ext/math/_pack-ieee754.js",
         "node_modules/es5-ext/math/_unpack-ieee754.js",
         "node_modules/es5-ext/math/acosh/implement.js",
@@ -347,6 +356,7 @@
         "node_modules/es5-ext/math/cbrt/index.js",
         "node_modules/es5-ext/math/cbrt/is-implemented.js",
         "node_modules/es5-ext/math/cbrt/shim.js",
+        "node_modules/es5-ext/math/ceil-10.js",
         "node_modules/es5-ext/math/clz32/implement.js",
         "node_modules/es5-ext/math/clz32/index.js",
         "node_modules/es5-ext/math/clz32/is-implemented.js",
@@ -359,6 +369,7 @@
         "node_modules/es5-ext/math/expm1/index.js",
         "node_modules/es5-ext/math/expm1/is-implemented.js",
         "node_modules/es5-ext/math/expm1/shim.js",
+        "node_modules/es5-ext/math/floor-10.js",
         "node_modules/es5-ext/math/fround/implement.js",
         "node_modules/es5-ext/math/fround/index.js",
         "node_modules/es5-ext/math/fround/is-implemented.js",
@@ -384,6 +395,7 @@
         "node_modules/es5-ext/math/log2/index.js",
         "node_modules/es5-ext/math/log2/is-implemented.js",
         "node_modules/es5-ext/math/log2/shim.js",
+        "node_modules/es5-ext/math/round-10.js",
         "node_modules/es5-ext/math/sign/implement.js",
         "node_modules/es5-ext/math/sign/index.js",
         "node_modules/es5-ext/math/sign/is-implemented.js",
@@ -456,6 +468,7 @@
         "node_modules/es5-ext/object/assign/index.js",
         "node_modules/es5-ext/object/assign/is-implemented.js",
         "node_modules/es5-ext/object/assign/shim.js",
+        "node_modules/es5-ext/object/assign-deep.js",
         "node_modules/es5-ext/object/clear.js",
         "node_modules/es5-ext/object/compact.js",
         "node_modules/es5-ext/object/compare.js",
@@ -465,9 +478,12 @@
         "node_modules/es5-ext/object/create.js",
         "node_modules/es5-ext/object/ensure-array.js",
         "node_modules/es5-ext/object/ensure-finite-number.js",
+        "node_modules/es5-ext/object/ensure-integer.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
+        "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
+        "node_modules/es5-ext/object/ensure-thenable.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -484,10 +500,15 @@
         "node_modules/es5-ext/object/is-copy.js",
         "node_modules/es5-ext/object/is-empty.js",
         "node_modules/es5-ext/object/is-finite-number.js",
+        "node_modules/es5-ext/object/is-integer.js",
+        "node_modules/es5-ext/object/is-natural-number-value.js",
+        "node_modules/es5-ext/object/is-natural-number.js",
         "node_modules/es5-ext/object/is-number-value.js",
         "node_modules/es5-ext/object/is-object.js",
+        "node_modules/es5-ext/object/is-plain-function.js",
         "node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/es5-ext/object/is-promise.js",
+        "node_modules/es5-ext/object/is-thenable.js",
         "node_modules/es5-ext/object/is-value.js",
         "node_modules/es5-ext/object/is.js",
         "node_modules/es5-ext/object/key-of.js",
@@ -518,6 +539,10 @@
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
+        "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/index.js",
+        "node_modules/es5-ext/promise/index.js",
+        "node_modules/es5-ext/promise/lazy.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
         "node_modules/es5-ext/reg-exp/#/is-sticky.js",
         "node_modules/es5-ext/reg-exp/#/is-unicode.js",
@@ -596,6 +621,7 @@
         "node_modules/es5-ext/string/index.js",
         "node_modules/es5-ext/string/is-string.js",
         "node_modules/es5-ext/string/random-uniq.js",
+        "node_modules/es5-ext/string/random.js",
         "node_modules/es5-ext/string/raw/implement.js",
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
@@ -719,6 +745,7 @@
         "node_modules/jquery/src/var/toString.js",
         "node_modules/jquery/src/wrap.js",
         "node_modules/mixto/lib/mixin.js",
+        "node_modules/next-tick/index.js",
         "node_modules/node-uuid/benchmark/benchmark.js",
         "node_modules/node-uuid/lib/sha1-browser.js",
         "node_modules/node-uuid/uuid.js",
@@ -737,6 +764,7 @@
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
         "node_modules/es5-ext/package.json",
+        "node_modules/es5-ext/promise/.eslintrc.json",
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
@@ -747,6 +775,7 @@
         "node_modules/jquery/bower.json",
         "node_modules/jquery/package.json",
         "node_modules/mixto/package.json",
+        "node_modules/next-tick/package.json",
         "node_modules/node-uuid/bower.json",
         "node_modules/node-uuid/component.json",
         "node_modules/node-uuid/package.json",
@@ -862,6 +891,8 @@
           "node_modules/es5-ext/object/assign",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
+          "node_modules/es5-ext/promise/#",
+          "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
           "node_modules/es5-ext/reg-exp/#/replace",
@@ -939,6 +970,8 @@
           "node_modules/es5-ext/test/object/assign",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
+          "node_modules/es5-ext/test/promise/#",
+          "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
           "node_modules/es5-ext/test/reg-exp/#/replace",
@@ -960,8 +993,9 @@
           "node_modules/es5-ext/test/string/raw"
         ],
         "dependencies": {
-          "es6-iterator": "2",
-          "es6-symbol": "~3.1"
+          "es6-iterator": "~2.0.3",
+          "es6-symbol": "~3.1.1",
+          "next-tick": "1"
         }
       },
       {
@@ -982,8 +1016,8 @@
         ],
         "dependencies": {
           "d": "1",
-          "es5-ext": "^0.10.14",
-          "es6-symbol": "^3.1"
+          "es5-ext": "^0.10.35",
+          "es6-symbol": "^3.1.1"
         }
       },
       {

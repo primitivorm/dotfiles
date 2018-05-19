@@ -1,9 +1,16 @@
 <a name="v4.29.7"></a>
+
+# v4.29.8 (2018-02-23)
+
+## :bug: Bug Fixes
+
+- Fix crash when used alongside tree-sitter grammars ([#650](https://github.com/atom-minimap/minimap/pull/650))
+
 # v4.29.7 (2017-09-18)
 
 ## :bug: Bug Fixes
 
-- Guard against their being no visible screen row when the minimap is constructed. Fixes [#626](https://github.com/atom-minimap/minimap/issues/626).
+- Guard against there being no visible screen row when the minimap is constructed ([b2012d034a](https://github.com/atom-minimap/minimap/commit/b2012d034a162e18dc4def10f9204d3d4286440d), [#626](https://github.com/atom-minimap/minimap/issues/626))
 
 <a name="v4.29.6"></a>
 # v4.29.6 (2017-08-09)

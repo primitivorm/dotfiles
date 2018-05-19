@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11709-10211-7ikbz3/package.tgz",
+        "raw": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11709-10211-7ikbz3/package.tgz",
-        "spec": "/tmp/d-11709-10211-7ikbz3/package.tgz",
+        "rawSpec": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
+        "spec": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11709-10211-1ccbnxe"
+      "/tmp/apm-install-dir-118412-27423-1wfar2q.uiv28lrf6r"
     ]
   ],
-  "_from": "../d-11709-10211-7ikbz3/package.tgz",
-  "_id": "language-cmake@0.3.0",
+  "_from": "../d-118412-27423-ycorsn.ji91p833di/package.tgz",
+  "_id": "language-cmake@1.1.0",
   "_inCache": true,
-  "_installable": true,
   "_location": "/language-cmake",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11709-10211-7ikbz3/package.tgz",
+    "raw": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11709-10211-7ikbz3/package.tgz",
-    "spec": "/tmp/d-11709-10211-7ikbz3/package.tgz",
+    "rawSpec": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
+    "spec": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11709-10211-7ikbz3/package.tgz",
-  "_shasum": "44c1eb981dce35332681eb69609ded9890267572",
+  "_resolved": "file:../d-118412-27423-ycorsn.ji91p833di/package.tgz",
+  "_shasum": "212f88c8da89a7de4401838f5a66f02c85e9a585",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11709-10211-7ikbz3/package.tgz",
-  "_where": "/tmp/apm-install-dir-11709-10211-1ccbnxe",
+  "_spec": "/tmp/d-118412-27423-ycorsn.ji91p833di/package.tgz",
+  "_where": "/tmp/apm-install-dir-118412-27423-1wfar2q.uiv28lrf6r",
   "bugs": {
     "url": "https://github.com/lucas-clemente/language-cmake/issues"
   },
@@ -55,5 +54,15 @@
     "type": "git",
     "url": "git+https://github.com/lucas-clemente/language-cmake.git"
   },
-  "version": "0.3.0"
+  "version": "1.1.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

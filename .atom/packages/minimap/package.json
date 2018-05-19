@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+        "raw": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
-        "spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+        "rawSpec": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
+        "spec": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117827-27655-rvlczj.nxwn2n8kt9"
+      "/tmp/apm-install-dir-118412-27426-1hi4uni.if58jdzpvi"
     ]
   ],
-  "_from": "../d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
-  "_id": "minimap@4.29.7",
+  "_from": "../d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
+  "_id": "minimap@4.29.8",
   "_inCache": true,
   "_location": "/minimap",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+    "raw": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
-    "spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
+    "rawSpec": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
+    "spec": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
-  "_shasum": "55a8dfc8003d29c8fc895a8583ddf4a80e85191e",
+  "_resolved": "file:../d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
+  "_shasum": "e411643a04c0e163b11e9f7d412f1cdf06e8bfe6",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117827-27655-xhe13y.eotfdy4x6r/package.tgz",
-  "_where": "/tmp/apm-install-dir-117827-27655-rvlczj.nxwn2n8kt9",
+  "_spec": "/tmp/d-118412-27426-d9pwtq.gjm3fbhuxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-118412-27426-1hi4uni.if58jdzpvi",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com"
@@ -255,7 +255,7 @@
       "IntersectionObserver"
     ]
   },
-  "version": "4.29.7",
+  "version": "4.29.8",
   "viewProviders": [
     "minimapViewProvider"
   ],
@@ -284,7 +284,7 @@
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.8",
+        "version": "1.1.11",
         "path": "node_modules/brace-expansion/index.js"
       },
       {
@@ -304,7 +304,7 @@
       },
       {
         "name": "element-resize-detector",
-        "version": "1.1.12",
+        "version": "1.1.14",
         "path": "node_modules/element-resize-detector/src/element-resize-detector.js"
       },
       {
@@ -314,7 +314,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.30",
+        "version": "0.10.42",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -324,7 +324,7 @@
       },
       {
         "name": "es6-iterator",
-        "version": "2.0.1",
+        "version": "2.0.3",
         "path": "node_modules/es5-ext/node_modules/es6-iterator/index.js"
       },
       {
@@ -413,6 +413,11 @@
         "path": "node_modules/mkdirp/index.js"
       },
       {
+        "name": "next-tick",
+        "version": "1.0.0",
+        "path": "node_modules/next-tick/index.js"
+      },
+      {
         "name": "once",
         "version": "1.4.0",
         "path": "node_modules/once/once.js"
@@ -466,6 +471,7 @@
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
         "node_modules/es5-ext/package.json",
+        "node_modules/es5-ext/promise/.eslintrc.json",
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
@@ -484,6 +490,7 @@
         "node_modules/minimist/package.json",
         "node_modules/mixto/package.json",
         "node_modules/mkdirp/package.json",
+        "node_modules/next-tick/package.json",
         "node_modules/once/package.json",
         "node_modules/path-is-absolute/package.json",
         "node_modules/property-accessors/package.json",
@@ -655,8 +662,10 @@
         "node_modules/es5-ext/date/#/floor-year.js",
         "node_modules/es5-ext/date/#/format.js",
         "node_modules/es5-ext/date/#/index.js",
+        "node_modules/es5-ext/date/ensure-time-value.js",
         "node_modules/es5-ext/date/index.js",
         "node_modules/es5-ext/date/is-date.js",
+        "node_modules/es5-ext/date/is-time-value.js",
         "node_modules/es5-ext/date/valid-date.js",
         "node_modules/es5-ext/error/#/index.js",
         "node_modules/es5-ext/error/#/throw.js",
@@ -669,6 +678,7 @@
         "node_modules/es5-ext/function/#/curry.js",
         "node_modules/es5-ext/function/#/index.js",
         "node_modules/es5-ext/function/#/lock.js",
+        "node_modules/es5-ext/function/#/microtask-delay.js",
         "node_modules/es5-ext/function/#/not.js",
         "node_modules/es5-ext/function/#/partial.js",
         "node_modules/es5-ext/function/#/spread.js",
@@ -692,6 +702,7 @@
         "node_modules/es5-ext/iterable/validate.js",
         "node_modules/es5-ext/json/index.js",
         "node_modules/es5-ext/json/safe-stringify.js",
+        "node_modules/es5-ext/math/_decimal-adjust.js",
         "node_modules/es5-ext/math/_pack-ieee754.js",
         "node_modules/es5-ext/math/_unpack-ieee754.js",
         "node_modules/es5-ext/math/acosh/implement.js",
@@ -710,6 +721,7 @@
         "node_modules/es5-ext/math/cbrt/index.js",
         "node_modules/es5-ext/math/cbrt/is-implemented.js",
         "node_modules/es5-ext/math/cbrt/shim.js",
+        "node_modules/es5-ext/math/ceil-10.js",
         "node_modules/es5-ext/math/clz32/implement.js",
         "node_modules/es5-ext/math/clz32/index.js",
         "node_modules/es5-ext/math/clz32/is-implemented.js",
@@ -722,6 +734,7 @@
         "node_modules/es5-ext/math/expm1/index.js",
         "node_modules/es5-ext/math/expm1/is-implemented.js",
         "node_modules/es5-ext/math/expm1/shim.js",
+        "node_modules/es5-ext/math/floor-10.js",
         "node_modules/es5-ext/math/fround/implement.js",
         "node_modules/es5-ext/math/fround/index.js",
         "node_modules/es5-ext/math/fround/is-implemented.js",
@@ -747,6 +760,7 @@
         "node_modules/es5-ext/math/log2/index.js",
         "node_modules/es5-ext/math/log2/is-implemented.js",
         "node_modules/es5-ext/math/log2/shim.js",
+        "node_modules/es5-ext/math/round-10.js",
         "node_modules/es5-ext/math/sign/implement.js",
         "node_modules/es5-ext/math/sign/index.js",
         "node_modules/es5-ext/math/sign/is-implemented.js",
@@ -819,6 +833,7 @@
         "node_modules/es5-ext/object/assign/index.js",
         "node_modules/es5-ext/object/assign/is-implemented.js",
         "node_modules/es5-ext/object/assign/shim.js",
+        "node_modules/es5-ext/object/assign-deep.js",
         "node_modules/es5-ext/object/clear.js",
         "node_modules/es5-ext/object/compact.js",
         "node_modules/es5-ext/object/compare.js",
@@ -828,9 +843,12 @@
         "node_modules/es5-ext/object/create.js",
         "node_modules/es5-ext/object/ensure-array.js",
         "node_modules/es5-ext/object/ensure-finite-number.js",
+        "node_modules/es5-ext/object/ensure-integer.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
+        "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
+        "node_modules/es5-ext/object/ensure-thenable.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -847,10 +865,15 @@
         "node_modules/es5-ext/object/is-copy.js",
         "node_modules/es5-ext/object/is-empty.js",
         "node_modules/es5-ext/object/is-finite-number.js",
+        "node_modules/es5-ext/object/is-integer.js",
+        "node_modules/es5-ext/object/is-natural-number-value.js",
+        "node_modules/es5-ext/object/is-natural-number.js",
         "node_modules/es5-ext/object/is-number-value.js",
         "node_modules/es5-ext/object/is-object.js",
+        "node_modules/es5-ext/object/is-plain-function.js",
         "node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/es5-ext/object/is-promise.js",
+        "node_modules/es5-ext/object/is-thenable.js",
         "node_modules/es5-ext/object/is-value.js",
         "node_modules/es5-ext/object/is.js",
         "node_modules/es5-ext/object/key-of.js",
@@ -881,6 +904,10 @@
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
+        "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/index.js",
+        "node_modules/es5-ext/promise/index.js",
+        "node_modules/es5-ext/promise/lazy.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
         "node_modules/es5-ext/reg-exp/#/is-sticky.js",
         "node_modules/es5-ext/reg-exp/#/is-unicode.js",
@@ -959,6 +986,7 @@
         "node_modules/es5-ext/string/index.js",
         "node_modules/es5-ext/string/is-string.js",
         "node_modules/es5-ext/string/random-uniq.js",
+        "node_modules/es5-ext/string/random.js",
         "node_modules/es5-ext/string/raw/implement.js",
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
@@ -1014,6 +1042,7 @@
         "node_modules/mkdirp/bin/cmd.js",
         "node_modules/mkdirp/examples/pow.js",
         "node_modules/mkdirp/index.js",
+        "node_modules/next-tick/index.js",
         "node_modules/once/once.js",
         "node_modules/path-is-absolute/index.js",
         "node_modules/property-accessors/lib/property-accessors.js",
@@ -1173,6 +1202,8 @@
           "node_modules/es5-ext/object/assign",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
+          "node_modules/es5-ext/promise/#",
+          "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
           "node_modules/es5-ext/reg-exp/#/replace",
@@ -1250,6 +1281,8 @@
           "node_modules/es5-ext/test/object/assign",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
+          "node_modules/es5-ext/test/promise/#",
+          "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
           "node_modules/es5-ext/test/reg-exp/#/replace",
@@ -1271,8 +1304,9 @@
           "node_modules/es5-ext/test/string/raw"
         ],
         "dependencies": {
-          "es6-iterator": "2",
-          "es6-symbol": "~3.1"
+          "es6-iterator": "~2.0.3",
+          "es6-symbol": "~3.1.1",
+          "next-tick": "1"
         }
       },
       {
@@ -1293,8 +1327,8 @@
         ],
         "dependencies": {
           "d": "1",
-          "es5-ext": "^0.10.14",
-          "es6-symbol": "^3.1"
+          "es5-ext": "^0.10.35",
+          "es6-symbol": "^3.1.1"
         }
       },
       {

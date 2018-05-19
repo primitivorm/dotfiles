@@ -1,0 +1,122 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+        "spec": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-118419-4469-z9vlp0.6trb8d7vi"
+    ]
+  ],
+  "_from": "../d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+  "_id": "terminal-tab@0.5.6",
+  "_inCache": true,
+  "_location": "/terminal-tab",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+    "spec": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+  "_shasum": "63bc8047a4f0c0c7fcd7f273810ebd9f4341a860",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-118419-4469-4ag3u2.8u7mqme7b9/package.tgz",
+  "_where": "/tmp/apm-install-dir-118419-4469-z9vlp0.6trb8d7vi",
+  "author": {
+    "name": "Justin Mecham",
+    "email": "justin@mecham.me",
+    "url": "http://justin.mecham.me"
+  },
+  "bugs": {
+    "url": "https://github.com/jsmecham/atom-terminal-tab/issues"
+  },
+  "dependencies": {
+    "etch": "^0.12.7",
+    "node-pty-prebuilt": "^0.7.3",
+    "rgb-hex": "^2.1.0",
+    "xterm": "^3.1.0"
+  },
+  "description": "A simple terminal for panes and docks.",
+  "deserializers": {
+    "TerminalSession": "deserializeTerminalSession"
+  },
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.19.0 <2.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jasmine": true,
+      "node": true
+    },
+    "globals": {
+      "atom": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "homepage": "https://atom.io/packages/terminal-tab",
+  "keywords": [
+    "command",
+    "console",
+    "prompt",
+    "pty",
+    "terminal",
+    "term",
+    "tty",
+    "xterm"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "terminal-tab",
+  "optionalDependencies": {},
+  "private": true,
+  "readme": "# Terminal for Atom\n\nA simple terminal for Atom that is based on the excellent [Xterm.js](http://xtermjs.org) and [node-pty](https://github.com/Tyriar/node-pty) projects. Works best with Atom 1.17 and later with support for Docks.\n\n## Demo\n\n![Terminal Demo](https://raw.githubusercontent.com/jsmecham/atom-terminal-tab/master/demo.gif)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsmecham/atom-terminal-tab.git"
+  },
+  "scripts": {
+    "test": "apm test"
+  },
+  "version": "0.5.6"
+}

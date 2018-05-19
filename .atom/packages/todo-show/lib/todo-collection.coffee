@@ -143,7 +143,7 @@ class TodoCollection
   fetchOpenRegexItem: (todoRegex, activeEditorOnly) ->
     editors = []
     if activeEditorOnly
-      if editor = atom.workspace.getPanes()[0]?.getActiveEditor()
+      if editor = atom.workspace.getActiveTextEditor()
         editors = [editor]
     else
       editors = atom.workspace.getTextEditors()
@@ -170,7 +170,9 @@ class TodoCollection
     # No async operations, so just return a resolved promise
     Promise.resolve()
 
-  search: ->
+  search: (force = false) ->
+    return if !atom.config.get('todo-show.autoRefresh') and !force
+
     @clear()
     @searching = true
     @emitter.emit 'did-start-search'
