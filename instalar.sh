@@ -2,42 +2,44 @@
 
 #update sources
 echo "actualizando fuentes..."
-sudo apt-get update -qq -y
+sudo apt update -qq -y
 
 #remove some packages
-sudo apt-get remove vim vim-runtime vim-tiny vim-common vim-gui-common -y
+sudo apt remove vim vim-runtime vim-tiny vim-common vim-gui-common -y
 
 echo "instalando paquetes..."
 #install packages
-sudo apt-get install aptitude build-essential gcc g++ automake -y
-sudo apt-get install git make cmake flex bison libreadline-dev -y
-sudo apt-get install valgrind dos2unix exuberant-ctags -y
-sudo apt-get install python python-dev python-urllib3 libxml2-dev libxslt-dev libssl-dev -y
-sudo apt-get install tmux ack-grep astyle libtool libunistring-dev -y
-sudo apt-get install dpkg-dev libgnome-keyring-dev java -y
-sudo apt-get install python-pip lcov npm ruby-coffee-script nodejs -y
-sudo apt-get install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
-sudo apt-get install lua5.2 liblua5.2-dev meld libz3 clang-format -y
-sudo apt-get install gnome-system-monitor clisp libgtk-3-dev -y
-sudo apt-get install libjansson-dev libcurl4-openssl-dev curl -y
-sudo apt-get install libgccjit-5-dev xd mono-xbuild graphviz -y
-sudo apt-get install konsole dump gwhere gnuplot plotutils libappindicator1 -y
-sudo apt-get install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
-sudo apt-get install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
-sudo apt-get install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
-sudo apt-get install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+sudo apt install aptitude build-essential gcc g++ automake -y
+sudo apt install git make cmake flex bison libreadline-dev -y
+sudo apt install valgrind dos2unix exuberant-ctags -y
+sudo apt install python python-dev python-urllib3 libxml2-dev libxslt-dev libssl-dev -y
+sudo apt install tmux ack-grep astyle libtool libunistring-dev -y
+sudo apt install dpkg-dev libgnome-keyring-dev java -y
+sudo apt install python-pip lcov npm ruby-coffee-script nodejs -y
+sudo apt install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
+sudo apt install lua5.2 liblua5.2-dev meld libz3 clang-format -y
+sudo apt install gnome-system-monitor clisp libgtk-3-dev -y
+sudo apt install libjansson-dev libcurl4-openssl-dev curl -y
+sudo apt install libgccjit-5-dev xd mono-xbuild graphviz -y
+sudo apt install konsole dump gwhere gnuplot plotutils libappindicator1 -y
+sudo apt install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-utility -y
+sudo apt install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
+sudo apt install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
+sudo apt install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+#to build ninja
+sudo apt install re2c
 
 #necesarios para compilar gvim
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
         ruby-dev mercurial -y
 
 #extras
-sudo apt-get install ttf-liberation ttf-mscorefonts-installer -y
+sudo apt install ttf-liberation ttf-mscorefonts-installer -y
 
 #remover paquetes temporales
-sudo apt-get autoremove -qq -y
+sudo apt autoremove -qq -y
 
 #install pip packages
 sudo pip install --upgrade pip

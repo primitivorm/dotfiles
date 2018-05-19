@@ -13,7 +13,7 @@ git clone --recursive https://github.com/llvm-mirror/llvm
 cd ~/src/llvm-mirror/llvm/tools
 git clone --recursive https://github.com/llvm-mirror/clang
 cd ~/src/llvm-mirror/llvm/tools/clang/tools
-git clone --recursive https://github.com/llvm-mirror/clang-tools-extra
+git clone --recursive https://github.com/llvm-mirror/clang-tools-extra extra
 cd ~/src/llvm-mirror/llvm/tools/
 git clone --recursive https://github.com/llvm-mirror/lld
 #git clone --recursive https://github.com/llvm-mirror/polly
