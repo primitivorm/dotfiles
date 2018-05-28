@@ -41,4 +41,4 @@
     showOnStartup: false
   "you-complete-me":
     globalExtraConfig: "C:/Users/Proman02/vimfiles/_ycm_extra_conf.py"
-    ycmdPath: "C:/Users/Proman02/vimfiles/bundleYouCompleteMe/third_party/ycmd"
+    ycmdPath: "C:/Users/Proman02/vimfiles/bundle/YouCompleteMe/third_party/ycmd"
