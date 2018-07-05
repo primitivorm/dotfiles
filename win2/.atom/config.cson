@@ -9,6 +9,9 @@
     formatCOnSave: true
     formatCPlusPlusOnSave: true
   core:
+    disabledPackages: [
+      "terminal-tab"
+    ]
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
