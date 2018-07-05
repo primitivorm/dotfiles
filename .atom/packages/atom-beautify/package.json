@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
+        "raw": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
-        "spec": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
+        "rawSpec": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
+        "spec": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118419-4446-e0k7sw.si473qh0k9"
+      "/tmp/apm-install-dir-11852-9656-lnxn0a.4t451p2e29"
     ]
   ],
-  "_from": "../d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
-  "_id": "atom-beautify@0.32.4",
+  "_from": "../d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
+  "_id": "atom-beautify@0.32.5",
   "_inCache": true,
   "_location": "/atom-beautify",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
+    "raw": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
-    "spec": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
+    "rawSpec": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
+    "spec": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
-  "_shasum": "bd5666a37b4576cb3c25c0bb802dd673c4163894",
+  "_resolved": "file:../d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
+  "_shasum": "d3b89954adc7994bbaa4e7de3079159eba23b270",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118419-4446-ojgo1r.1s9jjdcxr/package.tgz",
-  "_where": "/tmp/apm-install-dir-118419-4446-e0k7sw.si473qh0k9",
+  "_spec": "/tmp/d-11852-9656-1slw808.74iuyuv7vi/package.tgz",
+  "_where": "/tmp/apm-install-dir-11852-9656-lnxn0a.4t451p2e29",
   "activationCommands": {
     "atom-workspace": [
       "atom-beautify:help-debug-editor",
@@ -516,7 +516,7 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Glavin001/atom-beautify.git"
+    "url": "git+https://github.com/Glavin001/atom-beautify.git"
   },
   "scripts": {
     "build-options": "node script/build-options.js",
@@ -527,5 +527,5 @@
     "pretest": "npm run lint",
     "test": "atom --test spec"
   },
-  "version": "0.32.4"
+  "version": "0.32.5"
 }

@@ -47,33 +47,35 @@ Markdown table editor/formatter
 * Insert and delete rows and columns
 
 ### Commands
-| Name                  | Description                              | Keybinding                        |
-| --------------------- | ---------------------------------------- | --------------------------------- |
-| Next Cell             | Move to the next cell                    | <kbd>tab</kbd>                    |
-| Previous Cell         | Move to the previous cell                | <kbd>shift</kbd> + <kbd>tab</kbd> |
-| Next Row              | Move to the next row                     | <kbd>enter</kbd>                  |
-| Escape                | Escape from the table                    | <kbd>escape</kbd>                 |
-| Format                | Just format the table                    |                                   |
-| Format All            | Format all the tables in the text editor |                                   |
-| Align Left            | Left-align the column                    |                                   |
-| Align Right           | Right-align the column                   |                                   |
-| Align Center          | Center-align the column                  |                                   |
-| Align None            | Unset alignment of the column            |                                   |
-| Select Cell           | Select the cell content                  |                                   |
-| Move Left             | Move to the left cell                    |                                   |
-| Move Right            | Move to the right cell                   |                                   |
-| Move Up               | Move to the upper cell                   |                                   |
-| Move Down             | Move to the lower cell                   |                                   |
-| Insert Row            | Insert an empty row                      |                                   |
-| Delete Row            | Delete the row                           |                                   |
-| Move Row Up           | Move the row up                          |                                   |
-| Move Row Down         | Move the row down                        |                                   |
-| Insert Column         | Insert an empty column                   |                                   |
-| Delete Column         | Delete the column                        |                                   |
-| Move Column Left      | Move the column left                     |                                   |
-| Move Column Right     | Move the column right                    |                                   |
-| Toggle Format On Save | Toggle "Format On Save" config           |                                   |
-| Switch Format Type    | Switch "Format Type" config              |                                   |
+| Name                   | Description                              | Keybinding                        |
+| ---------------------- | ---------------------------------------- | --------------------------------- |
+| Next Cell              | Move to the next cell                    | <kbd>tab</kbd>                    |
+| Previous Cell          | Move to the previous cell                | <kbd>shift</kbd> + <kbd>tab</kbd> |
+| Next Row               | Move to the next row                     | <kbd>enter</kbd>                  |
+| Escape                 | Escape from the table                    | <kbd>escape</kbd>                 |
+| Format                 | Just format the table                    |                                   |
+| Format All             | Format all the tables in the text editor |                                   |
+| Align Left             | Left-align the column                    |                                   |
+| Align Right            | Right-align the column                   |                                   |
+| Align Center           | Center-align the column                  |                                   |
+| Align None             | Unset alignment of the column            |                                   |
+| Select Cell            | Select the cell content                  |                                   |
+| Move Left              | Move to the left cell                    |                                   |
+| Move Right             | Move to the right cell                   |                                   |
+| Move Up                | Move to the upper cell                   |                                   |
+| Move Down              | Move to the lower cell                   |                                   |
+| Insert Row             | Insert an empty row                      |                                   |
+| Delete Row             | Delete the row                           |                                   |
+| Move Row Up            | Move the row up                          |                                   |
+| Move Row Down          | Move the row down                        |                                   |
+| Insert Column          | Insert an empty column                   |                                   |
+| Delete Column          | Delete the column                        |                                   |
+| Move Column Left       | Move the column left                     |                                   |
+| Move Column Right      | Move the column right                    |                                   |
+| Toggle Format On Save  | Toggle "Format On Save" config           |                                   |
+| Switch Format Type     | Switch  "Format Type" config             |                                   |
+| Set Format Type Normal | Set "Format Type" config to "Normal"     |                                   |
+| Set Format Type Weak   | Set "Format Type" config to "Weak"       |                                   |
 
 (To input a newline in a table, press <kbd>shift</kbd> + <kbd>enter</kbd> (or some equivalent) instead.)
 
@@ -105,4 +107,8 @@ Here are the ones which I use:
 ## FAQ
 ### Q. My table does not align well when dealing with Chinese characters
 A. Use a monospaced font that includes glyphs for Chinese characters, such as [Noto Sans Mono CJK](https://github.com/googlei18n/noto-cjk).
-markdown-table-editor already supports East Asian characters including Chinese characters.
+markdown-table-editor supports East Asian characters including Chinese characters :)
+
+## For developers
+This package is based on [markdown-table-editor kernel](https://github.com/susisu/mte-kernel), which provides a text editor independent implementation of the functionality of the package.
+You can create a markdown-table-editor plugin for your favorite text editor with ease!

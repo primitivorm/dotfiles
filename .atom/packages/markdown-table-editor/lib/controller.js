@@ -8,6 +8,10 @@ const EDITOR_COMMAND_TARGET = COMMAND_TARGET + ".markdown-table-editor-active";
 const NAMESPACE = "markdown-table-editor";
 
 const FORMAT_TYPES = [FormatType.NORMAL, FormatType.WEAK];
+const FORMAT_TYPE_NAMES = {
+  [FormatType.NORMAL]: "Normal",
+  [FormatType.WEAK]  : "Weak"
+};
 
 export default class Controller {
   constructor() {
@@ -31,6 +35,12 @@ export default class Controller {
       },
       [`${NAMESPACE}:switch-format-type`]: () => {
         this.switchFormatType();
+      },
+      [`${NAMESPACE}:set-format-type-normal`]: () => {
+        this.setFormatType(FormatType.NORMAL);
+      },
+      [`${NAMESPACE}:set-format-type-weak`]: () => {
+        this.setFormatType(FormatType.WEAK);
       },
       [`${NAMESPACE}:format-all`]: this.editorCommand(editorCtrler => {
         editorCtrler.formatAll();
@@ -121,6 +131,9 @@ export default class Controller {
   toggleFormatOnSave() {
     const formatOnSave = atom.config.get(`${NAMESPACE}.formatOnSave`);
     atom.config.set(`${NAMESPACE}.formatOnSave`, !formatOnSave);
+    atom.notifications.addInfo("markdown-table-editor", {
+      detail: `"Format On Save" is turned ${!formatOnSave ? "on" : "off"}`
+    });
   }
 
   switchFormatType() {
@@ -128,6 +141,16 @@ export default class Controller {
     const i = FORMAT_TYPES.indexOf(formatType);
     const newFormatType = FORMAT_TYPES[i + 1 > FORMAT_TYPES.length - 1 ? 0 : i + 1];
     atom.config.set(`${NAMESPACE}.formatType`, newFormatType);
+    atom.notifications.addInfo("markdown-table-editor", {
+      detail: `"Format Type" is switched to "${FORMAT_TYPE_NAMES[newFormatType]}"`
+    });
+  }
+
+  setFormatType(type) {
+    atom.config.set(`${NAMESPACE}.formatType`, type);
+    atom.notifications.addInfo("markdown-table-editor", {
+      detail: `"Format Type" is set to "${FORMAT_TYPE_NAMES[type]}"`
+    });
   }
 
   editorCommand(callback) {

@@ -102,14 +102,14 @@ if ! shopt -oq posix; then
 fi
 
 #configure path for llvm
-export PATH="~/src/llvm-mirror/build/bin:$PATH"
+export PATH="~/src/bitbucket/latino-llvm/deps/llvm-mirror/build/bin:$PATH"
 
 #configure for tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(~/.tmuxifier/bin/tmuxifier init -)"
 
 export PATH="/usr/local/bin:$PATH"
-export LD_LIBRARY_PATH="~/src/llvm-mirror/build/lib:/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="~/src/bitbucket/latino-llvm/deps/llvm-mirror/build/lib:/usr/local/lib:$LD_LIBRARY_PATH"
 
 #configure for latino
 
@@ -126,3 +126,6 @@ export LLVM_CONFIG_PATH="/usr/local/bin/"
 #if [ "$TERM" != "linux" ]; then
 #    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 #fi
+
+# added by Anaconda3 installer
+export PATH="/home/primi/anaconda3/bin:$PATH"
