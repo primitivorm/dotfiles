@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
+        "raw": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
-        "spec": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
+        "rawSpec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
+        "spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117228-2536-1g8y7w1"
+      "/tmp/apm-install-dir-118629-11855-1tnecav.mpfbnjyvi"
     ]
   ],
-  "_from": "../d-117228-2536-1s6ub9o/package.tgz",
-  "_id": "highlight-selected@0.13.1",
+  "_from": "../d-118629-11855-143uns.o510olmcxr/package.tgz",
+  "_id": "highlight-selected@0.14.0",
   "_inCache": true,
-  "_installable": true,
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
+    "raw": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
-    "spec": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
+    "rawSpec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
+    "spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117228-2536-1s6ub9o/package.tgz",
-  "_shasum": "8b6ce153f680dfd60ab003835e666266c4420e5f",
+  "_resolved": "file:../d-118629-11855-143uns.o510olmcxr/package.tgz",
+  "_shasum": "3c8c2c838b70beec0a4b108a5f7356bd70bb8b24",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117228-2536-1s6ub9o/package.tgz",
-  "_where": "/tmp/apm-install-dir-117228-2536-1g8y7w1",
+  "_spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-118629-11855-1tnecav.mpfbnjyvi",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
@@ -44,16 +43,22 @@
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "scroll-marker": {
+      "versions": {
+        "0.1.0": "consumeScrollMarker"
+      }
     }
   },
   "dependencies": {
+    "atom-package-deps": "^4.6.2",
     "grim": "^2.0.1"
   },
   "description": "Highlights the current word selected when double clicking",
   "devDependencies": {
-    "coffee-script": "1.9.0",
-    "coffeelint": "1.8.1",
-    "coffeelint-jasmine": "0.0.2"
+    "coffeelint": "^2.1.0",
+    "coffeelint-jasmine": "0.0.2",
+    "coffeescript": "^2.3.1"
   },
   "dist": {
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
@@ -62,10 +67,18 @@
     "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/richrace/highlight-selected",
+  "keywords": [
+    "highlight selected",
+    "highlight selection",
+    "highlight occurrences"
+  ],
   "license": "MIT",
   "main": "./lib/highlight-selected",
   "name": "highlight-selected",
   "optionalDependencies": {},
+  "package-deps": [
+    "scroll-marker"
+  ],
   "providedServices": {
     "highlightSelected": {
       "description": "Exposes Highlight Selected Events",
@@ -81,5 +94,5 @@
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.13.1"
+  "version": "0.14.0"
 }
