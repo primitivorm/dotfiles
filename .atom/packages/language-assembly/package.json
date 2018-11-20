@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+        "spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11742-2935-jzr9ms"
+    ]
+  ],
+  "_from": "../d-11742-2935-1uokm0z/package.tgz",
+  "_id": "language-assembly@0.7.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/language-assembly",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+    "spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11742-2935-1uokm0z/package.tgz",
+  "_shasum": "ed80126e3284cd62b5ca4bc66c87e0659da17b14",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11742-2935-1uokm0z/package.tgz",
+  "_where": "/tmp/apm-install-dir-11742-2935-jzr9ms",
+  "bugs": {
+    "url": "https://github.com/oliverkeeble/atom-language-assembly/issues"
+  },
+  "dependencies": {},
+  "description": "Provides syntax highlighing for assembly language.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/oliverkeeble/atom-language-assembly#readme",
+  "license": "Public Domain",
+  "name": "language-assembly",
+  "optionalDependencies": {},
+  "readme": "# language-assembly\n## An assembly grammar for Atom.\n------------\n\n* Supports Intel syntax and x86 instruction sets.\n* Fully supports the 8051 family. (_NEW_) (Yay!)\n\n![Yay, pretty colours!](https://raw.githubusercontent.com/oliverkeeble/atom-language-assembly/master/screenshot.png)\n\n------------\n\n## Example snippets\nRight now, the package does not include any snippets, but you can add them manually.\n\nCheck out all the snippets we have on our [Wiki](https://github.com/oliverkeeble/atom-language-assembly/wiki)!\n\n```\n'.source.assembly.asm.x86.intel':\n    'Move instruction':\n        'prefix': 'MOV'\n        'body': 'MOV $1, $2'\n    'Move to Accumulator':\n        'prefix': 'MOVA'\n        'body': 'MOV A, $1'\n    'Add':\n        'prefix': 'ADD'\n        'body': 'ADD A, $1'\n```\n\n------------\n### To Do List\n- [ ] Other syntaxes\n\t- [ ] AT&T\n\t- [ ] Others?\n- [ ] Other instruction sets\n\t- [ ] ARM\n\t- [ ] MIPS\n\t- [x] ATMEL\n\t- [ ] Others?\n- [ ] Add snippets to package.\n- [ ] Lots of testing.\n- [ ] More instructions.\n- [ ] Even more instructions.\n- [ ] Fix all the bugs.\n- [ ] Fix even more bugs.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverkeeble/atom-language-assembly.git"
+  },
+  "version": "0.7.2"
+}

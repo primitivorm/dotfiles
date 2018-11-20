@@ -1,0 +1,68 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+        "spec": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-116920-7252-x3pjsi"
+    ]
+  ],
+  "_from": "../d-116920-7252-1cazqo0/package.tgz",
+  "_id": "language-cpp14@0.6.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/language-cpp14",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+    "spec": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-116920-7252-1cazqo0/package.tgz",
+  "_shasum": "3556bae4b7377119088d7073cd76dddef786ccbe",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-116920-7252-1cazqo0/package.tgz",
+  "_where": "/tmp/apm-install-dir-116920-7252-x3pjsi",
+  "bugs": {
+    "url": "https://github.com/jbw3/language-cpp14/issues"
+  },
+  "dependencies": {},
+  "description": "C++14 language support including new keywords, raw strings, digit separators, and binary literals",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/jbw3/language-cpp14#readme",
+  "keywords": [
+    "C++",
+    "C++11",
+    "C++14",
+    "doxygen",
+    "grammar",
+    "language",
+    "syntax"
+  ],
+  "license": "MIT",
+  "name": "language-cpp14",
+  "optionalDependencies": {},
+  "readme": "# language-cpp14 package\n\nSyntax highlighting for C++14.\n\n### Features\n\n* C++11 and C++14 keywords\n* Doxygen keywords\n* Binary literals\n* Digit separators\n* Raw strings\n* Attributes\n* C++ snippets\n\n### Doxygen\n\nThis package marks doxygen keywords. Most syntax themes will highlight them with the same color as keywords. To change this, add the following to your styles.less file:\n\n```less\natom-text-editor::shadow .keyword.other.documentation\n{\n    color: red;\n}\n```\n\n### License\n\nMIT\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbw3/language-cpp14.git"
+  },
+  "version": "0.6.2"
+}

@@ -1,0 +1,112 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.sass-autocompile {
+    .loading-spinner-tiny {
+        margin-left: 10px;
+    }
+
+    .right-top-options {
+        .btn-close {
+            height: 100%;
+        }
+    }
+
+    .clickable {
+        cursor: pointer;
+
+        &:hover {
+            & when (lightness(@inset-panel-background-color) >= 50%) {
+                background-color: darken(@inset-panel-background-color, 3%);
+            }
+            & when (lightness(@inset-panel-background-color) < 50%) {
+                background-color: lighten(@inset-panel-background-color, 3%);
+            }
+        }
+    }
+
+    .open-node-sass-output {
+        display: inline-block;
+        cursor: pointer;
+        color: @text-color-highlight;
+
+        &:hover {
+            color: @text-color-info;
+        }
+
+        &::before {
+            content: "\2014";
+            display: inline-block;
+            padding: 0 10px;
+            cursor: default;
+            color: fadeout(@text-color, 70%);
+        }
+    }
+
+    .panel-body {
+        padding: 10px 0;
+
+        p {
+            margin: 0;
+            padding: 4px 10px;
+        }
+
+        .success-text-wrapper {
+
+            .success-details {
+                color: #888;
+
+                .success-output-style {
+                    padding: 0 0 0 21px;
+                }
+
+                .success-duration {
+                    padding: 0 0 0 12px;
+                }
+
+                .success-file-size {
+                    padding: 0 0 0 12px;
+                }
+
+                .value {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .error-caption {
+        }
+
+        .error-text {
+            padding: 0 0 0 7px;
+        }
+
+        .error-file-wrapper {
+            padding-left: 21px;
+        }
+
+        .error-file {
+            padding: 0 7px;
+        }
+
+        .error-line {
+
+            &::before {
+                content: '(';
+            }
+
+            &::after {
+                content: ', ';
+            }
+        }
+
+        .error-column {
+            &::after {
+                content: ')';
+            }
+        }
+    }
+}

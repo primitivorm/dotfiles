@@ -1,0 +1,686 @@
+'scopeName': 'source.cpp'
+'name': 'C++14'
+
+'fileTypes': [
+  'c++'
+  'cc'
+  'cp'
+  'cpp'
+  'cxx'
+  'h'
+  'h++'
+  'hh'
+  'hpp'
+  'hxx'
+  'inc'
+  'inl'
+  'ipp'
+  'tcc'
+  'tpp'
+]
+
+# control keywords
+'patterns': [{
+  # preprocessor
+  'begin': '(?=#)'
+  'end': '(?<!\\\\)\\n'
+  'name': 'meta.preprocessor.cpp'
+
+  # keywords
+  'patterns': [{
+    # keywords
+    # NOTE: error, include, pragma, and warning are defined below
+      'match': '#\\s*(define|elif|else|endif|if|ifdef|ifndef|line|undef)\\b'
+      'captures':
+        '1':
+          'name': 'keyword.control.cpp'
+    },
+    # include
+    {
+      'begin': '#\\s*(include)\\b'
+      'beginCaptures':
+        '1':
+          'name': 'keyword.control.import.include.cpp'
+      'end': '(?<!\\\\)(?=\\n)'
+      'patterns': [{
+        # quotes highlight (e.g. #include "math.h")
+          'begin': '"'
+          'end': '"'
+          'name': 'string.quoted.double.include.cpp'
+        },
+        # angle brackets highlight (e.g. #include <cmath>)
+        {
+          'begin': '<'
+          'end': '>'
+          'name': 'string.quoted.other.lt-gt.include.cpp'
+        },
+        {
+          'include': '#line-comment'
+        },
+        {
+          'include': '#block-comment'
+        }]
+    },
+    # TODO: highlight common pragma keywords
+    # error, pragma, and warning
+    {
+      'begin': '#\\s*(error|pragma|warning)\\b'
+      'beginCaptures':
+        '1':
+          'name': 'keyword.control.cpp'
+      'end': '(?<!\\\\)(?=\\n)'
+      'patterns': [{
+          'include': '#line-comment'
+        },
+        {
+          'include': '#block-comment'
+        }]
+    },
+    {
+      'include': '#block-comment'
+    },
+    {
+      'include': '#line-comment'
+    },
+    {
+      'include': '#numeric-literals'
+    },
+    {
+      'include': '#language-constants'
+    },
+    {
+      'include': '#support-constants'
+    },
+    {
+      'include': '#block'
+    },
+    {
+      'include': '#control-keywords'
+    },
+    {
+      'include': '#operator-keywords'
+    },
+    {
+      'include': '#cast-operator-keywords'
+    },
+    {
+      'include': '#deprecated-keywords'
+    },
+    {
+      'include': '#storage-types'
+    },
+    {
+      'include': '#storage-modifiers'
+    },
+    {
+      'include': '#support-types'
+    },
+    {
+      'include': '#language-variables'
+    },
+    {
+      'include': '#string'
+    },
+    {
+      'include': '#raw-string'
+    },
+    {
+      'include': '#char-literals'
+    },
+    {
+      'include': '#template'
+    },
+    {
+      'include': '#function'
+    },
+    {
+      'include': '#namespace'
+    },
+    {
+      'include': '#enum'
+    },
+    {
+      'include': '#class'
+    },
+    {
+      'include': '#attributes'
+    }]
+},
+{
+  'include': '#block-comment'
+},
+{
+  'include': '#line-comment'
+},
+{
+  'include': '#numeric-literals'
+},
+{
+  'include': '#language-constants'
+},
+{
+  'include': '#support-constants'
+},
+{
+  'include': '#block'
+},
+{
+  'include': '#control-keywords'
+},
+{
+  'include': '#operator-keywords'
+},
+{
+  'include': '#cast-operator-keywords'
+},
+{
+  'include': '#deprecated-keywords'
+},
+{
+  'include': '#storage-types'
+},
+{
+  'include': '#storage-modifiers'
+},
+{
+  'include': '#support-types'
+},
+{
+  'include': '#language-variables'
+},
+{
+  'include': '#string'
+},
+{
+  'include': '#raw-string'
+},
+{
+  'include': '#char-literals'
+},
+{
+  'include': '#template'
+},
+{
+  'include': '#function'
+},
+{
+  'include': '#namespace'
+},
+{
+  'include': '#enum'
+},
+{
+  'include': '#class'
+},
+{
+  'include': '#attributes'
+}]
+
+'repository':
+  # doxygen keywords
+  # NOTE: param is defined below
+  # TODO: mark @f{ and @f}
+  'doxygen-keywords':
+    'match': '[@\\\\](?:(?:{|}|f\\$|f\\[|f\\]|\\$|@|\\\\|&|~|<|>|#|%|"|\\.|::|\\||-{2,3})|(?:a|addindex|addtogroup|anchor|arg|attention|author|authors|b|brief|bug|c|callergraph|callgraph|category|cite|class|code|cond|copybrief|copydetails|copydoc|copyright|date|def|defgroup|deprecated|details|diafile|dir|docbookonly|dontinclude|dot|dotfile|e|else|elseif|em|endcode|endcond|enddocbookonly|enddot|endhtmlonly|endif|endinternal|endlatexonly|endlink|endmanonly|endmsc|endparblock|endrtfonly|endsecreflist|endverbatim|enduml|endxmlonly|enum|example|exception|extends|file|fn|headerfile|hidecallergraph|hidecallgraph|hideinitializer|htmlinclude|htmlonly|idlexcept|if|ifnot|image|implements|include|includelineno|ingroup|internal|invariant|interface|latexinclude|latexonly|li|line|link|mainpage|manonly|memberof|msc|mscfile|n|name|namespace|nosubgrouping|note|overload|p|package|page|par|paragraph|parblock|post|pre|private|privatesection|property|protected|protectedsection|protocol|public|publicsection|pure|ref|refitem|related|relates|relatedalso|relatesalso|remark|result|return|returns|retval|rtfonly|sa|secreflist|section|see|short|showinitializer|since|skip|skipline|snippet|startuml|struct|subpage|subsection|subsubsection|tableofcontents|test|throw|throws|todo|tparam|typedef|union|until|var|verbatim|verbinclude|version|vhdlflow|warning|weakgroup|xmlonly|xrefitem)\\b)'
+    'name':  'comment.block.documentation.cpp keyword.other.documentation.doxygen'
+
+  'doxygen-param':
+    'match': '([@\\\\]param)\\b(?:\\s*(\\[(?:in|in,out|out)\\]))?'
+    'captures':
+      '1':
+        'name':  'comment.block.documentation.cpp keyword.other.documentation.doxygen'
+      '2':
+        'name':  'comment.block.documentation.cpp keyword.other.documentation.doxygen'
+
+  # line comment
+  'line-comment':
+    'begin': '(?=//)'
+    'end': '\\n'
+    'name': 'comment.line.double-slash.cpp'
+    # doxygen
+    'patterns': [{
+      # start with "///" or "//!" but not "////"
+      'begin': '(?<!/)(?=//(/[^/]|!))'
+      'end': '(?=\\n)'
+      'name': 'meta.documentation.cpp'
+      'patterns': [{
+        'include': '#doxygen-keywords'
+      },
+      {
+        'include': '#doxygen-param'
+      }]
+    }]
+
+  # block comment
+  'block-comment':
+    'begin': '(?=/\\*)'
+    'end': '(?<!/)\\*/'
+    'name': 'comment.block.cpp'
+    # doxygen
+    'patterns': [{
+      # start with "/**" or "/*!" but not "/***"
+      'begin': '(?=/\\*(\\*[^\\*]|!))'
+      'end': '(?=\\*/)'
+      'name': 'meta.documentation.cpp'
+      'patterns': [{
+        'include': '#doxygen-keywords'
+      },
+      {
+        'include': '#doxygen-param'
+      }]
+    }]
+
+  # block
+  'block':
+    'begin': '{'
+    'end': '}'
+    'name': 'meta.block.cpp'
+    'patterns': [{
+      'include': '$base'
+    }]
+
+  # control keywords
+  # NOTE: namespace is highlighted in '#namespace'
+  # TODO: C++17: add concept and requires
+  'control-keywords':
+    'match': '\\b(?:alignas|alignof|asm|break|case|catch|continue|default|delete|do|else|explicit|export|extern|for|friend|goto|if|inline|new|noexcept|operator|private|protected|public|return|sizeof|static_assert|switch|throw|try|typedef|using|virtual|while)\\b'
+    'name': 'keyword.control.cpp'
+
+  # operator keywords
+  'operator-keywords':
+    'match': '\\b(?:and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq)\\b'
+    'name': 'keyword.operator.cpp'
+
+  # cast keywords
+  'cast-operator-keywords':
+    'match': '\\b(?:const_cast|dynamic_cast|reinterpret_cast|static_cast)\\b'
+    'name': 'keyword.operator.cast.cpp'
+
+  # special identifiers
+  # TODO: final can apply to a class as well
+  'special-identifiers':
+    'match': '\\b(?:final|override)\\b'
+    'name': 'keyword.control.cpp'
+
+  # deprecated keywords
+  'deprecated-keywords':
+    'match': '\\bregister\\b'
+    'name': 'invalid.deprecated.cpp'
+
+  # storage types
+  # NOTE: class, struct, and union are highlighted in '#class';
+  # template is highlighted in '#template';
+  # enum is highlighted in '#enum'
+  'storage-types':
+    'match': '\\b(?:auto|bool|char|char16_t|char32_t|decltype|double|float|int|long|short|signed|unsigned|void|wchar_t)\\b'
+    'name': 'storage.type.cpp'
+
+  # storage modifiers
+  'storage-modifiers':
+    'match': '\\b(?:const|constexpr|mutable|static|thread_local|typename|volatile)\\b'
+    'name': 'storage.modifier.cpp'
+
+  # language constants
+  'language-constants':
+    'match': '\\b(?:__func__|false|nullptr|true)\\b'
+    'name': 'constant.language.cpp'
+
+  # support types
+  'support-types':
+    'match': '\\b(?:int8_t|int16_t|int32_t|int64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|int_least8_t|int_least16_t|int_least32_t|int_least64_t|intmax_t|intptr_t|size_t|uint|uint8_t|uint16_t|uint32_t|uint64_t|uint_fast8_t|uint_fast16_t|uint_fast32_t|uint_fast64_t|uint_least8_t|uint_least16_t|uint_least32_t|uint_least64_t|uintmax_t|uintptr_t)\\b'
+    'name': 'support.type.cpp'
+
+  # support constants
+  'support-constants':
+    'match': '\\b(?:__FILE__|__FUNCTION__|__LINE__)\\b'
+    'name': 'support.constant.cpp'
+
+  # language variables
+  'language-variables':
+    'match': '\\bthis\\b'
+    'name': 'variable.language.cpp'
+
+  # numeric literals
+  'numeric-literals':
+    'match': '(?<![\'\\.])(?:(?:(?:\\b\\d(?:[\\d\']*\\d)?\\.\\d(?:[\\d\']*\\d)?|\\B\\.\\d(?:[\\d\']*\\d)?)(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)?(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b|(?:\\b\\d(?:[\\d\']*\\d)?\\.)(?:\\B|(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))\\b|(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b)|\\b\\d(?:[\\d\']*\\d)?(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b)|\\b(?:(?:[1-9](?:[\\d\']*\\d)?|0(?:[0-7\']*[0-7])?|0[Xx][\\da-fA-F](?:[\\da-fA-F\']*[\\da-fA-F])?|0[Bb][01](?:[01\']*[01])?)(?:(?:l{1,2}|L{1,2})[uU]?|[uU](?:l{0,2}|L{0,2})|(?:i[fl]?|h|min|[mun]?s|_\\w*))?)\\b)(?!\\.)'
+    'name': 'constant.numeric.cpp'
+
+  # escape chars
+  'escape-chars':
+    'match': '\\\\(?:[\'"\\?\\\\abfnrtv]|[0-7]{1,3}|x[\\da-fA-F]+|u[\\da-fA-F]{4}|U[\\da-fA-F]{8})'
+    'name':  'constant.character.escape.cpp'
+
+  # invaild escape chars
+  'invalid-escape-chars':
+    'match': '\\\\(?:[^\'"\\?\\\\abfnrtvxuU0-7]|x[^\\da-fA-F]|u[\\da-fA-F]{0,3}[^\\da-fA-F]|U[\\da-fA-F]{0,7}[^\\da-fA-F])'
+    'name':  'invalid.illegal.unknown-escape.cpp'
+
+  # string
+  'string':
+    'begin': '(?:L|u8|u|U)?"'
+    'beginCaptures':
+      '0':
+        'name':'punctuation.definition.string.begin.cpp'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name':'punctuation.definition.string.end.cpp'
+    'name': 'string.quoted.double.cpp'
+    'patterns': [{
+      'include': '#escape-chars'
+    },
+    {
+      'include': '#invalid-escape-chars'
+    }]
+
+  # raw string
+  'raw-string':
+    'begin': '(?:L|u8|u|U)?R"([^\\(\\)\\\\ ]{0,16})\\('
+    'beginCaptures':
+      '0':
+        'name':'punctuation.definition.string.begin.cpp'
+    'end': '\\)\\1"'
+    'endCaptures':
+      '0':
+        'name':'punctuation.definition.string.end.cpp'
+    'name': 'string.quoted.double.cpp'
+
+  # char literals
+  'char-literals':
+    'begin': '(?:L|u|U)?\'' # TODO: C++17: add u8
+    'beginCaptures':
+      '0':
+        'name':'punctuation.definition.string.begin.cpp'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name':'punctuation.definition.string.end.cpp'
+    'name': 'string.quoted.single.cpp'
+    'patterns': [{
+      'include': '#escape-chars'
+    },
+    {
+      'include': '#invalid-escape-chars'
+    }]
+
+  # function
+  # TODO: match across newlines
+  # TODO: don't match non-functions in between <>
+  # TODO: Recursively match template args
+  'function':
+    'match': '(?:[_a-zA-Z]\\w*(?:\\s*<(?:[^<].*)?>\\s*)?::)*(?:(?:~?[_a-zA-Z]\\w*(?:\\s*<(?:[^<].*)?>\\s*)?)|(?:operator\\b[^\\(]+))\\s*\\('
+    'name': 'meta.function.cpp'
+    'captures':
+      '0':
+        'patterns': [{
+          'begin': '<'
+          'end': '>'
+          'patterns': [{
+            'include': '$base'
+          }]
+        },
+        {
+          'match': '\\boperator\\b'
+          'name': 'keyword.control.cpp'
+        },
+        {
+          'match': '~?[_a-zA-Z]\\w*'
+          'name': 'entity.name.function.cpp'
+        }]
+
+  # after function
+  'after-function':
+    'begin': '\\)'
+    'end': '(?=;|{)'
+    'name': 'meta.after-function'
+    'patterns': [{
+      'include': '#block-comment'
+    },
+    {
+      'include': '#line-comment'
+    },
+    {
+      'include': '#control-keywords'
+    },
+    {
+      'include': '#operator-keywords'
+    },
+    {
+      'include': '#cast-operator-keywords'
+    },
+    {
+      'include': '#special-identifiers'
+    },
+    {
+      'include': '#storage-types'
+    },
+    {
+      'include': '#storage-modifiers'
+    },
+    {
+      'include': '#support-types'
+    },
+    {
+      'include': '#language-constants'
+    },
+    {
+      'include': '#support-constants'
+    },
+    {
+      'include': '#language-variables'
+    },
+    {
+      'include': '#numeric-literals'
+    },
+    {
+      'include': '#string'
+    },
+    {
+      'include': '#raw-string'
+    },
+    {
+      'include': '#char-literals'
+    },
+    {
+      'include': '#function'
+    }]
+
+  # namespace
+  'namespace':
+    'begin': '\\b(namespace)\\b'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.cpp'
+    'end': '(?=;|{)'
+    'patterns': [{
+      'match': '\\b([_a-zA-Z]\\w*)\\b'
+      'name': 'entity.name.type.cpp'
+    },
+    {
+      'include': '#line-comment'
+    },
+    {
+      'include': '#block-comment'
+    }]
+
+  # enum
+  'enum':
+    'begin': '\\b(enum)\\b'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.cpp'
+    'end': '(?=;|{)'
+    'name': 'meta.enum-block.cpp'
+    'patterns': [{
+      'match': '\\b(?:class|struct)\\b'
+      'name': 'storage.type.cpp'
+    },
+    {
+      # enum name
+      # TODO: only highlight one
+      'match': '\\b([_a-zA-Z]\\w*)\\b'
+      'name': 'entity.name.type.cpp'
+    },
+    {
+      'include': '#line-comment'
+    },
+    {
+      'include': '#block-comment'
+    },
+    {
+      'begin': ':'
+      'end': '(?=;|{)'
+      'patterns':[{
+        'include': '#line-comment'
+      },
+      {
+        'include': '#block-comment'
+      },
+      {
+        'include': '#storage-types'
+      },
+      {
+        'include': '#storage-modifiers'
+      },
+      {
+        'include': '#support-types'
+      }]
+    }]
+
+  # class, struct, union
+  # TODO: don't highlight words in template brackets (e.g. < >)
+  'class':
+    'begin': '\\b(class|struct|union)\\b'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.cpp'
+    'end': ';'
+    'name': 'meta.class-struct-block.cpp'
+    'patterns': [{
+      'begin': '(?<=class|struct|union)'
+      'end': '(?=;|{)'
+      'patterns': [{
+        # base must be included first or keywords will
+        # not be highlighted
+        'include': '$base'
+      },
+      {
+        # class name
+        # TODO: only highlight one
+        'match': '\\b([_a-zA-Z]\\w*)\\b'
+        'name': 'entity.name.type.cpp'
+      },
+      {
+        # inherited name(s)
+        'begin': ':'
+        'end': '(?=;|{)'
+        'patterns':[{
+          # base must be included first or keywords will
+          # not be highlighted
+          'include': '$base'
+        },
+        {
+          'match': '\\b([_a-zA-Z]\\w*)\\b'
+          'name': 'entity.name.type.inherited.cpp'
+        }]
+      }]
+    },
+    {
+      'begin': '{'
+      'end': '}'
+      'patterns': [{
+        'include': '$base'
+      },
+      {
+        'include': '#after-function'
+      }]
+    }]
+
+  # template
+  'template':
+    'begin': '\\btemplate\\b'
+    'beginCaptures':
+      '0':
+        'name': 'storage.type.cpp'
+    'end': '(?=>)'
+    'patterns': [{
+        'begin': '(?=<)'
+        'end': '(?=>)'
+        'patterns': [{
+          # recursively include template again
+          'include': '#template'
+        },
+        {
+          'include': '#block-comment'
+        },
+        {
+          'include': '#line-comment'
+        },
+        {
+          'include': '#numeric-literals'
+        },
+        {
+          'include': '#language-constants'
+        },
+        {
+          'include': '#support-constants'
+        },
+        {
+          'include': '#storage-types'
+        },
+        {
+          'match': '\\bclass\\b'
+          'name': 'storage.type.cpp'
+        },
+        {
+          'include': '#control-keywords'
+        },
+        {
+          'include': '#operator-keywords'
+        },
+        {
+          'include': '#cast-operator-keywords'
+        },
+        {
+          'include': '#deprecated-keywords'
+        },
+        {
+          'include': '#storage-modifiers'
+        },
+        {
+          'include': '#support-types'
+        },
+        {
+          'include': '#string'
+        },
+        {
+          'include': '#raw-string'
+        },
+        {
+          'include': '#char-literals'
+        },
+        {
+          'include': '#function'
+        }]
+    }]
+
+  'attributes':
+    'begin': '\\[\\s*\\['
+    'end': '\\]\\s*\\]'
+    'name': 'meta.attributes.cpp'
+    'patterns': [{
+        'match': '\\b(?:carries_dependency|deprecated|noreturn)\\b'
+        'name': 'keyword.other.cpp'
+      },
+      {
+        'include': '#line-comment'
+      },
+      {
+        'include': '#block-comment'
+      },
+      {
+        'include': '#string'
+      },
+      {
+        'include': "#raw-string"
+      }]

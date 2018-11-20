@@ -1,0 +1,5 @@
+'.source.latino':
+  'editor':
+    'commentStart': '#'
+    'increaseIndentPattern': '\\b(si|sino|elegir|caso|defecto|mientras|hacer|desde|funcion)\\b((?!fin).)*$|\\{\\s*$'
+    'decreaseIndentPattern': '^\\s*(fin,?|\\}\\)?).*$'

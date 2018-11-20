@@ -1,0 +1,96 @@
+extends: 
+  - eslint:all
+parserOptions:
+  ecmaVersion: 6
+  ecmaFeatures:
+    globalReturn: true
+env:
+  browser: true
+  node: true
+  es6: true
+  mocha: true
+  jquery: true
+  nashorn: true
+  greasemonkey: true
+rules:
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  space-before-function-paren:
+    - error
+    - never
+  padded-blocks:
+    - error
+    - never
+  one-var:
+    - error
+    - never
+  id-length: off
+  no-magic-numbers: off
+  quote-props:
+    - error
+    - as-needed
+  object-curly-newline: off
+  no-extra-parens: off
+  func-names: off
+  no-console: off
+  max-len: off
+  max-lines: off
+  no-use-before-define:
+    - error
+    - functions: false
+  max-statements: off
+  func-style:
+    - error
+    - declaration
+  require-jsdoc: off
+  no-ternary: off
+  no-shadow: off
+  consistent-return: off
+  camelcase: off
+  no-constant-condition:
+    - error
+    - checkLoops: false
+  no-plusplus: off
+  guard-for-in: off
+  no-warning-comments: off
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  no-loop-func: off
+  no-else-return: off
+  newline-per-chained-call: off
+  default-case: off
+  no-inner-declarations: off
+  no-param-reassign: off
+  no-sync: off
+  no-implicit-coercion:
+    - error
+    - boolean: false
+  no-bitwise: off
+  no-void: off
+  complexity: off
+  max-depth:
+    - error
+    - max: 10
+  no-process-env: off
+  no-underscore-dangle: off
+  no-continue: off
+  max-params:
+    - error
+    - 5
+  no-undefined: off
+  no-negated-condition: off
+  callback-return: off
+  no-catch-shadow: off
+  no-process-exit: off
+  operator-linebreak:
+    - error
+    - after
+  wrap-regex: off
+  wrap-iife:
+    - error
+    - inside
+  multiline-ternary: off
+  sort-keys: off
