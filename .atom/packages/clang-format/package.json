@@ -1,299 +1,56 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-        "spec": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-118412-27428-10lt0e2.k0vo4oyldi"
-    ]
-  ],
-  "_from": "../d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-  "_id": "clang-format@1.30.0",
-  "_inCache": true,
+  "_from": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+  "_id": "clang-format@2.0.7",
+  "_inBundle": false,
+  "_integrity": "sha512-eAwd82zAptBx8sEQJGMur/Bw3TwIFYNxrxW5cnD5f7Y9cdQorzL8in4ohQdOxbR8819znnJBgBwPhjkBLmiCvg==",
   "_location": "/clang-format",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-    "spec": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-    "type": "local"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "file:../d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-  "_shasum": "0b962aad7d302b7169b9939f108a234ec4aa574a",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-118412-27428-und0o6.s5bhzx5hfr/package.tgz",
-  "_where": "/tmp/apm-install-dir-118412-27428-10lt0e2.k0vo4oyldi",
+  "_resolved": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+  "_shasum": "9fccf114435a4fb85647142a3b24a2cc6beb68fb",
+  "_spec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
+  "_where": "/tmp/apm-install-dir-119213-7913-zbgu3p.e8i5",
   "bugs": {
     "url": "https://github.com/LiquidHelium/atom-clang-format/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
-    "clang-format": "github:angular/clang-format"
+    "clang-format-binaries": "^0.0.1"
   },
-  "description": "Format your C/C++/Obj-C/Javascript files with clang-format from inside atom. Requires clang-format to be installed.",
-  "devDependencies": {},
+  "deprecated": false,
+  "description": "Format your C/C++/Obj-C/Javascript files with clang-format from inside atom.",
+  "devDependencies": {
+    "@semantic-release/apm": "^1.0.1",
+    "@semantic-release/git": "^7.0.7",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "semantic-release": "^15.13.2"
+  },
   "homepage": "https://github.com/LiquidHelium/atom-clang-format#readme",
   "license": "MIT",
   "main": "./lib/main",
   "name": "clang-format",
-  "optionalDependencies": {},
   "private": true,
-  "readme": "# clang-format package\n\nFormat your C/C++/Obj-C/Javascript files with clang-format from inside atom. Requires clang-format to be installed and on your systems path.\n\nMore info on clang-format can be found here: http://clang.llvm.org/docs/ClangFormat.html http://clang.llvm.org/docs/ClangTools.html\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LiquidHelium/atom-clang-format.git"
   },
-  "version": "1.30.0",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [
-      {
-        "name": "async",
-        "version": "1.5.2",
-        "path": "node_modules/async/lib/async.js"
-      },
-      {
-        "name": "balanced-match",
-        "version": "1.0.0",
-        "path": "node_modules/balanced-match/index.js"
-      },
-      {
-        "name": "brace-expansion",
-        "version": "1.1.11",
-        "path": "node_modules/brace-expansion/index.js"
-      },
-      {
-        "name": "clang-format",
-        "version": "1.2.3",
-        "path": "node_modules/clang-format/index.js"
-      },
-      {
-        "name": "concat-map",
-        "version": "0.0.1",
-        "path": "node_modules/concat-map/index.js"
-      },
-      {
-        "name": "fs.realpath",
-        "version": "1.0.0",
-        "path": "node_modules/fs.realpath/index.js"
-      },
-      {
-        "name": "glob",
-        "version": "7.1.2",
-        "path": "node_modules/glob/glob.js"
-      },
-      {
-        "name": "inflight",
-        "version": "1.0.6",
-        "path": "node_modules/inflight/inflight.js"
-      },
-      {
-        "name": "inherits",
-        "version": "2.0.3",
-        "path": "node_modules/inherits/inherits.js"
-      },
-      {
-        "name": "minimatch",
-        "version": "3.0.4",
-        "path": "node_modules/minimatch/minimatch.js"
-      },
-      {
-        "name": "once",
-        "version": "1.4.0",
-        "path": "node_modules/once/once.js"
-      },
-      {
-        "name": "path-is-absolute",
-        "version": "1.0.1",
-        "path": "node_modules/path-is-absolute/index.js"
-      },
-      {
-        "name": "path-parse",
-        "version": "1.0.5",
-        "path": "node_modules/path-parse/index.js"
-      },
-      {
-        "name": "resolve",
-        "version": "1.7.1",
-        "path": "node_modules/resolve/index.js"
-      },
-      {
-        "name": "wrappy",
-        "version": "1.0.2",
-        "path": "node_modules/wrappy/wrappy.js"
-      }
-    ],
-    "extensions": {
-      ".coffee": [
-        "lib/clang-format.coffee",
-        "lib/main.coffee"
-      ],
-      ".js": [
-        "node_modules/async/dist/async.js",
-        "node_modules/async/dist/async.min.js",
-        "node_modules/async/lib/async.js",
-        "node_modules/balanced-match/index.js",
-        "node_modules/brace-expansion/index.js",
-        "node_modules/clang-format/bin/check-clang-format.js",
-        "node_modules/clang-format/index.js",
-        "node_modules/clang-format/testproject/lib/test.js",
-        "node_modules/concat-map/example/map.js",
-        "node_modules/concat-map/index.js",
-        "node_modules/fs.realpath/index.js",
-        "node_modules/fs.realpath/old.js",
-        "node_modules/glob/common.js",
-        "node_modules/glob/glob.js",
-        "node_modules/glob/sync.js",
-        "node_modules/inflight/inflight.js",
-        "node_modules/inherits/inherits.js",
-        "node_modules/inherits/inherits_browser.js",
-        "node_modules/minimatch/minimatch.js",
-        "node_modules/once/once.js",
-        "node_modules/path-is-absolute/index.js",
-        "node_modules/path-parse/index.js",
-        "node_modules/path-parse/index.min.js",
-        "node_modules/path-parse/test.js",
-        "node_modules/path-parse/test.min.js",
-        "node_modules/resolve/example/async.js",
-        "node_modules/resolve/example/sync.js",
-        "node_modules/resolve/index.js",
-        "node_modules/resolve/lib/async.js",
-        "node_modules/resolve/lib/caller.js",
-        "node_modules/resolve/lib/core.js",
-        "node_modules/resolve/lib/node-modules-paths.js",
-        "node_modules/resolve/lib/sync.js",
-        "node_modules/wrappy/wrappy.js"
-      ],
-      ".json": [
-        "node_modules/async/package.json",
-        "node_modules/balanced-match/package.json",
-        "node_modules/brace-expansion/package.json",
-        "node_modules/clang-format/package.json",
-        "node_modules/clang-format/testproject/package.json",
-        "node_modules/concat-map/package.json",
-        "node_modules/fs.realpath/package.json",
-        "node_modules/glob/package.json",
-        "node_modules/inflight/package.json",
-        "node_modules/inherits/package.json",
-        "node_modules/minimatch/package.json",
-        "node_modules/once/package.json",
-        "node_modules/path-is-absolute/package.json",
-        "node_modules/path-parse/package.json",
-        "node_modules/resolve/lib/core.json",
-        "node_modules/resolve/package.json",
-        "node_modules/wrappy/package.json",
-        "package.json"
-      ]
-    },
-    "folders": [
-      {
-        "paths": [
-          "node_modules/brace-expansion"
-        ],
-        "dependencies": {
-          "balanced-match": "^1.0.0",
-          "concat-map": "0.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/clang-format/bin",
-          "node_modules/clang-format",
-          "node_modules/clang-format/testproject/lib",
-          "node_modules/clang-format/testproject"
-        ],
-        "dependencies": {
-          "async": "^1.5.2",
-          "glob": "^7.0.0",
-          "resolve": "^1.1.6"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/glob"
-        ],
-        "dependencies": {
-          "fs.realpath": "^1.0.0",
-          "inflight": "^1.0.4",
-          "inherits": "2",
-          "minimatch": "^3.0.4",
-          "once": "^1.3.0",
-          "path-is-absolute": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/inflight"
-        ],
-        "dependencies": {
-          "once": "^1.3.0",
-          "wrappy": "1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/minimatch"
-        ],
-        "dependencies": {
-          "brace-expansion": "^1.1.7"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/once"
-        ],
-        "dependencies": {
-          "wrappy": "1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/resolve/example",
-          "node_modules/resolve",
-          "node_modules/resolve/lib",
-          "node_modules/resolve/test",
-          "node_modules/resolve/test/dotdot/abc",
-          "node_modules/resolve/test/dotdot",
-          "node_modules/resolve/test/module_dir/xmodules/aaa",
-          "node_modules/resolve/test/module_dir/ymodules/aaa",
-          "node_modules/resolve/test/module_dir/zmodules/bbb",
-          "node_modules/resolve/test/node_path/x/aaa",
-          "node_modules/resolve/test/node_path/x/ccc",
-          "node_modules/resolve/test/node_path/y/bbb",
-          "node_modules/resolve/test/node_path/y/ccc",
-          "node_modules/resolve/test/pathfilter/deep_ref",
-          "node_modules/resolve/test/precedence/aaa",
-          "node_modules/resolve/test/precedence",
-          "node_modules/resolve/test/precedence/bbb",
-          "node_modules/resolve/test/resolver/baz",
-          "node_modules/resolve/test/resolver/browser_field",
-          "node_modules/resolve/test/resolver",
-          "node_modules/resolve/test/resolver/dot_main",
-          "node_modules/resolve/test/resolver/dot_slash_main",
-          "node_modules/resolve/test/resolver/incorrect_main",
-          "node_modules/resolve/test/resolver/other_path/lib",
-          "node_modules/resolve/test/resolver/other_path",
-          "node_modules/resolve/test/resolver/quux/foo",
-          "node_modules/resolve/test/resolver/same_names/foo",
-          "node_modules/resolve/test/resolver/same_names",
-          "node_modules/resolve/test/resolver/without_basedir"
-        ],
-        "dependencies": {
-          "path-parse": "^1.0.5"
-        }
-      }
-    ]
-  }
+  "scripts": {
+    "lint": "eslint .",
+    "release": "semantic-release --ci --debug",
+    "test": "atom --test ."
+  },
+  "version": "2.0.7"
 }
