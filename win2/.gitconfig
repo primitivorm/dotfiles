@@ -9,16 +9,13 @@
 [push]
     default = upstream
 
-[remote "origin"]
-    fetch = +refs/heads/*:refs/remotes/origin/*
-    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
-
 [core]
     autocrlf = true
 	trustctime = false
 	editor = vim
     filemode = false
-
+	longpaths = true
+	
 [rebase]
     autosquash = true
 
