@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-  "_id": "clang-format@2.0.7",
+  "_from": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+  "_id": "clang-format@2.0.8",
   "_inBundle": false,
-  "_integrity": "sha512-eAwd82zAptBx8sEQJGMur/Bw3TwIFYNxrxW5cnD5f7Y9cdQorzL8in4ohQdOxbR8819znnJBgBwPhjkBLmiCvg==",
+  "_integrity": "sha512-lsO5FLKSU7ACV+lTinzU9qvE6KyEVbUVr952Qmh7YgtwtCxyCqtrIVFQr1EmMewFzDNP0JkKG797ILkbJeWmIA==",
   "_location": "/clang-format",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball"
+    "raw": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-  "_shasum": "9fccf114435a4fb85647142a3b24a2cc6beb68fb",
-  "_spec": "https://www.atom.io/api/packages/clang-format/versions/2.0.7/tarball",
-  "_where": "/tmp/apm-install-dir-119213-7913-zbgu3p.e8i5",
+  "_resolved": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+  "_shasum": "13207d401f01f441a7747d0eeff9b597d8f8b0cb",
+  "_spec": "https://www.atom.io/api/packages/clang-format/versions/2.0.8/tarball",
+  "_where": "/tmp/apm-install-dir-119522-5421-13n8jk7.lk2w",
   "bugs": {
     "url": "https://github.com/LiquidHelium/atom-clang-format/issues"
   },
@@ -52,5 +52,5 @@
     "release": "semantic-release --ci --debug",
     "test": "atom --test ."
   },
-  "version": "2.0.7"
+  "version": "2.0.8"
 }

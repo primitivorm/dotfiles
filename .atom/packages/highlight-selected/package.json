@@ -1,43 +1,29 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-        "spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-118629-11855-1tnecav.mpfbnjyvi"
-    ]
-  ],
-  "_from": "../d-118629-11855-143uns.o510olmcxr/package.tgz",
-  "_id": "highlight-selected@0.14.0",
-  "_inCache": true,
+  "_from": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+  "_id": "highlight-selected@0.16.0",
+  "_inBundle": false,
+  "_integrity": "sha512-74X20kMqyb/dErMfl+1OxmNYGA7El+G1TfMTlzfV0t98Sgk/aRXT20HcVqeRCvZe56bHpf36yZQvITnPHWe+EA==",
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-    "spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-    "type": "local"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "file:../d-118629-11855-143uns.o510olmcxr/package.tgz",
-  "_shasum": "3c8c2c838b70beec0a4b108a5f7356bd70bb8b24",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-118629-11855-143uns.o510olmcxr/package.tgz",
-  "_where": "/tmp/apm-install-dir-118629-11855-1tnecav.mpfbnjyvi",
+  "_resolved": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+  "_shasum": "a7008573e744577d6e54091ba08c7f408aeccd2d",
+  "_spec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
+  "_where": "/tmp/apm-install-dir-119522-5444-12knvm1.lu8f",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
+  "bundleDependencies": false,
   "consumedServices": {
     "status-bar": {
       "versions": {
@@ -51,14 +37,20 @@
     }
   },
   "dependencies": {
-    "atom-package-deps": "^4.6.2",
-    "grim": "^2.0.1"
+    "atom-package-deps": "^5.0.0",
+    "debounce": "^1.2.0",
+    "grim": "^2.0.2"
   },
+  "deprecated": false,
   "description": "Highlights the current word selected when double clicking",
   "devDependencies": {
-    "coffeelint": "^2.1.0",
-    "coffeelint-jasmine": "0.0.2",
-    "coffeescript": "^2.3.1"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.3"
   },
   "dist": {
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
@@ -73,9 +65,8 @@
     "highlight occurrences"
   ],
   "license": "MIT",
-  "main": "./lib/highlight-selected",
+  "main": "./lib/main",
   "name": "highlight-selected",
-  "optionalDependencies": {},
   "package-deps": [
     "scroll-marker"
   ],
@@ -88,11 +79,9 @@
       }
     }
   },
-  "readme": "# Highlight Selected\n\nDouble click on a word to highlight it throughout the open file.\n\nThis is something hacky I've put together as I missed the functionality that Sublime gave. As such, it's doesn't work 100% but is good enough to start!\n\nSome code and has been take from Atom's find and replace package ([link](https://github.com/atom/find-and-replace))\n\nPlease log any issues and pull requests are more than welcome!\n\n![Gif in action](http://i.imgur.com/C5FnzzQ.gif)\n\n# Issues and Todo\n\n- Some double click events are not triggered\n- Refactor and tidy up the code\n- Add specs to test it\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.14.0"
+  "version": "0.16.0"
 }
