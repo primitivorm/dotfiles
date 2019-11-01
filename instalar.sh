@@ -31,6 +31,9 @@ sudo apt install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
 sudo snap install docker -y
 sudo apt  install docker.io -y
 
+# install powerline
+sudo apt install fonts-powerline powerline -y
+
 #to build ninja
 sudo apt install re2c
 

@@ -126,6 +126,9 @@ export LLVM_CONFIG_PATH="/usr/local/bin/"
 #if [ "$TERM" != "linux" ]; then
 #    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 #fi
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  source /usr/share/powerline/bindings/bash/powerline.sh
+fi
 
 # added by Anaconda3 installer
 export PATH="/home/primi/anaconda3/bin:$PATH"
