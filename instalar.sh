@@ -33,6 +33,7 @@ sudo apt  install docker.io -y
 
 # install powerline
 sudo apt install fonts-powerline powerline -y
+sudo pip install powerline-gitstatus
 
 #to build ninja
 sudo apt install re2c
