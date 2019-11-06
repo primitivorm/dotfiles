@@ -1,40 +1,25 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-        "spec": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-11852-9701-1rsh9nb.eyk00sh5mi"
-    ]
-  ],
-  "_from": "../d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-  "_id": "terminal-tab@0.5.7",
-  "_inCache": true,
+  "_from": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+  "_id": "terminal-tab@0.6.0",
+  "_inBundle": false,
+  "_integrity": "sha512-hzoKyj6PdaLgRPZlzNkqk+/aNnCpssxxFpVnVqhwwz6uWmXXMtsIXB0RQulKQgVZJ1H5PqChSopaHlv/NuxYHg==",
   "_location": "/terminal-tab",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-    "spec": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-    "type": "local"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "file:../d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-  "_shasum": "a7e74cdb662039ec9d41be746dc9440ec81c78df",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-11852-9701-192n9k.rp1n0cnmi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11852-9701-1rsh9nb.eyk00sh5mi",
+  "_resolved": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+  "_shasum": "0a9291b908db676b1e5dfc1b9e31bfd85d3ba4eb",
+  "_spec": "https://www.atom.io/api/packages/terminal-tab/versions/0.6.0/tarball",
+  "_where": "/tmp/apm-install-dir-119929-19193-1rbpktw.b2f9",
   "author": {
     "name": "Justin Mecham",
     "email": "justin@mecham.me",
@@ -43,17 +28,19 @@
   "bugs": {
     "url": "https://github.com/jsmecham/atom-terminal-tab/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
-    "etch": "^0.12.7",
-    "node-pty-prebuilt": "^0.7.3",
-    "rgb-hex": "^2.1.0",
-    "xterm": "^3.1.0"
+    "etch": "^0.14.0",
+    "node-pty-prebuilt-multiarch": "^0.9.0",
+    "rgb-hex": "^3.0.0",
+    "xterm": "^4.2.0",
+    "xterm-addon-fit": "^0.3.0"
   },
+  "deprecated": false,
   "description": "A simple terminal for panes and docks.",
   "deserializers": {
     "TerminalSession": "deserializeTerminalSession"
   },
-  "devDependencies": {},
   "engines": {
     "atom": ">=1.19.0 <2.0.0"
   },
@@ -107,10 +94,7 @@
   "license": "MIT",
   "main": "./lib/main",
   "name": "terminal-tab",
-  "optionalDependencies": {},
   "private": true,
-  "readme": "# Terminal for Atom\n\nA simple terminal for Atom that is based on the excellent [Xterm.js](http://xtermjs.org) and [node-pty](https://github.com/Tyriar/node-pty) projects. Works best with Atom 1.17 and later with support for Docks.\n\n## Demo\n\n![Terminal Demo](https://raw.githubusercontent.com/jsmecham/atom-terminal-tab/master/demo.gif)\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jsmecham/atom-terminal-tab.git"
@@ -118,5 +102,5 @@
   "scripts": {
     "test": "apm test"
   },
-  "version": "0.5.7"
+  "version": "0.6.0"
 }

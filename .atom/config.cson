@@ -9,6 +9,9 @@
     formatCOnSave: true
     formatCPlusPlusOnSave: true
   core:
+    disabledPackages: [
+      "you-complete-me"
+    ]
     projectHome: "/home/latino/src/"
     telemetryConsent: "limited"
     themes: [
@@ -17,7 +20,7 @@
     ]
   editor:
     fontFamily: "Inconsolata"
-    fontSize: 15
+    fontSize: 13
     invisibles: {}
   "exception-reporting":
     userId: "42052f43-3441-4ef3-82f4-65fb8b1b4580"
@@ -25,7 +28,7 @@
     gccDefaultCFlags: "-c -Wall -std=c11"
     gccSuppressWarnings: true
   "linter-ui-default":
-    panelHeight: 161
+    panelHeight: 307
     showPanel: true
   minimap:
     charHeight: 3

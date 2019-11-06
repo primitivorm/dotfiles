@@ -26,6 +26,15 @@ sudo apt install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-uti
 sudo apt install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
 sudo apt install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
 sudo apt install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+
+# install docker
+sudo snap install docker -y
+sudo apt  install docker.io -y
+
+# install powerline
+sudo apt install fonts-powerline powerline -y
+sudo pip install powerline-gitstatus
+
 #to build ninja
 sudo apt install re2c
 
