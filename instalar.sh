@@ -35,6 +35,11 @@ sudo apt  install docker.io -y
 sudo apt install fonts-powerline powerline -y
 sudo pip install powerline-gitstatus
 
+#install nutty
+sudo apt-add-repository ppa:bablu-boy/nutty-daily
+sudo apt-get update
+sudo apt-get install nutty
+
 #to build ninja
 sudo apt install re2c
 
