@@ -1,0 +1,14 @@
+[Unit]
+Description=gx-boa-ms-invoicing-mex-store
+
+[Service]
+WorkingDirectory=/var/www/gx-boa-ms-invoicing-mex-store
+ExecStart=/usr/bin/dotnet /var/www/gx-boa-ms-invoicing-mex-store/gx-boa-ms-invoicing-mex-store.dll
+Restart=always
+RestartSec=10
+SyslogIdentifier=gx-boa-ms-invoicing-mex-store
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
+
