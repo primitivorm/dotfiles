@@ -20,25 +20,25 @@ sudo cp -f usr/local/bin/atom-update /usr/local/bin/
 #########################################################
 #install vim plugins
 #########################################################
-if [ ! -d ~/.vim/bundle ]; then 
-    mkdir ~/.vim/bundle/
-fi
-echo "instalando vim plugins..."
-rm -fr ~/.vim/bundle/Vundle.vim
-cd ~/.vim/bundle/ && git clone https://github.com/VundleVim/Vundle.vim
-find . -type f -exec dos2unix {} \;
-gvim -c ":PluginInstall" ~/.vimrc
-find . -type f -exec dos2unix {} \;
-if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
-    #compile YouCompleteMe plugin
-    echo "compilando YouCompleteMe plugin..."
-    cd ~/.vim/bundle/ && git clone https://github.com/Valloric/YouCompleteMe
-    cd ~/.vim/bundle/YouCompleteMe/
-    git clean -f
-    git pull
-    git submodule update --recursive --init
-    python install.py --clang-completer
-fi
+#if [ ! -d ~/.vim/bundle ]; then 
+#    mkdir ~/.vim/bundle/
+#fi
+#echo "instalando vim plugins..."
+#rm -fr ~/.vim/bundle/Vundle.vim
+#cd ~/.vim/bundle/ && git clone https://github.com/VundleVim/Vundle.vim
+#find . -type f -exec dos2unix {} \;
+#gvim -c ":PluginInstall" ~/.vimrc
+#find . -type f -exec dos2unix {} \;
+#if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
+#    #compile YouCompleteMe plugin
+#    echo "compilando YouCompleteMe plugin..."
+#    cd ~/.vim/bundle/ && git clone https://github.com/Valloric/YouCompleteMe
+#    cd ~/.vim/bundle/YouCompleteMe/
+#    git clean -f
+#    git pull
+#    git submodule update --recursive --init
+#    python install.py --clang-completer
+#fi
 
 #########################################################
 #configure tmux
