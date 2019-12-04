@@ -11,11 +11,11 @@ echo "instalando paquetes..."
 #install packages
 sudo apt install aptitude build-essential gcc g++ automake -y
 sudo apt install git make cmake flex bison libreadline-dev -y
-sudo apt install valgrind dos2unix exuberant-ctags -y
+sudo apt install valgrind dos2unix exuberant-ctags net-tools -y
 sudo apt install python python-dev python-urllib3 libxml2-dev libxslt-dev libssl-dev -y
 sudo apt install tmux ack-grep astyle libtool libunistring-dev -y
 sudo apt install dpkg-dev libgnome-keyring-dev java -y
-sudo apt install python-pip lcov npm ruby-coffee-script nodejs -y
+sudo apt install python-pip lcov ruby-coffee-script nodejs -y
 sudo apt install default-jre default-jdk indent texinfo libjpeg-dev libgif-dev giflib-tools libtiff5-dev -y
 sudo apt install lua5.2 liblua5.2-dev meld libz3 clang-format -y
 sudo apt install gnome-system-monitor clisp libgtk-3-dev -y
@@ -26,6 +26,10 @@ sudo apt install k3b vlc brasero libdvdcss libdvdread4 libdvdnav4 gnome-disk-uti
 sudo apt install ninja-build uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev -y 
 sudo apt install libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config -y
 sudo apt install libblocksruntime-dev autoconf systemtap-sdt-dev tzdata -y
+
+# node
+sudo apt install npm -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 # install docker
 sudo snap install docker -y
