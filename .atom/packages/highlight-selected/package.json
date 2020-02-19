@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-  "_id": "highlight-selected@0.16.0",
+  "_from": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+  "_id": "highlight-selected@0.17.0",
   "_inBundle": false,
-  "_integrity": "sha512-74X20kMqyb/dErMfl+1OxmNYGA7El+G1TfMTlzfV0t98Sgk/aRXT20HcVqeRCvZe56bHpf36yZQvITnPHWe+EA==",
+  "_integrity": "sha512-faDT7mf+gZoTYDdf6C4ri10bUWuy66tGw+AC0DLfUIUkxVco8pFefqrfxVheRse3WeU+744l2um9o+YiSlKJlg==",
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball"
+    "raw": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-  "_shasum": "a7008573e744577d6e54091ba08c7f408aeccd2d",
-  "_spec": "https://www.atom.io/api/packages/highlight-selected/versions/0.16.0/tarball",
-  "_where": "/tmp/apm-install-dir-119522-5444-12knvm1.lu8f",
+  "_resolved": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+  "_shasum": "35fc149e1bf8097bdee90913faccd100100ef159",
+  "_spec": "https://www.atom.io/api/packages/highlight-selected/versions/0.17.0/tarball",
+  "_where": "/tmp/apm-install-dir-120119-3974-16dodu4.mn5l",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
@@ -83,5 +83,10 @@
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.16.0"
+  "scripts": {
+    "check": "npm run lint && npm run test",
+    "lint": "eslint lib spec",
+    "test": "atom --test spec"
+  },
+  "version": "0.17.0"
 }
