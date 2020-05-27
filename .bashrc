@@ -132,3 +132,7 @@ fi
 
 # added by Anaconda3 installer
 export PATH="/home/primi/anaconda3/bin:$PATH"
+
+export NVM_DIR="/home/primi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$PATH:/opt/mssql-tools/bin"

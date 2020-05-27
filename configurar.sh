@@ -18,32 +18,9 @@ cp -f .NERDTreeBookmarks ~/
 sudo cp -f usr/local/bin/atom-update /usr/local/bin/
 
 #########################################################
-#install vim plugins
-#########################################################
-#if [ ! -d ~/.vim/bundle ]; then 
-#    mkdir ~/.vim/bundle/
-#fi
-#echo "instalando vim plugins..."
-#rm -fr ~/.vim/bundle/Vundle.vim
-#cd ~/.vim/bundle/ && git clone https://github.com/VundleVim/Vundle.vim
-#find . -type f -exec dos2unix {} \;
-#gvim -c ":PluginInstall" ~/.vimrc
-#find . -type f -exec dos2unix {} \;
-#if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then 
-#    #compile YouCompleteMe plugin
-#    echo "compilando YouCompleteMe plugin..."
-#    cd ~/.vim/bundle/ && git clone https://github.com/Valloric/YouCompleteMe
-#    cd ~/.vim/bundle/YouCompleteMe/
-#    git clean -f
-#    git pull
-#    git submodule update --recursive --init
-#    python install.py --clang-completer
-#fi
-
-#########################################################
 #configure tmux
 #########################################################
-if [ ! -d ~/.tmuxifier ]; then 
+if [ ! -d ~/.tmuxifier ]; then
     echo "configurando tmuxifier..."
     git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
     cd ~/.tmuxifier/
@@ -52,10 +29,11 @@ if [ ! -d ~/.tmuxifier ]; then
     bash init.sh
     cp ~/dotfiles/.dev-window.sh ~/
 fi
+
 #########################################################
 #configure atom
 #########################################################
-if [ ! -d ~/.atom ]; then 
+if [ ! -d ~/.atom ]; then
     echo "configurando atom..."
     bash /usr/local/bin/atom-update
     cp -r .atom ~/.atom
@@ -64,7 +42,7 @@ fi
 #########################################################
 #install powerline fonts
 #########################################################
-if [ ! -d ~/src/fonts ]; then 
+if [ ! -d ~/src/fonts ]; then
     cd ~/src
     git clone https://github.com/powerline/fonts.git
     cd fonts
@@ -78,7 +56,7 @@ fi
 #########################################################
 #configure powerline shell
 #########################################################
-#if [ ! -d ~/powerline-shell ]; then 
+#if [ ! -d ~/powerline-shell ]; then
 #    cd ~
 #    git clone https://github.com/banga/powerline-shell
 #    cd powerline-shell
