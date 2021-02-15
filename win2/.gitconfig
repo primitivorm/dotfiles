@@ -1,6 +1,6 @@
 [user]
 	name = primitivorm
-    email = cibercafe_montero@hotmail.com
+	email = cibercafe_montero@hotmail.com
 
 [gui]
 	recentrepo = C:/Users/proman02/vimfiles
@@ -15,7 +15,7 @@
 	editor = vim
     filemode = false
 	longpaths = true
-	
+
 [rebase]
     autosquash = true
 
@@ -44,4 +44,8 @@
 	br = branch
 	unstage = reset HEAD --
 	dc = diff --cached
-    lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\n--abbrev-commit --date=relative
+	pl = pull --recurse-submodules
+	ph = push
+	s = status
+	rc = rebase --continue
+  lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\n--abbrev-commit --date=relative
