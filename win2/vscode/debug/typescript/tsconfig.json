@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true
+  },
+  "exclude": ["node_modules", "dist", "bdvs-commons"],
+  "paths": {
+    "@models/*": ["src/api/database_management/models/*"],
+    "@schemas/*": ["src/api/database_management/schemas/*"],
+    "@interfaces/*": ["src/api/database_management/interfaces/*"],
+    "@modules/*": ["src/api/*"]
+  }
+}

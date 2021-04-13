@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "xlocale": "cpp",
+        "utility": "cpp",
+        "iterator": "cpp",
+        "ios": "cpp",
+        "__locale": "cpp",
+        "unordered_map": "cpp",
+        "locale": "cpp",
+        "string": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "streambuf": "cpp",
+        "xmemory0": "cpp",
+        "iosfwd": "cpp",
+        "system_error": "cpp",
+        "cstdint": "cpp",
+        "*.def": "cpp"
+    }
+}
