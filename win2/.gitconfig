@@ -1,5 +1,5 @@
 [user]
-	name = primitivorm
+	name = PrimitivoRM
 	email = cibercafe_montero@hotmail.com
 
 [gui]
@@ -36,10 +36,11 @@
 
 [alias]
 	last = log -1 --stat
+	a = add .
 	cp = cherry-pick
 	co = checkout
 	cl = clone
-	ci = commit
+	cm = commit -m
 	st = status -sb
 	br = branch
 	unstage = reset HEAD --
@@ -47,5 +48,13 @@
 	pl = pull --recurse-submodules
 	ph = push
 	s = status
+	r = rebase
 	rc = rebase --continue
-  lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\n--abbrev-commit --date=relative
+	rd = rebase development
+	plr = pull --rebase
+    lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\n--abbrev-commit --date=relative
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
